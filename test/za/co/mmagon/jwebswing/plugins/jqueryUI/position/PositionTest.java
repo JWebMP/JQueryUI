@@ -1,13 +1,12 @@
-package za.co.mmagon.jwebswing.plugins.jqueryUI.position;
+package za.co.mmagon.jwebswing.plugins.jqueryui.position;
 
-import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
-import za.co.mmagon.jwebswing.plugins.jqueryui.position.PositionLocationVertical;
-import za.co.mmagon.jwebswing.plugins.jqueryui.position.PositionLocationHorizontal;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
-import za.co.mmagon.jwebswing.base.html.Area;
-import za.co.mmagon.jwebswing.components.jqimagemap.imagemap.JQImageMap;
+import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
+import za.co.mmagon.jwebswing.plugins.jqueryui.position.PositionLocationHorizontal;
+import za.co.mmagon.jwebswing.plugins.jqueryui.position.PositionLocationVertical;
 
 /**
  *
@@ -27,9 +26,9 @@ public class PositionTest extends BaseTestClass
     public void testGetMyString()
     {
         System.out.println("getMyString");
-        Area area = new Area(JQImageMap.ImageMapAreaShapes.Default, "0,0,0,0");
-        area.setID("of");
-        Position instance = new Position(PositionLocationHorizontal.Left, PositionLocationVertical.top, PositionLocationHorizontal.Left, PositionLocationVertical.top, area);
+        Div d = new Div();
+        d.setID("of");
+        Position instance = new Position(PositionLocationHorizontal.Left, PositionLocationVertical.top, PositionLocationHorizontal.Left, PositionLocationVertical.top, d);
         System.out.println(instance.toString());
         String expResult = "{\n"
                 + "  \"myX\" : \"left\",\n"

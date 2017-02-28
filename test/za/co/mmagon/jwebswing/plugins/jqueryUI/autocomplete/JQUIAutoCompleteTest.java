@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.jqueryUI.autocomplete;
+package za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete;
 
 import junit.framework.Assert;
 import org.junit.Test;
@@ -59,11 +59,10 @@ public class JQUIAutoCompleteTest extends BaseTestClass
         ac.toString(true);
         System.out.println(ac.renderJavascript().toString());
         String expected = "$('#input').autocomplete({\n"
-                + "  \"source\" : [ {\n"
-                + "    \"label\" : \"option 1\"\n"
-                + "  } ]\n"
-                + "});\n"
-                + "";
+                + "  \"source\" : [{\n"
+                + "  \"label\" : \"option 1\"\n"
+                + "}]\n"
+                + "});\n";
         String rendered = ac.renderJavascript().toString();
         Assert.assertEquals(expected, rendered);
     }
@@ -79,11 +78,11 @@ public class JQUIAutoCompleteTest extends BaseTestClass
         System.out.println(ac.renderJavascript().toString());
 
         String expected = "$('#input').autocomplete({\n"
-                + "  \"source\" : [ {\n"
-                + "    \"label\" : \"option 1\",\n"
-                + "    \"value\" : \"value1\",\n"
-                + "    \"category\" : \"category1\"\n"
-                + "  } ]\n"
+                + "  \"source\" : [{\n"
+                + "  \"label\" : \"option 1\",\n"
+                + "  \"value\" : \"value1\",\n"
+                + "  \"category\" : \"category1\"\n"
+                + "}]\n"
                 + "});\n"
                 + "";
         String rendered = ac.renderJavascript().toString();
@@ -92,4 +91,23 @@ public class JQUIAutoCompleteTest extends BaseTestClass
         Assert.assertEquals(expected, rendered);
     }
 
+    @Test
+    public void testSourceDataUrl()
+    {
+        JQUIAutoComplete ac = new JQUIAutoComplete("autocomplete");
+        ac.setID("id");
+        ac.getLabel().setID("label");
+        ac.getInput().setID("input");
+        ac.getOptions().setAjax(true, ac);
+        ac.getOptions().addOption("option 1", "value1", "category1");
+        System.out.println(ac.renderJavascript().toString());
+
+        String expected = "$('#input').autocomplete({\n"
+                + "  \"source\" : \"jwdata?component=id\"\n"
+                + "});\n";
+        String rendered = ac.renderJavascript().toString();
+
+        //super.writeValuesToFile(expected, rendered);
+        Assert.assertEquals(expected, rendered);
+    }
 }

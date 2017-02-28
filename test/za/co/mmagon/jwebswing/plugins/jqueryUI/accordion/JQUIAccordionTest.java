@@ -14,20 +14,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.jqueryUI.accordion;
+package za.co.mmagon.jwebswing.plugins.jqueryui.accordion;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import org.junit.Assert;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
-import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.HeaderTypes;
-import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordion;
-import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab;
 import za.co.mmagon.jwebswing.generics.Direction;
-import za.co.mmagon.jwebswing.plugins.easingeffects.JQEasingEffects;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTypes;
+import za.co.mmagon.jwebswing.plugins.easingeffects.JQEasingEffects;
 
 /**
  *
@@ -55,7 +52,7 @@ public class JQUIAccordionTest extends BaseTestClass
     @Test
     public void testIcons() throws UnsupportedEncodingException, IOException
     {
-        JQUIAccordion accordion = new JQUIAccordion();
+        za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordion accordion = new JQUIAccordion();
         accordion.setID("id");
         accordion.getOptions().getIcons().setHeader("headerIcons");
         accordion.getOptions().getIcons().setActiveHeader("activeHeaderIcons");
@@ -166,13 +163,13 @@ public class JQUIAccordionTest extends BaseTestClass
     {
         JQUIAccordion accordion = new JQUIAccordion();
         accordion.setID("id");
-        Div d1 = new Div();
+        za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent d1 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent();
         d1.setID("d1");
-        Div d2 = new Div();
+        za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent d2 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent();
         d2.setID("d2");
-        JQUIAccordionTab tab1 = new JQUIAccordionTab("tab1", d1);
+        za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab tab1 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab("tab1", d1);
         tab1.getHeader().setID("h1");
-        JQUIAccordionTab tab2 = new JQUIAccordionTab("tab2", d2);
+        za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab tab2 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab("tab2", d2);
         tab2.getHeader().setID("h2");
 
         accordion.addAccordianTab(tab1);
