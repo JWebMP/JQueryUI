@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.progressbar;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  * The Query UI Implementation of a progress bar
@@ -28,7 +29,9 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
  * <p>
  * <p>
  */
-public class JQUIProgressBar extends Div<JQUIProgressBarChildren, NoAttributes, JQUIProgressBarFeatures, JQUIProgressBarEvents, JQUIProgressBar>
+@ComponentInformation(name = "JQuery UI Progress Bar", description = "The progress bar is designed to display the current percent complete for a process. The bar is coded to be flexibly sized through CSS and will scale to fit inside its parent container by default.",
+        url = "http://jqueryui.com/progressbar/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIProgressBar extends Div<JQUIProgressBarChildren, NoAttributes, JQUIProgressBarFeatures, JQUIProgressBarEvents, JQUIProgressBar> implements IJQUIProgressBar
 {
 
     private static final long serialVersionUID = 1L;
@@ -68,5 +71,15 @@ public class JQUIProgressBar extends Div<JQUIProgressBarChildren, NoAttributes, 
     public JQUIProgressBarOptions getOptions()
     {
         return getFeature().getOptions();
+    }
+
+    /**
+     * A neater view
+     *
+     * @return
+     */
+    public IJQUIProgressBar asMe()
+    {
+        return this;
     }
 }

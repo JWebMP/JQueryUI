@@ -17,9 +17,9 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.accordion;
 
 import za.co.mmagon.jwebswing.base.html.attributes.HeaderTypes;
-import za.co.mmagon.jwebswing.plugins.easingeffects.JQEasingAnimationEffectsPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTypes;
+import za.co.mmagon.jwebswing.plugins.easingeffects.JQEasingAnimationEffectsPart;
 
 /**
  * Specifies all the accordion tabs
@@ -89,10 +89,12 @@ public class JQUIAccordionOptions extends JavaScriptPart
      * Sets the panel that is active
      *
      * @param active
+     * @return
      */
-    public void setActive(Integer active)
+    public JQUIAccordionOptions setActive(Integer active)
     {
         this.active = active;
+        return this;
     }
 
     /**
@@ -113,10 +115,12 @@ public class JQUIAccordionOptions extends JavaScriptPart
      * Sets the animation
      *
      * @param animate
+     * @return
      */
-    public void setAnimate(JQEasingAnimationEffectsPart animate)
+    public JQUIAccordionOptions setAnimate(JQEasingAnimationEffectsPart animate)
     {
         this.animate = animate;
+        return this;
     }
 
     /**
@@ -133,10 +137,12 @@ public class JQUIAccordionOptions extends JavaScriptPart
      * Sets Whether all the sections can be closed at once. Allows collapsing the active section.
      *
      * @param collapsible
+     * @return
      */
-    public void setCollapsible(Boolean collapsible)
+    public JQUIAccordionOptions setCollapsible(Boolean collapsible)
     {
         this.collapsible = collapsible;
+        return this;
     }
 
     /**
@@ -153,10 +159,12 @@ public class JQUIAccordionOptions extends JavaScriptPart
      * Sets the disabled flag for the accordion
      *
      * @param disabled
+     * @return
      */
-    public void setDisabled(Boolean disabled)
+    public JQUIAccordionOptions setDisabled(Boolean disabled)
     {
         this.disabled = disabled;
+        return this;
     }
 
     /**
@@ -173,10 +181,12 @@ public class JQUIAccordionOptions extends JavaScriptPart
      * Sets the event that will trigger the accordion
      *
      * @param event
+     * @return
      */
-    public void setEvent(EventTypes event)
+    public JQUIAccordionOptions setEvent(EventTypes event)
     {
         this.event = event;
+        return this;
     }
 
     /**
@@ -193,10 +203,12 @@ public class JQUIAccordionOptions extends JavaScriptPart
      * Sets the header type to be used as a group
      *
      * @param header
+     * @return
      */
-    public void setHeader(HeaderTypes header)
+    public JQUIAccordionOptions setHeader(HeaderTypes header)
     {
         this.header = header;
+        return this;
     }
 
     /**
@@ -213,10 +225,12 @@ public class JQUIAccordionOptions extends JavaScriptPart
      * Sets the height style
      *
      * @param heightStyle
+     * @return
      */
-    public void setHeightStyle(JQUIAccordionHeightStyle heightStyle)
+    public JQUIAccordionOptions setHeightStyle(JQUIAccordionHeightStyle heightStyle)
     {
         this.heightStyle = heightStyle;
+        return this;
     }
 
     /**
@@ -237,9 +251,11 @@ public class JQUIAccordionOptions extends JavaScriptPart
      * Sets the icon options
      *
      * @param icons
+     * @return
      */
-    public void setIcons(JQUIAccordionIconOptions icons)
+    public JQUIAccordionOptions setIcons(JQUIAccordionIconOptions icons)
     {
         this.icons = icons;
+        return this;
     }
 }

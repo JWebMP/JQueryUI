@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.droppable;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  *
@@ -25,7 +26,9 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
  * @since 07 Aug 2015
  * @version 1.0
  */
-public class JQUIDroppable extends Div<JQUIDroppableChildren, NoAttributes, JQUIDroppableFeatures, JQUIDroppableEvents, JQUIDroppable>
+@ComponentInformation(name = "JQuery UI Droppable", description = "Enable any DOM element to be droppable, a target for draggable elements.",
+        url = "http://jqueryui.com/droppable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIDroppable extends Div<JQUIDroppableChildren, NoAttributes, JQUIDroppableFeatures, JQUIDroppableEvents, JQUIDroppable> implements IJQUIDroppable
 {
 
     private static final long serialVersionUID = 1L;
@@ -50,8 +53,19 @@ public class JQUIDroppable extends Div<JQUIDroppableChildren, NoAttributes, JQUI
      * <p>
      * @return
      */
+    @Override
     public JQUIDroppableOptions getOptions()
     {
         return getFeature().getOptions();
+    }
+
+    /**
+     * Neater View
+     *
+     * @return
+     */
+    public IJQUIDroppable asMe()
+    {
+        return this;
     }
 }

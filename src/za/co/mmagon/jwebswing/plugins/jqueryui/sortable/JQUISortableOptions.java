@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,11 +18,11 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.sortable;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
-import za.co.mmagon.jwebswing.plugins.jqueryui.draggable.Axis;
-import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
 import za.co.mmagon.jwebswing.htmlbuilder.css.displays.Cursors;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
+import za.co.mmagon.jwebswing.plugins.jqueryui.draggable.Axis;
+import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
 
 /**
  * The jQuery UI Sortable plugin makes selected elements sortable by dragging with the mouse.
@@ -37,14 +37,6 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
  */
 public class JQUISortableOptions extends JavaScriptPart
 {
-
-    /**
-     * Constructs a new instance of the JWSortable Options
-     */
-    public JQUISortableOptions()
-    {
-        //Nothing needed here
-    }
 
     private static final long serialVersionUID = 1L;
 
@@ -169,6 +161,14 @@ public class JQUISortableOptions extends JavaScriptPart
      * Z-index for element/helper while being sorted. Default: 1000
      */
     private Integer zIndex;
+
+    /**
+     * Constructs a new instance of the JWSortable Options
+     */
+    public JQUISortableOptions()
+    {
+        //Nothing needed here
+    }
 
     /**
      * Defines where the helper that moves with the mouse is being appended to during the drag (for example, to resolve overlap/zIndex issues). Multiple types supported:

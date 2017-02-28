@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -30,6 +30,8 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 public class JQUIAccordionIconOptions extends JavaScriptPart
 {
 
+    private static final long serialVersionUID = 1L;
+
     private String header;
     private String activeHeader;
 
@@ -43,7 +45,7 @@ public class JQUIAccordionIconOptions extends JavaScriptPart
     /**
      * Constructs a new Icon Options Class
      *
-     * @param header       The icon for closed
+     * @param header The icon for closed
      * @param activeHeader The icon for open
      */
     public JQUIAccordionIconOptions(String header, String activeHeader)

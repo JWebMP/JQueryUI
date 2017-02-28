@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.themes;
 
 import java.util.EnumSet;
+import za.co.mmagon.jwebswing.base.interfaces.ICSSClassName;
 
 /**
  * All the class names to work with JQuery UI Themes
@@ -25,7 +26,7 @@ import java.util.EnumSet;
  * @since 21 Jul 2013
  * @version 1.0
  */
-public enum JQUIThemeBlocks
+public enum JQUIThemeBlocks implements ICSSClassName
 {
     /**
      * Specifies the container must adopt the widget

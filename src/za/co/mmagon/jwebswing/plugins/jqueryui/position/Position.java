@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.position;
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  * This defines the JavaScript part for JQuery UI for Position
@@ -27,6 +28,8 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
  * @since 07 Apr 2013
  * @version 1.0
  */
+@ComponentInformation(name = "JQuery UI Position", description = "Position an element relative to the window, document, another element, or the cursor/mouse.",
+        url = "http://jqueryui.com/position/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class Position extends JavaScriptPart
 {
 
@@ -76,7 +79,7 @@ public class Position extends JavaScriptPart
      * @param myY My Y Location
      * @param atX At X Location
      * @param atY At Y Location
-     * @param of  Of Which Component
+     * @param of Of Which Component
      */
     public Position(PositionLocationHorizontal myX, PositionLocationVertical myY, PositionLocationHorizontal atX, PositionLocationVertical atY, ComponentHierarchyBase of)
     {

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.slider;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  *
@@ -27,7 +28,10 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
  * <p>
  * <p>
  */
-public class JQUISlider extends Div<JQUISliderChildren, NoAttributes, JQUISliderFeatures, JQUISliderEvents, JQUISlider>
+@ComponentInformation(name = "JQuery UI Slider",
+        description = "The jQuery UI Slider plugin makes selected elements into sliders. There are various options such as multiple handles and ranges. The handle can be moved with the mouse or the arrow keys.",
+        url = "http://jqueryui.com/slider/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUISlider extends Div<JQUISliderChildren, NoAttributes, JQUISliderFeatures, JQUISliderEvents, JQUISlider> implements IJQUISlider
 {
 
     private static final long serialVersionUID = 1L;
@@ -72,6 +76,16 @@ public class JQUISlider extends Div<JQUISliderChildren, NoAttributes, JQUISlider
             this.options = new JQUISliderOptions();
         }
         return options;
+    }
+
+    /**
+     * The slider as me
+     *
+     * @return
+     */
+    public IJQUISlider asMe()
+    {
+        return this;
     }
 
 }

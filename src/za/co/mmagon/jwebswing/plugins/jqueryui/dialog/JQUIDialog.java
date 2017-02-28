@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,13 +19,16 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.dialog;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  * A JQuery UI Panel with all bells
  *
  * @author Marc Magon
  */
-public class JQUIDialog extends Div<JQUIDialogChildren, NoAttributes, JQUIDialogFeatures, JQUIDialogEvents, JQUIDialog>
+@ComponentInformation(name = "JQuery UI Dialog", description = "The basic dialog window is an overlay positioned within the viewport and is protected from page content (like select elements) shining through with an iframe. It has a title bar and a content area, and can be moved, resized and closed with the 'x' icon by default.",
+        url = "http://jqueryui.com/dialog/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIDialog extends Div<JQUIDialogChildren, NoAttributes, JQUIDialogFeatures, JQUIDialogEvents, JQUIDialog> implements IJQUIDialog
 {
 
     private static final long serialVersionUID = 1L;
@@ -58,5 +61,15 @@ public class JQUIDialog extends Div<JQUIDialogChildren, NoAttributes, JQUIDialog
             options = new JQUIDialogOptions();
         }
         return options;
+    }
+
+    /**
+     * Neater view
+     *
+     * @return
+     */
+    public IJQUIDialog asMe()
+    {
+        return this;
     }
 }

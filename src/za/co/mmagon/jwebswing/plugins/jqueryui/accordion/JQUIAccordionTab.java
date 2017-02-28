@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,9 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.accordion;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import za.co.mmagon.jwebswing.base.html.Div;
-import za.co.mmagon.jwebswing.base.html.HeaderText;
-import za.co.mmagon.jwebswing.base.html.attributes.HeaderTypes;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 
 /**
@@ -33,24 +30,26 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 public class JQUIAccordionTab extends JavaScriptPart implements JQUIAccordionChildren
 {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * The header for the accordion
      */
     @JsonIgnore
-    private HeaderText header;
+    private JQUIAccordionHeader header;
     /**
      * The component to display in the accordion
      */
     @JsonIgnore
-    private Div component;
+    private JQUIAccordionContent component;
 
     /**
      * Constructs a new accordion tab
      * <p>
-     * @param header    The header to use
+     * @param header The header to use
      * @param component The component to use
      */
-    public JQUIAccordionTab(HeaderText header, Div component)
+    public JQUIAccordionTab(JQUIAccordionHeader header, JQUIAccordionContent component)
     {
         this.header = header;
         this.component = component;
@@ -59,12 +58,12 @@ public class JQUIAccordionTab extends JavaScriptPart implements JQUIAccordionChi
     /**
      * Constructs a new accordion tab
      * <p>
-     * @param header    The header to use
+     * @param header The header to use
      * @param component The component to use
      */
-    public JQUIAccordionTab(String header, Div component)
+    public JQUIAccordionTab(String header, JQUIAccordionContent component)
     {
-        this.header = new HeaderText(HeaderTypes.H3, header);
+        this.header = new JQUIAccordionHeader(header);
         this.component = component;
     }
 
@@ -73,7 +72,7 @@ public class JQUIAccordionTab extends JavaScriptPart implements JQUIAccordionChi
      * <p>
      * @return
      */
-    public HeaderText getHeader()
+    public JQUIAccordionHeader getHeader()
     {
         return header;
     }
@@ -83,7 +82,7 @@ public class JQUIAccordionTab extends JavaScriptPart implements JQUIAccordionChi
      * <p>
      * @param header
      */
-    public void setHeader(HeaderText header)
+    public void setHeader(JQUIAccordionHeader header)
     {
         this.header = header;
     }
@@ -93,7 +92,7 @@ public class JQUIAccordionTab extends JavaScriptPart implements JQUIAccordionChi
      * <p>
      * @return
      */
-    public Div getComponent()
+    public JQUIAccordionContent getComponent()
     {
         return component;
     }
@@ -103,7 +102,7 @@ public class JQUIAccordionTab extends JavaScriptPart implements JQUIAccordionChi
      * <p>
      * @param component
      */
-    public void setComponent(Div component)
+    public void setComponent(JQUIAccordionContent component)
     {
         this.component = component;
     }

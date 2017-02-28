@@ -33,7 +33,7 @@ public class JQUITabsFeature extends Feature<JQUITabOptions, JQUITabsFeature> im
     /**
      * The actual tab
      */
-    private final JQUITab tab;
+    private final JQUITabs tab;
     /**
      * The options for this tab
      */
@@ -44,7 +44,7 @@ public class JQUITabsFeature extends Feature<JQUITabOptions, JQUITabsFeature> im
      * <p>
      * @param tab
      */
-    public JQUITabsFeature(JQUITab tab)
+    public JQUITabsFeature(JQUITabs tab)
     {
         super("JWTabs");
         this.tab = tab;

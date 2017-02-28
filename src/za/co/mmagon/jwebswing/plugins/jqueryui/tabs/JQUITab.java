@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,105 +16,86 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.tabs;
 
-import za.co.mmagon.jwebswing.base.html.*;
-import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
+import za.co.mmagon.jwebswing.Component;
+import za.co.mmagon.jwebswing.base.html.Link;
+import za.co.mmagon.jwebswing.base.html.ListItem;
+import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
 
 /**
- * This class implements the JQuery UI implementation of a normal button
- *
+ * A specific tab for the JWAccordion
+ * <p>
  * @author MMagon
- * @since 09 Mar 2013
+ * @since 29 Mar 2013
  * @version 1.0
  */
-public class JQUITab extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatures, JQUITabsEvents, JQUITab>
+public class JQUITab
 {
 
-    private static final long serialVersionUID = 1L;
     /**
-     * the feature list
+     * The header for a tab
      */
-    private JQUITabsFeature feature;
+    private ListItem tabHeader;
+    /**
+     * The child component for a tab
+     */
+    private JQUITabContent tabDisplayComponent;
 
     /**
-     * The Unordered List
+     * Any tab to be displayed
+     *
+     * @param tabHeader
+     * @param tabDisplayComponent
      */
-    private List unorderedList;
-
-    /**
-     * Constructs a new JQUI Tab
-     */
-    public JQUITab()
+    public JQUITab(ListItem tabHeader, JQUITabContent tabDisplayComponent)
     {
-        super();
-        addFeature(getFeature());
-        add(getUnorderedList());
-    }
-
-    /**
-     * Returns the feature for the JQUITab object
-     * <p>
-     * @return
-     */
-    public final JQUITabsFeature getFeature()
-    {
-        if (feature == null)
+        if (tabDisplayComponent != null)
         {
-            feature = new JQUITabsFeature(this);
+            Link tabLink = new Link("#" + Component.class.cast(tabDisplayComponent).getID(), null, tabHeader.getText(0).toString());
+            tabHeader.setText((String) null);
+            tabHeader.add(tabLink);
         }
-        return feature;
+        this.tabHeader = tabHeader;
+        this.tabDisplayComponent = tabDisplayComponent;
+        Component.class.cast(tabDisplayComponent).addClass(JQUIThemeBlocks.UI_Widget_Content.toString());
     }
 
     /**
-     * Adds a tab to the collection
-     * <p>
-     * @param tab
+     * Returns the tab header
      *
      * @return
      */
-    public Tab addTab(Tab tab)
+    public ListItem getTabHeader()
     {
-        getUnorderedList().add(tab.getTabHeader());
-        add(JQUITabsChildren.class.cast(tab.getTabDisplayComponent()));
-        return tab;
-    }
-
-    public Tab addTab(String title, JQUITabsChildren displayComponent)
-    {
-        return addTab(new Tab(new ListItem(title), (JQUITabsChildren) displayComponent));
+        return tabHeader;
     }
 
     /**
-     * Retrieves this unordered list
+     * Sets the tab header
+     *
+     * @param tabHeader
+     */
+    public void setTabHeader(ListItem tabHeader)
+    {
+        this.tabHeader = tabHeader;
+    }
+
+    /**
+     * Returns the children of the tab
      *
      * @return
      */
-    public final List getUnorderedList()
+    public JQUITabContent getTabDisplayComponent()
     {
-        if (unorderedList == null)
-        {
-            unorderedList = new List();
-        }
-        return unorderedList;
+        return tabDisplayComponent;
     }
 
     /**
-     * Sets the unordered list
+     * Sets the children of the display
      *
-     * @param unorderedList
+     * @param tabDisplayComponent
      */
-    public void setUnorderedList(List unorderedList)
+    public void setTabDisplayComponent(JQUITabContent tabDisplayComponent)
     {
-        this.unorderedList = unorderedList;
-    }
-
-    /**
-     * Returns the options fields for the tab
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUITabOptions getOptions()
-    {
-        return feature.getOptions();
+        this.tabDisplayComponent = tabDisplayComponent;
     }
 }

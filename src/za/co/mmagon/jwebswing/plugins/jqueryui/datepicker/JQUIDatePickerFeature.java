@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -59,7 +59,7 @@ public class JQUIDatePickerFeature extends Feature<JQUIDatePickerOptions, JQUIDa
     public void assignFunctionsToComponent()
     {
         addQuery(dateInput.getJQueryID() + "datepicker("
-                + getOptions() + ");");
+                + getOptions() + ");" + getNewLine());
 
     }
 

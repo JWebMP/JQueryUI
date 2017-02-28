@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,13 +16,16 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.themes;
 
+import za.co.mmagon.jwebswing.base.interfaces.ICSSClassName;
+
 /**
  * Defines the blocks available to UI-Themes for Icons
+ *
  * @author MMagon,
  * @since 24 Jun 2013,
  * @version 1.0,
  */
-public enum JQUIIcons
+public enum JQUIIcons implements ICSSClassName
 {
     UI_icon_blank,
     UI_icon_carat_1_n,
@@ -200,7 +203,7 @@ public enum JQUIIcons
     UI_icon_grip_solid_horizontal,
     UI_icon_gripsmall_diagonal_se,
     UI_icon_grip_diagonal_se;
-    
+
     @Override
     public String toString()
     {

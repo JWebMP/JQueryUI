@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,6 +21,7 @@ import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
@@ -30,14 +31,13 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
  * @since 2013/01/16
  * @version 1.0
  */
+@ComponentInformation(name = "JQuery UI Tooltips",
+        description = "Tooltip replaces native tooltips, making them themeable as well as allowing various customizations:",
+        url = "http://jqueryui.com/tooltip/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIToolTipFeature extends Feature<JQUITooltipOptions, JQUIToolTipFeature> implements JQUIToolTipFeatures, GlobalFeatures
 {
 
     private static final long serialVersionUID = 1L;
-    /**
-     * The component this feature is for
-     */
-    private final Component forComponent;
     /**
      * The options for this component
      */
@@ -62,10 +62,10 @@ public class JQUIToolTipFeature extends Feature<JQUITooltipOptions, JQUIToolTipF
     public JQUIToolTipFeature(Component forComponent, String tooltipText)
     {
         super("JWTooltip");
-        this.forComponent = forComponent;
+        setComponent(forComponent);
         if (!(tooltipText == null))
         {
-            forComponent.addAttribute(GlobalAttributes.Title, tooltipText);
+            getComponent().addAttribute(GlobalAttributes.Title, tooltipText);
         }
 
         getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
@@ -86,7 +86,12 @@ public class JQUIToolTipFeature extends Feature<JQUITooltipOptions, JQUIToolTipF
     public JQUIToolTipFeature(Component forComponent, Div divToDisplayForComponent)
     {
         super("JWTooltip");
-        this.forComponent = forComponent;
+        setComponent(forComponent);
+        getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
+        getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
+        getCssReferences().add(JQUIReferencePool.Core.getCssReference());
+        getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
+
         getJavascriptReferences().add(JQUIReferencePool.Tooltip.getJavaScriptReference());
         getCssReferences().add(JQUIReferencePool.Tooltip.getCssReference());
     }
@@ -109,7 +114,7 @@ public class JQUIToolTipFeature extends Feature<JQUITooltipOptions, JQUIToolTipF
     @Override
     public void assignFunctionsToComponent()
     {
-        String requiredString = forComponent.getJQueryID() + "tooltip(";
+        String requiredString = getComponent().getJQueryID() + "tooltip(";
         requiredString += getOptions().toString();
         requiredString += ");" + getNewLine();
 

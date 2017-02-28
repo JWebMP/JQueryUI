@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.spinner;
 import za.co.mmagon.jwebswing.base.html.*;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.components.globalize.cultures.GlobalizeCultures;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  *
@@ -28,7 +29,10 @@ import za.co.mmagon.jwebswing.components.globalize.cultures.GlobalizeCultures;
  * <p>
  *
  */
-public final class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpinnerFeatures, JQUISpinnerEvents, JQUISpinner>
+@ComponentInformation(name = "JQuery UI Spinner",
+        description = "The Spinner, or number stepper widget, is perfect for handling all kinds of numeric input. It allows users to type a value directly, or modify an existing value by spinning with the keyboard, mouse or scrollwheel. When combined with Globalize, you can even spin currencies and dates in a variety of locales.",
+        url = "http://jqueryui.com/spinner/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpinnerFeatures, JQUISpinnerEvents, JQUISpinner> implements IJQUISpinner
 {
 
     private static final long serialVersionUID = 1L;
@@ -39,12 +43,12 @@ public final class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQ
     /**
      * The actual input
      */
-    private Input input;
+    private JQUISpinnerInput input;
 
     /**
      * The pre-child labour
      */
-    private Label entryLabel;
+    private JQUISpinnerLabel label;
     /**
      * The spinner feature
      */
@@ -66,16 +70,13 @@ public final class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQ
      */
     public JQUISpinner(String labelText)
     {
-
+        input = new JQUISpinnerInput();
+        input.addFeature(getFeature());
+        input.setID(getID() + "_spinnerInput");
         if (labelText != null)
         {
-            entryLabel = new Label(labelText);
-            input = new Input();
-            add(entryLabel);
-            add(input);
-            input.addFeature(getFeature());
-            input.setID(getID() + "_spinnerInput");
-            entryLabel.setForInputComponent(input);
+            label = new JQUISpinnerLabel(labelText);
+            label.setForInputComponent(input);
         }
     }
 
@@ -84,19 +85,23 @@ public final class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQ
      * <p>
      * @return
      */
-    public Label getEntryLabel()
+    @Override
+    public JQUISpinnerLabel getLabel()
     {
-        return entryLabel;
+        return label;
     }
 
     /**
      * Sets the entry label with this spinner
      * <p>
-     * @param entryLabel
+     * @param label
+     * @return
      */
-    public void setEntryLabel(Label entryLabel)
+    @Override
+    public JQUISpinner setLabel(JQUISpinnerLabel label)
     {
-        this.entryLabel = entryLabel;
+        this.label = label;
+        return this;
     }
 
     /**
@@ -110,7 +115,7 @@ public final class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQ
         return feature.getOptions();
     }
 
-    public JQUISpinnerFeature getFeature()
+    public final JQUISpinnerFeature getFeature()
     {
         if (feature == null)
         {
@@ -123,12 +128,15 @@ public final class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQ
      * Adds the specific culture to the options
      *
      * @param culture
+     * @return
      */
-    public void addGlobalization(GlobalizeCultures culture)
+    @Override
+    public JQUISpinner addGlobalization(GlobalizeCultures culture)
     {
         getFeature().getJavascriptReferences().add(culture.getJavascriptCoreReference());
         getJavascriptReferences().add(culture.getJavascriptReference());
         getOptions().setCulture(culture.toString());
+        return this;
     }
 
     /**
@@ -136,6 +144,7 @@ public final class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQ
      *
      * @return
      */
+    @Override
     public String getHeaderText()
     {
         return headerText;
@@ -145,10 +154,13 @@ public final class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQ
      * Gets the header text
      *
      * @param headerText
+     * @return
      */
-    public void setHeaderText(String headerText)
+    @Override
+    public JQUISpinner setHeaderText(String headerText)
     {
         this.headerText = headerText;
+        return this;
     }
 
     /**
@@ -156,7 +168,8 @@ public final class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQ
      *
      * @return
      */
-    public Input getInput()
+    @Override
+    public JQUISpinnerInput getInput()
     {
         return input;
     }
@@ -165,10 +178,36 @@ public final class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQ
      * Sets the Input Object
      *
      * @param input
+     * @return
      */
-    public void setInput(Input input)
+    @Override
+    public JQUISpinner setInput(JQUISpinnerInput input)
     {
         this.input = input;
+        return this;
+    }
+
+    @Override
+    protected StringBuilder renderBeforeTag()
+    {
+        if (getLabel() != null)
+        {
+            return new StringBuilder().append(getCurrentTabIndentString()).append(getLabel().toString(true)).append(getNewLine());
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    @Override
+    public void preConfigure()
+    {
+        if (!isConfigured())
+        {
+            add(getInput());
+        }
+        super.preConfigure();
     }
 
 }

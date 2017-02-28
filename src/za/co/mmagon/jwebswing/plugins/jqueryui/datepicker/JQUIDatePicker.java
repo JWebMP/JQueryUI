@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.datepicker;
 import java.util.Date;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  * The DatePicker is tied to a standard form input field.
@@ -29,7 +30,9 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
  * <p>
  * @author mmagon
  */
-public class JQUIDatePicker extends Div<JQUIDatePickerChildren, NoAttributes, JQUIDatePickerFeatures, JQUIDatePickerEvents, JQUIDatePicker>
+@ComponentInformation(name = "JQuery UI Date Picker", description = "Select a date from a popup or inline calendar",
+        url = "http://jqueryui.com/datepicker/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIDatePicker extends Div<JQUIDatePickerChildren, NoAttributes, JQUIDatePickerFeatures, JQUIDatePickerEvents, JQUIDatePicker> implements IJQUIDatePicker
 {
 
     private static final long serialVersionUID = 1L;
@@ -61,6 +64,16 @@ public class JQUIDatePicker extends Div<JQUIDatePickerChildren, NoAttributes, JQ
     }
 
     /**
+     * A neater view
+     *
+     * @return
+     */
+    public IJQUIDatePicker asMe()
+    {
+        return this;
+    }
+
+    /**
      * Returns the options of an item
      * <p>
      * @return
@@ -68,7 +81,7 @@ public class JQUIDatePicker extends Div<JQUIDatePickerChildren, NoAttributes, JQ
     @Override
     public JQUIDatePickerOptions getOptions()
     {
-        return inputFeature.getOptions();
+        return getInputFeature().getOptions();
     }
 
     /**
@@ -76,6 +89,7 @@ public class JQUIDatePicker extends Div<JQUIDatePickerChildren, NoAttributes, JQ
      * <p>
      * @return
      */
+    @Override
     public JQUIDatePickerFeature getInputFeature()
     {
         if (inputFeature == null)

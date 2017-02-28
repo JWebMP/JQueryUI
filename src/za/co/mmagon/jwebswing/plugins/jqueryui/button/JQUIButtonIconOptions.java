@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,13 +20,16 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 
 /**
+ * The button icon options, This has been deprecated from version 1-11
  *
  * @author GedMarc
  * @since Mar 8, 2015
  * @version 1.0
+ * @deprecated
  * <p>
  * <p>
  */
+@Deprecated
 public class JQUIButtonIconOptions extends JavaScriptPart
 {
 

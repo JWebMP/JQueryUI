@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,22 +17,21 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.sortable;
 
 import za.co.mmagon.jwebswing.base.html.Div;
-import za.co.mmagon.jwebswing.base.html.List;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  *
  * @author GedMarc
  * @since 20150807
  */
-public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISortableFeatures, JQUISortableEvents, JQUISortable>
+@ComponentInformation(name = "JQuery UI Sortable",
+        description = "The jQuery UI Slider plugin makes selected elements into sliders. There are various options such as multiple handles and ranges. The handle can be moved with the mouse or the arrow keys.",
+        url = "http://jqueryui.com/sortable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISortableFeatures, JQUISortableEvents, JQUISortable> implements IJQUISortable
 {
 
     private static final long serialVersionUID = 1L;
-    /**
-     * The actual list
-     */
-    private List list;
     /**
      * The sortable feature
      */
@@ -43,9 +42,8 @@ public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISo
      */
     public JQUISortable()
     {
-        list = new List(true);
-        add(list);
-        list.addFeature(getFeature());
+        setTag("ul");
+        addFeature(getFeature());
     }
 
     /**
@@ -57,7 +55,7 @@ public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISo
     {
         if (feature == null)
         {
-            feature = new JQUISortableFeature(list);
+            feature = new JQUISortableFeature(this);
         }
         return feature;
     }
@@ -74,17 +72,13 @@ public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISo
     }
 
     /**
-     * Returns the list associated with this sortable
+     * Returns a neater view
      *
      * @return
      */
-    public List getList()
+    public IJQUISortable asMe()
     {
-        if (list == null)
-        {
-            list = new List();
-        }
-        return list;
+        return this;
     }
 
 }

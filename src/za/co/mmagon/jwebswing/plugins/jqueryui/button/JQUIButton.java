@@ -20,8 +20,8 @@ import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.*;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionChildren;
-import za.co.mmagon.jwebswing.plugins.jqueryui.radiobutton.JQUIRadioButtonGroupChildren;
 
 /**
  * This class implements the JQuery UI implementation of a normal button
@@ -34,9 +34,11 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.radiobutton.JQUIRadioButtonGroupC
  *
  * Update 2014/07/09 - Added attribute for identification in JQuery. Minimizing the JavaScript being sent through.
  */
+@ComponentInformation(name = "JQuery UI Button", description = "Enhances standard form elements like buttons, inputs and anchors to themeable buttons with appropriate hover and active styles.",
+        url = "http://jqueryui.com/button/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIButton<J extends JQUIButton>
         extends Component<JQUIButtonChildren, ButtonAttributes, JQUIButtonFeatures, JQUIButtonEvents, J>
-        implements GlobalChildren, NoNewLineBeforeClosingTag, NoNewLineForRawText, JQUIRadioButtonGroupChildren, JQUIAccordionChildren
+        implements GlobalChildren, NoNewLineBeforeClosingTag, NoNewLineForRawText, JQUIAccordionChildren
 {
 
     private static final long serialVersionUID = 1L;

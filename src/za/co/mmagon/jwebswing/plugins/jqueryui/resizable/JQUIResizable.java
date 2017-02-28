@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.resizable;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  *
@@ -25,10 +26,16 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
  * @since 07 Aug 2015
  * @version 1.0
  */
-public class JQUIResizable extends Div<JQUIResizableChildren, NoAttributes, JQUIResizableFeatures, JQUIResizableEvents, JQUIResizable>
+@ComponentInformation(name = "JQuery UI Resizable",
+        description = "Enable any DOM element to be resizable. With the cursor grab the right or bottom border and drag to the desired width or height.",
+        url = "http://jqueryui.com/resizable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIResizable extends Div<JQUIResizableChildren, NoAttributes, JQUIResizableFeatures, JQUIResizableEvents, JQUIResizable> implements IJQUIResizable
 {
 
     private static final long serialVersionUID = 1L;
+    /**
+     * The resizable feature
+     */
     private JQUIResizableFeature feature;
 
     /**
@@ -72,5 +79,15 @@ public class JQUIResizable extends Div<JQUIResizableChildren, NoAttributes, JQUI
     public void setFeature(JQUIResizableFeature feature)
     {
         this.feature = feature;
+    }
+
+    /**
+     * A neater representation
+     *
+     * @return
+     */
+    public IJQUIResizable asMe()
+    {
+        return this;
     }
 }

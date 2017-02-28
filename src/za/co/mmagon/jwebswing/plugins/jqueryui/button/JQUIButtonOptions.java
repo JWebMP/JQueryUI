@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -34,7 +34,16 @@ public class JQUIButtonOptions extends JavaScriptPart
     /**
      * The icons to display for the button
      */
+    @Deprecated
     private JQUIButtonIconOptions icons;
+    /**
+     * The new icon class for 1.12
+     */
+    private String icon;
+    /**
+     * The icon position
+     */
+    private JQUIButtonIconPositions iconPosition;
     /**
      * The label of the button
      */
@@ -58,10 +67,12 @@ public class JQUIButtonOptions extends JavaScriptPart
      * Sets the button disabled
      *
      * @param disabled
+     * @return
      */
-    public void setDisabled(Boolean disabled)
+    public JQUIButtonOptions setDisabled(Boolean disabled)
     {
         this.disabled = disabled;
+        return this;
     }
 
     /**
@@ -69,6 +80,7 @@ public class JQUIButtonOptions extends JavaScriptPart
      *
      * @return
      */
+    @Deprecated
     public JQUIButtonIconOptions getIcons()
     {
         if (icons == null)
@@ -82,10 +94,13 @@ public class JQUIButtonOptions extends JavaScriptPart
      * Sets the icons for the button
      *
      * @param icons
+     * @return
      */
-    public void setIcons(JQUIButtonIconOptions icons)
+    @Deprecated
+    public JQUIButtonOptions setIcons(JQUIButtonIconOptions icons)
     {
         this.icons = icons;
+        return this;
     }
 
     /**
@@ -102,10 +117,12 @@ public class JQUIButtonOptions extends JavaScriptPart
      * Gets the label for the button
      *
      * @param label
+     * @return
      */
-    public void setLabel(String label)
+    public JQUIButtonOptions setLabel(String label)
     {
         this.label = label;
+        return this;
     }
 
     /**
@@ -122,9 +139,56 @@ public class JQUIButtonOptions extends JavaScriptPart
      * Sets if the label should be shown but the icons option must be enabled, otherwise the text option will be ignored.
      *
      * @param showLabel
+     * @return
      */
-    public void setShowLabel(Boolean showLabel)
+    public JQUIButtonOptions setShowLabel(Boolean showLabel)
     {
         this.showLabel = showLabel;
+        return this;
     }
+
+    /**
+     * The icon class
+     *
+     * @return
+     */
+    public String getIcon()
+    {
+        return icon;
+    }
+
+    /**
+     * Sets the icon class
+     *
+     * @param icon
+     * @return
+     */
+    public JQUIButtonOptions setIcon(String icon)
+    {
+        this.icon = icon;
+        return this;
+    }
+
+    /**
+     * The icon position of the button
+     *
+     * @return
+     */
+    public JQUIButtonIconPositions getIconPosition()
+    {
+        return iconPosition;
+    }
+
+    /**
+     * Sets the icon position
+     *
+     * @param iconPosition
+     * @return
+     */
+    public JQUIButtonOptions setIconPosition(JQUIButtonIconPositions iconPosition)
+    {
+        this.iconPosition = iconPosition;
+        return this;
+    }
+
 }

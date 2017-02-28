@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -29,6 +29,8 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
  */
 public class JQUIMenuIconSet extends JavaScriptPart
 {
+
+    private static final long serialVersionUID = 1L;
 
     /**
      * Sets the sub menu string

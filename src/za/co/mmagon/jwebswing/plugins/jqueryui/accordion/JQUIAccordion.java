@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,12 +18,11 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.accordion;
 
 import java.util.ArrayList;
 import za.co.mmagon.jwebswing.base.html.Div;
-import za.co.mmagon.jwebswing.base.html.HeaderText;
 import za.co.mmagon.jwebswing.base.html.attributes.*;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
- * Displays collapsible content panels for presenting information in a limited amount of space.
- * https://jqueryui.com/accordion/
+ * Displays collapsible content panels for presenting information in a limited amount of space. https://jqueryui.com/accordion/
  * <p>
  * <p>
  * <p>
@@ -35,14 +34,20 @@ import za.co.mmagon.jwebswing.base.html.attributes.*;
  * @author Marc Magon
  * @since 2013/01/15
  */
-public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUIAccordionFeatures, JQUIAccordionEvents, JQUIAccordion> 
+@ComponentInformation(name = "JQuery UI Accordion", description = "Displays collapsible content panels for presenting information in a limited amount of space.",
+        url = "http://jqueryui.com/accordion/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUIAccordionFeatures, JQUIAccordionEvents, JQUIAccordion>
         implements JQUIAccordionChildren
 {
 
     private static final long serialVersionUID = 1L;
-
+    /**
+     * The list of accordion tabs
+     */
     private ArrayList<JQUIAccordionTab> accordionTabs;
-
+    /**
+     * The attached accordion feature
+     */
     private JQUIAccordionFeature feature;
 
     /**
@@ -130,11 +135,11 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
     /**
      * Adds a new accordion tab
      * <p>
-     * @param tabName     The name of the accordion
+     * @param tabName The name of the accordion
      * @param tabContents The content of the accordion
      * @return The accordion tab
      */
-    public JQUIAccordionTab addAccordianTab(HeaderText tabName, Div tabContents)
+    public JQUIAccordionTab addAccordianTab(JQUIAccordionHeader tabName, JQUIAccordionContent tabContents)
     {
         JQUIAccordionTab accTab = new JQUIAccordionTab(tabName, tabContents);
         addAccordianTab(accTab);
@@ -144,20 +149,20 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
     /**
      * Adds a new accordion tab
      * <p>
-     * @param tabName     The name of the accordion
+     * @param tabName The name of the accordion
      * @param tabContents The content of the accordion
      * @return The accordion tab
      */
-    public JQUIAccordionTab addAccordianTab(String tabName, Div tabContents)
+    public JQUIAccordionTab addAccordianTab(String tabName, JQUIAccordionContent tabContents)
     {
-        HeaderText header;
+        JQUIAccordionHeader header;
         if (getOptions().getHeader() == null)
         {
-            header = new HeaderText(HeaderTypes.H3, tabName);
+            header = new JQUIAccordionHeader(tabName);
         }
         else
         {
-            header = new HeaderText(getOptions().getHeader(), tabName);
+            return addAccordianTab(new JQUIAccordionHeader(tabName), tabContents);
         }
 
         return addAccordianTab(header, tabContents);

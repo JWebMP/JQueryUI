@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,8 +19,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 
 /**
- * Specifies a single entry for a JQUI Auto Complete
- * Moved from inner class to object
+ * Specifies a single entry for a JQUI Auto Complete Moved from inner class to object
  *
  * @author GedMarc
  * @since 22 Feb 2016
@@ -48,6 +47,7 @@ public class AutoCompleteEntries extends JavaScriptPart
      * Creates a label only with custom value auto complete entry
      *
      * @param label
+     * @param value
      */
     public AutoCompleteEntries(String label, String value)
     {
@@ -59,6 +59,7 @@ public class AutoCompleteEntries extends JavaScriptPart
      * Creates an auto complete entry that has categories
      *
      * @param label
+     * @param value
      * @param category
      */
     public AutoCompleteEntries(String label, String value, String category)

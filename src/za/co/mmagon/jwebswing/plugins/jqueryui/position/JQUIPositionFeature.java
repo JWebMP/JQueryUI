@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,8 +18,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.position;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
-import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
  *
@@ -34,12 +34,11 @@ public class JQUIPositionFeature extends Feature<JavaScriptPart, JQUIPositionFea
 
     private static final long serialVersionUID = 1L;
     private final Position position;
-    private final Component positionComponent;
 
     public JQUIPositionFeature(Component positionComponent, Position position)
     {
         super("JWPosition");
-        this.positionComponent = positionComponent;
+        setComponent(positionComponent);
         this.position = position;
         getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
         getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
@@ -52,6 +51,6 @@ public class JQUIPositionFeature extends Feature<JavaScriptPart, JQUIPositionFea
     @Override
     public void assignFunctionsToComponent()
     {
-        addQuery("$('#" + this.positionComponent.getID() + "').position(" + position.toString() + ");");
+        addQuery(getComponent().getJQueryID() + "position(" + position.toString() + ");");
     }
 }

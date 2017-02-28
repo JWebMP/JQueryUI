@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,11 +16,15 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRawValue;
 import java.util.ArrayList;
 import java.util.List;
+import za.co.mmagon.JWebSwingSiteBinder;
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
-import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
 
 /**
  *
@@ -57,6 +61,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
      * The label property is displayed in the suggestion menu. The value will be inserted into the input element when a user selects an item. If just one property is specified, it will be used for
      * both, e.g., if you provide only value properties, the value will also be used as the label.
      */
+    @JsonIgnore
     private List<AutoCompleteEntries> source;
     /**
      * If set to true the first item will automatically be focused when the menu is shown. Code examples:
@@ -348,6 +353,93 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
     public void setPosition(Position position)
     {
         this.position = position;
+    }
+
+    @JsonIgnore
+    private boolean ajax;
+    /**
+     * The source url location
+     */
+    @JsonIgnore
+    private String sourceUrl;
+    /**
+     * The autoComplete location
+     */
+    @JsonIgnore
+    private JQUIAutoComplete autoComplete;
+
+    /**
+     * Renders the source string
+     *
+     * @return
+     */
+    @JsonProperty("source")
+    @JsonRawValue
+    private String getSourceUrl()
+    {
+        if (isAjax())
+        {
+            return '"' + JWebSwingSiteBinder.getDataBindUrl(autoComplete) + '"';
+        }
+        else
+        {
+            AutoCompleteEntrySet set = new AutoCompleteEntrySet();
+            set.getSource().clear();
+            set.getSource().addAll(getSource());
+            return set.toString();
+        }
+    }
+
+    /**
+     * If this auto complete uses ajax
+     *
+     * @return
+     */
+    public boolean isAjax()
+    {
+        return ajax;
+    }
+
+    /**
+     * If the auto complete uses ajax
+     *
+     * @param ajax
+     * @param accordion
+     */
+    public void setAjax(boolean ajax, JQUIAutoComplete accordion)
+    {
+        this.ajax = ajax;
+        this.autoComplete = accordion;
+    }
+
+    /**
+     * Returns the autoComplete
+     *
+     * @return
+     */
+    public JQUIAutoComplete getAutoComplete()
+    {
+        return autoComplete;
+    }
+
+    /**
+     * Sets the referenced autoComplete
+     *
+     * @param autoComplete
+     */
+    public void setAutoComplete(JQUIAutoComplete autoComplete)
+    {
+        this.autoComplete = autoComplete;
+    }
+
+    /**
+     * Sets this source list
+     *
+     * @param source
+     */
+    public void setSource(List<AutoCompleteEntries> source)
+    {
+        this.source = source;
     }
 
 }

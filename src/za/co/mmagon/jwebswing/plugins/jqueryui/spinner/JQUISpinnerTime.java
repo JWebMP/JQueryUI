@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,10 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.spinner;
 
-import za.co.mmagon.jwebswing.base.html.*;
-import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
-import za.co.mmagon.jwebswing.components.globalize.cultures.GlobalizeCultures;
-
 /**
  *
  * @author GedMarc
@@ -28,23 +24,11 @@ import za.co.mmagon.jwebswing.components.globalize.cultures.GlobalizeCultures;
  * <p>
  *
  */
-public final class JQUISpinnerTime extends Div<JQUISpinnerChildren, NoAttributes, JQUISpinnerFeatures, JQUISpinnerEvents, JQUISpinnerTime>
+public final class JQUISpinnerTime extends JQUISpinner
 {
 
     private static final long serialVersionUID = 1L;
-    /**
-     * The default header text for the time spinner
-     */
-    private String headerText = "JQuery UI Spinner Demo";
-    /**
-     * The component input
-     */
-    private Input input;
 
-    /**
-     * The pre-child labour
-     */
-    private Label entryLabel;
     /**
      * The spinner feature
      */
@@ -62,73 +46,22 @@ public final class JQUISpinnerTime extends Div<JQUISpinnerChildren, NoAttributes
     /**
      * Constructs a new spinner paragraph object
      * <p>
-     * @param labelText THe label of the Spinner
+     * @param labelText
      */
     public JQUISpinnerTime(String labelText)
     {
-
-        if (labelText != null)
-        {
-            entryLabel = new Label(labelText);
-            input = new Input();
-            add(entryLabel);
-            add(input);
-            input.addFeature(getFeature());
-            input.setID(getID() + "_spinnerInput");
-            entryLabel.setForInputComponent(input);
-        }
+        super(labelText);
+        getFeatures().clear();
+        addFeature(getTimeFeature());
     }
 
-    /**
-     * Returns the label object with this spinner
-     * <p>
-     * @return
-     */
-    public Label getEntryLabel()
-    {
-        return entryLabel;
-    }
-
-    /**
-     * Sets the entry label with this spinner
-     * <p>
-     * @param entryLabel
-     */
-    public void setEntryLabel(Label entryLabel)
-    {
-        this.entryLabel = entryLabel;
-    }
-
-    /**
-     * Returns the options associated with this spinner
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUISpinnerOptions getOptions()
-    {
-        return feature.getOptions();
-    }
-
-    public JQUISpinnerTimeFeature getFeature()
+    public JQUISpinnerTimeFeature getTimeFeature()
     {
         if (feature == null)
         {
-            feature = new JQUISpinnerTimeFeature(input);
+            feature = new JQUISpinnerTimeFeature(getInput());
         }
         return feature;
-    }
-
-    /**
-     * Adds the specific culture to the options
-     *
-     * @param culture
-     */
-    public void addGlobalization(GlobalizeCultures culture)
-    {
-        getFeature().getJavascriptReferences().add(culture.getJavascriptCoreReference());
-        getJavascriptReferences().add(culture.getJavascriptReference());
-        getOptions().setCulture(culture.toString());
     }
 
 }

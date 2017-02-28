@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete;
 import za.co.mmagon.jwebswing.base.html.*;
 import za.co.mmagon.jwebswing.base.html.attributes.LabelAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
+import za.co.mmagon.jwebswing.base.servlets.interfaces.IDataComponent;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
 
 /**
@@ -28,7 +30,11 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
  * @since 06 Aug 2015
  * @version 1.0
  */
-public class JQUIAutoComplete extends Div<JQUIAutoCompleteChildren, NoAttributes, JQUIAutoCompleteFeatures, JQUIAutoCompleteEvents, JQUIAutoComplete>
+@ComponentInformation(name = "JQuery UI Auto Complete", description = "Enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering.",
+        url = "http://jqueryui.com/autocomplete/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIAutoComplete
+        extends Div<JQUIAutoCompleteChildren, NoAttributes, JQUIAutoCompleteFeatures, JQUIAutoCompleteEvents, JQUIAutoComplete>
+        implements IDataComponent
 {
 
     /**
@@ -43,7 +49,7 @@ public class JQUIAutoComplete extends Div<JQUIAutoCompleteChildren, NoAttributes
     /**
      * The input label for the auto complete
      */
-    private Label label;
+    private JQUIAutoCompleteLabel label;
     /**
      * The actual label for the input
      */
@@ -57,11 +63,11 @@ public class JQUIAutoComplete extends Div<JQUIAutoCompleteChildren, NoAttributes
     public JQUIAutoComplete(String label)
     {
         input = new InputTextType();
-        this.label = new Label(label, input);
-        add(this.label);
-        add(input);
+        this.label = new JQUIAutoCompleteLabel(label, input);
+        getChildren().add(this.label);
+        getChildren().add(input);
         addFeature(feature = new JQUIAutoCompleteFeature(input));
-        addClass(JQUIThemeBlocks.UI_Widget);
+        addClass(JQUIThemeBlocks.UI_Widget.toString());
     }
 
     /**
@@ -69,7 +75,7 @@ public class JQUIAutoComplete extends Div<JQUIAutoCompleteChildren, NoAttributes
      *
      * @return
      */
-    public Label getLabel()
+    public JQUIAutoCompleteLabel getLabel()
     {
         return label;
     }
@@ -79,7 +85,7 @@ public class JQUIAutoComplete extends Div<JQUIAutoCompleteChildren, NoAttributes
      *
      * @param label
      */
-    public void setLabel(Label label)
+    public void setLabel(JQUIAutoCompleteLabel label)
     {
         this.label = label;
         label.addAttribute(LabelAttributes.For, getInput().getID());
@@ -102,7 +108,7 @@ public class JQUIAutoComplete extends Div<JQUIAutoCompleteChildren, NoAttributes
      */
     public void setInput(Input input)
     {
-        remove(input);
+        getChildren().remove(input);
         input.addFeature(feature = new JQUIAutoCompleteFeature(input));
         this.input = input;
     }
@@ -140,5 +146,18 @@ public class JQUIAutoComplete extends Div<JQUIAutoCompleteChildren, NoAttributes
     public JQUIAutoCompleteOptions getOptions()
     {
         return getFeature().getOptions();
+    }
+
+    @Override
+    public AutoCompleteEntrySet getData(java.util.Map params)
+    {
+        AutoCompleteEntrySet entrySet = new AutoCompleteEntrySet();
+        String searchTerm = params.get("term").toString();
+        getOptions().getSource().stream().filter((next) -> (next.getValue().toLowerCase().startsWith(searchTerm.toLowerCase())))
+                .forEachOrdered(next ->
+                {
+                    entrySet.getSource().add(next);
+                });
+        return entrySet;
     }
 }

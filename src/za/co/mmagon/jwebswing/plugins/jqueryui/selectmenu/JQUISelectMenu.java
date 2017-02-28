@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  * The Select Menu from the JQuery UI
@@ -29,7 +30,10 @@ import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
  * <p>
  * <p>
  */
-public class JQUISelectMenu extends Div<JQUISelectMenuChildren, NoAttributes, JQUISelectMenuFeatures, JQUISelectMenuEvents, JQUISelectMenu>
+@ComponentInformation(name = "JQuery UI Select Menu",
+        description = "Enable a DOM element (or group of elements) to be selectable. Draw a box with your cursor to select items. Hold down the Ctrl key to make multiple non-adjacent selections.",
+        url = "http://jqueryui.com/selectmenu/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUISelectMenu extends Div<JQUISelectMenuChildren, NoAttributes, JQUISelectMenuFeatures, JQUISelectMenuEvents, JQUISelectMenu> implements IJQUISelectMenu
 {
 
     private static final long serialVersionUID = 1L;
@@ -60,6 +64,16 @@ public class JQUISelectMenu extends Div<JQUISelectMenuChildren, NoAttributes, JQ
             feature = new JQUISelectMenuFeature(this);
         }
         return feature;
+    }
+
+    /**
+     * As Me
+     *
+     * @return
+     */
+    public IJQUISelectMenu asMe()
+    {
+        return this;
     }
 
     /**
