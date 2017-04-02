@@ -4,5 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="JWebswing Static"/>
         <group name="JWebSwing"/>
+        <group name="JWebSwing Plugins">
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/JQueryUIPlugin/src/za/co/mmagon/jwebswing/plugins/jqueryui/autocomplete/JQUIAutoCompleteOptions.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/JQueryUIPlugin/src/za/co/mmagon/jwebswing/plugins/jqueryui/JQUIPageConfigurator.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/JQueryUIPlugin/src/za/co/mmagon/jwebswing/plugins/jqueryui/accordion/JQUIAccordion.java</file>
+        </group>
     </open-files>
 </project-private>
