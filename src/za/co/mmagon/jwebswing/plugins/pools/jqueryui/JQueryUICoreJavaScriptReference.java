@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -34,7 +34,7 @@ class JQueryUICoreJavaScriptReference extends JavascriptReference
 
     public JQueryUICoreJavaScriptReference()
     {
-        super("JQueryUICore", 1.114, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js");//core.js");
+        super("JQueryUICore", 1.114, "bower_components/jquery-ui/jquery-ui.min.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js");//core.js");
         setSortOrder(5);
         setPriority(RequirementsPriority.Third);
     }

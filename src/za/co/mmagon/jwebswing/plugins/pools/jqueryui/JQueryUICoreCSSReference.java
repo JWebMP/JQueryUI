@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@ class JQueryUICoreCSSReference extends CSSReference
 
     public JQueryUICoreCSSReference()
     {
-        super("JQueryUICore", 1.114, "bower_components/jquery-ui/themes/base/core.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css");
+        super("JQueryUICore", 1.114, "bower_components/jquery-ui/themes/base/core.min.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css");
         setSortOrder(10);
         setPriority(RequirementsPriority.Third);
     }

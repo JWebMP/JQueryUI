@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -58,12 +58,12 @@ public class JQUIPageConfigurator extends PageConfigurator
     {
         if (!page.isConfigured())
         {
-            boolean isUsed = page.getBody().readChildrenPropertyFirstResult(JQueryUIEnabled, true);
-            if (isUsed)
-            {
-                page.getBody().getJavascriptReferences().add(JQueryUIReferencePool.Core.getJavaScriptReference());
-                page.getBody().getCssReferences().add(JQueryUIReferencePool.Core.getCssReference());
-            }
+            //boolean isUsed = page.getBody().readChildrenPropertyFirstResult(JQueryUIEnabled, true);
+            //if (isUsed)
+            //{
+            page.getBody().getJavascriptReferences().add(JQueryUIReferencePool.Core.getJavaScriptReference());
+            page.getBody().getCssReferences().add(JQueryUIReferencePool.Core.getCssReference());
+            //}
         }
         return page;
     }
