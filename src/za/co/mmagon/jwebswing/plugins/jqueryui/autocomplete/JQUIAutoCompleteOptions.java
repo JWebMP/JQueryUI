@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRawValue;
 import java.util.ArrayList;
 import java.util.List;
-import za.co.mmagon.jwebswing.JWebSwingSiteBinder;
+import za.co.mmagon.JWebSwingSiteBinder;
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
