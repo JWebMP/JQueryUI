@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,9 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.button;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.base.html.attributes.ButtonAttributes;
-import za.co.mmagon.jwebswing.base.html.interfaces.*;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
+import za.co.mmagon.jwebswing.base.html.interfaces.NoNewLineBeforeClosingTag;
+import za.co.mmagon.jwebswing.base.html.interfaces.NoNewLineForRawText;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionChildren;
@@ -35,8 +37,8 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionChildren;
  * Update 2014/07/09 - Added attribute for identification in JQuery. Minimizing the JavaScript being sent through.
  */
 @ComponentInformation(name = "JQuery UI Button", description = "Enhances standard form elements like buttons, inputs and anchors to themeable buttons with appropriate hover and active styles.",
-        url = "http://jqueryui.com/button/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUIButton<J extends JQUIButton>
+                      url = "http://jqueryui.com/button/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIButton<J extends JQUIButton<J>>
         extends Component<JQUIButtonChildren, ButtonAttributes, JQUIButtonFeatures, JQUIButtonEvents, J>
         implements GlobalChildren, NoNewLineBeforeClosingTag, NoNewLineForRawText, JQUIAccordionChildren
 {
