@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -29,7 +29,7 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
  * <p>
  * <p>
  */
-public class JQUIControlGroupFeature extends Feature<JavaScriptPart, Feature>
+public class JQUIControlGroupFeature extends Feature<JavaScriptPart, JQUIControlGroupFeature>
 {
 
     private static final long serialVersionUID = 1L;
