@@ -21,19 +21,17 @@ import za.co.mmagon.jwebswing.events.spin.SpinAdapter;
 import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.JQUISpinnerEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class SpinEvent extends SpinAdapter
-        implements JQUISpinnerEvents
+		implements JQUISpinnerEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public SpinEvent(Component component)
-    {
-        super(component);
-    }
+	public SpinEvent(Component component)
+	{
+		super(component);
+	}
 }

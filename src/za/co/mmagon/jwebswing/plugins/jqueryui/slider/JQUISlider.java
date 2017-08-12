@@ -21,71 +21,71 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
- *
  * @author GedMarc
- * @since Mar 9, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 9, 2015
  */
 @ComponentInformation(name = "JQuery UI Slider",
-        description = "The jQuery UI Slider plugin makes selected elements into sliders. There are various options such as multiple handles and ranges. The handle can be moved with the mouse or the arrow keys.",
-        url = "http://jqueryui.com/slider/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		description = "The jQuery UI Slider plugin makes selected elements into sliders. There are various options such as multiple handles and ranges. The handle can be moved with the mouse or the arrow keys.",
+		url = "http://jqueryui.com/slider/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUISlider extends Div<JQUISliderChildren, NoAttributes, JQUISliderFeatures, JQUISliderEvents, JQUISlider> implements IJQUISlider
 {
 
-    private static final long serialVersionUID = 1L;
-    /**
-     * The feature for this component
-     */
-    private final JQUISliderFeature slider;
-    /**
-     * The options for this component
-     */
-    private JQUISliderOptions options;
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The feature for this component
+	 */
+	private final JQUISliderFeature slider;
+	/**
+	 * The options for this component
+	 */
+	private JQUISliderOptions options;
 
-    /**
-     *
-     */
-    public JQUISlider()
-    {
-        slider = new JQUISliderFeature(this);
-        addFeature(slider);
-    }
+	/**
+	 *
+	 */
+	public JQUISlider()
+	{
+		slider = new JQUISliderFeature(this);
+		addFeature(slider);
+	}
 
-    /**
-     * Returns the actual slider
-     *
-     * @return
-     */
-    public JQUISliderFeature getSlider()
-    {
-        return slider;
-    }
+	/**
+	 * Returns the actual slider
+	 *
+	 * @return
+	 */
+	public JQUISliderFeature getSlider()
+	{
+		return slider;
+	}
 
-    /**
-     * Returns the slider options
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUISliderOptions getOptions()
-    {
-        if (this.options == null)
-        {
-            this.options = new JQUISliderOptions();
-        }
-        return options;
-    }
+	/**
+	 * Returns the slider options
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUISliderOptions getOptions()
+	{
+		if (this.options == null)
+		{
+			this.options = new JQUISliderOptions();
+		}
+		return options;
+	}
 
-    /**
-     * The slider as me
-     *
-     * @return
-     */
-    public IJQUISlider asMe()
-    {
-        return this;
-    }
+	/**
+	 * The slider as me
+	 *
+	 * @return
+	 */
+	public IJQUISlider asMe()
+	{
+		return this;
+	}
 
 }

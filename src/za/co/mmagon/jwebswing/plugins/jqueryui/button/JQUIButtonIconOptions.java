@@ -23,85 +23,88 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
  * The button icon options, This has been deprecated from version 1-11
  *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
- * @deprecated
- * <p>
+ * @since Mar 8, 2015
+ * @deprecated <p>
  * <p>
  */
 @Deprecated
 public class JQUIButtonIconOptions extends JavaScriptPart
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * Specifies the icon for primary
-     */
-    private String primaryIcon;
-    /**
-     * Specifies the icon for secondary
-     */
-    private String secondaryIcon;
+	/**
+	 * Specifies the icon for primary
+	 */
+	private String primaryIcon;
+	/**
+	 * Specifies the icon for secondary
+	 */
+	private String secondaryIcon;
 
-    /**
-     *
-     */
-    public JQUIButtonIconOptions()
-    {
+	/**
+	 *
+	 */
+	public JQUIButtonIconOptions()
+	{
 
-    }
+	}
 
-    /**
-     * Gets the primary icon
-     * <p>
-     * @return CSS Class Type
-     */
-    public String getPrimaryIcon()
-    {
-        return primaryIcon;
-    }
+	/**
+	 * Gets the primary icon
+	 * <p>
+	 *
+	 * @return CSS Class Type
+	 */
+	public String getPrimaryIcon()
+	{
+		return primaryIcon;
+	}
 
-    /**
-     * Sets the primary icon
-     * <p>
-     * @param primaryIcon CSS Class Type
-     *
-     * @return
-     */
-    public JQUIButtonIconOptions setPrimaryIcon(String primaryIcon)
-    {
-        this.primaryIcon = primaryIcon;
-        return this;
-    }
+	/**
+	 * Sets the primary icon
+	 * <p>
+	 *
+	 * @param primaryIcon CSS Class Type
+	 *
+	 * @return
+	 */
+	public JQUIButtonIconOptions setPrimaryIcon(String primaryIcon)
+	{
+		this.primaryIcon = primaryIcon;
+		return this;
+	}
 
-    /**
-     * *
-     * Gets the secondary icon
-     * <p>
-     * @return
-     */
-    public String getSecondaryIcon()
-    {
-        return secondaryIcon;
-    }
+	/**
+	 * *
+	 * Gets the secondary icon
+	 * <p>
+	 *
+	 * @return
+	 */
+	public String getSecondaryIcon()
+	{
+		return secondaryIcon;
+	}
 
-    /**
-     * Sets the secondary icon CSS Class
-     * <p>
-     * @param secondaryIcon
-     *
-     * @return
-     */
-    public JQUIButtonIconOptions setSecondaryIcon(String secondaryIcon)
-    {
-        this.secondaryIcon = secondaryIcon;
-        return this;
-    }
+	/**
+	 * Sets the secondary icon CSS Class
+	 * <p>
+	 *
+	 * @param secondaryIcon
+	 *
+	 * @return
+	 */
+	public JQUIButtonIconOptions setSecondaryIcon(String secondaryIcon)
+	{
+		this.secondaryIcon = secondaryIcon;
+		return this;
+	}
 
-    @Override
-    public JavascriptPartType getJavascriptType()
-    {
-        return JavascriptPartType.Javascript;
-    }
+	@Override
+	public JavascriptPartType getJavascriptType()
+	{
+		return JavascriptPartType.Javascript;
+	}
 }

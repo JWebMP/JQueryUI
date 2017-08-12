@@ -22,35 +22,34 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
- *
- * @since Forever
- * @version 1.0
  * @author MMagon
- *
  * <p>
+ * <p>
+ * @version 1.0
+ * @since Forever
  */
 public class JQUIPositionFeature extends Feature<JavaScriptPart, JQUIPositionFeature>
 {
 
-    private static final long serialVersionUID = 1L;
-    private final Position position;
+	private static final long serialVersionUID = 1L;
+	private final Position position;
 
-    public JQUIPositionFeature(Component positionComponent, Position position)
-    {
-        super("JWPosition");
-        setComponent(positionComponent);
-        this.position = position;
-        getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-        getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-        getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-        getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
+	public JQUIPositionFeature(Component positionComponent, Position position)
+	{
+		super("JWPosition");
+		setComponent(positionComponent);
+		this.position = position;
+		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
+		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
+		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
+		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
 
-        getJavascriptReferences().add(JQUIReferencePool.Position.getJavaScriptReference());
-    }
+		getJavascriptReferences().add(JQUIReferencePool.Position.getJavaScriptReference());
+	}
 
-    @Override
-    public void assignFunctionsToComponent()
-    {
-        addQuery(getComponent().getJQueryID() + "position(" + position.toString() + ");");
-    }
+	@Override
+	public void assignFunctionsToComponent()
+	{
+		addQuery(getComponent().getJQueryID() + "position(" + position.toString() + ");");
+	}
 }

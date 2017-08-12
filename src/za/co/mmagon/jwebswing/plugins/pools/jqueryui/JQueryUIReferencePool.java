@@ -16,147 +16,146 @@
  */
 package za.co.mmagon.jwebswing.plugins.pools.jqueryui;
 
-import za.co.mmagon.jwebswing.base.references.JavascriptReference;
 import za.co.mmagon.jwebswing.base.references.CSSReference;
+import za.co.mmagon.jwebswing.base.references.JavascriptReference;
 import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
 
 /**
- *
  * @author GedMarc
- * @since Mar 4, 2015
  * @version 1.0
+ * @since Mar 4, 2015
  */
 public enum JQueryUIReferencePool implements ReferencePool
 {
-    
-    /**
-     * The core of JQuery UI
-     */
-    Core(new JQueryUICoreJavaScriptReference(), new JQueryUICoreCSSReference()),
-    /**
-     * The widget library of JQuery UI
-     */
-    Widget(new JQueryUIWidgetJavaScriptReference(), new JQueryUIWidgetCSSReference()),
-    /**
-     * The Mouse Library of JQuery UI
-     */
-    Mouse(new JQueryUIMouseJavaScriptReference(), null),
-    /**
-     * The accordion setup of JQueryUI
-     */
-    Accordion(new JQUIAccordionJavaScriptReference(), new JQUIAccordionCSSReference()),
-    /**
-     * The auto complete setup of JQueryUI
-     */
-    AutoComplete(new JQUIAutoCompleteJavaScriptReference(), new JQUIAutoCompleteCSSReference()),
-    /**
-     * Provides the auto complete with categorization support
-     */
-    AutoComplete_Categorization(new JQUIAutoCompleteCategorizeJavaScriptReference(), new JQUIAutoCompleteCategorizeCSSReference()),
-    /**
-     * Provides the auto complete with categorization support
-     */
-    AutoComplete_ComboBox(new JQUIAutoCompleteComboBoxJavaScriptReference(), new JQUIAutoCompleteComboBoxCSSReference()),
-    /**
-     * The button setup of JQuery UI
-     */
-    Button(new JQUIButtonJavaScriptReference(), new JQUIButtonCSSReference()),
-    /**
-     * The date picker element of JQuery UI
-     */
-    DatePicker(new JQUIDatePickerJavaScriptReference(), new JQUIDatePickerCSSReference()),
-    /**
-     * The dialog element of JQuery UI
-     */
-    Dialog(new JQUIDialogJavaScriptReference(), new JQUIDialogCSSReference()),
-    /**
-     * The menu element of JQuery UI
-     */
-    Menu(new JQUIMenuJavaScriptReference(), new JQUIMenuCSSReference()),
-    /**
-     * The position element of JQuery UI
-     */
-    Position(new JQUIPositionJavaScriptReference(), null),
-    /**
-     * Progress Bar
-     */
-    ProgressBar(new JQUIProgressBarJavaScriptReference(), new JQUIProgressBarCSSReference()),
-    /**
-     * Select Menu
-     */
-    SelectMenu(new JQUISelectMenuJavaScriptReference(), new JQUISelectMenuCSSReference()),
-    /**
-     * The select menu add-ons script from JQuery UI .com
-     */
-    SelectMenuIcons(new JQUISelectMenuIconsJavaScriptReference(), null),
-    /**
-     * The Slider add-ons
-     */
-    Slider(new JQUISliderJavaScriptReference(), new JQUISliderCSSReference()),
-    /**
-     * The spinner class
-     */
-    Spinner(new JQUISpinnerJavaScriptReference(), new JQUISpinnerCSSReference()),
-    /**
-     * The tabs scripts for JQuery UI
-     */
-    Tabs(new JQUITabsJavaScriptReference(), new JQUITabsCSSReference()),
-    /**
-     * The JQuery UI Tooltip Functionality
-     */
-    Tooltip(new JQueryUITooltipJavaScriptReference(), new JQueryUITooltipCSSReference()),
-    /**
-     * The JQuery UI draggable feature
-     */
-    Draggable(new JQUIDraggableJavaScriptReference(), new JQUIDraggableCSSReference()),
-    /**
-     * The JQuery UI droppable
-     */
-    Droppable(new JQUIDroppableJavaScriptReference(), null),
-    /**
-     * The JQuery UI Resizable
-     */
-    Resizable(new JQUIResizableJavaScriptReference(), new JQUIResizableCSSReference()),
-    /**
-     * The selectable widget implementation
-     */
-    Selectable(new JQUISelectableJavaScriptReference(), new JQUISelectableCSSReference()),
-    /**
-     * The sortable implementation
-     */
-    Sortable(new JQUISortableJavaScriptReference(), new JQUISortableCSSReference()),;
-
-    private JavascriptReference javaScriptReference;
-    private CSSReference cssReference;
-
-    private JQueryUIReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
-    {
-        this.javaScriptReference = javaScriptReference;
-        this.cssReference = cssReference;
-    }
-
-    @Override
-    public JavascriptReference getJavaScriptReference()
-    {
-        return javaScriptReference;
-    }
-
-    @Override
-    public void setJavaScriptReference(JavascriptReference javaScriptReference)
-    {
-        this.javaScriptReference = javaScriptReference;
-    }
-
-    @Override
-    public CSSReference getCssReference()
-    {
-        return cssReference;
-    }
-
-    @Override
-    public void setCssReference(CSSReference cssReference)
-    {
-        this.cssReference = cssReference;
-    }
-
+	
+	/**
+	 * The core of JQuery UI
+	 */
+	Core(new JQueryUICoreJavaScriptReference(), new JQueryUICoreCSSReference()),
+	/**
+	 * The widget library of JQuery UI
+	 */
+	Widget(new JQueryUIWidgetJavaScriptReference(), new JQueryUIWidgetCSSReference()),
+	/**
+	 * The Mouse Library of JQuery UI
+	 */
+	Mouse(new JQueryUIMouseJavaScriptReference(), null),
+	/**
+	 * The accordion setup of JQueryUI
+	 */
+	Accordion(new JQUIAccordionJavaScriptReference(), new JQUIAccordionCSSReference()),
+	/**
+	 * The auto complete setup of JQueryUI
+	 */
+	AutoComplete(new JQUIAutoCompleteJavaScriptReference(), new JQUIAutoCompleteCSSReference()),
+	/**
+	 * Provides the auto complete with categorization support
+	 */
+	AutoComplete_Categorization(new JQUIAutoCompleteCategorizeJavaScriptReference(), new JQUIAutoCompleteCategorizeCSSReference()),
+	/**
+	 * Provides the auto complete with categorization support
+	 */
+	AutoComplete_ComboBox(new JQUIAutoCompleteComboBoxJavaScriptReference(), new JQUIAutoCompleteComboBoxCSSReference()),
+	/**
+	 * The button setup of JQuery UI
+	 */
+	Button(new JQUIButtonJavaScriptReference(), new JQUIButtonCSSReference()),
+	/**
+	 * The date picker element of JQuery UI
+	 */
+	DatePicker(new JQUIDatePickerJavaScriptReference(), new JQUIDatePickerCSSReference()),
+	/**
+	 * The dialog element of JQuery UI
+	 */
+	Dialog(new JQUIDialogJavaScriptReference(), new JQUIDialogCSSReference()),
+	/**
+	 * The menu element of JQuery UI
+	 */
+	Menu(new JQUIMenuJavaScriptReference(), new JQUIMenuCSSReference()),
+	/**
+	 * The position element of JQuery UI
+	 */
+	Position(new JQUIPositionJavaScriptReference(), null),
+	/**
+	 * Progress Bar
+	 */
+	ProgressBar(new JQUIProgressBarJavaScriptReference(), new JQUIProgressBarCSSReference()),
+	/**
+	 * Select Menu
+	 */
+	SelectMenu(new JQUISelectMenuJavaScriptReference(), new JQUISelectMenuCSSReference()),
+	/**
+	 * The select menu add-ons script from JQuery UI .com
+	 */
+	SelectMenuIcons(new JQUISelectMenuIconsJavaScriptReference(), null),
+	/**
+	 * The Slider add-ons
+	 */
+	Slider(new JQUISliderJavaScriptReference(), new JQUISliderCSSReference()),
+	/**
+	 * The spinner class
+	 */
+	Spinner(new JQUISpinnerJavaScriptReference(), new JQUISpinnerCSSReference()),
+	/**
+	 * The tabs scripts for JQuery UI
+	 */
+	Tabs(new JQUITabsJavaScriptReference(), new JQUITabsCSSReference()),
+	/**
+	 * The JQuery UI Tooltip Functionality
+	 */
+	Tooltip(new JQueryUITooltipJavaScriptReference(), new JQueryUITooltipCSSReference()),
+	/**
+	 * The JQuery UI draggable feature
+	 */
+	Draggable(new JQUIDraggableJavaScriptReference(), new JQUIDraggableCSSReference()),
+	/**
+	 * The JQuery UI droppable
+	 */
+	Droppable(new JQUIDroppableJavaScriptReference(), null),
+	/**
+	 * The JQuery UI Resizable
+	 */
+	Resizable(new JQUIResizableJavaScriptReference(), new JQUIResizableCSSReference()),
+	/**
+	 * The selectable widget implementation
+	 */
+	Selectable(new JQUISelectableJavaScriptReference(), new JQUISelectableCSSReference()),
+	/**
+	 * The sortable implementation
+	 */
+	Sortable(new JQUISortableJavaScriptReference(), new JQUISortableCSSReference()),;
+	
+	private JavascriptReference javaScriptReference;
+	private CSSReference cssReference;
+	
+	private JQueryUIReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
+	{
+		this.javaScriptReference = javaScriptReference;
+		this.cssReference = cssReference;
+	}
+	
+	@Override
+	public JavascriptReference getJavaScriptReference()
+	{
+		return javaScriptReference;
+	}
+	
+	@Override
+	public void setJavaScriptReference(JavascriptReference javaScriptReference)
+	{
+		this.javaScriptReference = javaScriptReference;
+	}
+	
+	@Override
+	public CSSReference getCssReference()
+	{
+		return cssReference;
+	}
+	
+	@Override
+	public void setCssReference(CSSReference cssReference)
+	{
+		this.cssReference = cssReference;
+	}
+	
 }

@@ -22,24 +22,23 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.button;
  *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public enum JQUIButtonIconPositions
 {
-    Beginning,
-    End,
-    Top,
-    Bottom;
+	Beginning,
+	End,
+	Top,
+	Bottom;
 
-    private JQUIButtonIconPositions()
-    {
+	private JQUIButtonIconPositions()
+	{
 
-    }
+	}
 
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase();
-    }
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase();
+	}
 
 }

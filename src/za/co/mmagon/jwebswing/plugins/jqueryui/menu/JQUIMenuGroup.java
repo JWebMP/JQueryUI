@@ -21,19 +21,18 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
 
 /**
- *
  * @author Marc Magon
- * @since 30 Oct 2015
  * @version 1.0
+ * @since 30 Oct 2015
  */
 public class JQUIMenuGroup extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvents, JQUIMenuGroup> implements JQUIMenuChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public JQUIMenuGroup()
-    {
-        addClass(JQUIThemeBlocks.UI_Widget_Header.toString());
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	public JQUIMenuGroup()
+	{
+		addClass(JQUIThemeBlocks.UI_Widget_Header.toString());
+	}
+	
 }

@@ -20,6 +20,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 
 /**
  * Specifies all valid Accordion Children
+ *
  * @author Marc Magon
  */
 public interface JQUIAccordionChildren extends GlobalChildren

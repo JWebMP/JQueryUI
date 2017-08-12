@@ -21,19 +21,17 @@ import za.co.mmagon.jwebswing.events.deactivate.DeactivateAdapter;
 import za.co.mmagon.jwebswing.plugins.jqueryui.droppable.JQUIDroppableEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class DeActivateEvent extends DeactivateAdapter
-        implements JQUIDroppableEvents
+		implements JQUIDroppableEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public DeActivateEvent(Component component)
-    {
-        super(component);
-    }
+	public DeActivateEvent(Component component)
+	{
+		super(component);
+	}
 }

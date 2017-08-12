@@ -19,19 +19,18 @@ package za.co.mmagon.jwebswing.plugins.pools.jqueryui;
 import za.co.mmagon.jwebswing.base.references.CSSReference;
 
 /**
- *
  * @author Marc Magon
- * @since 30 Oct 2015
  * @version 1.0
+ * @since 30 Oct 2015
  */
 class JQueryUIMenuBarJavaScriptReference extends CSSReference
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public JQueryUIMenuBarJavaScriptReference()
-    {
-        super("JWMenuBarCSSRef", 1.114, "bower_components/jquery-ui/themes/base/menubar.css", "bower_components/jquery-ui/themes/base/menubar.css");
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	public JQueryUIMenuBarJavaScriptReference()
+	{
+		super("JWMenuBarCSSRef", 1.114, "bower_components/jquery-ui/themes/base/menubar.css", "bower_components/jquery-ui/themes/base/menubar.css");
+	}
+	
 }

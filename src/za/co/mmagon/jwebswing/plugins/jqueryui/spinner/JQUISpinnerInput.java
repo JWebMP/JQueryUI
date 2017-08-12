@@ -19,21 +19,19 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.spinner;
 import za.co.mmagon.jwebswing.base.html.Input;
 
 /**
- *
  * @author GedMarc
  * @since 28 Feb 2017
- *
  */
 public class JQUISpinnerInput extends Input implements JQUISpinnerChildren
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * The spinner input
-     */
-    public JQUISpinnerInput()
-    {
+	/**
+	 * The spinner input
+	 */
+	public JQUISpinnerInput()
+	{
 
-    }
+	}
 }

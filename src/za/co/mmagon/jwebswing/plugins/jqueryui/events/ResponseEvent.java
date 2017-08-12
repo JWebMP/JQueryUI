@@ -21,19 +21,17 @@ import za.co.mmagon.jwebswing.events.response.ResponseAdapter;
 import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.JQUIAutoCompleteEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class ResponseEvent extends ResponseAdapter
-        implements JQUIAutoCompleteEvents
+		implements JQUIAutoCompleteEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public ResponseEvent(Component component)
-    {
-        super(component);
-    }
+	public ResponseEvent(Component component)
+	{
+		super(component);
+	}
 }

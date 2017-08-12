@@ -19,20 +19,18 @@ package za.co.mmagon.jwebswing.plugins.pools.jqueryui;
 import za.co.mmagon.jwebswing.base.references.JavascriptReference;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
- * 
+ * @since Mar 8, 2015
  */
 public class JQUIAutoCompleteComboBoxJavaScriptReference extends JavascriptReference
 {
-    /**
-    *
-    */
-    public JQUIAutoCompleteComboBoxJavaScriptReference()
-    {
-        super("JWAutoCompleteComboBoxJS",1.113,"bower_components/jquery-ui/ui/autocomplete_combobox.js","bower_components/jquery-ui/ui/autocomplete_combobox.js");
-    }
+	/**
+	 *
+	 */
+	public JQUIAutoCompleteComboBoxJavaScriptReference()
+	{
+		super("JWAutoCompleteComboBoxJS", 1.113, "bower_components/jquery-ui/ui/autocomplete_combobox.js", "bower_components/jquery-ui/ui/autocomplete_combobox.js");
+	}
 }

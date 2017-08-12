@@ -19,19 +19,18 @@ package za.co.mmagon.jwebswing.plugins.pools.jqueryui;
 import za.co.mmagon.jwebswing.base.references.JavascriptReference;
 
 /**
- *
  * @author Marc Magon
- * @since 31 Oct 2015
  * @version 1.0
+ * @since 31 Oct 2015
  */
 class JQueryUILoaderJavaScriptReference extends JavascriptReference
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public JQueryUILoaderJavaScriptReference()
-    {
-        super("jqueryAjaxReceiver", 3.91, "bower_components/jqwidgets/jqwidgets/jqxloader.js");
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	public JQueryUILoaderJavaScriptReference()
+	{
+		super("jqueryAjaxReceiver", 3.91, "bower_components/jqwidgets/jqwidgets/jqxloader.js");
+	}
+	
 }

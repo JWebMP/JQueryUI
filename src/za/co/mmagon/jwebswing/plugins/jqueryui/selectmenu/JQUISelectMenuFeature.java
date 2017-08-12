@@ -21,62 +21,60 @@ import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 8, 2015
  */
 public class JQUISelectMenuFeature extends Feature<JQUISelectMenuOptions, JQUISelectMenuFeature> implements JQUISelectMenuFeatures
 {
 
-    private static final long serialVersionUID = 1L;
-    /**
-     * The select menu's component
-     */
-    private final Component selectMenu;
-    /**
-     * The options associated
-     */
-    private JQUISelectMenuOptions options;
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The select menu's component
+	 */
+	private final Component selectMenu;
+	/**
+	 * The options associated
+	 */
+	private JQUISelectMenuOptions options;
 
-    /**
-     * Constructs a new Select Menu Add Options or Option Groups to configure
-     *
-     * @param selectMenu Because off css classing
-     */
-    public JQUISelectMenuFeature(Component selectMenu)
-    {
-        super("JWSelectMenuFeature");
-        this.selectMenu = selectMenu;
+	/**
+	 * Constructs a new Select Menu Add Options or Option Groups to configure
+	 *
+	 * @param selectMenu Because off css classing
+	 */
+	public JQUISelectMenuFeature(Component selectMenu)
+	{
+		super("JWSelectMenuFeature");
+		this.selectMenu = selectMenu;
 
-        getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-        getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-        getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-        getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
+		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
+		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
+		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
+		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
 
-        getJavascriptReferences().add(JQUIReferencePool.Menu.getJavaScriptReference());
-        getJavascriptReferences().add(JQUIReferencePool.SelectMenu.getJavaScriptReference());
-        getJavascriptReferences().add(JQUIReferencePool.SelectMenuIcons.getJavaScriptReference());
-        getCssReferences().add(JQUIReferencePool.SelectMenu.getCssReference());
-        getCssReferences().add(JQUIReferencePool.Menu.getCssReference());
-    }
+		getJavascriptReferences().add(JQUIReferencePool.Menu.getJavaScriptReference());
+		getJavascriptReferences().add(JQUIReferencePool.SelectMenu.getJavaScriptReference());
+		getJavascriptReferences().add(JQUIReferencePool.SelectMenuIcons.getJavaScriptReference());
+		getCssReferences().add(JQUIReferencePool.SelectMenu.getCssReference());
+		getCssReferences().add(JQUIReferencePool.Menu.getCssReference());
+	}
 
-    @Override
-    public void assignFunctionsToComponent()
-    {
-        addQuery(selectMenu.getJQueryID() + "selectmenu(" + getOptions() + ");" + getNewLine());
-    }
+	@Override
+	public void assignFunctionsToComponent()
+	{
+		addQuery(selectMenu.getJQueryID() + "selectmenu(" + getOptions() + ");" + getNewLine());
+	}
 
-    @Override
-    public JQUISelectMenuOptions getOptions()
-    {
-        if (options == null)
-        {
-            options = new JQUISelectMenuOptions();
-        }
-        return options;
-    }
+	@Override
+	public JQUISelectMenuOptions getOptions()
+	{
+		if (options == null)
+		{
+			options = new JQUISelectMenuOptions();
+		}
+		return options;
+	}
 
 }

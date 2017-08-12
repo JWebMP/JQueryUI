@@ -21,19 +21,17 @@ import za.co.mmagon.jwebswing.events.dropover.DropOverAdapter;
 import za.co.mmagon.jwebswing.plugins.jqueryui.droppable.JQUIDroppableEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class OverEvent extends DropOverAdapter
-        implements JQUIDroppableEvents
+		implements JQUIDroppableEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public OverEvent(Component component)
-    {
-        super(component);
-    }
+	public OverEvent(Component component)
+	{
+		super(component);
+	}
 }

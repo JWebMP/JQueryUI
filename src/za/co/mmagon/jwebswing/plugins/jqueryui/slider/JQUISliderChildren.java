@@ -19,12 +19,10 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.slider;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 
 /**
- *
  * @author GedMarc
- * @since Mar 9, 2015
  * @version 1.0
  * <p>
- * 
+ * @since Mar 9, 2015
  */
 public interface JQUISliderChildren extends GlobalChildren
 {

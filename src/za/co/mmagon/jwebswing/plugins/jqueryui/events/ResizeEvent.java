@@ -22,19 +22,17 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.dialog.JQUIDialogEvents;
 import za.co.mmagon.jwebswing.plugins.jqueryui.resizable.JQUIResizableEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class ResizeEvent extends ResizeAdapter
-        implements JQUIDialogEvents, JQUIResizableEvents
+		implements JQUIDialogEvents, JQUIResizableEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public ResizeEvent(Component component)
-    {
-        super(component);
-    }
+	public ResizeEvent(Component component)
+	{
+		super(component);
+	}
 }

@@ -21,67 +21,66 @@ import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 8, 2015
  */
 public class JQUISpinnerFeature extends Feature<JQUISpinnerOptions, JQUISpinnerFeature> implements JQUISpinnerFeatures
 {
 
-    private static final long serialVersionUID = 1L;
-    /**
-     * The component for the spinner
-     */
-    private final Component selectMenu;
-    /**
-     * The options for the spinner
-     */
-    private JQUISpinnerOptions options;
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The component for the spinner
+	 */
+	private final Component selectMenu;
+	/**
+	 * The options for the spinner
+	 */
+	private JQUISpinnerOptions options;
 
-    /**
-     * Constructs a new slider
-     *
-     * @param selectMenu
-     */
-    public JQUISpinnerFeature(Component selectMenu)
-    {
-        super("JWPSelectMenuFeature");
-        this.selectMenu = selectMenu;
+	/**
+	 * Constructs a new slider
+	 *
+	 * @param selectMenu
+	 */
+	public JQUISpinnerFeature(Component selectMenu)
+	{
+		super("JWPSelectMenuFeature");
+		this.selectMenu = selectMenu;
 
-        getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-        getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-        getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-        getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
+		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
+		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
+		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
+		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
 
-        getJavascriptReferences().add(JQUIReferencePool.Button.getJavaScriptReference());
-        getJavascriptReferences().add(JQUIReferencePool.Spinner.getJavaScriptReference());
-        getCssReferences().add(JQUIReferencePool.Button.getCssReference());
-        getCssReferences().add(JQUIReferencePool.Spinner.getCssReference());
+		getJavascriptReferences().add(JQUIReferencePool.Button.getJavaScriptReference());
+		getJavascriptReferences().add(JQUIReferencePool.Spinner.getJavaScriptReference());
+		getCssReferences().add(JQUIReferencePool.Button.getCssReference());
+		getCssReferences().add(JQUIReferencePool.Spinner.getCssReference());
 
-    }
+	}
 
-    @Override
-    public void assignFunctionsToComponent()
-    {
-        addQuery(selectMenu.getJQueryID() + "spinner(" + getOptions() + ");" + getNewLine());
-    }
+	@Override
+	public void assignFunctionsToComponent()
+	{
+		addQuery(selectMenu.getJQueryID() + "spinner(" + getOptions() + ");" + getNewLine());
+	}
 
-    /**
-     * Returns the options associated with the Spinner Object
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUISpinnerOptions getOptions()
-    {
-        if (options == null)
-        {
-            options = new JQUISpinnerOptions();
-        }
-        return options;
-    }
+	/**
+	 * Returns the options associated with the Spinner Object
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUISpinnerOptions getOptions()
+	{
+		if (options == null)
+		{
+			options = new JQUISpinnerOptions();
+		}
+		return options;
+	}
 
 }

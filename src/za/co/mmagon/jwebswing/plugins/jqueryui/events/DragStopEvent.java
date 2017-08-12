@@ -21,19 +21,17 @@ import za.co.mmagon.jwebswing.events.dragstop.DragStopAdapter;
 import za.co.mmagon.jwebswing.plugins.jqueryui.dialog.JQUIDialogEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class DragStopEvent extends DragStopAdapter
-        implements JQUIDialogEvents
+		implements JQUIDialogEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public DragStopEvent(Component component)
-    {
-        super(component);
-    }
+	public DragStopEvent(Component component)
+	{
+		super(component);
+	}
 }

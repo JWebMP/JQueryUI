@@ -19,34 +19,35 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.position;
 /**
  * Positions for the location horizontal
  * <p>
+ *
  * @author MMagon
- * @since 07 Apr 2013
  * @version 1.0
+ * @since 07 Apr 2013
  */
 public enum PositionLocationHorizontal
 {
 
-    /**
-     * Position to the Left
-     */
-    Left,
-    /**
-     * Position to the Center
-     */
-    Center,
-    /**
-     * Position to the Right
-     */
-    Right,
-    /**
-     * Places at Left bottom
-     */
-    Left_Bottom,;
+	/**
+	 * Position to the Left
+	 */
+	Left,
+	/**
+	 * Position to the Center
+	 */
+	Center,
+	/**
+	 * Position to the Right
+	 */
+	Right,
+	/**
+	 * Places at Left bottom
+	 */
+	Left_Bottom,;
 
-    @Override
-    public String toString()
-    {
-        return super.toString().toLowerCase().replace('_', ' ');
-    }
+	@Override
+	public String toString()
+	{
+		return super.toString().toLowerCase().replace('_', ' ');
+	}
 
 }

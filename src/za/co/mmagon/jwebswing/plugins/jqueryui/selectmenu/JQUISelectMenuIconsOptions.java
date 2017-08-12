@@ -19,53 +19,51 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 
 /**
- *
  * @author GedMarc
- * @since Mar 9, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 9, 2015
  */
 public class JQUISelectMenuIconsOptions extends JavaScriptPart
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
-     * button (string, default: "ui-icon-triangle-1-s")
-     */
-    private String button;
+	/**
+	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
+	 * button (string, default: "ui-icon-triangle-1-s")
+	 */
+	private String button;
 
-    /**
-     * Sets the button
-     *
-     * @param button
-     */
-    public JQUISelectMenuIconsOptions(String button)
-    {
-        this.button = button;
-    }
+	/**
+	 * Sets the button
+	 *
+	 * @param button
+	 */
+	public JQUISelectMenuIconsOptions(String button)
+	{
+		this.button = button;
+	}
 
-    /**
-     * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
-     * button (string, default: "ui-icon-triangle-1-s")
-     *
-     * @return
-     */
-    public String getButton()
-    {
-        return button;
-    }
+	/**
+	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
+	 * button (string, default: "ui-icon-triangle-1-s")
+	 *
+	 * @return
+	 */
+	public String getButton()
+	{
+		return button;
+	}
 
-    /**
-     * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
-     * button (string, default: "ui-icon-triangle-1-s")
-     *
-     * @param button
-     */
-    public void setButton(String button)
-    {
-        this.button = button;
-    }
+	/**
+	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
+	 * button (string, default: "ui-icon-triangle-1-s")
+	 *
+	 * @param button
+	 */
+	public void setButton(String button)
+	{
+		this.button = button;
+	}
 }

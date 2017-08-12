@@ -19,19 +19,18 @@ package za.co.mmagon.jwebswing.plugins.pools.jqueryui;
 import za.co.mmagon.jwebswing.base.references.CSSReference;
 
 /**
- *
  * @author Marc Magon
- * @since 31 Oct 2015
  * @version 1.0
+ * @since 31 Oct 2015
  */
 class JQueryUILoaderCSSReference extends CSSReference
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public JQueryUILoaderCSSReference()
-    {
-        super("WidgetLoader", 3.91, "bower_components/jqwidgets/jqwidgets/styles/jqx.base.css");
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	public JQueryUILoaderCSSReference()
+	{
+		super("WidgetLoader", 3.91, "bower_components/jqwidgets/jqwidgets/styles/jqx.base.css");
+	}
+	
 }

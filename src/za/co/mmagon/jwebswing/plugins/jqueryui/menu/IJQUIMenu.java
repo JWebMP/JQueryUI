@@ -17,19 +17,17 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.menu;
 
 /**
- *
  * @author GedMarc
  * @since 28 Feb 2017
- * 
  */
-public interface IJQUIMenu 
+public interface IJQUIMenu
 {
 
-    /**
-     * Gets the options of the menu
-     *
-     * @return
-     */
-    JQUIMenuOptions getOptions();
+	/**
+	 * Gets the options of the menu
+	 *
+	 * @return
+	 */
+	JQUIMenuOptions getOptions();
 
 }

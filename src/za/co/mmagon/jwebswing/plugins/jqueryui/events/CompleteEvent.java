@@ -21,19 +21,17 @@ import za.co.mmagon.jwebswing.events.complete.CompleteAdapter;
 import za.co.mmagon.jwebswing.plugins.jqueryui.progressbar.JQUIProgressBarEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class CompleteEvent extends CompleteAdapter
-        implements JQUIProgressBarEvents
+		implements JQUIProgressBarEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public CompleteEvent(Component component)
-    {
-        super(component);
-    }
+	public CompleteEvent(Component component)
+	{
+		super(component);
+	}
 }

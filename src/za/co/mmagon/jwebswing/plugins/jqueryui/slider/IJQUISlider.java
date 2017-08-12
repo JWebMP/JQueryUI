@@ -17,19 +17,18 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.slider;
 
 /**
- *
  * @author GedMarc
  * @since 28 Feb 2017
- * 
  */
-public interface IJQUISlider 
+public interface IJQUISlider
 {
 
-    /**
-     * Returns the slider options
-     * <p>
-     * @return
-     */
-    JQUISliderOptions getOptions();
+	/**
+	 * Returns the slider options
+	 * <p>
+	 *
+	 * @return
+	 */
+	JQUISliderOptions getOptions();
 
 }

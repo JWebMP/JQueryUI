@@ -17,26 +17,26 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.datepicker;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- * 
  */
-public interface IJQUIDatePicker 
+public interface IJQUIDatePicker
 {
 
-    /**
-     * Returns the feature of this date picker
-     * <p>
-     * @return
-     */
-    JQUIDatePickerFeature getInputFeature();
+	/**
+	 * Returns the feature of this date picker
+	 * <p>
+	 *
+	 * @return
+	 */
+	JQUIDatePickerFeature getInputFeature();
 
-    /**
-     * Returns the options of an item
-     * <p>
-     * @return
-     */
-    JQUIDatePickerOptions getOptions();
+	/**
+	 * Returns the options of an item
+	 * <p>
+	 *
+	 * @return
+	 */
+	JQUIDatePickerOptions getOptions();
 
 }

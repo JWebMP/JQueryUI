@@ -23,19 +23,17 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.droppable.JQUIDroppableEvents;
 import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.JQUITabsEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class ActivateEvent extends ActivateAdapter
-        implements JQUIAccordionEvents, JQUIDroppableEvents, JQUITabsEvents
+		implements JQUIAccordionEvents, JQUIDroppableEvents, JQUITabsEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public ActivateEvent(Component component)
-    {
-        super(component);
-    }
+	public ActivateEvent(Component component)
+	{
+		super(component);
+	}
 }

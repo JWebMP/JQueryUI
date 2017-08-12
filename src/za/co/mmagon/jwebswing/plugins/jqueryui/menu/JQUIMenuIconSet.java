@@ -20,46 +20,47 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 8, 2015
  */
 public class JQUIMenuIconSet extends JavaScriptPart
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * Sets the sub menu string
-     */
-    private String subMenu;
+	/**
+	 * Sets the sub menu string
+	 */
+	private String subMenu;
 
-    /**
-     * Returns the class for the sub menu icon
-     * <p>
-     * @return
-     */
-    public String getSubMenu()
-    {
-        return subMenu;
-    }
+	/**
+	 * Returns the class for the sub menu icon
+	 * <p>
+	 *
+	 * @return
+	 */
+	public String getSubMenu()
+	{
+		return subMenu;
+	}
 
-    /**
-     * Sets the class name for the sub menu icon set
-     * <p>
-     * @param subMenu
-     */
-    public void setSubMenu(String subMenu)
-    {
-        this.subMenu = subMenu;
-    }
+	/**
+	 * Sets the class name for the sub menu icon set
+	 * <p>
+	 *
+	 * @param subMenu
+	 */
+	public void setSubMenu(String subMenu)
+	{
+		this.subMenu = subMenu;
+	}
 
-    @Override
-    public JavascriptPartType getJavascriptType()
-    {
-        return JavascriptPartType.Javascript;
-    }
+	@Override
+	public JavascriptPartType getJavascriptType()
+	{
+		return JavascriptPartType.Javascript;
+	}
 }

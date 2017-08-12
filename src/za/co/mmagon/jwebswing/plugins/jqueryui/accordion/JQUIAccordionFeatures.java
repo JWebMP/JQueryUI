@@ -19,7 +19,6 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.accordion;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 
 /**
- *
  * @author Marc Magon
  */
 public interface JQUIAccordionFeatures extends GlobalFeatures

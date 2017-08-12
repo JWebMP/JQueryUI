@@ -22,38 +22,38 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 8, 2015
  */
 public class JQUIControlGroupFeature extends Feature<JavaScriptPart, JQUIControlGroupFeature>
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private final Component checkBoxGroup;
+	private final Component checkBoxGroup;
 
-    /**
-     * Configures a new check box group
-     * <p>
-     * @param checkBoxGroup The group to apply to
-     */
-    public JQUIControlGroupFeature(Component checkBoxGroup)
-    {
-        super("JWCheckBoxGroupFeature");
-        this.checkBoxGroup = checkBoxGroup;
-        getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-        getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-        getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-        getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-    }
+	/**
+	 * Configures a new check box group
+	 * <p>
+	 *
+	 * @param checkBoxGroup The group to apply to
+	 */
+	public JQUIControlGroupFeature(Component checkBoxGroup)
+	{
+		super("JWCheckBoxGroupFeature");
+		this.checkBoxGroup = checkBoxGroup;
+		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
+		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
+		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
+		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
+	}
 
-    @Override
-    public void assignFunctionsToComponent()
-    {
-        addQuery(checkBoxGroup.getJQueryID() + "controlgroup({});");
-    }
+	@Override
+	public void assignFunctionsToComponent()
+	{
+		addQuery(checkBoxGroup.getJQueryID() + "controlgroup({});");
+	}
 }

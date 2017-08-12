@@ -21,53 +21,53 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 
 /**
- *
  * @author GedMarc
  * @since 27 Apr 2015
  */
 public class JQUIButtonGroupOptions extends JavaScriptPart
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * The component type.
-     */
-    private String items;
+	/**
+	 * The component type.
+	 */
+	private String items;
 
-    /**
-     * The button group options for
-     */
-    public JQUIButtonGroupOptions()
-    {
-        //Nothing Needed
-    }
+	/**
+	 * The button group options for
+	 */
+	public JQUIButtonGroupOptions()
+	{
+		//Nothing Needed
+	}
 
-    public String getItems()
-    {
-        if (items != null)
-        {
-            return items;
-        }
-        else
-        {
-            return "";
-        }
-    }
+	public String getItems()
+	{
+		if (items != null)
+		{
+			return items;
+		}
+		else
+		{
+			return "";
+		}
+	}
 
-    /**
-     * Set the items the button group will apply for
-     * <p>
-     * @param items
-     */
-    public void setItems(ComponentTypes items)
-    {
-        this.items = items.getComponentTag();
-    }
+	/**
+	 * Set the items the button group will apply for
+	 * <p>
+	 *
+	 * @param items
+	 */
+	public void setItems(ComponentTypes items)
+	{
+		this.items = items.getComponentTag();
+	}
 
-    @Override
-    public JavascriptPartType getJavascriptType()
-    {
-        return JavascriptPartType.Javascript;
-    }
+	@Override
+	public JavascriptPartType getJavascriptType()
+	{
+		return JavascriptPartType.Javascript;
+	}
 }

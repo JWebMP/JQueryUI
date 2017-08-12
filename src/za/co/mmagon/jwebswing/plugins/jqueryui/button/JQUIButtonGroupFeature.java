@@ -21,54 +21,55 @@ import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 8, 2015
  */
 public class JQUIButtonGroupFeature extends Feature<JQUIButtonGroupOptions, JQUIButtonGroupFeature> implements JQUIButtonFeatures
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private final Component buttonGroup;
-    private JQUIButtonGroupOptions buttongGroupOptions;
+	private final Component buttonGroup;
+	private JQUIButtonGroupOptions buttongGroupOptions;
 
-    /**
-     * Configures a new check box group
-     * <p>
-     * @param buttonGroup The group to apply to
-     */
-    public JQUIButtonGroupFeature(Component buttonGroup)
-    {
-        super("JWCheckBoxGroupFeature");
-        this.buttonGroup = buttonGroup;
-        getJavascriptReferences().add(JQUIReferencePool.Button.getJavaScriptReference());
-    }
+	/**
+	 * Configures a new check box group
+	 * <p>
+	 *
+	 * @param buttonGroup The group to apply to
+	 */
+	public JQUIButtonGroupFeature(Component buttonGroup)
+	{
+		super("JWCheckBoxGroupFeature");
+		this.buttonGroup = buttonGroup;
+		getJavascriptReferences().add(JQUIReferencePool.Button.getJavaScriptReference());
+	}
 
-    @Override
-    public void assignFunctionsToComponent()
-    {
+	@Override
+	public void assignFunctionsToComponent()
+	{
 
-        addQuery(buttonGroup.getJQueryID() + "buttonset(" + getOptions() + ");" + getNewLine());
+		addQuery(buttonGroup.getJQueryID() + "buttonset(" + getOptions() + ");" + getNewLine());
 
-    }
+	}
 
-    /**
-     * Returns the button group options
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUIButtonGroupOptions getOptions()
-    {
-        if (buttongGroupOptions == null)
-        {
-            buttongGroupOptions = new JQUIButtonGroupOptions();
-        }
-        return buttongGroupOptions; //To change body of generated methods, choose Tools | Templates.
-    }
+	/**
+	 * Returns the button group options
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUIButtonGroupOptions getOptions()
+	{
+		if (buttongGroupOptions == null)
+		{
+			buttongGroupOptions = new JQUIButtonGroupOptions();
+		}
+		return buttongGroupOptions; //To change body of generated methods, choose Tools | Templates.
+	}
 
 }

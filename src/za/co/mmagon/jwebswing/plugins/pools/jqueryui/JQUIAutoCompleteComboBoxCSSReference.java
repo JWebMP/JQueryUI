@@ -19,21 +19,19 @@ package za.co.mmagon.jwebswing.plugins.pools.jqueryui;
 import za.co.mmagon.jwebswing.base.references.CSSReference;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 8, 2015
  */
 public class JQUIAutoCompleteComboBoxCSSReference extends CSSReference
 {
-
-    /**
-     *
-     */
-    public JQUIAutoCompleteComboBoxCSSReference()
-    {
-        super("JWAutoCompleteComboBoxCSSRef", 1.113, "bower_components/jquery-ui/themes/base/autocomplete_combobox.css", "bower_components/jquery-ui/themes/base/autocomplete_combobox.css");
-    }
+	
+	/**
+	 *
+	 */
+	public JQUIAutoCompleteComboBoxCSSReference()
+	{
+		super("JWAutoCompleteComboBoxCSSRef", 1.113, "bower_components/jquery-ui/themes/base/autocomplete_combobox.css", "bower_components/jquery-ui/themes/base/autocomplete_combobox.css");
+	}
 }

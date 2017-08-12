@@ -19,23 +19,22 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.menu;
 import za.co.mmagon.jwebswing.base.html.ListItem;
 
 /**
- *
  * @author Marc Magon
- * @since 30 Oct 2015
  * @version 1.0
+ * @since 30 Oct 2015
  */
 public class JQUIMenuItem extends ListItem implements JQUIMenuChildren
 {
-
-    private static final long serialVersionUID = 1L;
-
-    public JQUIMenuItem(String text)
-    {
-        super(text);
-    }
-
-    public JQUIMenuItem()
-    {
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	public JQUIMenuItem(String text)
+	{
+		super(text);
+	}
+	
+	public JQUIMenuItem()
+	{
+	}
+	
 }

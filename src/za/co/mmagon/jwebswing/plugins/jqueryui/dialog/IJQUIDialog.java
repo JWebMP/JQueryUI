@@ -17,19 +17,18 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.dialog;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- * 
  */
-public interface IJQUIDialog 
+public interface IJQUIDialog
 {
 
-    /**
-     * Instantiates the options on call
-     * <p>
-     * @return
-     */
-    JQUIDialogOptions getOptions();
+	/**
+	 * Instantiates the options on call
+	 * <p>
+	 *
+	 * @return
+	 */
+	JQUIDialogOptions getOptions();
 
 }

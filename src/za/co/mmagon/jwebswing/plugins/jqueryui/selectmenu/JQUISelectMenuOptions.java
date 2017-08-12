@@ -17,149 +17,147 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu;
 
 import za.co.mmagon.jwebswing.Component;
-import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
 
 /**
- *
  * @author GedMarc
- * @since Mar 9, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 9, 2015
  */
 public class JQUISelectMenuOptions extends JavaScriptPart
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * Which element to append the menu to. When the value is null, the parents of the select are checked for a class name of ui-front. If an element with the ui-front class name is found, the menu is
-     * appended to that element.<p>
-     * Regardless of the value, if no element is found, the menu is appended to the body.
-     */
-    private String appendTo;
-    /**
-     * Disables the select menu if set to true.
-     */
-    private Boolean disabled;
-    /**
-     * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
-     * button (string, default: "ui-icon-triangle-1-s")
-     */
-    private JQUISelectMenuIconsOptions icons;
-    /**
-     * Identifies the position of the menu in relation to the associated button element. You can refer to the jQuery UI Position utility for more details about the various options.
-     */
-    private Position position;
-    /**
-     * The width of the menu, in pixels. When the value is null, the width of the native select is used.
-     */
-    private Integer width;
+	/**
+	 * Which element to append the menu to. When the value is null, the parents of the select are checked for a class name of ui-front. If an element with the ui-front class name is found, the menu is
+	 * appended to that element.<p>
+	 * Regardless of the value, if no element is found, the menu is appended to the body.
+	 */
+	private String appendTo;
+	/**
+	 * Disables the select menu if set to true.
+	 */
+	private Boolean disabled;
+	/**
+	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
+	 * button (string, default: "ui-icon-triangle-1-s")
+	 */
+	private JQUISelectMenuIconsOptions icons;
+	/**
+	 * Identifies the position of the menu in relation to the associated button element. You can refer to the jQuery UI Position utility for more details about the various options.
+	 */
+	private Position position;
+	/**
+	 * The width of the menu, in pixels. When the value is null, the width of the native select is used.
+	 */
+	private Integer width;
 
-    /**
-     * Which element to append the menu to. When the value is null, the parents of the select are checked for a class name of ui-front. If an element with the ui-front class name is found, the menu is
-     * appended to that element.<p>
-     * Regardless of the value, if no element is found, the menu is appended to the body.
-     *
-     * @return
-     */
-    public String getAppendTo()
-    {
-        return appendTo;
-    }
+	/**
+	 * Which element to append the menu to. When the value is null, the parents of the select are checked for a class name of ui-front. If an element with the ui-front class name is found, the menu is
+	 * appended to that element.<p>
+	 * Regardless of the value, if no element is found, the menu is appended to the body.
+	 *
+	 * @return
+	 */
+	public String getAppendTo()
+	{
+		return appendTo;
+	}
 
-    /**
-     * Which element to append the menu to. When the value is null, the parents of the select are checked for a class name of ui-front. If an element with the ui-front class name is found, the menu is
-     * appended to that element.<p>
-     * Regardless of the value, if no element is found, the menu is appended to the body.
-     *
-     * @param appendTo
-     */
-    public void setAppendTo(Component appendTo)
-    {
-        this.appendTo = appendTo.getID(true);
-    }
+	/**
+	 * Which element to append the menu to. When the value is null, the parents of the select are checked for a class name of ui-front. If an element with the ui-front class name is found, the menu is
+	 * appended to that element.<p>
+	 * Regardless of the value, if no element is found, the menu is appended to the body.
+	 *
+	 * @param appendTo
+	 */
+	public void setAppendTo(Component appendTo)
+	{
+		this.appendTo = appendTo.getID(true);
+	}
 
-    /**
-     * Disables the selectmenu if set to true.
-     *
-     * @return
-     */
-    public Boolean getDisabled()
-    {
-        return disabled;
-    }
+	/**
+	 * Disables the selectmenu if set to true.
+	 *
+	 * @return
+	 */
+	public Boolean getDisabled()
+	{
+		return disabled;
+	}
 
-    /**
-     * Disables the selectmenu if set to true.
-     *
-     * @param disabled
-     */
-    public void setDisabled(Boolean disabled)
-    {
-        this.disabled = disabled;
-    }
+	/**
+	 * Disables the selectmenu if set to true.
+	 *
+	 * @param disabled
+	 */
+	public void setDisabled(Boolean disabled)
+	{
+		this.disabled = disabled;
+	}
 
-    /**
-     * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
-     * button (string, default: "ui-icon-triangle-1-s")
-     *
-     * @return
-     */
-    public JQUISelectMenuIconsOptions getIcons()
-    {
-        return icons;
-    }
+	/**
+	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
+	 * button (string, default: "ui-icon-triangle-1-s")
+	 *
+	 * @return
+	 */
+	public JQUISelectMenuIconsOptions getIcons()
+	{
+		return icons;
+	}
 
-    /**
-     * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
-     * button (string, default: "ui-icon-triangle-1-s")
-     *
-     * @param icons
-     */
-    public void setIcons(JQUISelectMenuIconsOptions icons)
-    {
-        this.icons = icons;
-    }
+	/**
+	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
+	 * button (string, default: "ui-icon-triangle-1-s")
+	 *
+	 * @param icons
+	 */
+	public void setIcons(JQUISelectMenuIconsOptions icons)
+	{
+		this.icons = icons;
+	}
 
-    /**
-     * Identifies the position of the menu in relation to the associated button element. You can refer to the jQuery UI Position utility for more details about the various options.
-     *
-     * @return
-     */
-    public Position getPosition()
-    {
-        return position;
-    }
+	/**
+	 * Identifies the position of the menu in relation to the associated button element. You can refer to the jQuery UI Position utility for more details about the various options.
+	 *
+	 * @return
+	 */
+	public Position getPosition()
+	{
+		return position;
+	}
 
-    /**
-     * Identifies the position of the menu in relation to the associated button element. You can refer to the jQuery UI Position utility for more details about the various options.
-     *
-     * @param position
-     */
-    public void setPosition(Position position)
-    {
-        this.position = position;
-    }
+	/**
+	 * Identifies the position of the menu in relation to the associated button element. You can refer to the jQuery UI Position utility for more details about the various options.
+	 *
+	 * @param position
+	 */
+	public void setPosition(Position position)
+	{
+		this.position = position;
+	}
 
-    /**
-     * The width of the menu, in pixels. When the value is null, the width of the native select is used.
-     *
-     * @return
-     */
-    public int getWidth()
-    {
-        return width;
-    }
+	/**
+	 * The width of the menu, in pixels. When the value is null, the width of the native select is used.
+	 *
+	 * @return
+	 */
+	public int getWidth()
+	{
+		return width;
+	}
 
-    /**
-     * The width of the menu, in pixels. When the value is null, the width of the native select is used.
-     *
-     * @param width
-     */
-    public void setWidth(int width)
-    {
-        this.width = width;
-    }
+	/**
+	 * The width of the menu, in pixels. When the value is null, the width of the native select is used.
+	 *
+	 * @param width
+	 */
+	public void setWidth(int width)
+	{
+		this.width = width;
+	}
 }

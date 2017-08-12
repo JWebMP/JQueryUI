@@ -21,59 +21,57 @@ import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 8, 2015
  */
 public class JQUISortableFeature extends Feature<JQUISortableOptions, JQUISortableFeature> implements JQUISortableFeatures
 {
-
-    private static final long serialVersionUID = 1L;
-    /**
-     * The sortable linked component
-     */
-    private final Component selectMenu;
-    /**
-     * The options for the sortablke feature
-     */
-    private JQUISortableOptions options;
-
-    /**
-     * Constructs a new slider
-     *
-     * @param selectMenu
-     */
-    public JQUISortableFeature(Component selectMenu)
-    {
-        super("JWSortableFeature");
-        this.selectMenu = selectMenu;
-
-        getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-        getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-        getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-        getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-        getJavascriptReferences().add(JQUIReferencePool.Sortable.getJavaScriptReference());
-        getCssReferences().add(JQUIReferencePool.Sortable.getCssReference());
-    }
-
-    @Override
-    public void assignFunctionsToComponent()
-    {
-        addQuery(selectMenu.getJQueryID() + "sortable(" + getOptions() + ");" + getNewLine());
-    }
-
-    @Override
-    public JQUISortableOptions getOptions()
-    {
-        if (options == null)
-        {
-            options = new JQUISortableOptions();
-        }
-        return options;
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The sortable linked component
+	 */
+	private final Component selectMenu;
+	/**
+	 * The options for the sortablke feature
+	 */
+	private JQUISortableOptions options;
+	
+	/**
+	 * Constructs a new slider
+	 *
+	 * @param selectMenu
+	 */
+	public JQUISortableFeature(Component selectMenu)
+	{
+		super("JWSortableFeature");
+		this.selectMenu = selectMenu;
+		
+		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
+		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
+		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
+		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
+		
+		getJavascriptReferences().add(JQUIReferencePool.Sortable.getJavaScriptReference());
+		getCssReferences().add(JQUIReferencePool.Sortable.getCssReference());
+	}
+	
+	@Override
+	public void assignFunctionsToComponent()
+	{
+		addQuery(selectMenu.getJQueryID() + "sortable(" + getOptions() + ");" + getNewLine());
+	}
+	
+	@Override
+	public JQUISortableOptions getOptions()
+	{
+		if (options == null)
+		{
+			options = new JQUISortableOptions();
+		}
+		return options;
+	}
+	
 }

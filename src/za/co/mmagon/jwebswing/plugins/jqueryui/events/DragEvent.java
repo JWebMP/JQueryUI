@@ -22,19 +22,17 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.dialog.JQUIDialogEvents;
 import za.co.mmagon.jwebswing.plugins.jqueryui.draggable.JQUIDraggableEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class DragEvent extends DragAdapter
-        implements JQUIDraggableEvents, JQUIDialogEvents
+		implements JQUIDraggableEvents, JQUIDialogEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public DragEvent(Component component)
-    {
-        super(component);
-    }
+	public DragEvent(Component component)
+	{
+		super(component);
+	}
 }

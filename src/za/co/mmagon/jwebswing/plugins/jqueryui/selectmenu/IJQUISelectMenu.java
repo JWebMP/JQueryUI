@@ -17,19 +17,18 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu;
 
 /**
- *
  * @author GedMarc
  * @since 28 Feb 2017
- * 
  */
-public interface IJQUISelectMenu 
+public interface IJQUISelectMenu
 {
 
-    /**
-     * Returns the options for the select menu
-     * <p>
-     * @return
-     */
-    JQUISelectMenuOptions getOptions();
+	/**
+	 * Returns the options for the select menu
+	 * <p>
+	 *
+	 * @return
+	 */
+	JQUISelectMenuOptions getOptions();
 
 }

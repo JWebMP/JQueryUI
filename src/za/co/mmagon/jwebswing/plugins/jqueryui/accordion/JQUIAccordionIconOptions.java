@@ -20,83 +20,85 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 8, 2015
  */
 public class JQUIAccordionIconOptions extends JavaScriptPart
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private String header;
-    private String activeHeader;
+	private String header;
+	private String activeHeader;
 
-    /**
-     * Constructs a blank Icon Options Class
-     */
-    public JQUIAccordionIconOptions()
-    {
-    }
+	/**
+	 * Constructs a blank Icon Options Class
+	 */
+	public JQUIAccordionIconOptions()
+	{
+	}
 
-    /**
-     * Constructs a new Icon Options Class
-     *
-     * @param header The icon for closed
-     * @param activeHeader The icon for open
-     */
-    public JQUIAccordionIconOptions(String header, String activeHeader)
-    {
-        this.header = header;
-        this.activeHeader = activeHeader;
-    }
+	/**
+	 * Constructs a new Icon Options Class
+	 *
+	 * @param header       The icon for closed
+	 * @param activeHeader The icon for open
+	 */
+	public JQUIAccordionIconOptions(String header, String activeHeader)
+	{
+		this.header = header;
+		this.activeHeader = activeHeader;
+	}
 
-    /**
-     * Returns the icon class for closed
-     * <p>
-     * @return
-     */
-    public String getHeader()
-    {
-        return header;
-    }
+	/**
+	 * Returns the icon class for closed
+	 * <p>
+	 *
+	 * @return
+	 */
+	public String getHeader()
+	{
+		return header;
+	}
 
-    /**
-     * Sets the icon class for closed
-     * <p>
-     * @param header
-     */
-    public void setHeader(String header)
-    {
-        this.header = header;
-    }
+	/**
+	 * Sets the icon class for closed
+	 * <p>
+	 *
+	 * @param header
+	 */
+	public void setHeader(String header)
+	{
+		this.header = header;
+	}
 
-    /**
-     * Gets the open icon
-     * <p>
-     * @return
-     */
-    public String getActiveHeader()
-    {
-        return activeHeader;
-    }
+	/**
+	 * Gets the open icon
+	 * <p>
+	 *
+	 * @return
+	 */
+	public String getActiveHeader()
+	{
+		return activeHeader;
+	}
 
-    /**
-     * Sets the open icon
-     * <p>
-     * @param activeHeader
-     */
-    public void setActiveHeader(String activeHeader)
-    {
-        this.activeHeader = activeHeader;
-    }
+	/**
+	 * Sets the open icon
+	 * <p>
+	 *
+	 * @param activeHeader
+	 */
+	public void setActiveHeader(String activeHeader)
+	{
+		this.activeHeader = activeHeader;
+	}
 
-    @Override
-    public JavascriptPartType getJavascriptType()
-    {
-        return JavascriptPartType.Javascript;
-    }
+	@Override
+	public JavascriptPartType getJavascriptType()
+	{
+		return JavascriptPartType.Javascript;
+	}
 }

@@ -24,19 +24,17 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.draggable.JQUIDraggableEvents;
 import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.JQUISelectMenuEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class OpenEvent extends OpenAdapter
-        implements JQUIAutoCompleteEvents, JQUIDraggableEvents, JQUIDialogEvents, JQUISelectMenuEvents
+		implements JQUIAutoCompleteEvents, JQUIDraggableEvents, JQUIDialogEvents, JQUISelectMenuEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public OpenEvent(Component component)
-    {
-        super(component);
-    }
+	public OpenEvent(Component component)
+	{
+		super(component);
+	}
 }

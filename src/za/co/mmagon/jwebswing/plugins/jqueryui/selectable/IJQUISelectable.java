@@ -17,19 +17,18 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.selectable;
 
 /**
- *
  * @author GedMarc
  * @since 28 Feb 2017
- * 
  */
-public interface IJQUISelectable 
+public interface IJQUISelectable
 {
 
-    /**
-     * Returns the features options
-     * <p>
-     * @return
-     */
-    JQUISelectableOptions getOptions();
+	/**
+	 * Returns the features options
+	 * <p>
+	 *
+	 * @return
+	 */
+	JQUISelectableOptions getOptions();
 
 }

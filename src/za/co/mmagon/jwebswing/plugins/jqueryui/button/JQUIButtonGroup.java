@@ -23,51 +23,52 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 8, 2015
  */
 public class JQUIButtonGroup extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, JQUIButtonGroup>
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private JQUIButtonGroupFeature groupFeature;
+	private JQUIButtonGroupFeature groupFeature;
 
-    /**
-     *
-     */
-    public JQUIButtonGroup()
-    {
-        addFeature(getGroupFeature());
-    }
+	/**
+	 *
+	 */
+	public JQUIButtonGroup()
+	{
+		addFeature(getGroupFeature());
+	}
 
-    /**
-     * Returns the group feature associated with this button group
-     * <p>
-     * @return
-     */
-    public final JQUIButtonGroupFeature getGroupFeature()
-    {
-        if (groupFeature == null)
-        {
-            groupFeature = new JQUIButtonGroupFeature(this);
-        }
-        return groupFeature;
-    }
+	/**
+	 * Returns the group feature associated with this button group
+	 * <p>
+	 *
+	 * @return
+	 */
+	public final JQUIButtonGroupFeature getGroupFeature()
+	{
+		if (groupFeature == null)
+		{
+			groupFeature = new JQUIButtonGroupFeature(this);
+		}
+		return groupFeature;
+	}
 
-    /**
-     * Returns the options for this Button Group from the feature
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUIButtonGroupOptions getOptions()
-    {
-        return getGroupFeature().getOptions();
-    }
+	/**
+	 * Returns the options for this Button Group from the feature
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUIButtonGroupOptions getOptions()
+	{
+		return getGroupFeature().getOptions();
+	}
 
 }

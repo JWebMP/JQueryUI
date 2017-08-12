@@ -24,67 +24,70 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 /**
  * The Select Menu from the JQuery UI
  * <p>
+ *
  * @author GedMarc
- * @since Mar 9, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 9, 2015
  */
 @ComponentInformation(name = "JQuery UI Select Menu",
-        description = "Enable a DOM element (or group of elements) to be selectable. Draw a box with your cursor to select items. Hold down the Ctrl key to make multiple non-adjacent selections.",
-        url = "http://jqueryui.com/selectmenu/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		description = "Enable a DOM element (or group of elements) to be selectable. Draw a box with your cursor to select items. Hold down the Ctrl key to make multiple non-adjacent selections.",
+		url = "http://jqueryui.com/selectmenu/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUISelectMenu extends Div<JQUISelectMenuChildren, NoAttributes, JQUISelectMenuFeatures, JQUISelectMenuEvents, JQUISelectMenu> implements IJQUISelectMenu
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * The select menu feature
-     */
-    private JQUISelectMenuFeature feature;
+	/**
+	 * The select menu feature
+	 */
+	private JQUISelectMenuFeature feature;
 
-    /**
-     * Constructs a new select menu
-     */
-    public JQUISelectMenu()
-    {
-        super(ComponentTypes.Select);
-        addFeature(getFeature());
-    }
+	/**
+	 * Constructs a new select menu
+	 */
+	public JQUISelectMenu()
+	{
+		super(ComponentTypes.Select);
+		addFeature(getFeature());
+	}
 
-    /**
-     * Returns the select menu feature
-     * <p>
-     * @return
-     */
-    public final JQUISelectMenuFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new JQUISelectMenuFeature(this);
-        }
-        return feature;
-    }
+	/**
+	 * Returns the select menu feature
+	 * <p>
+	 *
+	 * @return
+	 */
+	public final JQUISelectMenuFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUISelectMenuFeature(this);
+		}
+		return feature;
+	}
 
-    /**
-     * As Me
-     *
-     * @return
-     */
-    public IJQUISelectMenu asMe()
-    {
-        return this;
-    }
+	/**
+	 * As Me
+	 *
+	 * @return
+	 */
+	public IJQUISelectMenu asMe()
+	{
+		return this;
+	}
 
-    /**
-     * Returns the options for the select menu
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUISelectMenuOptions getOptions()
-    {
-        return getFeature().getOptions();
-    }
+	/**
+	 * Returns the options for the select menu
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUISelectMenuOptions getOptions()
+	{
+		return getFeature().getOptions();
+	}
 
 }

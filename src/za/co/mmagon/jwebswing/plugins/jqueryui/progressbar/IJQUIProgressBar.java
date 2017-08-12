@@ -17,19 +17,18 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.progressbar;
 
 /**
- *
  * @author GedMarc
  * @since 28 Feb 2017
- * 
  */
-public interface IJQUIProgressBar 
+public interface IJQUIProgressBar
 {
 
-    /**
-     * Returns the Progress bar options
-     * <p>
-     * @return
-     */
-    JQUIProgressBarOptions getOptions();
+	/**
+	 * Returns the Progress bar options
+	 * <p>
+	 *
+	 * @return
+	 */
+	JQUIProgressBarOptions getOptions();
 
 }

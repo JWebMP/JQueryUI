@@ -21,73 +21,73 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
- *
  * @author Marc Magon
- * @since 07 Aug 2015
  * @version 1.0
+ * @since 07 Aug 2015
  */
 @ComponentInformation(name = "JQuery UI Resizable",
-        description = "Enable any DOM element to be resizable. With the cursor grab the right or bottom border and drag to the desired width or height.",
-        url = "http://jqueryui.com/resizable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		description = "Enable any DOM element to be resizable. With the cursor grab the right or bottom border and drag to the desired width or height.",
+		url = "http://jqueryui.com/resizable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIResizable extends Div<JQUIResizableChildren, NoAttributes, JQUIResizableFeatures, JQUIResizableEvents, JQUIResizable> implements IJQUIResizable
 {
 
-    private static final long serialVersionUID = 1L;
-    /**
-     * The resizable feature
-     */
-    private JQUIResizableFeature feature;
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The resizable feature
+	 */
+	private JQUIResizableFeature feature;
 
-    /**
-     * Adds the feature to the resizable
-     */
-    public JQUIResizable()
-    {
-        addFeature(feature = new JQUIResizableFeature(this));
-    }
+	/**
+	 * Adds the feature to the resizable
+	 */
+	public JQUIResizable()
+	{
+		addFeature(feature = new JQUIResizableFeature(this));
+	}
 
-    /**
-     * Returns the features options
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUIResizableOptions getOptions()
-    {
-        return feature.getOptions();
-    }
+	/**
+	 * Returns the features options
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUIResizableOptions getOptions()
+	{
+		return feature.getOptions();
+	}
 
-    /**
-     * Returns this feature
-     *
-     * @return
-     */
-    public JQUIResizableFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new JQUIResizableFeature(this);
-        }
-        return feature;
-    }
+	/**
+	 * Returns this feature
+	 *
+	 * @return
+	 */
+	public JQUIResizableFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUIResizableFeature(this);
+		}
+		return feature;
+	}
 
-    /**
-     * Sets this feature
-     *
-     * @param feature
-     */
-    public void setFeature(JQUIResizableFeature feature)
-    {
-        this.feature = feature;
-    }
+	/**
+	 * Sets this feature
+	 *
+	 * @param feature
+	 */
+	public void setFeature(JQUIResizableFeature feature)
+	{
+		this.feature = feature;
+	}
 
-    /**
-     * A neater representation
-     *
-     * @return
-     */
-    public IJQUIResizable asMe()
-    {
-        return this;
-    }
+	/**
+	 * A neater representation
+	 *
+	 * @return
+	 */
+	public IJQUIResizable asMe()
+	{
+		return this;
+	}
 }

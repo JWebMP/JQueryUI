@@ -19,7 +19,6 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 
 /**
- *
  * @author Marc Magon
  */
 public interface JQUIAutoCompleteChildren extends GlobalChildren

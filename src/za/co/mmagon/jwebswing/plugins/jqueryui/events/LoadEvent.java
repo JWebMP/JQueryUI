@@ -21,19 +21,17 @@ import za.co.mmagon.jwebswing.events.load.LoadAdapter;
 import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.JQUITabsEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class LoadEvent extends LoadAdapter
-        implements JQUITabsEvents
+		implements JQUITabsEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public LoadEvent(Component component)
-    {
-        super(component);
-    }
+	public LoadEvent(Component component)
+	{
+		super(component);
+	}
 }

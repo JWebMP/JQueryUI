@@ -20,59 +20,57 @@ import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 8, 2015
  */
 public class JQUISliderFeature extends Feature<JQUISliderOptions, JQUISliderFeature> implements JQUISliderFeatures
 {
 
-    private static final long serialVersionUID = 1L;
-    /**
-     * The actual slider for the menu
-     */
-    private final JQUISlider selectMenu;
-    /**
-     * The options for the select menu
-     */
-    private JQUISliderOptions options;
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The actual slider for the menu
+	 */
+	private final JQUISlider selectMenu;
+	/**
+	 * The options for the select menu
+	 */
+	private JQUISliderOptions options;
 
-    /**
-     * Constructs a new slider
-     *
-     * @param selectMenu
-     */
-    public JQUISliderFeature(JQUISlider selectMenu)
-    {
-        super("JWPSelectMenuFeature");
-        this.selectMenu = selectMenu;
+	/**
+	 * Constructs a new slider
+	 *
+	 * @param selectMenu
+	 */
+	public JQUISliderFeature(JQUISlider selectMenu)
+	{
+		super("JWPSelectMenuFeature");
+		this.selectMenu = selectMenu;
 
-        getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-        getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-        getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-        getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
+		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
+		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
+		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
+		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
 
-        getJavascriptReferences().add(JQUIReferencePool.Slider.getJavaScriptReference());
-        getCssReferences().add(JQUIReferencePool.Slider.getCssReference());
-    }
+		getJavascriptReferences().add(JQUIReferencePool.Slider.getJavaScriptReference());
+		getCssReferences().add(JQUIReferencePool.Slider.getCssReference());
+	}
 
-    @Override
-    public void assignFunctionsToComponent()
-    {
-        addQuery(selectMenu.getJQueryID() + "slider(" + getOptions() + ");");
-    }
+	@Override
+	public void assignFunctionsToComponent()
+	{
+		addQuery(selectMenu.getJQueryID() + "slider(" + getOptions() + ");");
+	}
 
-    @Override
-    public JQUISliderOptions getOptions()
-    {
-        if (options == null)
-        {
-            options = new JQUISliderOptions();
-        }
-        return options;
-    }
+	@Override
+	public JQUISliderOptions getOptions()
+	{
+		if (options == null)
+		{
+			options = new JQUISliderOptions();
+		}
+		return options;
+	}
 
 }

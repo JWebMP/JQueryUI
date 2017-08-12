@@ -19,22 +19,21 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.menu;
 import za.co.mmagon.jwebswing.base.html.ListItem;
 
 /**
- *
  * @author Marc Magon
- * @since 30 Oct 2015
  * @version 1.0
+ * @since 30 Oct 2015
  */
 public class JQUIMenuItemDivider extends ListItem implements JQUIMenuChildren
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * Creates a menu item divider
-     */
-    public JQUIMenuItemDivider()
-    {
-        super("-");
-    }
+	/**
+	 * Creates a menu item divider
+	 */
+	public JQUIMenuItemDivider()
+	{
+		super("-");
+	}
 
 }

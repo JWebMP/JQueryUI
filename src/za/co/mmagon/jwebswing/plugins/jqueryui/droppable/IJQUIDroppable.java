@@ -17,19 +17,18 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.droppable;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- * 
  */
-public interface IJQUIDroppable 
+public interface IJQUIDroppable
 {
 
-    /**
-     * Returns the Droppable Options
-     * <p>
-     * @return
-     */
-    JQUIDroppableOptions getOptions();
+	/**
+	 * Returns the Droppable Options
+	 * <p>
+	 *
+	 * @return
+	 */
+	JQUIDroppableOptions getOptions();
 
 }

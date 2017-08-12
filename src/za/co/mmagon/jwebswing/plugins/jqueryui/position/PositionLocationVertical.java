@@ -19,24 +19,25 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.position;
 /**
  * Positions available for the JQueryUI position set
  * <p>
+ *
  * @author MMagon
- * @since 07 Apr 2013
  * @version 1.0
+ * @since 07 Apr 2013
  */
 public enum PositionLocationVertical
 {
 
-    /**
-     * Position at the top
-     */
-    top,
-    /**
-     * Position at the center
-     */
-    center,
-    /**
-     * Position at the bottom
-     */
-    bottom;
+	/**
+	 * Position at the top
+	 */
+	top,
+	/**
+	 * Position at the center
+	 */
+	center,
+	/**
+	 * Position at the bottom
+	 */
+	bottom;
 
 }

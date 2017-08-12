@@ -28,69 +28,69 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionChildren;
 /**
  * This class implements the JQuery UI implementation of a normal button
  *
- * @author MMagon
  * @param <J>
  *
- * @since 09 Mar 2013
+ * @author MMagon
  * @version 1.0
- *
+ * <p>
  * Update 2014/07/09 - Added attribute for identification in JQuery. Minimizing the JavaScript being sent through.
+ * @since 09 Mar 2013
  */
 @ComponentInformation(name = "JQuery UI Button", description = "Enhances standard form elements like buttons, inputs and anchors to themeable buttons with appropriate hover and active styles.",
-                      url = "http://jqueryui.com/button/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		url = "http://jqueryui.com/button/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIButton<J extends JQUIButton<J>>
-        extends Component<JQUIButtonChildren, ButtonAttributes, JQUIButtonFeatures, JQUIButtonEvents, J>
-        implements GlobalChildren, NoNewLineBeforeClosingTag, NoNewLineForRawText, JQUIAccordionChildren
+		extends Component<JQUIButtonChildren, ButtonAttributes, JQUIButtonFeatures, JQUIButtonEvents, J>
+		implements GlobalChildren, NoNewLineBeforeClosingTag, NoNewLineForRawText, JQUIAccordionChildren
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private JQUIButtonFeature feature;
+	private JQUIButtonFeature feature;
 
-    /**
-     * Constructs a new JWButton
-     */
-    public JQUIButton()
-    {
-        this(null);
-    }
+	/**
+	 * Constructs a new JWButton
+	 */
+	public JQUIButton()
+	{
+		this(null);
+	}
 
-    /**
-     * Constructs a new Button of type button
-     *
-     * @param text
-     */
-    public JQUIButton(String text)
-    {
-        super(ComponentTypes.Button);
-        setText(text);
-        getFeature();
-    }
+	/**
+	 * Constructs a new Button of type button
+	 *
+	 * @param text
+	 */
+	public JQUIButton(String text)
+	{
+		super(ComponentTypes.Button);
+		setText(text);
+		getFeature();
+	}
 
-    /**
-     * Returns the button options from the feature
-     *
-     * @return
-     */
-    @Override
-    public JQUIButtonOptions getOptions()
-    {
-        return getFeature().getOptions();
-    }
+	/**
+	 * Returns the button options from the feature
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUIButtonOptions getOptions()
+	{
+		return getFeature().getOptions();
+	}
 
-    /**
-     * Returns the feature associated with this object
-     *
-     * @return
-     */
-    public final JQUIButtonFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new JQUIButtonFeature(this);
-            addFeature(feature);
-        }
-        return feature;
-    }
+	/**
+	 * Returns the feature associated with this object
+	 *
+	 * @return
+	 */
+	public final JQUIButtonFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUIButtonFeature(this);
+			addFeature(feature);
+		}
+		return feature;
+	}
 
 }

@@ -21,19 +21,17 @@ import za.co.mmagon.jwebswing.events.drop.DropAdapter;
 import za.co.mmagon.jwebswing.plugins.jqueryui.droppable.JQUIDroppableEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class DropEvent extends DropAdapter
-        implements JQUIDroppableEvents
+		implements JQUIDroppableEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public DropEvent(Component component)
-    {
-        super(component);
-    }
+	public DropEvent(Component component)
+	{
+		super(component);
+	}
 }

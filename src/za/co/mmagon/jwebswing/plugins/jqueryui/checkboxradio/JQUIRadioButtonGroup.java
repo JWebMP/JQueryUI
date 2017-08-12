@@ -21,82 +21,84 @@ import za.co.mmagon.jwebswing.base.html.Legend;
 import za.co.mmagon.jwebswing.plugins.jqueryui.controlgroup.JQUIControlGroupFeature;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 8, 2015
  */
 public class JQUIRadioButtonGroup extends FieldSet
 {
-
-    private static final long serialVersionUID = 1L;
-
-    private JQUIControlGroupFeature feature;
-
-    private String legendTitle;
-
-    /**
-     * Constructs a new Check Box Group
-     */
-    public JQUIRadioButtonGroup()
-    {
-        addFeature(getFeature());
-    }
-
-    /**
-     * Adds a new Check Box to the group
-     * <p>
-     * @param label the label to create
-     * @param checkBox the check box to add
-     * @return
-     */
-    public JQUIRadioButtonGroup addRadioButton(JQUIRadioButton checkBox)
-    {
-        add(checkBox);
-        return this;
-    }
-
-    public String getLegendTitle()
-    {
-        return legendTitle;
-    }
-
-    public JQUIRadioButtonGroup setLegendTitle(String legendTitle)
-    {
-        this.legendTitle = legendTitle;
-        return this;
-    }
-
-    @Override
-    protected StringBuilder renderBeforeChildren()
-    {
-        Legend leg = new Legend();
-        leg.setText(legendTitle);
-        leg.setTiny(true);
-        return new StringBuilder().append(getCurrentTabIndents()).append(leg.toString(true)).append(getNewLine());
-    }
-
-    /**
-     * Adds a new Check Box to the group
-     * <p>
-     * @param label the label to create
-     * @param checkBox the check box to add
-     * @return The label object that is created
-     */
-    /**
-     * Returns this groups feature
-     * <p>
-     * @return
-     */
-    public final JQUIControlGroupFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new JQUIControlGroupFeature(this);
-        }
-        return feature;
-    }
-
+	
+	private static final long serialVersionUID = 1L;
+	
+	private JQUIControlGroupFeature feature;
+	
+	private String legendTitle;
+	
+	/**
+	 * Constructs a new Check Box Group
+	 */
+	public JQUIRadioButtonGroup()
+	{
+		addFeature(getFeature());
+	}
+	
+	/**
+	 * Adds a new Check Box to the group
+	 * <p>
+	 *
+	 * @param label    the label to create
+	 * @param checkBox the check box to add
+	 *
+	 * @return
+	 */
+	public JQUIRadioButtonGroup addRadioButton(JQUIRadioButton checkBox)
+	{
+		add(checkBox);
+		return this;
+	}
+	
+	public String getLegendTitle()
+	{
+		return legendTitle;
+	}
+	
+	public JQUIRadioButtonGroup setLegendTitle(String legendTitle)
+	{
+		this.legendTitle = legendTitle;
+		return this;
+	}
+	
+	@Override
+	protected StringBuilder renderBeforeChildren()
+	{
+		Legend leg = new Legend();
+		leg.setText(legendTitle);
+		leg.setTiny(true);
+		return new StringBuilder().append(getCurrentTabIndents()).append(leg.toString(true)).append(getNewLine());
+	}
+	
+	/**
+	 * Adds a new Check Box to the group
+	 * <p>
+	 * @param label the label to create
+	 * @param checkBox the check box to add
+	 * @return The label object that is created
+	 */
+	/**
+	 * Returns this groups feature
+	 * <p>
+	 *
+	 * @return
+	 */
+	public final JQUIControlGroupFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUIControlGroupFeature(this);
+		}
+		return feature;
+	}
+	
 }

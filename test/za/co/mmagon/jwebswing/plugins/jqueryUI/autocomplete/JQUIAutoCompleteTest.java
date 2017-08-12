@@ -19,95 +19,93 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete;
 import junit.framework.Assert;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
-import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.JQUIAutoComplete;
 
 /**
- *
  * @author GedMarc
  */
 public class JQUIAutoCompleteTest extends BaseTestClass
 {
-
-    public JQUIAutoCompleteTest()
-    {
-    }
-
-    @Test
-    public void testStrucure()
-    {
-        JQUIAutoComplete ac = new JQUIAutoComplete("autocomplete");
-        ac.setID("id");
-        ac.getLabel().setID("label");
-        ac.getInput().setID("input");
-        ac.getOptions().addOption("option 1");
-        System.out.println(ac.toString(true));
-        Assert.assertEquals(""
-                + "<div class=\"ui-widget\" id=\"id\">\n"
-                + "	<label for=\"autocomplete\" id=\"label\">autocomplete</label>\n"
-                + "	<input id=\"input\" type=\"text\">\n"
-                + "</div>", ac.toString(true).toString());
-    }
-
-    @Test
-    public void testSourceBasic()
-    {
-        JQUIAutoComplete ac = new JQUIAutoComplete("autocomplete");
-        ac.setID("id");
-        ac.getLabel().setID("label");
-        ac.getInput().setID("input");
-        ac.getOptions().addOption("option 1");
-        ac.toString(true);
-        System.out.println(ac.renderJavascript().toString());
-        String expected = "$('#input').autocomplete({\n"
-                + "  \"source\" : [{\n"
-                + "  \"label\" : \"option 1\"\n"
-                + "}]\n"
-                + "});\n";
-        String rendered = ac.renderJavascript().toString();
-        Assert.assertEquals(expected, rendered);
-    }
-
-    @Test
-    public void testSourceCategories()
-    {
-        JQUIAutoComplete ac = new JQUIAutoComplete("autocomplete");
-        ac.setID("id");
-        ac.getLabel().setID("label");
-        ac.getInput().setID("input");
-        ac.getOptions().addOption("option 1", "value1", "category1");
-        System.out.println(ac.renderJavascript().toString());
-
-        String expected = "$('#input').autocomplete({\n"
-                + "  \"source\" : [{\n"
-                + "  \"label\" : \"option 1\",\n"
-                + "  \"value\" : \"value1\",\n"
-                + "  \"category\" : \"category1\"\n"
-                + "}]\n"
-                + "});\n"
-                + "";
-        String rendered = ac.renderJavascript().toString();
-
-        //super.writeValuesToFile(expected, rendered);
-        Assert.assertEquals(expected, rendered);
-    }
-
-    @Test
-    public void testSourceDataUrl()
-    {
-        JQUIAutoComplete ac = new JQUIAutoComplete("autocomplete");
-        ac.setID("id");
-        ac.getLabel().setID("label");
-        ac.getInput().setID("input");
-        ac.getOptions().setAjax(true, ac);
-        ac.getOptions().addOption("option 1", "value1", "category1");
-        System.out.println(ac.renderJavascript().toString());
-
-        String expected = "$('#input').autocomplete({\n"
-                + "  \"source\" : \"jwdata?component=id\"\n"
-                + "});\n";
-        String rendered = ac.renderJavascript().toString();
-
-        //super.writeValuesToFile(expected, rendered);
-        Assert.assertEquals(expected, rendered);
-    }
+	
+	public JQUIAutoCompleteTest()
+	{
+	}
+	
+	@Test
+	public void testStrucure()
+	{
+		JQUIAutoComplete ac = new JQUIAutoComplete("autocomplete");
+		ac.setID("id");
+		ac.getLabel().setID("label");
+		ac.getInput().setID("input");
+		ac.getOptions().addOption("option 1");
+		System.out.println(ac.toString(true));
+		Assert.assertEquals(""
+				                    + "<div class=\"ui-widget\" id=\"id\">\n"
+				                    + "	<label for=\"autocomplete\" id=\"label\">autocomplete</label>\n"
+				                    + "	<input id=\"input\" type=\"text\">\n"
+				                    + "</div>", ac.toString(true).toString());
+	}
+	
+	@Test
+	public void testSourceBasic()
+	{
+		JQUIAutoComplete ac = new JQUIAutoComplete("autocomplete");
+		ac.setID("id");
+		ac.getLabel().setID("label");
+		ac.getInput().setID("input");
+		ac.getOptions().addOption("option 1");
+		ac.toString(true);
+		System.out.println(ac.renderJavascript().toString());
+		String expected = "$('#input').autocomplete({\n"
+				+ "  \"source\" : [{\n"
+				+ "  \"label\" : \"option 1\"\n"
+				+ "}]\n"
+				+ "});\n";
+		String rendered = ac.renderJavascript().toString();
+		Assert.assertEquals(expected, rendered);
+	}
+	
+	@Test
+	public void testSourceCategories()
+	{
+		JQUIAutoComplete ac = new JQUIAutoComplete("autocomplete");
+		ac.setID("id");
+		ac.getLabel().setID("label");
+		ac.getInput().setID("input");
+		ac.getOptions().addOption("option 1", "value1", "category1");
+		System.out.println(ac.renderJavascript().toString());
+		
+		String expected = "$('#input').autocomplete({\n"
+				+ "  \"source\" : [{\n"
+				+ "  \"label\" : \"option 1\",\n"
+				+ "  \"value\" : \"value1\",\n"
+				+ "  \"category\" : \"category1\"\n"
+				+ "}]\n"
+				+ "});\n"
+				+ "";
+		String rendered = ac.renderJavascript().toString();
+		
+		//super.writeValuesToFile(expected, rendered);
+		Assert.assertEquals(expected, rendered);
+	}
+	
+	@Test
+	public void testSourceDataUrl()
+	{
+		JQUIAutoComplete ac = new JQUIAutoComplete("autocomplete");
+		ac.setID("id");
+		ac.getLabel().setID("label");
+		ac.getInput().setID("input");
+		ac.getOptions().setAjax(true, ac);
+		ac.getOptions().addOption("option 1", "value1", "category1");
+		System.out.println(ac.renderJavascript().toString());
+		
+		String expected = "$('#input').autocomplete({\n"
+				+ "  \"source\" : \"jwdata?component=id\"\n"
+				+ "});\n";
+		String rendered = ac.renderJavascript().toString();
+		
+		//super.writeValuesToFile(expected, rendered);
+		Assert.assertEquals(expected, rendered);
+	}
 }

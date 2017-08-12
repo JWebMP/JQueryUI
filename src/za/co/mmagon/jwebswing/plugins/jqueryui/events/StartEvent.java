@@ -24,19 +24,17 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.slider.JQUISliderEvents;
 import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.JQUISpinnerEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class StartEvent extends StartAdapter
-        implements JQUIDraggableEvents, JQUIResizableEvents, JQUISliderEvents, JQUISpinnerEvents
+		implements JQUIDraggableEvents, JQUIResizableEvents, JQUISliderEvents, JQUISpinnerEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public StartEvent(Component component)
-    {
-        super(component);
-    }
+	public StartEvent(Component component)
+	{
+		super(component);
+	}
 }

@@ -21,19 +21,17 @@ import za.co.mmagon.jwebswing.events.search.SearchAdapter;
 import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.JQUIAutoCompleteEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class SearchEvent extends SearchAdapter
-        implements JQUIAutoCompleteEvents
+		implements JQUIAutoCompleteEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public SearchEvent(Component component)
-    {
-        super(component);
-    }
+	public SearchEvent(Component component)
+	{
+		super(component);
+	}
 }

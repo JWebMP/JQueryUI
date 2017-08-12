@@ -16,54 +16,52 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.button;
 
-import za.co.mmagon.jwebswing.plugins.jqueryui.button.JQUIButton;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
 
 /**
- *
  * @author GedMarc
  */
 public class JQUIButtonTest extends BaseTestClass
 {
-
-    public JQUIButtonTest()
-    {
-    }
-
-    @Test
-    public void testHtml()
-    {
-        JQUIButton button = new JQUIButton("test");
-        button.setID("test");
-        System.out.println(button.toString(true));
-    }
-
-    @Test
-    public void testJS()
-    {
-        JQUIButton button = new JQUIButton("test");
-        button.setID("test");
-        //button.toString(true);
-        //System.out.println(button.renderJavascript());
-        System.out.println(button.renderJavascriptAll());
-
-    }
-
-    /**
-     * Test of getOptions method, of class JQUIButton.
-     */
-    @Test
-    public void testGetOptions()
-    {
-    }
-
-    /**
-     * Test of getFeature method, of class JQUIButton.
-     */
-    @Test
-    public void testGetFeature()
-    {
-    }
-
+	
+	public JQUIButtonTest()
+	{
+	}
+	
+	@Test
+	public void testHtml()
+	{
+		JQUIButton button = new JQUIButton("test");
+		button.setID("test");
+		System.out.println(button.toString(true));
+	}
+	
+	@Test
+	public void testJS()
+	{
+		JQUIButton button = new JQUIButton("test");
+		button.setID("test");
+		//button.toString(true);
+		//System.out.println(button.renderJavascript());
+		System.out.println(button.renderJavascriptAll());
+		
+	}
+	
+	/**
+	 * Test of getOptions method, of class JQUIButton.
+	 */
+	@Test
+	public void testGetOptions()
+	{
+	}
+	
+	/**
+	 * Test of getFeature method, of class JQUIButton.
+	 */
+	@Test
+	public void testGetFeature()
+	{
+	}
+	
 }

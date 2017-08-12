@@ -17,19 +17,18 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.resizable;
 
 /**
- *
  * @author GedMarc
  * @since 28 Feb 2017
- * 
  */
-public interface IJQUIResizable 
+public interface IJQUIResizable
 {
 
-    /**
-     * Returns the features options
-     * <p>
-     * @return
-     */
-    JQUIResizableOptions getOptions();
+	/**
+	 * Returns the features options
+	 * <p>
+	 *
+	 * @return
+	 */
+	JQUIResizableOptions getOptions();
 
 }

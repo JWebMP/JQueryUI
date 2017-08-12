@@ -19,22 +19,20 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.tabs;
 import za.co.mmagon.jwebswing.base.html.List;
 
 /**
- *
  * @author GedMarc
  * @since 28 Feb 2017
- *
  */
 public class JQUITabList extends List implements JQUITabsChildren
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * A list for the tabs display
-     */
-    public JQUITabList()
-    {
-        //Nothing needed
-    }
+	/**
+	 * A list for the tabs display
+	 */
+	public JQUITabList()
+	{
+		//Nothing needed
+	}
 
 }

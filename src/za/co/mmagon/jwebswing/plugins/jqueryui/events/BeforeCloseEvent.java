@@ -21,19 +21,17 @@ import za.co.mmagon.jwebswing.events.beforeclose.BeforeCloseAdapter;
 import za.co.mmagon.jwebswing.plugins.jqueryui.dialog.JQUIDialogEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class BeforeCloseEvent extends BeforeCloseAdapter
-        implements JQUIDialogEvents
+		implements JQUIDialogEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public BeforeCloseEvent(Component component)
-    {
-        super(component);
-    }
+	public BeforeCloseEvent(Component component)
+	{
+		super(component);
+	}
 }

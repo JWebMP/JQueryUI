@@ -24,27 +24,27 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.slider;
 public enum SliderRanges
 {
 
-    /**
-     * Enables 2 fields for entry
-     */
-    True,
-    /**
-     * Sets to 1 slider entry
-     */
-    False,
-    /**
-     * Locks the minimum
-     */
-    Min,
-    /**
-     * Locks the maximum
-     */
-    Max;
+	/**
+	 * Enables 2 fields for entry
+	 */
+	True,
+	/**
+	 * Sets to 1 slider entry
+	 */
+	False,
+	/**
+	 * Locks the minimum
+	 */
+	Min,
+	/**
+	 * Locks the maximum
+	 */
+	Max;
 
-    @Override
-    public String toString()
-    {
-        return super.toString().toLowerCase();
-    }
+	@Override
+	public String toString()
+	{
+		return super.toString().toLowerCase();
+	}
 
 }

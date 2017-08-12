@@ -33,28 +33,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum JQUIAccordionHeightStyle
 {
 
-    /**
-     * All panels will be set to the height of the tallest panel.
-     */
-    Auto,
-    /**
-     * Expand to the available height based on the accordion's parent height.
-     */
-    Fill,
-    /**
-     * Each panel will be only as tall as its content.
-     */
-    Content;
+	/**
+	 * All panels will be set to the height of the tallest panel.
+	 */
+	Auto,
+	/**
+	 * Expand to the available height based on the accordion's parent height.
+	 */
+	Fill,
+	/**
+	 * Each panel will be only as tall as its content.
+	 */
+	Content;
 
-    /**
-     * Returns the height style in lowercase
-     *
-     * @return
-     */
-    @JsonValue
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase();
-    }
+	/**
+	 * Returns the height style in lowercase
+	 *
+	 * @return
+	 */
+	@JsonValue
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase();
+	}
 }

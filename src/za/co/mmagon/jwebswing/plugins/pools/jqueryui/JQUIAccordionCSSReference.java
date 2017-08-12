@@ -19,23 +19,22 @@ package za.co.mmagon.jwebswing.plugins.pools.jqueryui;
 import za.co.mmagon.jwebswing.base.references.CSSReference;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 8, 2015
  */
 class JQUIAccordionCSSReference extends CSSReference
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     *
-     */
-    public JQUIAccordionCSSReference()
-    {
-        super("JWAccordionCSSRef", 1.114, "bower_components/jquery-ui/themes/base/accordion.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css");
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 *
+	 */
+	public JQUIAccordionCSSReference()
+	{
+		super("JWAccordionCSSRef", 1.114, "bower_components/jquery-ui/themes/base/accordion.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css");
+	}
 }

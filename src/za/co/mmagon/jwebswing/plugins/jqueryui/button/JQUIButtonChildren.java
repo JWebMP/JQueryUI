@@ -19,7 +19,6 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.button;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 
 /**
- *
  * @author Marc Magon
  */
 public interface JQUIButtonChildren extends GlobalChildren

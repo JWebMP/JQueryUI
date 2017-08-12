@@ -17,51 +17,50 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.spinner;
 
 /**
- *
  * @author GedMarc
- * @since Mar 9, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 9, 2015
  */
 public final class JQUISpinnerTime extends JQUISpinner
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * The spinner feature
-     */
-    private JQUISpinnerTimeFeature feature;
+	/**
+	 * The spinner feature
+	 */
+	private JQUISpinnerTimeFeature feature;
 
-    /**
-     * Constructs a new spinner paragraph object
-     * <p>
-     */
-    public JQUISpinnerTime()
-    {
-        this(null);
-    }
+	/**
+	 * Constructs a new spinner paragraph object
+	 * <p>
+	 */
+	public JQUISpinnerTime()
+	{
+		this(null);
+	}
 
-    /**
-     * Constructs a new spinner paragraph object
-     * <p>
-     * @param labelText
-     */
-    public JQUISpinnerTime(String labelText)
-    {
-        super(labelText);
-        getFeatures().clear();
-        addFeature(getTimeFeature());
-    }
+	/**
+	 * Constructs a new spinner paragraph object
+	 * <p>
+	 *
+	 * @param labelText
+	 */
+	public JQUISpinnerTime(String labelText)
+	{
+		super(labelText);
+		getFeatures().clear();
+		addFeature(getTimeFeature());
+	}
 
-    public JQUISpinnerTimeFeature getTimeFeature()
-    {
-        if (feature == null)
-        {
-            feature = new JQUISpinnerTimeFeature(getInput());
-        }
-        return feature;
-    }
+	public JQUISpinnerTimeFeature getTimeFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUISpinnerTimeFeature(getInput());
+		}
+		return feature;
+	}
 
 }

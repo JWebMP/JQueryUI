@@ -19,37 +19,35 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio;
 import za.co.mmagon.jwebswing.base.html.Input;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- * 
  */
-public interface IJQUICheckBox 
+public interface IJQUICheckBox
 {
 
-    /**
-     * Sets the label of this checkbox
-     *
-     * @return
-     */
-    String getLabel();
+	/**
+	 * Sets the label of this checkbox
+	 *
+	 * @return
+	 */
+	String getLabel();
 
-    JQUICheckBoxRadioOptions getOptions();
+	/**
+	 * Sets the label of this checkbox
+	 *
+	 * @param label
+	 */
+	void setLabel(String label);
 
-    /**
-     * Gets the value of this checkbox
-     *
-     * @return
-     */
-    String getValue();
+	JQUICheckBoxRadioOptions getOptions();
 
-    /**
-     * Sets the label of this checkbox
-     *
-     * @param label
-     */
-    void setLabel(String label);
+	/**
+	 * Gets the value of this checkbox
+	 *
+	 * @return
+	 */
+	String getValue();
 
-    Input setValue(String value);
+	Input setValue(String value);
 
 }

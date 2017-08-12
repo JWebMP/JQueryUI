@@ -20,6 +20,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 
 /**
  * Specifies all events for accordions
+ *
  * @author Marc Magon
  */
 public interface JQUIAccordionEvents extends GlobalEvents

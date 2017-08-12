@@ -19,22 +19,21 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.tabs;
 import org.junit.Test;
 
 /**
- *
  * @author GedMarc
  */
 public class JQUITabsTest
 {
 
-    public JQUITabsTest()
-    {
-    }
+	public JQUITabsTest()
+	{
+	}
 
-    @Test
-    public void testSomeMethod()
-    {
-        JQUITabs tab = new JQUITabs();
-        tab.addTab("tab 1", new JQUITabContent());
-        System.out.println(tab.toString(0));
-    }
+	@Test
+	public void testSomeMethod()
+	{
+		JQUITabs tab = new JQUITabs();
+		tab.addTab("tab 1", new JQUITabContent());
+		System.out.println(tab.toString(0));
+	}
 
 }

@@ -17,10 +17,9 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.tooltips;
 
 /**
- *
  * @author Marc Magon
- * @since 07 Aug 2015
  * @version 1.0
+ * @since 07 Aug 2015
  */
 public interface JQUIToolTipFeatures
 {

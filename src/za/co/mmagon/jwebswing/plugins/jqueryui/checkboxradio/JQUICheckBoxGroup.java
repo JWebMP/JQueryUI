@@ -21,93 +21,96 @@ import za.co.mmagon.jwebswing.base.html.Legend;
 import za.co.mmagon.jwebswing.plugins.jqueryui.controlgroup.JQUIControlGroupFeature;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 8, 2015
  */
 public class JQUICheckBoxGroup extends FieldSet
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private JQUIControlGroupFeature feature;
+	private JQUIControlGroupFeature feature;
 
-    private String legendTitle;
+	private String legendTitle;
 
-    /**
-     * Constructs a new Check Box Group
-     */
-    public JQUICheckBoxGroup()
-    {
-        addFeature(getFeature());
-    }
+	/**
+	 * Constructs a new Check Box Group
+	 */
+	public JQUICheckBoxGroup()
+	{
+		addFeature(getFeature());
+	}
 
-    /**
-     * Adds a new Check Box to the group
-     * <p>
-     * @param label the label to create
-     * @param checkBox the check box to add
-     * @return
-     */
-    public JQUICheckBoxGroup addCheckBox(JQUICheckBox checkBox)
-    {
-        add(checkBox);
-        return this;
-    }
+	/**
+	 * Adds a new Check Box to the group
+	 * <p>
+	 *
+	 * @param label    the label to create
+	 * @param checkBox the check box to add
+	 *
+	 * @return
+	 */
+	public JQUICheckBoxGroup addCheckBox(JQUICheckBox checkBox)
+	{
+		add(checkBox);
+		return this;
+	}
 
-    /**
-     * Sets the legend title
-     *
-     * @return
-     */
-    public String getLegendTitle()
-    {
-        return legendTitle;
-    }
+	/**
+	 * Sets the legend title
+	 *
+	 * @return
+	 */
+	public String getLegendTitle()
+	{
+		return legendTitle;
+	}
 
-    /**
-     * Sets the legend title
-     *
-     * @param legendTitle
-     * @return
-     */
-    public JQUICheckBoxGroup setLegendTitle(String legendTitle)
-    {
-        this.legendTitle = legendTitle;
-        return this;
-    }
+	/**
+	 * Sets the legend title
+	 *
+	 * @param legendTitle
+	 *
+	 * @return
+	 */
+	public JQUICheckBoxGroup setLegendTitle(String legendTitle)
+	{
+		this.legendTitle = legendTitle;
+		return this;
+	}
 
-    @Override
-    protected StringBuilder renderBeforeChildren()
-    {
-        Legend leg = new Legend();
-        leg.setText(legendTitle);
-        leg.setTiny(true);
-        return new StringBuilder().append(getCurrentTabIndents()).append(leg.toString(true)).append(getNewLine());
-    }
+	@Override
+	protected StringBuilder renderBeforeChildren()
+	{
+		Legend leg = new Legend();
+		leg.setText(legendTitle);
+		leg.setTiny(true);
+		return new StringBuilder().append(getCurrentTabIndents()).append(leg.toString(true)).append(getNewLine());
+	}
 
-    /**
-     * Adds a new Check Box to the group
-     * <p>
-     * @param label the label to create
-     * @param checkBox the check box to add
-     * @return The label object that is created
-     */
-    /**
-     * Returns this groups feature
-     * <p>
-     * @return
-     */
-    public final JQUIControlGroupFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new JQUIControlGroupFeature(this);
-        }
-        return feature;
-    }
+	/**
+	 * Adds a new Check Box to the group
+	 * <p>
+	 * @param label the label to create
+	 * @param checkBox the check box to add
+	 * @return The label object that is created
+	 */
+	/**
+	 * Returns this groups feature
+	 * <p>
+	 *
+	 * @return
+	 */
+	public final JQUIControlGroupFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUIControlGroupFeature(this);
+		}
+		return feature;
+	}
 
 }

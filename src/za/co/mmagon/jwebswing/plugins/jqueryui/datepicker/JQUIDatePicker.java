@@ -16,10 +16,11 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.datepicker;
 
-import java.util.Date;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+
+import java.util.Date;
 
 /**
  * The DatePicker is tied to a standard form input field.
@@ -28,75 +29,79 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  * <p>
  * If a date is chosen, feedback is shown as the input's value.
  * <p>
+ *
  * @author mmagon
  */
 @ComponentInformation(name = "JQuery UI Date Picker", description = "Select a date from a popup or inline calendar",
-        url = "http://jqueryui.com/datepicker/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		url = "http://jqueryui.com/datepicker/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIDatePicker extends Div<JQUIDatePickerChildren, NoAttributes, JQUIDatePickerFeatures, JQUIDatePickerEvents, JQUIDatePicker> implements IJQUIDatePicker
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private JQUIDatePickerFeature inputFeature;
+	private JQUIDatePickerFeature inputFeature;
 
-    /**
-     * Creates a new JWDatePicker for the selected date
-     * <p>
-     * @param selectedDate
-     */
-    public JQUIDatePicker(Date selectedDate)
-    {
-        super();
-        inputFeature = new JQUIDatePickerFeature(this);
-        if (selectedDate != null)
-        {
-            inputFeature.getOptions().setDefaultDate(selectedDate.toString());
-        }
-        addFeature(inputFeature);
-    }
+	/**
+	 * Creates a new JWDatePicker for the selected date
+	 * <p>
+	 *
+	 * @param selectedDate
+	 */
+	public JQUIDatePicker(Date selectedDate)
+	{
+		super();
+		inputFeature = new JQUIDatePickerFeature(this);
+		if (selectedDate != null)
+		{
+			inputFeature.getOptions().setDefaultDate(selectedDate.toString());
+		}
+		addFeature(inputFeature);
+	}
 
-    /**
-     * Constructs a new date picker
-     */
-    public JQUIDatePicker()
-    {
-        this(new Date());
-    }
+	/**
+	 * Constructs a new date picker
+	 */
+	public JQUIDatePicker()
+	{
+		this(new Date());
+	}
 
-    /**
-     * A neater view
-     *
-     * @return
-     */
-    public IJQUIDatePicker asMe()
-    {
-        return this;
-    }
+	/**
+	 * A neater view
+	 *
+	 * @return
+	 */
+	public IJQUIDatePicker asMe()
+	{
+		return this;
+	}
 
-    /**
-     * Returns the options of an item
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUIDatePickerOptions getOptions()
-    {
-        return getInputFeature().getOptions();
-    }
+	/**
+	 * Returns the options of an item
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUIDatePickerOptions getOptions()
+	{
+		return getInputFeature().getOptions();
+	}
 
-    /**
-     * Returns the feature of this date picker
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUIDatePickerFeature getInputFeature()
-    {
-        if (inputFeature == null)
-        {
-            inputFeature = new JQUIDatePickerFeature(this);
-        }
-        return inputFeature;
-    }
+	/**
+	 * Returns the feature of this date picker
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUIDatePickerFeature getInputFeature()
+	{
+		if (inputFeature == null)
+		{
+			inputFeature = new JQUIDatePickerFeature(this);
+		}
+		return inputFeature;
+	}
 
 }

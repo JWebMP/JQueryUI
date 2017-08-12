@@ -19,44 +19,44 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.tabs;
 import java.util.List;
 
 /**
- *
  * @author GedMarc
  * @since 28 Feb 2017
- * 
  */
-public interface IJQUITabs 
+public interface IJQUITabs
 {
 
-    /**
-     * Adds a tab to the collection
-     * <p>
-     * @param tab
-     *
-     * @return
-     */
-    JQUITab addTab(JQUITab tab);
+	/**
+	 * Adds a tab to the collection
+	 * <p>
+	 *
+	 * @param tab
+	 *
+	 * @return
+	 */
+	JQUITab addTab(JQUITab tab);
 
-    JQUITab addTab(String title, JQUITabContent displayComponent);
+	JQUITab addTab(String title, JQUITabContent displayComponent);
 
-    /**
-     * Returns the options fields for the tab
-     * <p>
-     * @return
-     */
-    JQUITabOptions getOptions();
+	/**
+	 * Returns the options fields for the tab
+	 * <p>
+	 *
+	 * @return
+	 */
+	JQUITabOptions getOptions();
 
-    /**
-     * Returns a list of tabs
-     *
-     * @return
-     */
-    List<JQUITab> getTabs();
+	/**
+	 * Returns a list of tabs
+	 *
+	 * @return
+	 */
+	List<JQUITab> getTabs();
 
-    /**
-     * Sets the list of tabs
-     *
-     * @param tabs
-     */
-    void setTabs(List<JQUITab> tabs);
+	/**
+	 * Sets the list of tabs
+	 *
+	 * @param tabs
+	 */
+	void setTabs(List<JQUITab> tabs);
 
 }

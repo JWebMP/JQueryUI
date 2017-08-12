@@ -19,97 +19,101 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.progressbar;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 8, 2015
  */
 public class JQUIProgressBarOptions extends JavaScriptPart
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * if is disabled
-     */
-    private Boolean disabled;
-    /**
-     * the max value
-     */
-    private Integer max;
-    /**
-     * The actual value
-     */
-    private Integer value;
+	/**
+	 * if is disabled
+	 */
+	private Boolean disabled;
+	/**
+	 * the max value
+	 */
+	private Integer max;
+	/**
+	 * The actual value
+	 */
+	private Integer value;
 
-    /**
-     *
-     */
-    public JQUIProgressBarOptions()
-    {
-        //Nothing needed here
-    }
+	/**
+	 *
+	 */
+	public JQUIProgressBarOptions()
+	{
+		//Nothing needed here
+	}
 
-    /**
-     * Returns if the progress bar is disabled or not
-     * <p>
-     * @return
-     */
-    public Boolean getDisabled()
-    {
-        return disabled;
-    }
+	/**
+	 * Returns if the progress bar is disabled or not
+	 * <p>
+	 *
+	 * @return
+	 */
+	public Boolean getDisabled()
+	{
+		return disabled;
+	}
 
-    /**
-     * Returns if the progress bar is disabled or not
-     * <p>
-     * @param disabled
-     */
-    public void setDisabled(Boolean disabled)
-    {
-        this.disabled = disabled;
-    }
+	/**
+	 * Returns if the progress bar is disabled or not
+	 * <p>
+	 *
+	 * @param disabled
+	 */
+	public void setDisabled(Boolean disabled)
+	{
+		this.disabled = disabled;
+	}
 
-    /**
-     * Gets the max
-     * <p>
-     * @return
-     */
-    public Integer getMax()
-    {
-        return max;
-    }
+	/**
+	 * Gets the max
+	 * <p>
+	 *
+	 * @return
+	 */
+	public Integer getMax()
+	{
+		return max;
+	}
 
-    /**
-     * Sets the maximum value
-     * <p>
-     * @param max
-     */
-    public void setMax(Integer max)
-    {
-        this.max = max;
-    }
+	/**
+	 * Sets the maximum value
+	 * <p>
+	 *
+	 * @param max
+	 */
+	public void setMax(Integer max)
+	{
+		this.max = max;
+	}
 
-    /**
-     * Gets the current value
-     * <p>
-     * @return
-     */
-    public Integer getValue()
-    {
-        return value;
-    }
+	/**
+	 * Gets the current value
+	 * <p>
+	 *
+	 * @return
+	 */
+	public Integer getValue()
+	{
+		return value;
+	}
 
-    /**
-     * Sets the current value
-     * <p>
-     * @param value
-     */
-    public void setValue(Integer value)
-    {
-        this.value = value;
-    }
+	/**
+	 * Sets the current value
+	 * <p>
+	 *
+	 * @param value
+	 */
+	public void setValue(Integer value)
+	{
+		this.value = value;
+	}
 
 }

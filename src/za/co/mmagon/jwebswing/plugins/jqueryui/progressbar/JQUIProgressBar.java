@@ -23,63 +23,66 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 /**
  * The Query UI Implementation of a progress bar
  * <p>
+ *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 8, 2015
  */
 @ComponentInformation(name = "JQuery UI Progress Bar", description = "The progress bar is designed to display the current percent complete for a process. The bar is coded to be flexibly sized through CSS and will scale to fit inside its parent container by default.",
-        url = "http://jqueryui.com/progressbar/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		url = "http://jqueryui.com/progressbar/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIProgressBar extends Div<JQUIProgressBarChildren, NoAttributes, JQUIProgressBarFeatures, JQUIProgressBarEvents, JQUIProgressBar> implements IJQUIProgressBar
 {
 
-    private static final long serialVersionUID = 1L;
-    /**
-     * The feature for the progress bar
-     */
-    private JQUIProgressBarFeature feature;
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The feature for the progress bar
+	 */
+	private JQUIProgressBarFeature feature;
 
-    /**
-     *
-     */
-    public JQUIProgressBar()
-    {
-        addFeature(feature = new JQUIProgressBarFeature(this));
-    }
+	/**
+	 *
+	 */
+	public JQUIProgressBar()
+	{
+		addFeature(feature = new JQUIProgressBarFeature(this));
+	}
 
-    /**
-     * Returns the feature for this progress bar
-     * <p>
-     * @return
-     */
-    public JQUIProgressBarFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new JQUIProgressBarFeature(this);
-        }
-        return feature;
-    }
+	/**
+	 * Returns the feature for this progress bar
+	 * <p>
+	 *
+	 * @return
+	 */
+	public JQUIProgressBarFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUIProgressBarFeature(this);
+		}
+		return feature;
+	}
 
-    /**
-     * Returns the Progress bar options
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUIProgressBarOptions getOptions()
-    {
-        return getFeature().getOptions();
-    }
+	/**
+	 * Returns the Progress bar options
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUIProgressBarOptions getOptions()
+	{
+		return getFeature().getOptions();
+	}
 
-    /**
-     * A neater view
-     *
-     * @return
-     */
-    public IJQUIProgressBar asMe()
-    {
-        return this;
-    }
+	/**
+	 * A neater view
+	 *
+	 * @return
+	 */
+	public IJQUIProgressBar asMe()
+	{
+		return this;
+	}
 }

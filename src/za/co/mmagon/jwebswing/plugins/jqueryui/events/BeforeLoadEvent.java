@@ -22,19 +22,17 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.dialog.JQUIDialogEvents;
 import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.JQUITabsEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class BeforeLoadEvent extends BeforeLoadAdapter
-        implements JQUIDialogEvents, JQUITabsEvents
+		implements JQUIDialogEvents, JQUITabsEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public BeforeLoadEvent(Component component)
-    {
-        super(component);
-    }
+	public BeforeLoadEvent(Component component)
+	{
+		super(component);
+	}
 }

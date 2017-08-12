@@ -26,74 +26,73 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
  * down (string, default: "ui-icon-triangle-1-s")
  *
  * @author GedMarc
- * @since Mar 9, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 9, 2015
  */
 public class SpinnerIconOptions extends JavaScriptPart
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
-     * <p>
-     * button (string, default: "ui-icon-triangle-1-s")
-     */
-    private String up;
-    /**
-     * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
-     * <p>
-     * button (string, default: "ui-icon-triangle-1-s")
-     */
-    private String down;
+	/**
+	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
+	 * <p>
+	 * button (string, default: "ui-icon-triangle-1-s")
+	 */
+	private String up;
+	/**
+	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
+	 * <p>
+	 * button (string, default: "ui-icon-triangle-1-s")
+	 */
+	private String down;
 
-    /**
-     * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
-     * <p>
-     * button (string, default: "ui-icon-triangle-1-s")
-     *
-     * @return Returns the up icon class
-     */
-    public String getUp()
-    {
-        return up;
-    }
+	/**
+	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
+	 * <p>
+	 * button (string, default: "ui-icon-triangle-1-s")
+	 *
+	 * @return Returns the up icon class
+	 */
+	public String getUp()
+	{
+		return up;
+	}
 
-    /**
-     * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
-     * <p>
-     * button (string, default: "ui-icon-triangle-1-s")
-     *
-     * @param up
-     */
-    public void setUp(String up)
-    {
-        this.up = up;
-    }
+	/**
+	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
+	 * <p>
+	 * button (string, default: "ui-icon-triangle-1-s")
+	 *
+	 * @param up
+	 */
+	public void setUp(String up)
+	{
+		this.up = up;
+	}
 
-    /**
-     * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
-     * <p>
-     * button (string, default: "ui-icon-triangle-1-s")
-     *
-     * @return
-     */
-    public String getDown()
-    {
-        return down;
-    }
+	/**
+	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
+	 * <p>
+	 * button (string, default: "ui-icon-triangle-1-s")
+	 *
+	 * @return
+	 */
+	public String getDown()
+	{
+		return down;
+	}
 
-    /**
-     * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
-     * <p>
-     * button (string, default: "ui-icon-triangle-1-s")
-     *
-     * @param down
-     */
-    public void setDown(String down)
-    {
-        this.down = down;
-    }
+	/**
+	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
+	 * <p>
+	 * button (string, default: "ui-icon-triangle-1-s")
+	 *
+	 * @param down
+	 */
+	public void setDown(String down)
+	{
+		this.down = down;
+	}
 }

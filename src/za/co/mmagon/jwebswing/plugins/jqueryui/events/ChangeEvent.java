@@ -25,19 +25,17 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.slider.JQUISliderEvents;
 import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.JQUISpinnerEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class ChangeEvent extends ChangeAdapter
-        implements JQUIAutoCompleteEvents, JQUIProgressBarEvents, JQUISelectMenuEvents, JQUISliderEvents, JQUISpinnerEvents
+		implements JQUIAutoCompleteEvents, JQUIProgressBarEvents, JQUISelectMenuEvents, JQUISliderEvents, JQUISpinnerEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public ChangeEvent(Component component)
-    {
-        super(component);
-    }
+	public ChangeEvent(Component component)
+	{
+		super(component);
+	}
 }

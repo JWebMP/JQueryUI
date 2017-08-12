@@ -28,63 +28,65 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  * <p>
  * Try to tab to the menu then use the cursor keys to navigate.
  * <p>
+ *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 8, 2015
  */
 @ComponentInformation(name = "JQuery UI Menu", description = "A menu with the default configuration, disabled items and nested menus. A list is transformed, adding theming, mouse and keyboard navigation support. Try to tab to the menu then use the cursor keys to navigate.",
-        url = "http://jqueryui.com/menu/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		url = "http://jqueryui.com/menu/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIMenu extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvents, JQUIMenu> implements IJQUIMenu
 {
-
-    private static final long serialVersionUID = 1L;
-    private JQUIMenuFeature feature;
-
-    /**
-     * Creates an ordered list
-     *
-     * @param orientation
-     */
-    public JQUIMenu(Orientation orientation)
-    {
-        addFeature(getFeature());
-
-    }
-
-    /**
-     * Returns an instance of this feature
-     * <p>
-     * @return
-     */
-    public final JQUIMenuFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new JQUIMenuFeature(this);
-        }
-        return feature;
-    }
-
-    /**
-     * Gets the options of the menu
-     *
-     * @return
-     */
-    @Override
-    public JQUIMenuOptions getOptions()
-    {
-        return getFeature().getOptions();
-    }
-
-    /**
-     * Returns a cleaner view of this object
-     *
-     * @return
-     */
-    public IJQUIMenu asMe()
-    {
-        return this;
-    }
+	
+	private static final long serialVersionUID = 1L;
+	private JQUIMenuFeature feature;
+	
+	/**
+	 * Creates an ordered list
+	 *
+	 * @param orientation
+	 */
+	public JQUIMenu(Orientation orientation)
+	{
+		addFeature(getFeature());
+		
+	}
+	
+	/**
+	 * Returns an instance of this feature
+	 * <p>
+	 *
+	 * @return
+	 */
+	public final JQUIMenuFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUIMenuFeature(this);
+		}
+		return feature;
+	}
+	
+	/**
+	 * Gets the options of the menu
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUIMenuOptions getOptions()
+	{
+		return getFeature().getOptions();
+	}
+	
+	/**
+	 * Returns a cleaner view of this object
+	 *
+	 * @return
+	 */
+	public IJQUIMenu asMe()
+	{
+		return this;
+	}
 }

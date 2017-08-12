@@ -16,8 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.accordion;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import org.junit.Assert;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
@@ -26,166 +24,168 @@ import za.co.mmagon.jwebswing.generics.Direction;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTypes;
 import za.co.mmagon.jwebswing.plugins.easingeffects.JQEasingEffects;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+
 /**
- *
  * @author GedMarc
  */
 public class JQUIAccordionTest extends BaseTestClass
 {
-
-    public JQUIAccordionTest()
-    {
-    }
-
-    @Test
-    public void testDefault() throws UnsupportedEncodingException, IOException
-    {
-        JQUIAccordion accordion = new JQUIAccordion();
-        accordion.setID("id");
-        String rendered = accordion.renderJavascript().toString();
-        String expected = "$('#id').accordion();\n";
-        System.out.println(rendered);
-        Assert.assertEquals(expected, rendered);
-
-    }
-
-    @Test
-    public void testIcons() throws UnsupportedEncodingException, IOException
-    {
-        za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordion accordion = new JQUIAccordion();
-        accordion.setID("id");
-        accordion.getOptions().getIcons().setHeader("headerIcons");
-        accordion.getOptions().getIcons().setActiveHeader("activeHeaderIcons");
-        String expected = "$('#id').accordion({\n"
-                + "  \"icons\" : {\n"
-                + "    \"header\" : \"headerIcons\",\n"
-                + "    \"activeHeader\" : \"activeHeaderIcons\"\n"
-                + "  }\n"
-                + "});\n"
-                + "";
-        String rendered = accordion.renderJavascript().toString();
-        System.out.println(rendered);
-
-        //super.writeValuesToFile(expected, rendered);
-        Assert.assertEquals(expected, rendered);
-    }
-
-    @Test
-    public void testActive() throws UnsupportedEncodingException, IOException
-    {
-        JQUIAccordion accordion = new JQUIAccordion();
-        accordion.setID("id");
-        accordion.getOptions().setActive(1);
-
-        String rendered = accordion.renderJavascript().toString();
-        String expected = "$('#id').accordion({\n"
-                + "  \"active\" : 1\n"
-                + "});\n";
-        System.out.println(rendered);
-        //super.writeValuesToFile(expected, rendered);
-        Assert.assertEquals(expected, rendered);
-    }
-
-    @Test
-    public void testCollapsible() throws UnsupportedEncodingException, IOException
-    {
-        JQUIAccordion accordion = new JQUIAccordion();
-        accordion.setID("id");
-        accordion.getOptions().setCollapsible(true);
-        String sss = accordion.renderJavascriptAll().toString();
-        System.out.println("ssss : " + sss);
-        String rendered = accordion.renderJavascript().toString();
-        String expected = "$('#id').accordion({\n"
-                + "  \"collapsible\" : true\n"
-                + "});\n";
-        System.out.println(rendered);
-        //super.writeValuesToFile(expected, rendered);
-        Assert.assertEquals(expected, rendered);
-    }
-
-    @Test
-    public void testAnimate() throws UnsupportedEncodingException, IOException
-    {
-        JQUIAccordion accordion = new JQUIAccordion();
-        accordion.setID("id");
-        accordion.getOptions().getAnimate().setDuration(200);
-        accordion.getOptions().getAnimate().setDirection(Direction.Vertical);
-        accordion.getOptions().getAnimate().setEasing(JQEasingEffects.easeInBack);
-        String rendered = accordion.renderJavascript().toString();
-        String expected = "$('#id').accordion({\n"
-                + "  \"animate\" : {\n"
-                + "    \"easing\" : \"easeInBack\",\n"
-                + "    \"duration\" : 200,\n"
-                + "    \"direction\" : \"vertical\"\n"
-                + "  }\n"
-                + "});\n";
-        System.out.println(rendered);
-        //super.writeValuesToFile(expected, rendered);
-        Assert.assertEquals(expected, rendered);
-    }
-
-    @Test
-    public void testEvent() throws UnsupportedEncodingException, IOException
-    {
-        JQUIAccordion accordion = new JQUIAccordion();
-        accordion.setID("id");
-
-        accordion.getOptions().setEvent(EventTypes.mouseOver);
-
-        String rendered = accordion.renderJavascript().toString();
-        String expected = "$('#id').accordion({\n"
-                + "  \"event\" : \"mouseover\"\n"
-                + "});\n";
-        System.out.println(rendered);
-        //super.writeValuesToFile(expected, rendered);
-        Assert.assertEquals(expected, rendered);
-    }
-
-    @Test
-    public void testHeader() throws UnsupportedEncodingException, IOException
-    {
-        JQUIAccordion accordion = new JQUIAccordion();
-        accordion.setID("id");
-
-        accordion.getOptions().setHeader(HeaderTypes.H3);
-
-        String rendered = accordion.renderJavascript().toString();
-        String expected = "$('#id').accordion({\n"
-                + "  \"header\" : \"h3\"\n"
-                + "});\n";
-        System.out.println(rendered);
-        //super.writeValuesToFile(expected, rendered);
-        Assert.assertEquals(expected, rendered);
-    }
-
-    @Test
-    public void testStructure() throws UnsupportedEncodingException, IOException
-    {
-        JQUIAccordion accordion = new JQUIAccordion();
-        accordion.setID("id");
-        za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent d1 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent();
-        d1.setID("d1");
-        za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent d2 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent();
-        d2.setID("d2");
-        za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab tab1 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab("tab1", d1);
-        tab1.getHeader().setID("h1");
-        za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab tab2 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab("tab2", d2);
-        tab2.getHeader().setID("h2");
-
-        accordion.addAccordianTab(tab1);
-        accordion.addAccordianTab(tab2);
-
-        accordion.getOptions().setHeader(HeaderTypes.H3);
-
-        String rendered = accordion.toString(true).toString();
-        String expected = "<div id=\"id\" jwtype=\"accordion\">\n"
-                + "	<h3 id=\"h1\">tab1</h3>\n"
-                + "	<div id=\"d1\"></div>\n"
-                + "	<h3 id=\"h2\">tab2</h3>\n"
-                + "	<div id=\"d2\"></div>\n"
-                + "</div>";
-        System.out.println(rendered);
-        //super.writeValuesToFile(expected, rendered);
-        Assert.assertEquals(expected, rendered);
-    }
+	
+	public JQUIAccordionTest()
+	{
+	}
+	
+	@Test
+	public void testDefault() throws UnsupportedEncodingException, IOException
+	{
+		JQUIAccordion accordion = new JQUIAccordion();
+		accordion.setID("id");
+		String rendered = accordion.renderJavascript().toString();
+		String expected = "$('#id').accordion();\n";
+		System.out.println(rendered);
+		Assert.assertEquals(expected, rendered);
+		
+	}
+	
+	@Test
+	public void testIcons() throws UnsupportedEncodingException, IOException
+	{
+		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordion accordion = new JQUIAccordion();
+		accordion.setID("id");
+		accordion.getOptions().getIcons().setHeader("headerIcons");
+		accordion.getOptions().getIcons().setActiveHeader("activeHeaderIcons");
+		String expected = "$('#id').accordion({\n"
+				+ "  \"icons\" : {\n"
+				+ "    \"header\" : \"headerIcons\",\n"
+				+ "    \"activeHeader\" : \"activeHeaderIcons\"\n"
+				+ "  }\n"
+				+ "});\n"
+				+ "";
+		String rendered = accordion.renderJavascript().toString();
+		System.out.println(rendered);
+		
+		//super.writeValuesToFile(expected, rendered);
+		Assert.assertEquals(expected, rendered);
+	}
+	
+	@Test
+	public void testActive() throws UnsupportedEncodingException, IOException
+	{
+		JQUIAccordion accordion = new JQUIAccordion();
+		accordion.setID("id");
+		accordion.getOptions().setActive(1);
+		
+		String rendered = accordion.renderJavascript().toString();
+		String expected = "$('#id').accordion({\n"
+				+ "  \"active\" : 1\n"
+				+ "});\n";
+		System.out.println(rendered);
+		//super.writeValuesToFile(expected, rendered);
+		Assert.assertEquals(expected, rendered);
+	}
+	
+	@Test
+	public void testCollapsible() throws UnsupportedEncodingException, IOException
+	{
+		JQUIAccordion accordion = new JQUIAccordion();
+		accordion.setID("id");
+		accordion.getOptions().setCollapsible(true);
+		String sss = accordion.renderJavascriptAll().toString();
+		System.out.println("ssss : " + sss);
+		String rendered = accordion.renderJavascript().toString();
+		String expected = "$('#id').accordion({\n"
+				+ "  \"collapsible\" : true\n"
+				+ "});\n";
+		System.out.println(rendered);
+		//super.writeValuesToFile(expected, rendered);
+		Assert.assertEquals(expected, rendered);
+	}
+	
+	@Test
+	public void testAnimate() throws UnsupportedEncodingException, IOException
+	{
+		JQUIAccordion accordion = new JQUIAccordion();
+		accordion.setID("id");
+		accordion.getOptions().getAnimate().setDuration(200);
+		accordion.getOptions().getAnimate().setDirection(Direction.Vertical);
+		accordion.getOptions().getAnimate().setEasing(JQEasingEffects.easeInBack);
+		String rendered = accordion.renderJavascript().toString();
+		String expected = "$('#id').accordion({\n"
+				+ "  \"animate\" : {\n"
+				+ "    \"easing\" : \"easeInBack\",\n"
+				+ "    \"duration\" : 200,\n"
+				+ "    \"direction\" : \"vertical\"\n"
+				+ "  }\n"
+				+ "});\n";
+		System.out.println(rendered);
+		//super.writeValuesToFile(expected, rendered);
+		Assert.assertEquals(expected, rendered);
+	}
+	
+	@Test
+	public void testEvent() throws UnsupportedEncodingException, IOException
+	{
+		JQUIAccordion accordion = new JQUIAccordion();
+		accordion.setID("id");
+		
+		accordion.getOptions().setEvent(EventTypes.mouseOver);
+		
+		String rendered = accordion.renderJavascript().toString();
+		String expected = "$('#id').accordion({\n"
+				+ "  \"event\" : \"mouseover\"\n"
+				+ "});\n";
+		System.out.println(rendered);
+		//super.writeValuesToFile(expected, rendered);
+		Assert.assertEquals(expected, rendered);
+	}
+	
+	@Test
+	public void testHeader() throws UnsupportedEncodingException, IOException
+	{
+		JQUIAccordion accordion = new JQUIAccordion();
+		accordion.setID("id");
+		
+		accordion.getOptions().setHeader(HeaderTypes.H3);
+		
+		String rendered = accordion.renderJavascript().toString();
+		String expected = "$('#id').accordion({\n"
+				+ "  \"header\" : \"h3\"\n"
+				+ "});\n";
+		System.out.println(rendered);
+		//super.writeValuesToFile(expected, rendered);
+		Assert.assertEquals(expected, rendered);
+	}
+	
+	@Test
+	public void testStructure() throws UnsupportedEncodingException, IOException
+	{
+		JQUIAccordion accordion = new JQUIAccordion();
+		accordion.setID("id");
+		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent d1 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent();
+		d1.setID("d1");
+		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent d2 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent();
+		d2.setID("d2");
+		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab tab1 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab("tab1", d1);
+		tab1.getHeader().setID("h1");
+		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab tab2 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab("tab2", d2);
+		tab2.getHeader().setID("h2");
+		
+		accordion.addAccordianTab(tab1);
+		accordion.addAccordianTab(tab2);
+		
+		accordion.getOptions().setHeader(HeaderTypes.H3);
+		
+		String rendered = accordion.toString(true).toString();
+		String expected = "<div id=\"id\" jwtype=\"accordion\">\n"
+				+ "	<h3 id=\"h1\">tab1</h3>\n"
+				+ "	<div id=\"d1\"></div>\n"
+				+ "	<h3 id=\"h2\">tab2</h3>\n"
+				+ "	<div id=\"d2\"></div>\n"
+				+ "</div>";
+		System.out.println(rendered);
+		//super.writeValuesToFile(expected, rendered);
+		Assert.assertEquals(expected, rendered);
+	}
 }

@@ -27,106 +27,106 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 public class AutoCompleteEntries extends JavaScriptPart
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private String label;
-    private String value;
-    private String category;
+	private String label;
+	private String value;
+	private String category;
 
-    /**
-     * Creates a label only auto complete entry
-     *
-     * @param label
-     */
-    public AutoCompleteEntries(String label)
-    {
-        this.label = label;
-    }
+	/**
+	 * Creates a label only auto complete entry
+	 *
+	 * @param label
+	 */
+	public AutoCompleteEntries(String label)
+	{
+		this.label = label;
+	}
 
-    /**
-     * Creates a label only with custom value auto complete entry
-     *
-     * @param label
-     * @param value
-     */
-    public AutoCompleteEntries(String label, String value)
-    {
-        this.label = label;
-        this.value = value;
-    }
+	/**
+	 * Creates a label only with custom value auto complete entry
+	 *
+	 * @param label
+	 * @param value
+	 */
+	public AutoCompleteEntries(String label, String value)
+	{
+		this.label = label;
+		this.value = value;
+	}
 
-    /**
-     * Creates an auto complete entry that has categories
-     *
-     * @param label
-     * @param value
-     * @param category
-     */
-    public AutoCompleteEntries(String label, String value, String category)
-    {
-        this.label = label;
-        this.value = value;
-        this.category = category;
-    }
+	/**
+	 * Creates an auto complete entry that has categories
+	 *
+	 * @param label
+	 * @param value
+	 * @param category
+	 */
+	public AutoCompleteEntries(String label, String value, String category)
+	{
+		this.label = label;
+		this.value = value;
+		this.category = category;
+	}
 
-    /**
-     * Returns the label
-     *
-     * @return
-     */
-    public String getLabel()
-    {
-        return label;
-    }
+	/**
+	 * Returns the label
+	 *
+	 * @return
+	 */
+	public String getLabel()
+	{
+		return label;
+	}
 
-    /**
-     * Sets the label
-     *
-     * @param label
-     */
-    public void setLabel(String label)
-    {
-        this.label = label;
-    }
+	/**
+	 * Sets the label
+	 *
+	 * @param label
+	 */
+	public void setLabel(String label)
+	{
+		this.label = label;
+	}
 
-    /**
-     * Gets the category
-     *
-     * @return
-     */
-    public String getCategory()
-    {
-        return category;
-    }
+	/**
+	 * Gets the category
+	 *
+	 * @return
+	 */
+	public String getCategory()
+	{
+		return category;
+	}
 
-    /**
-     * Sets the category
-     *
-     * @param category
-     */
-    public void setCategory(String category)
-    {
-        this.category = category;
-    }
+	/**
+	 * Sets the category
+	 *
+	 * @param category
+	 */
+	public void setCategory(String category)
+	{
+		this.category = category;
+	}
 
-    /**
-     * Gets the value for this object
-     *
-     * @return
-     */
-    public String getValue()
-    {
-        return value;
-    }
+	/**
+	 * Gets the value for this object
+	 *
+	 * @return
+	 */
+	public String getValue()
+	{
+		return value;
+	}
 
-    /**
-     * Sets the value for this object
-     *
-     * @param value
-     */
-    public void setValue(String value)
-    {
-        this.value = value;
-    }
+	/**
+	 * Sets the value for this object
+	 *
+	 * @param value
+	 */
+	public void setValue(String value)
+	{
+		this.value = value;
+	}
 
 }

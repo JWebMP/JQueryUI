@@ -21,51 +21,51 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
- *
  * @author Marc Magon
- * @since 07 Aug 2015
  * @version 1.0
+ * @since 07 Aug 2015
  */
 @ComponentInformation(name = "JQuery UI Droppable", description = "Enable any DOM element to be droppable, a target for draggable elements.",
-        url = "http://jqueryui.com/droppable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		url = "http://jqueryui.com/droppable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIDroppable extends Div<JQUIDroppableChildren, NoAttributes, JQUIDroppableFeatures, JQUIDroppableEvents, JQUIDroppable> implements IJQUIDroppable
 {
 
-    private static final long serialVersionUID = 1L;
-    private JQUIDroppableFeature feature;
+	private static final long serialVersionUID = 1L;
+	private JQUIDroppableFeature feature;
 
-    public JQUIDroppable()
-    {
-        addFeature(getFeature());
-    }
+	public JQUIDroppable()
+	{
+		addFeature(getFeature());
+	}
 
-    public final JQUIDroppableFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new JQUIDroppableFeature(this);
-        }
-        return feature;
-    }
+	public final JQUIDroppableFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUIDroppableFeature(this);
+		}
+		return feature;
+	}
 
-    /**
-     * Returns the Droppable Options
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUIDroppableOptions getOptions()
-    {
-        return getFeature().getOptions();
-    }
+	/**
+	 * Returns the Droppable Options
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUIDroppableOptions getOptions()
+	{
+		return getFeature().getOptions();
+	}
 
-    /**
-     * Neater View
-     *
-     * @return
-     */
-    public IJQUIDroppable asMe()
-    {
-        return this;
-    }
+	/**
+	 * Neater View
+	 *
+	 * @return
+	 */
+	public IJQUIDroppable asMe()
+	{
+		return this;
+	}
 }

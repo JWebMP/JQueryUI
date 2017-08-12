@@ -23,19 +23,17 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.resizable.JQUIResizableEvents;
 import za.co.mmagon.jwebswing.plugins.jqueryui.slider.JQUISliderEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class SlideEvent extends SlideAdapter
-        implements JQUIDraggableEvents, JQUIResizableEvents, JQUISliderEvents
+		implements JQUIDraggableEvents, JQUIResizableEvents, JQUISliderEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public SlideEvent(Component component)
-    {
-        super(component);
-    }
+	public SlideEvent(Component component)
+	{
+		super(component);
+	}
 }

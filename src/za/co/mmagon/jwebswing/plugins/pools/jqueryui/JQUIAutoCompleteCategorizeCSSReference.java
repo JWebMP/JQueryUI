@@ -19,23 +19,22 @@ package za.co.mmagon.jwebswing.plugins.pools.jqueryui;
 import za.co.mmagon.jwebswing.base.references.CSSReference;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 8, 2015
  */
 class JQUIAutoCompleteCategorizeCSSReference extends CSSReference
 {
-
-    private static final long serialVersionUID = 1L;
-
-    /**
-     *
-     */
-    public JQUIAutoCompleteCategorizeCSSReference()
-    {
-        super("JWAutoCompleteCategorizeCSSRef", 1.114, "bower_components/jquery-ui/themes/base/autocomplete_categorize.css", "bower_components/jquery-ui/themes/base/autocomplete_categorize.css");
-    }
+	
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 *
+	 */
+	public JQUIAutoCompleteCategorizeCSSReference()
+	{
+		super("JWAutoCompleteCategorizeCSSRef", 1.114, "bower_components/jquery-ui/themes/base/autocomplete_categorize.css", "bower_components/jquery-ui/themes/base/autocomplete_categorize.css");
+	}
 }

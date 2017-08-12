@@ -23,19 +23,17 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.menu.JQUIMenuEvents;
 import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.JQUISelectMenuEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class SelectEvent extends SelectAdapter
-        implements JQUIAutoCompleteEvents, JQUIMenuEvents, JQUISelectMenuEvents
+		implements JQUIAutoCompleteEvents, JQUIMenuEvents, JQUISelectMenuEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public SelectEvent(Component component)
-    {
-        super(component);
-    }
+	public SelectEvent(Component component)
+	{
+		super(component);
+	}
 }

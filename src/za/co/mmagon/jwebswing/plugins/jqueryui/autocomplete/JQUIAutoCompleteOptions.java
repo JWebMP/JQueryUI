@@ -19,427 +19,425 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRawValue;
-import java.util.ArrayList;
-import java.util.List;
 import za.co.mmagon.JWebSwingSiteBinder;
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 8, 2015
  */
 public class JQUIAutoCompleteOptions extends JavaScriptPart
 {
+	
+	/**
+	 * Version 1
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * appendTo Type: Selector Default: null
+	 * <p>
+	 * Which element the menu should be appended to. When the value is null, the parents of the input field will be checked for a class of ui-front. If an element with the ui-front class is found, the
+	 * menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body. Note: The appendTo option should not be changed while the
+	 * suggestions menu is open.
+	 * <p>
+	 */
+	private String appendTo;
+	
+	/**
+	 * The available category selections
+	 * <p>
+	 * Array: An array can be used for local data. There are two supported formats:
+	 * <p>
+	 * An array of strings: [ "Choice1", "Choice2" ] An array of objects with label and value properties: [ { label: "Choice1", value: "value1" }, ... ]
+	 * <p>
+	 * The label property is displayed in the suggestion menu. The value will be inserted into the input element when a user selects an item. If just one property is specified, it will be used for
+	 * both, e.g., if you provide only value properties, the value will also be used as the label.
+	 */
+	@JsonIgnore
+	private List<AutoCompleteEntries> source;
+	/**
+	 * If set to true the first item will automatically be focused when the menu is shown. Code examples:
+	 * <p>
+	 * Initialize the autocomplete with the autoFocus option specified: 1 2 3
+	 * <p>
+	 * <p>
+	 * $( ".selector" ).autocomplete({ autoFocus: true });
+	 */
+	private Boolean autoFocus;
+	
+	/**
+	 * delay
+	 * <p>
+	 * Type: Integer
+	 * <p>
+	 * Default: 300
+	 * <p>
+	 * The delay in milliseconds between when a keystroke occurs and when a search is performed
+	 * <p>
+	 * A zero-delay makes sense for local data (more responsive), but can produce a lot of load for remote data, while being less responsive. Code examples:
+	 * <p>
+	 * Initialize the autocomplete with the delay option specified:
+	 */
+	private Integer delay;
+	/**
+	 * disabled
+	 * <p>
+	 * Type: Boolean
+	 * <p>
+	 * Default: false
+	 * <p>
+	 * Disables the autocomplete if set to true.
+	 * <p>
+	 * Code examples:
+	 * <p>
+	 * <p>
+	 * <p>
+	 * Initialize the autocomplete with the disabled option specified: $( ".selector" ).autocomplete({ disabled: true });
+	 */
+	private Boolean disabled;
+	/**
+	 * minLength
+	 * <p>
+	 * Type: Integer
+	 * <p>
+	 * Default: 1
+	 * <p>
+	 * The minimum number of characters a user must type before a search is performed. Zero is useful for local data with just a few items, but a higher value should be used when a single character
+	 * search could match a few thousand items.
+	 * <p>
+	 * Code examples:
+	 * <p>
+	 * <p>
+	 * <p>
+	 * Initialize the autocomplete with the minLength option specified:
+	 * <p>
+	 * $( ".selector" ).autocomplete({ minLength: 0 });
+	 */
+	private Integer minLength;
+	/**
+	 * position
+	 * <p>
+	 * Type: Object
+	 * <p>
+	 * Default: { my: "left top", at: "left bottom", collision: "none" }
+	 * <p>
+	 * Identifies the position of the suggestions menu in relation to the associated input element.
+	 * <p>
+	 * The of option defaults to the input element, but you can specify another element to position against. You can refer to the jQuery UI Position utility for more details about the various options.
+	 * Code examples:
+	 * <p>
+	 * $( ".selector" ).autocomplete({ position: { my : "right top", at: "right bottom" } });
+	 */
+	private Position position;
+	@JsonIgnore
+	private boolean ajax;
+	/**
+	 * The source url location
+	 */
+	@JsonIgnore
+	private String sourceUrl;
+	/**
+	 * The autoComplete location
+	 */
+	@JsonIgnore
+	private JQUIAutoComplete autoComplete;
+	
+	/**
+	 * Constructs a new Auto Complete Options Array
+	 * <p>
+	 */
+	public JQUIAutoCompleteOptions()
+	{
+	
+	}
+	
+	/**
+	 * appendTo Type: Selector Default: null
+	 * <p>
+	 * Which element the menu should be appended to. When the value is null, the parents of the input field will be checked for a class of ui-front. If an element with the ui-front class is found, the
+	 * menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body. Note: The appendTo option should not be changed while the
+	 * suggestions menu is open.
+	 *
+	 * @return
+	 */
+	public String getAppendTo()
+	{
+		return appendTo;
+	}
+	
+	/**
+	 * appendTo Type: Selector Default: null
+	 * <p>
+	 * Which element the menu should be appended to. When the value is null, the parents of the input field will be checked for a class of ui-front. If an element with the ui-front class is found, the
+	 * menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body. Note: The appendTo option should not be changed while the
+	 * suggestions menu is open.
+	 *
+	 * @param appendTo Sets the string to the #id
+	 *
+	 * @return
+	 */
+	public JQUIAutoCompleteOptions setAppendTo(ComponentHierarchyBase appendTo)
+	{
+		this.appendTo = appendTo.getID(true);
+		return this;
+	}
+	
+	/**
+	 * appendTo Type: Selector Default: null
+	 * <p>
+	 * Which element the menu should be appended to. When the value is null, the parents of the input field will be checked for a class of ui-front. If an element with the ui-front class is found, the
+	 * menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body. Note: The appendTo option should not be changed while the
+	 * suggestions menu is open.
+	 *
+	 * @param appendTo set the string to the # id
+	 *
+	 * @return
+	 */
+	public JQUIAutoCompleteOptions setAppendTo(String appendTo)
+	{
+		this.appendTo = appendTo;
+		return this;
+	}
+	
+	/**
+	 * Adds a label option that is grouped into a category
+	 *
+	 * @param label
+	 * @param category
+	 *
+	 * @return
+	 */
+	public AutoCompleteEntries addOption(String label, String category)
+	{
+		return addOption(label, label, category);
+	}
+	
+	/**
+	 * Adds a label only option
+	 *
+	 * @param label
+	 *
+	 * @return
+	 */
+	public AutoCompleteEntries addOption(String label)
+	{
+		return addOption(label, null, null);
+	}
+	
+	/**
+	 * Adds a label with a value and category
+	 *
+	 * @param label
+	 * @param value
+	 * @param category
+	 *
+	 * @return
+	 */
+	public AutoCompleteEntries addOption(String label, String value, String category)
+	{
+		AutoCompleteEntries entry = new AutoCompleteEntries(label, value, category);
+		getSource().add(entry);
+		return entry;
+	}
+	
+	/**
+	 * Array: An array can be used for local data. There are two supported formats:
+	 * <p>
+	 * An array of strings: [ "Choice1", "Choice2" ] An array of objects with label and value properties: [ { label: "Choice1", value: "value1" }, ... ]
+	 * <p>
+	 * The label property is displayed in the suggestion menu. The value will be inserted into the input element when a user selects an item. If just one property is specified, it will be used for
+	 * both, e.g., if you provide only value properties, the value will also be used as the label.
+	 *
+	 * @return
+	 */
+	public List<AutoCompleteEntries> getSource()
+	{
+		if (source == null)
+		{
+			source = new ArrayList<>();
+		}
+		return source;
+	}
+	
+	/**
+	 * Sets this source list
+	 *
+	 * @param source
+	 */
+	public void setSource(List<AutoCompleteEntries> source)
+	{
+		this.source = source;
+	}
+	
+	/**
+	 * Gets whether the first item should be highlighted on open
+	 *
+	 * @return
+	 */
+	public Boolean getAutoFocus()
+	{
+		return autoFocus;
+	}
+	
+	/**
+	 * Sets if the first item should be highlighted on opening
+	 *
+	 * @param autoFocus
+	 */
+	public void setAutoFocus(Boolean autoFocus)
+	{
+		this.autoFocus = autoFocus;
+	}
+	
+	/**
+	 * Gets the delay to open
+	 *
+	 * @return
+	 */
+	public Integer getDelay()
+	{
+		return delay;
+	}
+	
+	/**
+	 * Sets the delay to open
+	 *
+	 * @param delay
+	 */
+	public void setDelay(Integer delay)
+	{
+		this.delay = delay;
+	}
+	
+	/**
+	 * gets disabled or not
+	 *
+	 * @return
+	 */
+	public Boolean getDisabled()
+	{
+		return disabled;
+	}
+	
+	/**
+	 * Sets disabled or not
+	 *
+	 * @param disabled
+	 */
+	public void setDisabled(Boolean disabled)
+	{
+		this.disabled = disabled;
+	}
+	
+	/**
+	 * gets the minimum length
+	 *
+	 * @return
+	 */
+	public Integer getMinLength()
+	{
+		return minLength;
+	}
 
-    /**
-     * Version 1
-     */
-    private static final long serialVersionUID = 1L;
-    /**
-     * appendTo Type: Selector Default: null
-     * <p>
-     * Which element the menu should be appended to. When the value is null, the parents of the input field will be checked for a class of ui-front. If an element with the ui-front class is found, the
-     * menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body. Note: The appendTo option should not be changed while the
-     * suggestions menu is open.
-     * <p>
-     */
-    private String appendTo;
+	/**
+	 * sets the minimum length
+	 *
+	 * @param minLength
+	 */
+	public void setMinLength(Integer minLength)
+	{
+		this.minLength = minLength;
+	}
 
-    /**
-     * The available category selections
-     * <p>
-     * Array: An array can be used for local data. There are two supported formats:
-     * <p>
-     * An array of strings: [ "Choice1", "Choice2" ] An array of objects with label and value properties: [ { label: "Choice1", value: "value1" }, ... ]
-     * <p>
-     * The label property is displayed in the suggestion menu. The value will be inserted into the input element when a user selects an item. If just one property is specified, it will be used for
-     * both, e.g., if you provide only value properties, the value will also be used as the label.
-     */
-    @JsonIgnore
-    private List<AutoCompleteEntries> source;
-    /**
-     * If set to true the first item will automatically be focused when the menu is shown. Code examples:
-     * <p>
-     * Initialize the autocomplete with the autoFocus option specified: 1 2 3
-     * <p>
-     * <p>
-     * $( ".selector" ).autocomplete({ autoFocus: true });
-     */
-    private Boolean autoFocus;
-
-    /**
-     * delay
-     * <p>
-     * Type: Integer
-     * <p>
-     * Default: 300
-     * <p>
-     * The delay in milliseconds between when a keystroke occurs and when a search is performed
-     * <p>
-     * A zero-delay makes sense for local data (more responsive), but can produce a lot of load for remote data, while being less responsive. Code examples:
-     * <p>
-     * Initialize the autocomplete with the delay option specified:
-     */
-    private Integer delay;
-    /**
-     * disabled
-     * <p>
-     * Type: Boolean
-     * <p>
-     * Default: false
-     * <p>
-     * Disables the autocomplete if set to true.
-     * <p>
-     * Code examples:
-     * <p>
-     * <p>
-     * <p>
-     * Initialize the autocomplete with the disabled option specified: $( ".selector" ).autocomplete({ disabled: true });
-     */
-    private Boolean disabled;
-    /**
-     * minLength
-     * <p>
-     * Type: Integer
-     * <p>
-     * Default: 1
-     * <p>
-     * The minimum number of characters a user must type before a search is performed. Zero is useful for local data with just a few items, but a higher value should be used when a single character
-     * search could match a few thousand items.
-     * <p>
-     * Code examples:
-     * <p>
-     * <p>
-     * <p>
-     * Initialize the autocomplete with the minLength option specified:
-     * <p>
-     * $( ".selector" ).autocomplete({ minLength: 0 });
-     */
-    private Integer minLength;
-    /**
-     * position
-     * <p>
-     * Type: Object
-     * <p>
-     * Default: { my: "left top", at: "left bottom", collision: "none" }
-     * <p>
-     * Identifies the position of the suggestions menu in relation to the associated input element.
-     * <p>
-     * The of option defaults to the input element, but you can specify another element to position against. You can refer to the jQuery UI Position utility for more details about the various options.
-     * Code examples:
-     * <p>
-     * $( ".selector" ).autocomplete({ position: { my : "right top", at: "right bottom" } });
-     */
-    private Position position;
-
-    /**
-     * Constructs a new Auto Complete Options Array
-     * <p>
-     */
-    public JQUIAutoCompleteOptions()
-    {
-
-    }
-
-    /**
-     * appendTo Type: Selector Default: null
-     * <p>
-     * Which element the menu should be appended to. When the value is null, the parents of the input field will be checked for a class of ui-front. If an element with the ui-front class is found, the
-     * menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body. Note: The appendTo option should not be changed while the
-     * suggestions menu is open.
-     *
-     * @return
-     */
-    public String getAppendTo()
-    {
-        return appendTo;
-    }
-
-    /**
-     * appendTo Type: Selector Default: null
-     * <p>
-     * Which element the menu should be appended to. When the value is null, the parents of the input field will be checked for a class of ui-front. If an element with the ui-front class is found, the
-     * menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body. Note: The appendTo option should not be changed while the
-     * suggestions menu is open.
-     *
-     * @param appendTo set the string to the # id
-     *
-     * @return
-     */
-    public JQUIAutoCompleteOptions setAppendTo(String appendTo)
-    {
-        this.appendTo = appendTo;
-        return this;
-    }
-
-    /**
-     * appendTo Type: Selector Default: null
-     * <p>
-     * Which element the menu should be appended to. When the value is null, the parents of the input field will be checked for a class of ui-front. If an element with the ui-front class is found, the
-     * menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body. Note: The appendTo option should not be changed while the
-     * suggestions menu is open.
-     *
-     * @param appendTo Sets the string to the #id
-     *
-     * @return
-     */
-    public JQUIAutoCompleteOptions setAppendTo(ComponentHierarchyBase appendTo)
-    {
-        this.appendTo = appendTo.getID(true);
-        return this;
-    }
-
-    /**
-     * Adds a label option that is grouped into a category
-     *
-     * @param label
-     * @param category
-     *
-     * @return
-     */
-    public AutoCompleteEntries addOption(String label, String category)
-    {
-        return addOption(label, label, category);
-    }
-
-    /**
-     * Adds a label only option
-     *
-     * @param label
-     *
-     * @return
-     */
-    public AutoCompleteEntries addOption(String label)
-    {
-        return addOption(label, null, null);
-    }
-
-    /**
-     * Adds a label with a value and category
-     *
-     * @param label
-     * @param value
-     * @param category
-     *
-     * @return
-     */
-    public AutoCompleteEntries addOption(String label, String value, String category)
-    {
-        AutoCompleteEntries entry = new AutoCompleteEntries(label, value, category);
-        getSource().add(entry);
-        return entry;
-    }
-
-    /**
-     * Array: An array can be used for local data. There are two supported formats:
-     * <p>
-     * An array of strings: [ "Choice1", "Choice2" ] An array of objects with label and value properties: [ { label: "Choice1", value: "value1" }, ... ]
-     * <p>
-     * The label property is displayed in the suggestion menu. The value will be inserted into the input element when a user selects an item. If just one property is specified, it will be used for
-     * both, e.g., if you provide only value properties, the value will also be used as the label.
-     *
-     * @return
-     */
-    public List<AutoCompleteEntries> getSource()
-    {
-        if (source == null)
-        {
-            source = new ArrayList<>();
-        }
-        return source;
-    }
-
-    /**
-     * Gets whether the first item should be highlighted on open
-     *
-     * @return
-     */
-    public Boolean getAutoFocus()
-    {
-        return autoFocus;
-    }
-
-    /**
-     * Sets if the first item should be highlighted on opening
-     *
-     * @param autoFocus
-     */
-    public void setAutoFocus(Boolean autoFocus)
-    {
-        this.autoFocus = autoFocus;
-    }
-
-    /**
-     * Gets the delay to open
-     *
-     * @return
-     */
-    public Integer getDelay()
-    {
-        return delay;
-    }
-
-    /**
-     * Sets the delay to open
-     *
-     * @param delay
-     */
-    public void setDelay(Integer delay)
-    {
-        this.delay = delay;
-    }
-
-    /**
-     * gets disabled or not
-     *
-     * @return
-     */
-    public Boolean getDisabled()
-    {
-        return disabled;
-    }
-
-    /**
-     * Sets disabled or not
-     *
-     * @param disabled
-     */
-    public void setDisabled(Boolean disabled)
-    {
-        this.disabled = disabled;
-    }
-
-    /**
-     * gets the minimum length
-     *
-     * @return
-     */
-    public Integer getMinLength()
-    {
-        return minLength;
-    }
-
-    /**
-     * sets the minimum length
-     *
-     * @param minLength
-     */
-    public void setMinLength(Integer minLength)
-    {
-        this.minLength = minLength;
-    }
-
-    /**
-     * Gets the position of the auto complete box
-     *
-     * @return
-     */
-    public Position getPosition()
-    {
-        return position;
-    }
-
-    /**
-     * Sets the position of the auto complete box
-     *
-     * @param position
-     */
-    public void setPosition(Position position)
-    {
-        this.position = position;
-    }
-
-    @JsonIgnore
-    private boolean ajax;
-    /**
-     * The source url location
-     */
-    @JsonIgnore
-    private String sourceUrl;
-    /**
-     * The autoComplete location
-     */
-    @JsonIgnore
-    private JQUIAutoComplete autoComplete;
-
-    /**
-     * Renders the source string
-     *
-     * @return
-     */
-    @JsonProperty("source")
-    @JsonRawValue
-    private String getSourceUrl()
-    {
-        if (isAjax())
-        {
-            return '"' + JWebSwingSiteBinder.getDataBindUrl(autoComplete) + '"';
-        }
-        else
-        {
-            AutoCompleteEntrySet set = new AutoCompleteEntrySet();
-            set.getSource().clear();
-            set.getSource().addAll(getSource());
-            return set.toString();
-        }
-    }
-
-    /**
-     * If this auto complete uses ajax
-     *
-     * @return
-     */
-    public boolean isAjax()
-    {
-        return ajax;
-    }
-
-    /**
-     * If the auto complete uses ajax
-     *
-     * @param ajax
-     * @param accordion
-     */
-    public void setAjax(boolean ajax, JQUIAutoComplete accordion)
-    {
-        this.ajax = ajax;
-        this.autoComplete = accordion;
-    }
-
-    /**
-     * Returns the autoComplete
-     *
-     * @return
-     */
-    public JQUIAutoComplete getAutoComplete()
-    {
-        return autoComplete;
-    }
-
-    /**
-     * Sets the referenced autoComplete
-     *
-     * @param autoComplete
-     */
-    public void setAutoComplete(JQUIAutoComplete autoComplete)
-    {
-        this.autoComplete = autoComplete;
-    }
-
-    /**
-     * Sets this source list
-     *
-     * @param source
-     */
-    public void setSource(List<AutoCompleteEntries> source)
-    {
-        this.source = source;
-    }
-
+	/**
+	 * Gets the position of the auto complete box
+	 *
+	 * @return
+	 */
+	public Position getPosition()
+	{
+		return position;
+	}
+	
+	/**
+	 * Sets the position of the auto complete box
+	 *
+	 * @param position
+	 */
+	public void setPosition(Position position)
+	{
+		this.position = position;
+	}
+	
+	/**
+	 * Renders the source string
+	 *
+	 * @return
+	 */
+	@JsonProperty("source")
+	@JsonRawValue
+	private String getSourceUrl()
+	{
+		if (isAjax())
+		{
+			return '"' + JWebSwingSiteBinder.getDataBindUrl(autoComplete) + '"';
+		}
+		else
+		{
+			AutoCompleteEntrySet set = new AutoCompleteEntrySet();
+			set.getSource().clear();
+			set.getSource().addAll(getSource());
+			return set.toString();
+		}
+	}
+	
+	/**
+	 * If this auto complete uses ajax
+	 *
+	 * @return
+	 */
+	public boolean isAjax()
+	{
+		return ajax;
+	}
+	
+	/**
+	 * If the auto complete uses ajax
+	 *
+	 * @param ajax
+	 * @param accordion
+	 */
+	public void setAjax(boolean ajax, JQUIAutoComplete accordion)
+	{
+		this.ajax = ajax;
+		this.autoComplete = accordion;
+	}
+	
+	/**
+	 * Returns the autoComplete
+	 *
+	 * @return
+	 */
+	public JQUIAutoComplete getAutoComplete()
+	{
+		return autoComplete;
+	}
+	
+	/**
+	 * Sets the referenced autoComplete
+	 *
+	 * @param autoComplete
+	 */
+	public void setAutoComplete(JQUIAutoComplete autoComplete)
+	{
+		this.autoComplete = autoComplete;
+	}
+	
 }

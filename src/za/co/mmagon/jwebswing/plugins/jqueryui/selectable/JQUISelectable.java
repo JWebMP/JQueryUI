@@ -22,73 +22,73 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.JQUISelectMenuChildren;
 
 /**
- *
  * @author GedMarcs
- * @since Mar 17, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 17, 2015
  */
 @ComponentInformation(name = "JQuery UI Selectable",
-        description = "Enable a DOM element (or group of elements) to be selectable. Draw a box with your cursor to select items. Hold down the Ctrl key to make multiple non-adjacent selections.",
-        url = "http://jqueryui.com/selectable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		description = "Enable a DOM element (or group of elements) to be selectable. Draw a box with your cursor to select items. Hold down the Ctrl key to make multiple non-adjacent selections.",
+		url = "http://jqueryui.com/selectable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUISelectable extends Div<JQUISelectMenuChildren, NoAttributes, JQUISelectableFeatures, JQUISelectableEvents, JQUISelectable> implements IJQUISelectable
 {
 
-    private static final long serialVersionUID = 1L;
-    private JQUISelectableFeature feature;
+	private static final long serialVersionUID = 1L;
+	private JQUISelectableFeature feature;
 
-    /**
-     *
-     */
-    public JQUISelectable()
-    {
-        addFeature(feature = new JQUISelectableFeature(this));
-    }
+	/**
+	 *
+	 */
+	public JQUISelectable()
+	{
+		addFeature(feature = new JQUISelectableFeature(this));
+	}
 
-    /**
-     * A neater view
-     *
-     * @return
-     */
-    public IJQUISelectable asMe()
-    {
-        return this;
-    }
+	/**
+	 * A neater view
+	 *
+	 * @return
+	 */
+	public IJQUISelectable asMe()
+	{
+		return this;
+	}
 
-    /**
-     * Returns the features options
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUISelectableOptions getOptions()
-    {
-        return feature.getOptions();
-    }
+	/**
+	 * Returns the features options
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUISelectableOptions getOptions()
+	{
+		return feature.getOptions();
+	}
 
-    /**
-     * Returns the feature for selectable
-     *
-     * @return
-     */
-    public JQUISelectableFeature getFeature()
-    {
-        if (feature == null)
-        {
-            feature = new JQUISelectableFeature(this);
-        }
-        return feature;
-    }
+	/**
+	 * Returns the feature for selectable
+	 *
+	 * @return
+	 */
+	public JQUISelectableFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUISelectableFeature(this);
+		}
+		return feature;
+	}
 
-    /**
-     * Sets the feature for the selectable
-     *
-     * @param feature
-     */
-    public void setFeature(JQUISelectableFeature feature)
-    {
-        this.feature = feature;
-    }
+	/**
+	 * Sets the feature for the selectable
+	 *
+	 * @param feature
+	 */
+	public void setFeature(JQUISelectableFeature feature)
+	{
+		this.feature = feature;
+	}
 
 }

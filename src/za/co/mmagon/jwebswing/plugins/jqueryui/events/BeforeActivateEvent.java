@@ -22,19 +22,17 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionEvents;
 import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.JQUITabsEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class BeforeActivateEvent extends BeforeActivateAdapter
-        implements JQUIAccordionEvents, JQUITabsEvents
+		implements JQUIAccordionEvents, JQUITabsEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public BeforeActivateEvent(Component component)
-    {
-        super(component);
-    }
+	public BeforeActivateEvent(Component component)
+	{
+		super(component);
+	}
 }

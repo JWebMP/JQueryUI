@@ -25,19 +25,17 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.menu.JQUIMenuEvents;
 import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.JQUISelectMenuEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class FocusEvent extends FocusAdapter
-        implements JQUIAutoCompleteEvents, JQUIDraggableEvents, JQUIDialogEvents, JQUIMenuEvents, JQUISelectMenuEvents
+		implements JQUIAutoCompleteEvents, JQUIDraggableEvents, JQUIDialogEvents, JQUIMenuEvents, JQUISelectMenuEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public FocusEvent(Component component)
-    {
-        super(component);
-    }
+	public FocusEvent(Component component)
+	{
+		super(component);
+	}
 }

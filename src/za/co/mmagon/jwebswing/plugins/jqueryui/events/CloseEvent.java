@@ -23,19 +23,17 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.dialog.JQUIDialogEvents;
 import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.JQUISelectMenuEvents;
 
 /**
- *
  * @author GedMarc
  * @since 27 Feb 2017
- *
  */
 public abstract class CloseEvent extends CloseAdapter
-        implements JQUIAutoCompleteEvents, JQUIDialogEvents, JQUISelectMenuEvents
+		implements JQUIAutoCompleteEvents, JQUIDialogEvents, JQUISelectMenuEvents
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public CloseEvent(Component component)
-    {
-        super(component);
-    }
+	public CloseEvent(Component component)
+	{
+		super(component);
+	}
 }

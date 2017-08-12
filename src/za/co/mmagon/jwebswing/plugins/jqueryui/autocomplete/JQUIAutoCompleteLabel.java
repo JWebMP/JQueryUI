@@ -20,45 +20,44 @@ import za.co.mmagon.jwebswing.base.html.Input;
 import za.co.mmagon.jwebswing.base.html.Label;
 
 /**
+ * @param <J>
  *
  * @author GedMarc
- * @param <J>
  * @since 27 Feb 2017
- *
  */
 public class JQUIAutoCompleteLabel<J extends JQUIAutoCompleteLabel<J>>
-        extends Label<J>
+		extends Label<J>
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * A new label
-     */
-    public JQUIAutoCompleteLabel()
-    {
+	/**
+	 * A new label
+	 */
+	public JQUIAutoCompleteLabel()
+	{
 
-    }
+	}
 
-    /**
-     * A new label
-     *
-     * @param label
-     */
-    public JQUIAutoCompleteLabel(String label)
-    {
-        super(label);
-    }
+	/**
+	 * A new label
+	 *
+	 * @param label
+	 */
+	public JQUIAutoCompleteLabel(String label)
+	{
+		super(label);
+	}
 
-    /**
-     * A new label
-     *
-     * @param label
-     * @param forInputComponent
-     */
-    public JQUIAutoCompleteLabel(String label, Input forInputComponent)
-    {
-        super(label, forInputComponent);
-    }
+	/**
+	 * A new label
+	 *
+	 * @param label
+	 * @param forInputComponent
+	 */
+	public JQUIAutoCompleteLabel(String label, Input forInputComponent)
+	{
+		super(label, forInputComponent);
+	}
 
 }

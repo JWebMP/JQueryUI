@@ -27,49 +27,51 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  * @author Marc Magon
  */
 @ComponentInformation(name = "JQuery UI Dialog", description = "The basic dialog window is an overlay positioned within the viewport and is protected from page content (like select elements) shining through with an iframe. It has a title bar and a content area, and can be moved, resized and closed with the 'x' icon by default.",
-        url = "http://jqueryui.com/dialog/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		url = "http://jqueryui.com/dialog/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIDialog extends Div<JQUIDialogChildren, NoAttributes, JQUIDialogFeatures, JQUIDialogEvents, JQUIDialog> implements IJQUIDialog
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private final JQUIDialogFeature jwDialogFeature;
-    private JQUIDialogOptions options;
+	private final JQUIDialogFeature jwDialogFeature;
+	private JQUIDialogOptions options;
 
-    /**
-     * Constructs a new JQuery Dialog with the given title as an attribute
-     * <p>
-     * @param title The title to build with
-     */
-    public JQUIDialog(String title)
-    {
-        jwDialogFeature = new JQUIDialogFeature(this);
-        addFeature(jwDialogFeature);
-        addAttribute(GlobalAttributes.Title, title);
-    }
+	/**
+	 * Constructs a new JQuery Dialog with the given title as an attribute
+	 * <p>
+	 *
+	 * @param title The title to build with
+	 */
+	public JQUIDialog(String title)
+	{
+		jwDialogFeature = new JQUIDialogFeature(this);
+		addFeature(jwDialogFeature);
+		addAttribute(GlobalAttributes.Title, title);
+	}
 
-    /**
-     * Instantiates the options on call
-     * <p>
-     * @return
-     */
-    @Override
-    public JQUIDialogOptions getOptions()
-    {
-        if (options == null)
-        {
-            options = new JQUIDialogOptions();
-        }
-        return options;
-    }
+	/**
+	 * Instantiates the options on call
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUIDialogOptions getOptions()
+	{
+		if (options == null)
+		{
+			options = new JQUIDialogOptions();
+		}
+		return options;
+	}
 
-    /**
-     * Neater view
-     *
-     * @return
-     */
-    public IJQUIDialog asMe()
-    {
-        return this;
-    }
+	/**
+	 * Neater view
+	 *
+	 * @return
+	 */
+	public IJQUIDialog asMe()
+	{
+		return this;
+	}
 }

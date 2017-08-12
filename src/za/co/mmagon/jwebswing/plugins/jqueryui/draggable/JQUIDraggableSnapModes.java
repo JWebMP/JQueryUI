@@ -17,33 +17,30 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.draggable;
 
 /**
- *
- * @since
- * @version
  * @author MMagon
- *
+ * <p>
  * <p>
  */
 public enum JQUIDraggableSnapModes
 {
 
-    /**
-     * Snap on the inside of a component
-     */
-    Inner,
-    /**
-     * Snap on the outside of a component
-     */
-    Outer,
-    /**
-     * Snaps on the inside and outside of a component
-     */
-    Both;
+	/**
+	 * Snap on the inside of a component
+	 */
+	Inner,
+	/**
+	 * Snap on the outside of a component
+	 */
+	Outer,
+	/**
+	 * Snaps on the inside and outside of a component
+	 */
+	Both;
 
-    @Override
-    public String toString()
-    {
-        return super.toString().toLowerCase();
-    }
+	@Override
+	public String toString()
+	{
+		return super.toString().toLowerCase();
+	}
 
 }

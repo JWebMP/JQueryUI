@@ -23,119 +23,117 @@ import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
- *
  * @author GedMarc
- * @since Mar 8, 2015
  * @version 1.0
  * <p>
- *
+ * @since Mar 8, 2015
  */
 @ComponentInformation(name = "JQuery UI Radio Button", description = "Enhances standard checkbox and radio input element to themeable buttons with appropriate hover and active styles.",
-        url = "http://jqueryui.com/button/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		url = "http://jqueryui.com/button/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 
 public class JQUIRadioButton extends InputRadioType implements IJQUICheckBox
 {
 
-    private static final long serialVersionUID = 1L;
-    /**
-     * The label of this checkbox
-     */
-    private String label;
-    /**
-     * The feature
-     */
-    private final JQUICheckBoxRadioFeature feature;
+	private static final long serialVersionUID = 1L;
+	/**
+	 * The feature
+	 */
+	private final JQUICheckBoxRadioFeature feature;
+	/**
+	 * The label of this checkbox
+	 */
+	private String label;
 
-    /**
-     * Constructs a new Check Box with the Button feature applied
-     *
-     * @param label
-     */
-    public JQUIRadioButton()
-    {
-        addFeature(feature = new JQUICheckBoxRadioFeature(this));
-    }
+	/**
+	 * Constructs a new Check Box with the Button feature applied
+	 *
+	 * @param label
+	 */
+	public JQUIRadioButton()
+	{
+		addFeature(feature = new JQUICheckBoxRadioFeature(this));
+	}
 
-    public JQUIRadioButton(String label)
-    {
-        addFeature(feature = new JQUICheckBoxRadioFeature(this));
-        this.label = label;
-    }
+	public JQUIRadioButton(String label)
+	{
+		addFeature(feature = new JQUICheckBoxRadioFeature(this));
+		this.label = label;
+	}
 
-    /**
-     * Sets the label of this checkbox
-     *
-     * @return
-     */
-    @Override
-    public String getLabel()
-    {
-        return label;
-    }
+	/**
+	 * Sets the label of this checkbox
+	 *
+	 * @return
+	 */
+	@Override
+	public String getLabel()
+	{
+		return label;
+	}
 
-    /**
-     * Sets the label of this checkbox
-     *
-     * @param label
-     */
-    @Override
-    public void setLabel(String label)
-    {
-        this.label = label;
-    }
+	/**
+	 * Sets the label of this checkbox
+	 *
+	 * @param label
+	 */
+	@Override
+	public void setLabel(String label)
+	{
+		this.label = label;
+	}
 
-    /**
-     * Gets the value of this checkbox
-     *
-     * @return
-     */
-    @Override
-    public String getValue()
-    {
-        return super.getAttribute(GlobalAttributes.Value);
-    }
+	/**
+	 * Gets the value of this checkbox
+	 *
+	 * @return
+	 */
+	@Override
+	public String getValue()
+	{
+		return super.getAttribute(GlobalAttributes.Value);
+	}
 
-    @Override
-    public Input setValue(String value)
-    {
-        return super.setValue(value); //To change body of generated methods, choose Tools | Templates.
-    }
+	@Override
+	public Input setValue(String value)
+	{
+		return super.setValue(value); //To change body of generated methods, choose Tools | Templates.
+	}
 
-    /**
-     * A cleaner view of the check box
-     *
-     * @return
-     */
-    public IJQUICheckBox asMe()
-    {
-        return this;
-    }
+	/**
+	 * A cleaner view of the check box
+	 *
+	 * @return
+	 */
+	public IJQUICheckBox asMe()
+	{
+		return this;
+	}
 
-    /**
-     * Returns the feature
-     *
-     * @return
-     */
-    public JQUICheckBoxRadioFeature getFeature()
-    {
-        return feature;
-    }
+	/**
+	 * Returns the feature
+	 *
+	 * @return
+	 */
+	public JQUICheckBoxRadioFeature getFeature()
+	{
+		return feature;
+	}
 
-    @Override
-    public JQUICheckBoxRadioOptions getOptions()
-    {
-        return getFeature().getOptions();
-    }
+	@Override
+	public JQUICheckBoxRadioOptions getOptions()
+	{
+		return getFeature().getOptions();
+	}
 
-    @Override
-    protected StringBuilder renderBeforeTag()
-    {
-        Label legend = new Label();
-        legend.setText(label);
-        legend.setTiny(true);
-        legend.setForInputComponent(this);
+	@Override
+	protected StringBuilder renderBeforeTag()
+	{
+		Label legend = new Label();
+		legend.setText(label);
+		legend.setTiny(true);
+		legend.setForInputComponent(this);
 
-        return new StringBuilder().append(getCurrentTabIndentString()).append(legend.toString(true)).append(getNewLine());
-    }
+		return new StringBuilder().append(getCurrentTabIndentString()).append(legend.toString(true)).append(getNewLine());
+	}
 
 }

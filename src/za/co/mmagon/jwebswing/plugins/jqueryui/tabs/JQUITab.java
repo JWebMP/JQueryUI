@@ -24,78 +24,79 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
 /**
  * A specific tab for the JWAccordion
  * <p>
+ *
  * @author MMagon
- * @since 29 Mar 2013
  * @version 1.0
+ * @since 29 Mar 2013
  */
 public class JQUITab
 {
 
-    /**
-     * The header for a tab
-     */
-    private ListItem tabHeader;
-    /**
-     * The child component for a tab
-     */
-    private JQUITabContent tabDisplayComponent;
+	/**
+	 * The header for a tab
+	 */
+	private ListItem tabHeader;
+	/**
+	 * The child component for a tab
+	 */
+	private JQUITabContent tabDisplayComponent;
 
-    /**
-     * Any tab to be displayed
-     *
-     * @param tabHeader
-     * @param tabDisplayComponent
-     */
-    public JQUITab(ListItem tabHeader, JQUITabContent tabDisplayComponent)
-    {
-        if (tabDisplayComponent != null)
-        {
-            Link tabLink = new Link("#" + Component.class.cast(tabDisplayComponent).getID(), null, tabHeader.getText(0).toString());
-            tabHeader.setText((String) null);
-            tabHeader.add(tabLink);
-        }
-        this.tabHeader = tabHeader;
-        this.tabDisplayComponent = tabDisplayComponent;
-        Component.class.cast(tabDisplayComponent).addClass(JQUIThemeBlocks.UI_Widget_Content.toString());
-    }
+	/**
+	 * Any tab to be displayed
+	 *
+	 * @param tabHeader
+	 * @param tabDisplayComponent
+	 */
+	public JQUITab(ListItem tabHeader, JQUITabContent tabDisplayComponent)
+	{
+		if (tabDisplayComponent != null)
+		{
+			Link tabLink = new Link("#" + Component.class.cast(tabDisplayComponent).getID(), null, tabHeader.getText(0).toString());
+			tabHeader.setText((String) null);
+			tabHeader.add(tabLink);
+		}
+		this.tabHeader = tabHeader;
+		this.tabDisplayComponent = tabDisplayComponent;
+		Component.class.cast(tabDisplayComponent).addClass(JQUIThemeBlocks.UI_Widget_Content.toString());
+	}
 
-    /**
-     * Returns the tab header
-     *
-     * @return
-     */
-    public ListItem getTabHeader()
-    {
-        return tabHeader;
-    }
+	/**
+	 * Returns the tab header
+	 *
+	 * @return
+	 */
+	public ListItem getTabHeader()
+	{
+		return tabHeader;
+	}
 
-    /**
-     * Sets the tab header
-     *
-     * @param tabHeader
-     */
-    public void setTabHeader(ListItem tabHeader)
-    {
-        this.tabHeader = tabHeader;
-    }
+	/**
+	 * Sets the tab header
+	 *
+	 * @param tabHeader
+	 */
+	public void setTabHeader(ListItem tabHeader)
+	{
+		this.tabHeader = tabHeader;
+	}
 
-    /**
-     * Returns the children of the tab
-     *
-     * @return
-     */
-    public JQUITabContent getTabDisplayComponent()
-    {
-        return tabDisplayComponent;
-    }
+	/**
+	 * Returns the children of the tab
+	 *
+	 * @return
+	 */
+	public JQUITabContent getTabDisplayComponent()
+	{
+		return tabDisplayComponent;
+	}
 
-    /**
-     * Sets the children of the display
-     *
-     * @param tabDisplayComponent
-     */
-    public void setTabDisplayComponent(JQUITabContent tabDisplayComponent)
-    {
-        this.tabDisplayComponent = tabDisplayComponent;
-    }
+	/**
+	 * Sets the children of the display
+	 *
+	 * @param tabDisplayComponent
+	 */
+	public void setTabDisplayComponent(JQUITabContent tabDisplayComponent)
+	{
+		this.tabDisplayComponent = tabDisplayComponent;
+	}
 }

@@ -16,148 +16,147 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.selectable;
 
-import java.util.ArrayList;
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.base.html.interfaces.CssClass;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 
+import java.util.ArrayList;
+
 /**
- *
  * @author GedMarc
- * @since Mar 17, 2015
  * @version 1.0
  * <p>
  * <p>
+ * @since Mar 17, 2015
  */
 public class JQUISelectableOptions extends JavaScriptPart
 {
 
-    private static final long serialVersionUID = 1L;
-    /**
-     * Which element the selectable helper should be appended to while dragging.
-     */
-    private String appendTo;
-    /**
-     * This determines whether to refresh (recalculate) the position and size of each selectee at the beginning of each select operation. If you have many items, you may want to set this to false and
-     * call the refresh() method manually. Default is true
-     */
-    private Boolean autoRefresh = true;
-    /**
-     * Prevents selecting if you start on elements matching the selector
-     */
-    private final ArrayList<CssClass> cancel = new ArrayList<>();
-    /**
-     * Time in milliseconds to define when the selecting should start. This helps prevent unwanted selections when clicking on an element.
-     */
-    private Integer delay;
-    /**
-     * Tolerance, in pixels, for when selecting should start. If specified, selecting will not start until the mouse has been dragged beyond the specified distance.
-     */
-    private Integer distance;
-    /**
-     * The matching child elements will be made selectees (able to be selected).
-     */
-    private final ArrayList<ComponentTypes> filter = new ArrayList<>();
+	private static final long serialVersionUID = 1L;
+	/**
+	 * Prevents selecting if you start on elements matching the selector
+	 */
+	private final ArrayList<CssClass> cancel = new ArrayList<>();
+	/**
+	 * The matching child elements will be made selectees (able to be selected).
+	 */
+	private final ArrayList<ComponentTypes> filter = new ArrayList<>();
+	/**
+	 * Which element the selectable helper should be appended to while dragging.
+	 */
+	private String appendTo;
+	/**
+	 * This determines whether to refresh (recalculate) the position and size of each selectee at the beginning of each select operation. If you have many items, you may want to set this to false and
+	 * call the refresh() method manually. Default is true
+	 */
+	private Boolean autoRefresh = true;
+	/**
+	 * Time in milliseconds to define when the selecting should start. This helps prevent unwanted selections when clicking on an element.
+	 */
+	private Integer delay;
+	/**
+	 * Tolerance, in pixels, for when selecting should start. If specified, selecting will not start until the mouse has been dragged beyond the specified distance.
+	 */
+	private Integer distance;
 
-    /**
-     *
-     */
-    public JQUISelectableOptions()
-    {
-        //Nothing needed here
-    }
+	/**
+	 *
+	 */
+	public JQUISelectableOptions()
+	{
+		//Nothing needed here
+	}
 
-    /**
-     * Which element the selectable helper should be appended to while dragging.
-     *
-     * @return The component that the selectable helper should be appended to while dragging.
-     */
-    public String getAppendTo()
-    {
-        return appendTo;
-    }
+	/**
+	 * Which element the selectable helper should be appended to while dragging.
+	 *
+	 * @return The component that the selectable helper should be appended to while dragging.
+	 */
+	public String getAppendTo()
+	{
+		return appendTo;
+	}
 
-    /**
-     * Which element the selectable helper should be appended to while dragging.
-     *
-     * @param appendTo Which element the selectable helper should be appended to while dragging.
-     */
-    public void setAppendTo(Component appendTo)
-    {
-        this.appendTo = appendTo.getID(true);
-    }
+	/**
+	 * Which element the selectable helper should be appended to while dragging.
+	 *
+	 * @param appendTo Which element the selectable helper should be appended to while dragging.
+	 */
+	public void setAppendTo(Component appendTo)
+	{
+		this.appendTo = appendTo.getID(true);
+	}
 
-    /**
-     *
-     * This determines whether to refresh (recalculate) the position and size of each selectee at the beginning of each select operation. If you have many items, you may want to set this to false and
-     * call the refresh() method manually. Default is true
-     *
-     * @return Is Auto Refresh
-     */
-    public Boolean isAutoRefresh()
-    {
-        return autoRefresh;
-    }
+	/**
+	 * This determines whether to refresh (recalculate) the position and size of each selectee at the beginning of each select operation. If you have many items, you may want to set this to false and
+	 * call the refresh() method manually. Default is true
+	 *
+	 * @return Is Auto Refresh
+	 */
+	public Boolean isAutoRefresh()
+	{
+		return autoRefresh;
+	}
 
-    /**
-     * This determines whether to refresh (recalculate) the position and size of each selectee at the beginning of each select operation. If you have many items, you may want to set this to false and
-     * call the refresh() method manually.
-     *
-     * @param autoRefresh Whether to refresh on call
-     */
-    public void setAutoRefresh(Boolean autoRefresh)
-    {
-        this.autoRefresh = autoRefresh;
-    }
+	/**
+	 * This determines whether to refresh (recalculate) the position and size of each selectee at the beginning of each select operation. If you have many items, you may want to set this to false and
+	 * call the refresh() method manually.
+	 *
+	 * @param autoRefresh Whether to refresh on call
+	 */
+	public void setAutoRefresh(Boolean autoRefresh)
+	{
+		this.autoRefresh = autoRefresh;
+	}
 
-    /**
-     * Prevents selecting if you start on elements matching the selector
-     *
-     * @return The list of CssClasses that don't start on the selector
-     */
-    public ArrayList<CssClass> getCancel()
-    {
-        return cancel;
-    }
+	/**
+	 * Prevents selecting if you start on elements matching the selector
+	 *
+	 * @return The list of CssClasses that don't start on the selector
+	 */
+	public ArrayList<CssClass> getCancel()
+	{
+		return cancel;
+	}
 
-    /**
-     * Time in milliseconds to define when the selecting should start. This helps prevent unwanted selections when clicking on an element.
-     *
-     * @return The Delay
-     */
-    public Integer getDelay()
-    {
-        return delay;
-    }
+	/**
+	 * Time in milliseconds to define when the selecting should start. This helps prevent unwanted selections when clicking on an element.
+	 *
+	 * @return The Delay
+	 */
+	public Integer getDelay()
+	{
+		return delay;
+	}
 
-    /**
-     * Time in milliseconds to define when the selecting should start. This helps prevent unwanted selections when clicking on an element.
-     *
-     * @param delay The delay to set
-     */
-    public void setDelay(Integer delay)
-    {
-        this.delay = delay;
-    }
+	/**
+	 * Time in milliseconds to define when the selecting should start. This helps prevent unwanted selections when clicking on an element.
+	 *
+	 * @param delay The delay to set
+	 */
+	public void setDelay(Integer delay)
+	{
+		this.delay = delay;
+	}
 
-    /**
-     * Tolerance, in pixels, for when selecting should start. If specified, selecting will not start until the mouse has been dragged beyond the specified distance.
-     *
-     * @return The distance in pixels
-     */
-    public Integer getDistance()
-    {
-        return distance;
-    }
+	/**
+	 * Tolerance, in pixels, for when selecting should start. If specified, selecting will not start until the mouse has been dragged beyond the specified distance.
+	 *
+	 * @return The distance in pixels
+	 */
+	public Integer getDistance()
+	{
+		return distance;
+	}
 
-    /**
-     * Tolerance, in pixels, for when selecting should start. If specified, selecting will not start until the mouse has been dragged beyond the specified distance.
-     *
-     * @param distance Sets the distance in pixels
-     */
-    public void setDistance(Integer distance)
-    {
-        this.distance = distance;
-    }
+	/**
+	 * Tolerance, in pixels, for when selecting should start. If specified, selecting will not start until the mouse has been dragged beyond the specified distance.
+	 *
+	 * @param distance Sets the distance in pixels
+	 */
+	public void setDistance(Integer distance)
+	{
+		this.distance = distance;
+	}
 }
