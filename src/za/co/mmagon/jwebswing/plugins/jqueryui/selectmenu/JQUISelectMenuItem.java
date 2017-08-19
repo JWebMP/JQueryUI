@@ -88,7 +88,7 @@ public class JQUISelectMenuItem extends Option implements JQUISelectMenuChildren
 		}
 		else
 		{
-			getAttributesCustom().remove(selectedString);
+			getAttributes().remove(selectedString);
 		}
 
 		return this;
