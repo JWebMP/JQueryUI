@@ -111,17 +111,17 @@ public class JQUIDroppableOptions extends JavaScriptPart
 	/**
 	 * @param activeClassType If specified, the class will be added to the droppable while an acceptable draggable is being dragged.
 	 */
-	public void setActiveClassType(String activeClassType)
-	{
-		this.activeClassType = activeClassType;
-	}
-
-	/**
-	 * @param activeClassType If specified, the class will be added to the droppable while an acceptable draggable is being dragged.
-	 */
 	public void setActiveClassType(JQUIThemeBlocks activeClassType)
 	{
 		this.activeClassType = activeClassType.toString();
+	}
+	
+	/**
+	 * @param activeClassType If specified, the class will be added to the droppable while an acceptable draggable is being dragged.
+	 */
+	public void setActiveClassType(String activeClassType)
+	{
+		this.activeClassType = activeClassType;
 	}
 
 	/**
@@ -170,17 +170,17 @@ public class JQUIDroppableOptions extends JavaScriptPart
 	/**
 	 * @param hoverClass If specified, the class will be added to the droppable while an acceptable draggable is being hovered over the droppable.
 	 */
-	public void setHoverClass(JQUIThemeBlocks hoverClass)
-	{
-		this.hoverClass = hoverClass.toString();
-	}
-
-	/**
-	 * @param hoverClass If specified, the class will be added to the droppable while an acceptable draggable is being hovered over the droppable.
-	 */
 	public void setHoverClass(String hoverClass)
 	{
 		this.hoverClass = hoverClass;
+	}
+	
+	/**
+	 * @param hoverClass If specified, the class will be added to the droppable while an acceptable draggable is being hovered over the droppable.
+	 */
+	public void setHoverClass(JQUIThemeBlocks hoverClass)
+	{
+		this.hoverClass = hoverClass.toString();
 	}
 
 	/**

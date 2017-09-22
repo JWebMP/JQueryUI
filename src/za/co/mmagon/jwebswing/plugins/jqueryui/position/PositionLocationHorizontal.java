@@ -26,7 +26,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.position;
  */
 public enum PositionLocationHorizontal
 {
-
+	
 	/**
 	 * Position to the Left
 	 */
@@ -43,11 +43,11 @@ public enum PositionLocationHorizontal
 	 * Places at Left bottom
 	 */
 	Left_Bottom,;
-
+	
 	@Override
 	public String toString()
 	{
 		return super.toString().toLowerCase().replace('_', ' ');
 	}
-
+	
 }

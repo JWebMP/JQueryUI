@@ -49,23 +49,19 @@ import java.util.logging.Logger;
 )
 public class JQUIPageConfigurator extends PageConfigurator
 {
-
+	
 	private static final Logger log = LogFactory.getInstance().getLogger("JQueryUIConfigurator");
 	private static final long serialVersionUID = 1L;
 	public static String JQueryUIEnabled = "jquery-ui-enabled";
-
+	
 	@Override
 	public Page configure(Page page)
 	{
 		if (!page.isConfigured())
 		{
 			JQueryPageConfigurator.setRequired(page.getBody(), true);
-			//boolean isUsed = page.getBody().readChildrenPropertyFirstResult(JQueryUIEnabled, true);
-			//if (isUsed)
-			//{
 			page.getBody().getJavascriptReferences().add(JQueryUIReferencePool.Core.getJavaScriptReference());
 			page.getBody().getCssReferences().add(JQueryUIReferencePool.Core.getCssReference());
-			//}
 		}
 		return page;
 	}

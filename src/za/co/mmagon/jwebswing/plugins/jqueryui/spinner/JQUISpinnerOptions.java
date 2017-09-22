@@ -25,9 +25,9 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
  */
 public class JQUISpinnerOptions extends JavaScriptPart
 {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	/**
 	 * Sets the culture to use for parsing and formatting the value.<p>
 	 * If null, the currently set culture in Globalize is used, see Globalize docs for available cultures.<p>
@@ -87,7 +87,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	 */
 	@JsonIgnore
 	private boolean integer = true;
-
+	
 	/**
 	 * Construct A Spinner
 	 */
@@ -95,7 +95,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		//Nothing needed here
 	}
-
+	
 	/**
 	 * Sets the culture to use for parsing and formatting the value.
 	 * <p>
@@ -109,7 +109,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		return culture;
 	}
-
+	
 	/**
 	 * Sets the culture to use for parsing and formatting the value.
 	 * <p>
@@ -122,7 +122,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		this.culture = culture;
 	}
-
+	
 	/**
 	 * Disables the spinner if set to true.
 	 *
@@ -132,7 +132,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		return disabled;
 	}
-
+	
 	/**
 	 * Disables the spinner if set to true.
 	 *
@@ -142,7 +142,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		this.disabled = disabled;
 	}
-
+	
 	/**
 	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
 	 * <p>
@@ -154,7 +154,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		return icons;
 	}
-
+	
 	/**
 	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
 	 * <p>
@@ -166,7 +166,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		this.icons = icons;
 	}
-
+	
 	/**
 	 * <p>
 	 * Controls the number of steps taken when holding down a spin button.
@@ -183,7 +183,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		return incremental;
 	}
-
+	
 	/**
 	 * <p>
 	 * Controls the number of steps taken when holding down a spin button.
@@ -200,7 +200,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		this.incremental = incremental;
 	}
-
+	
 	/**
 	 * The maximum allowed value. The element's max attribute is used if it exists and the option is not explicitly set. If null, there is no maximum enforced.
 	 *
@@ -210,7 +210,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		return max;
 	}
-
+	
 	/**
 	 * The maximum allowed value. The element's max attribute is used if it exists and the option is not explicitly set. If null, there is no maximum enforced.
 	 *
@@ -220,7 +220,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		this.max = max;
 	}
-
+	
 	/**
 	 * The minimum allowed value. The element's minimum attribute is used if it exists and the option is not explicitly set. If null, there is no minimum enforced.
 	 *
@@ -230,7 +230,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		return min;
 	}
-
+	
 	/**
 	 * The minimum allowed value. The element's minimum attribute is used if it exists and the option is not explicitly set. If null, there is no minimum enforced.
 	 *
@@ -240,7 +240,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		this.min = min;
 	}
-
+	
 	/**
 	 * Format of numbers passed to Globalize, if available.
 	 * <p>
@@ -252,7 +252,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		return numberFormat;
 	}
-
+	
 	/**
 	 * Format of numbers passed to Globalize, if available.
 	 * <p>
@@ -264,7 +264,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		this.numberFormat = numberFormat;
 	}
-
+	
 	/**
 	 * The number of steps to take when paging via the pageUp/pageDown methods.
 	 *
@@ -274,7 +274,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		return page;
 	}
-
+	
 	/**
 	 * The number of steps to take when paging via the pageUp/pageDown methods.
 	 *
@@ -284,7 +284,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		this.page = page;
 	}
-
+	
 	/**
 	 * Sets the incremental stepping
 	 *
@@ -302,18 +302,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 			return step;
 		}
 	}
-
-	/**
-	 * Sets the incremental stepping
-	 *
-	 * @param step
-	 */
-	public void setStep(Double step)
-	{
-		this.step = step;
-		setInteger(false);
-	}
-
+	
 	/**
 	 * Sets the incremental stepping
 	 *
@@ -324,7 +313,18 @@ public class JQUISpinnerOptions extends JavaScriptPart
 		this.step = new Double(step);
 		setInteger(true);
 	}
-
+	
+	/**
+	 * Sets the incremental stepping
+	 *
+	 * @param step
+	 */
+	public void setStep(Double step)
+	{
+		this.step = step;
+		setInteger(false);
+	}
+	
 	/**
 	 * Returns if the spinner is changing integers or doubles Default true
 	 *
@@ -334,7 +334,7 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		return integer;
 	}
-
+	
 	/**
 	 * Sets if the spinner is rendering integers or doubles. Default true
 	 *
@@ -344,5 +344,5 @@ public class JQUISpinnerOptions extends JavaScriptPart
 	{
 		this.integer = integer;
 	}
-
+	
 }

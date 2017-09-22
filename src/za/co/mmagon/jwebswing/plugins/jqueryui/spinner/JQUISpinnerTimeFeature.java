@@ -28,7 +28,7 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
  */
 public class JQUISpinnerTimeFeature extends Feature<JQUISpinnerOptions, JQUISpinnerTimeFeature> implements JQUISpinnerFeatures
 {
-
+	
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The component for the time feature
@@ -38,7 +38,7 @@ public class JQUISpinnerTimeFeature extends Feature<JQUISpinnerOptions, JQUISpin
 	 * The options for the time spinner
 	 */
 	private JQUISpinnerOptions options;
-
+	
 	/**
 	 * Constructs a new slider
 	 *
@@ -48,27 +48,27 @@ public class JQUISpinnerTimeFeature extends Feature<JQUISpinnerOptions, JQUISpin
 	{
 		super("JWSpinnerTimeFeature");
 		this.selectMenu = selectMenu;
-
+		
 		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
 		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
 		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
 		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
+		
 		getJavascriptReferences().add(JQUIReferencePool.Button.getJavaScriptReference());
 		getJavascriptReferences().add(JQUIReferencePool.Spinner.getJavaScriptReference());
 		getJavascriptReferences().add(JQUIReferencePool.SpinnerTime.getJavaScriptReference());
-
+		
 		getCssReferences().add(JQUIReferencePool.Button.getCssReference());
 		getCssReferences().add(JQUIReferencePool.Spinner.getCssReference());
-
+		
 	}
-
+	
 	@Override
 	public void assignFunctionsToComponent()
 	{
 		addQuery(selectMenu.getJQueryID() + "timespinner(" + getOptions() + ");" + getNewLine());
 	}
-
+	
 	/**
 	 * Returns the options associated with the Spinner Object
 	 * <p>
@@ -84,5 +84,5 @@ public class JQUISpinnerTimeFeature extends Feature<JQUISpinnerOptions, JQUISpin
 		}
 		return options;
 	}
-
+	
 }

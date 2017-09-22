@@ -30,10 +30,10 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
  */
 public class JQUIPositionFeature extends Feature<JavaScriptPart, JQUIPositionFeature>
 {
-
+	
 	private static final long serialVersionUID = 1L;
 	private final Position position;
-
+	
 	public JQUIPositionFeature(Component positionComponent, Position position)
 	{
 		super("JWPosition");
@@ -43,10 +43,10 @@ public class JQUIPositionFeature extends Feature<JavaScriptPart, JQUIPositionFea
 		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
 		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
 		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
+		
 		getJavascriptReferences().add(JQUIReferencePool.Position.getJavaScriptReference());
 	}
-
+	
 	@Override
 	public void assignFunctionsToComponent()
 	{

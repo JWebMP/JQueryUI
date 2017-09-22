@@ -33,11 +33,11 @@ public enum SortableHelpers
 	 * Produces the original
 	 */
 	Orginal;
-
+	
 	@Override
 	public String toString()
 	{
 		return super.toString().toLowerCase();
 	}
-
+	
 }

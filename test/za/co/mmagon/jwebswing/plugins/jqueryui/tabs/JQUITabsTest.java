@@ -23,11 +23,11 @@ import org.junit.Test;
  */
 public class JQUITabsTest
 {
-
+	
 	public JQUITabsTest()
 	{
 	}
-
+	
 	@Test
 	public void testSomeMethod()
 	{
@@ -35,5 +35,5 @@ public class JQUITabsTest
 		tab.addTab("tab 1", new JQUITabContent());
 		System.out.println(tab.toString(0));
 	}
-
+	
 }

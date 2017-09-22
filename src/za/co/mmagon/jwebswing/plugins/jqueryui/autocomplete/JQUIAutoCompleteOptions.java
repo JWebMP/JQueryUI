@@ -155,7 +155,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	 */
 	public JQUIAutoCompleteOptions()
 	{
-	
+
 	}
 	
 	/**
@@ -179,13 +179,13 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	 * menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body. Note: The appendTo option should not be changed while the
 	 * suggestions menu is open.
 	 *
-	 * @param appendTo Sets the string to the #id
+	 * @param appendTo set the string to the # id
 	 *
 	 * @return
 	 */
-	public JQUIAutoCompleteOptions setAppendTo(ComponentHierarchyBase appendTo)
+	public JQUIAutoCompleteOptions setAppendTo(String appendTo)
 	{
-		this.appendTo = appendTo.getID(true);
+		this.appendTo = appendTo;
 		return this;
 	}
 	
@@ -196,13 +196,13 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	 * menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body. Note: The appendTo option should not be changed while the
 	 * suggestions menu is open.
 	 *
-	 * @param appendTo set the string to the # id
+	 * @param appendTo Sets the string to the #id
 	 *
 	 * @return
 	 */
-	public JQUIAutoCompleteOptions setAppendTo(String appendTo)
+	public JQUIAutoCompleteOptions setAppendTo(ComponentHierarchyBase appendTo)
 	{
-		this.appendTo = appendTo;
+		this.appendTo = appendTo.getID(true);
 		return this;
 	}
 	

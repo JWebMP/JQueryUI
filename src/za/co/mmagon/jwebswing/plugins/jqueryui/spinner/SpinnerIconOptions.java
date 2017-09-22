@@ -32,9 +32,9 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
  */
 public class SpinnerIconOptions extends JavaScriptPart
 {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	/**
 	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
 	 * <p>
@@ -47,7 +47,7 @@ public class SpinnerIconOptions extends JavaScriptPart
 	 * button (string, default: "ui-icon-triangle-1-s")
 	 */
 	private String down;
-
+	
 	/**
 	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
 	 * <p>
@@ -59,7 +59,7 @@ public class SpinnerIconOptions extends JavaScriptPart
 	{
 		return up;
 	}
-
+	
 	/**
 	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
 	 * <p>
@@ -71,7 +71,7 @@ public class SpinnerIconOptions extends JavaScriptPart
 	{
 		this.up = up;
 	}
-
+	
 	/**
 	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
 	 * <p>
@@ -83,7 +83,7 @@ public class SpinnerIconOptions extends JavaScriptPart
 	{
 		return down;
 	}
-
+	
 	/**
 	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
 	 * <p>

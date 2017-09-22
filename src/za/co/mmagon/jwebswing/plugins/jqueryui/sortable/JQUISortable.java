@@ -29,13 +29,13 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 		url = "http://jqueryui.com/sortable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISortableFeatures, JQUISortableEvents, JQUISortable> implements IJQUISortable
 {
-
+	
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The sortable feature
 	 */
 	private JQUISortableFeature feature;
-
+	
 	/**
 	 * Constructs a new Selectable Ordered List
 	 */
@@ -44,7 +44,7 @@ public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISo
 		setTag("ul");
 		addFeature(getFeature());
 	}
-
+	
 	/**
 	 * Returns the feature associated with the sortable feature
 	 *
@@ -58,7 +58,7 @@ public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISo
 		}
 		return feature;
 	}
-
+	
 	/**
 	 * Returns the sortable options
 	 *
@@ -69,7 +69,7 @@ public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISo
 	{
 		return getFeature().getOptions();
 	}
-
+	
 	/**
 	 * Returns a neater view
 	 *
@@ -79,5 +79,5 @@ public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISo
 	{
 		return this;
 	}
-
+	
 }

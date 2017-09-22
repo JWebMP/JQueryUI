@@ -22,12 +22,12 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.sortable;
  */
 public interface IJQUISortable
 {
-
+	
 	/**
 	 * Returns the sortable options
 	 *
 	 * @return
 	 */
 	JQUISortableOptions getOptions();
-
+	
 }

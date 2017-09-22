@@ -12,11 +12,11 @@ import org.junit.Test;
  */
 public class JQUICheckBoxTest
 {
-
+	
 	public JQUICheckBoxTest()
 	{
 	}
-
+	
 	@Test
 	public void testGetLabel()
 	{
@@ -24,9 +24,9 @@ public class JQUICheckBoxTest
 		cb.asMe().setValue("Value 1");
 		cb.getOptions().setIcon("Icon");
 		cb.getOptions().getClasses().put("class1", "value1");
-
+		
 		System.out.println(cb.toString(true));
 		System.out.println(cb.renderJavascript());
 	}
-
+	
 }

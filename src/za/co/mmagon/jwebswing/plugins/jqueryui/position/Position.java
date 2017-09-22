@@ -32,7 +32,7 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 		url = "http://jqueryui.com/position/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class Position extends JavaScriptPart
 {
-
+	
 	private static final long serialVersionUID = 1L;
 	/**
 	 * My position of x
@@ -50,7 +50,7 @@ public class Position extends JavaScriptPart
 	 * Place component ad y
 	 */
 	private PositionLocationVertical atY;
-
+	
 	/**
 	 * The component id for at
 	 */
@@ -63,7 +63,7 @@ public class Position extends JavaScriptPart
 	 * The component ID for of
 	 */
 	private String of;
-
+	
 	/**
 	 * Blank instantiation
 	 */
@@ -71,7 +71,7 @@ public class Position extends JavaScriptPart
 	{
 		//Nothing needed here
 	}
-
+	
 	/**
 	 * Constructs a new JavaScript Part "Position"
 	 *
@@ -89,7 +89,7 @@ public class Position extends JavaScriptPart
 		this.atY = atY;
 		this.of = of.getID(true);
 	}
-
+	
 	/**
 	 * My x at target X
 	 * <p>
@@ -102,7 +102,7 @@ public class Position extends JavaScriptPart
 		this.myX = myX;
 		this.atX = atX;
 	}
-
+	
 	/**
 	 * At target X
 	 * <p>
@@ -113,7 +113,7 @@ public class Position extends JavaScriptPart
 	{
 		this.atX = atX;
 	}
-
+	
 	/**
 	 * My X at X of Component
 	 * <p>
@@ -128,7 +128,7 @@ public class Position extends JavaScriptPart
 		this.atX = atX;
 		this.of = of.getID(true);
 	}
-
+	
 	/**
 	 * My 7 at target Y
 	 * <p>
@@ -141,7 +141,7 @@ public class Position extends JavaScriptPart
 		this.myY = myY;
 		this.atY = atY;
 	}
-
+	
 	/**
 	 * My corners at corners
 	 * <p>
@@ -158,7 +158,7 @@ public class Position extends JavaScriptPart
 		this.atX = atX;
 		this.atY = atY;
 	}
-
+	
 	/**
 	 * Gets the My String Part
 	 *
@@ -168,7 +168,7 @@ public class Position extends JavaScriptPart
 	{
 		return myX.name() + " " + myY.name() + "";
 	}
-
+	
 	/**
 	 * Gets the At String Part
 	 *
@@ -178,7 +178,7 @@ public class Position extends JavaScriptPart
 	{
 		return atX.name() + " " + atY.name() + "";
 	}
-
+	
 	/**
 	 * The Of String Part
 	 *
@@ -188,7 +188,7 @@ public class Position extends JavaScriptPart
 	{
 		return of;
 	}
-
+	
 	/**
 	 * Set the component
 	 *
@@ -198,7 +198,7 @@ public class Position extends JavaScriptPart
 	{
 		this.of = comp.getID(true);
 	}
-
+	
 	/**
 	 * gets the at component string
 	 *
@@ -208,7 +208,7 @@ public class Position extends JavaScriptPart
 	{
 		return at;
 	}
-
+	
 	/**
 	 * Sets the at
 	 *
@@ -218,7 +218,7 @@ public class Position extends JavaScriptPart
 	{
 		this.at = at;
 	}
-
+	
 	/**
 	 * Returns the my
 	 *
@@ -228,7 +228,7 @@ public class Position extends JavaScriptPart
 	{
 		return my;
 	}
-
+	
 	/**
 	 * Sets the my
 	 *
@@ -238,7 +238,7 @@ public class Position extends JavaScriptPart
 	{
 		this.my = my;
 	}
-
+	
 	/**
 	 * Returns the id of the component of
 	 *
@@ -248,7 +248,7 @@ public class Position extends JavaScriptPart
 	{
 		return of;
 	}
-
+	
 	/**
 	 * sets the #id of the component
 	 *
@@ -258,7 +258,7 @@ public class Position extends JavaScriptPart
 	{
 		this.of = of;
 	}
-
+	
 	/**
 	 * Sets the location for position x
 	 *
@@ -268,7 +268,7 @@ public class Position extends JavaScriptPart
 	{
 		this.myX = myX;
 	}
-
+	
 	/**
 	 * Sets the location for position y
 	 *
@@ -278,7 +278,7 @@ public class Position extends JavaScriptPart
 	{
 		this.myY = myY;
 	}
-
+	
 	/**
 	 * Sets the position at x
 	 *
@@ -288,7 +288,7 @@ public class Position extends JavaScriptPart
 	{
 		this.atX = atX;
 	}
-
+	
 	/**
 	 * Sets the position at y
 	 *
@@ -298,5 +298,5 @@ public class Position extends JavaScriptPart
 	{
 		this.atY = atY;
 	}
-
+	
 }

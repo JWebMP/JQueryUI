@@ -26,7 +26,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.position;
  */
 public enum PositionLocationVertical
 {
-
+	
 	/**
 	 * Position at the top
 	 */
@@ -38,6 +38,6 @@ public enum PositionLocationVertical
 	/**
 	 * Position at the bottom
 	 */
-	bottom;
-
+	bottom
+	
 }

@@ -28,7 +28,7 @@ import java.util.Map;
  */
 public class JQUIControlGroupOptions extends JavaScriptPart
 {
-
+	
 	private static final long serialVersionUID = 1L;
 	/**
 	 * A map of the classes
@@ -50,7 +50,7 @@ public class JQUIControlGroupOptions extends JavaScriptPart
 	 * If only the visible items are considered
 	 */
 	private Boolean onlyVisible;
-
+	
 	/**
 	 * Constructs a new instance of the control group options
 	 */
@@ -58,7 +58,7 @@ public class JQUIControlGroupOptions extends JavaScriptPart
 	{
 		//Nothing needed
 	}
-
+	
 	/**
 	 * Specify additional classes to add to the widget's elements. Any of classes specified in the Theming section can be used as keys to override their value. To learn more about this option, check
 	 * out the learn article about the classes option.
@@ -73,7 +73,7 @@ public class JQUIControlGroupOptions extends JavaScriptPart
 		}
 		return classes;
 	}
-
+	
 	/**
 	 * Specify additional classes to add to the widget's elements. Any of classes specified in the Theming section can be used as keys to override their value. To learn more about this option, check
 	 * out the learn article about the classes option.
@@ -87,7 +87,7 @@ public class JQUIControlGroupOptions extends JavaScriptPart
 		this.classes = classes;
 		return this;
 	}
-
+	
 	/**
 	 * By default, controlgroup displays its controls in a horizontal layout. Use this option to use a vertical layout instead.
 	 *
@@ -97,7 +97,7 @@ public class JQUIControlGroupOptions extends JavaScriptPart
 	{
 		return direction;
 	}
-
+	
 	/**
 	 * By default, controlgroup displays its controls in a horizontal layout. Use this option to use a vertical layout instead.
 	 *
@@ -110,7 +110,7 @@ public class JQUIControlGroupOptions extends JavaScriptPart
 		this.direction = direction;
 		return this;
 	}
-
+	
 	/**
 	 * Disables the controlgroup if set to true.
 	 *
@@ -120,7 +120,7 @@ public class JQUIControlGroupOptions extends JavaScriptPart
 	{
 		return disabled;
 	}
-
+	
 	/**
 	 * Disables the controlgroup if set to true.
 	 *
@@ -133,7 +133,7 @@ public class JQUIControlGroupOptions extends JavaScriptPart
 		this.disabled = disabled;
 		return this;
 	}
-
+	
 	/**
 	 * Which descendant elements to initialize as their respective widgets. Two elements have special behavior: controlgroupLabel: Any elements matching the selector for this will be wrapped in a span
 	 * with the ui-controlgroup-label-contents class. spinner: This uses a class selector as the value. Requires either adding the class manually or initializing the spinner manually. Can be
@@ -145,7 +145,7 @@ public class JQUIControlGroupOptions extends JavaScriptPart
 	{
 		return items;
 	}
-
+	
 	/**
 	 * Which descendant elements to initialize as their respective widgets. Two elements have special behavior: controlgroupLabel: Any elements matching the selector for this will be wrapped in a span
 	 * with the ui-controlgroup-label-contents class. spinner: This uses a class selector as the value. Requires either adding the class manually or initializing the spinner manually. Can be
@@ -160,7 +160,7 @@ public class JQUIControlGroupOptions extends JavaScriptPart
 		this.items = items;
 		return this;
 	}
-
+	
 	/**
 	 * Sets whether to exclude invisible children in the assignment of rounded corners. When set to false, all children of a controlgroup are taken into account when assigning rounded corners,
 	 * including hidden children. Thus, if, for example, the controlgroup's first child is hidden and the default horizontal layout is applied, the controlgroup will, in effect, not have rounded
@@ -172,7 +172,7 @@ public class JQUIControlGroupOptions extends JavaScriptPart
 	{
 		return onlyVisible;
 	}
-
+	
 	/**
 	 * Sets whether to exclude invisible children in the assignment of rounded corners. When set to false, all children of a controlgroup are taken into account when assigning rounded corners,
 	 * including hidden children. Thus, if, for example, the controlgroup's first child is hidden and the default horizontal layout is applied, the controlgroup will, in effect, not have rounded
@@ -187,5 +187,5 @@ public class JQUIControlGroupOptions extends JavaScriptPart
 		this.onlyVisible = onlyVisible;
 		return this;
 	}
-
+	
 }
