@@ -2242,7 +2242,7 @@
                     }
                 },
 
-                // Restores a set of previously saved properties from a data storage
+                // Restores a set of previously 
                 restore: function (element, set) {
                     var val, i = 0, length = set.length;
                     for (; i < length; i++) {
@@ -4077,7 +4077,6 @@
         };
     }
 
-    ;
     /*!
  * jQuery UI Keycode 1.12.1
  * http://jqueryui.com
