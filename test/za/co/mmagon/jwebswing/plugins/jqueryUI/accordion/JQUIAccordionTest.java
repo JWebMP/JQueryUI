@@ -16,8 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.accordion;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.base.html.attributes.HeaderTypes;
 import za.co.mmagon.jwebswing.generics.Direction;
@@ -45,7 +45,7 @@ public class JQUIAccordionTest extends BaseTestClass
 		String rendered = accordion.renderJavascript().toString();
 		String expected = "$('#id').accordion();\n";
 		System.out.println(rendered);
-		Assert.assertEquals(expected, rendered);
+		Assertions.assertEquals(expected, rendered);
 		
 	}
 	
@@ -67,7 +67,7 @@ public class JQUIAccordionTest extends BaseTestClass
 		System.out.println(rendered);
 		
 		//super.writeValuesToFile(expected, rendered);
-		Assert.assertEquals(expected, rendered);
+		Assertions.assertEquals(expected, rendered);
 	}
 	
 	@Test
@@ -83,7 +83,7 @@ public class JQUIAccordionTest extends BaseTestClass
 				+ "});\n";
 		System.out.println(rendered);
 		//super.writeValuesToFile(expected, rendered);
-		Assert.assertEquals(expected, rendered);
+		Assertions.assertEquals(expected, rendered);
 	}
 	
 	@Test
@@ -100,7 +100,7 @@ public class JQUIAccordionTest extends BaseTestClass
 				+ "});\n";
 		System.out.println(rendered);
 		//super.writeValuesToFile(expected, rendered);
-		Assert.assertEquals(expected, rendered);
+		Assertions.assertEquals(expected, rendered);
 	}
 	
 	@Test
@@ -121,7 +121,7 @@ public class JQUIAccordionTest extends BaseTestClass
 				+ "});\n";
 		System.out.println(rendered);
 		//super.writeValuesToFile(expected, rendered);
-		Assert.assertEquals(expected, rendered);
+		Assertions.assertEquals(expected, rendered);
 	}
 	
 	@Test
@@ -138,7 +138,7 @@ public class JQUIAccordionTest extends BaseTestClass
 				+ "});\n";
 		System.out.println(rendered);
 		//super.writeValuesToFile(expected, rendered);
-		Assert.assertEquals(expected, rendered);
+		Assertions.assertEquals(expected, rendered);
 	}
 	
 	@Test
@@ -155,7 +155,7 @@ public class JQUIAccordionTest extends BaseTestClass
 				+ "});\n";
 		System.out.println(rendered);
 		//super.writeValuesToFile(expected, rendered);
-		Assert.assertEquals(expected, rendered);
+		Assertions.assertEquals(expected, rendered);
 	}
 	
 	@Test
@@ -186,6 +186,6 @@ public class JQUIAccordionTest extends BaseTestClass
 				+ "</div>";
 		System.out.println(rendered);
 		//super.writeValuesToFile(expected, rendered);
-		Assert.assertEquals(expected, rendered);
+		Assertions.assertEquals(expected, rendered);
 	}
 }

@@ -16,8 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete;
 
-import junit.framework.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
 
 /**
@@ -39,7 +39,7 @@ public class JQUIAutoCompleteTest extends BaseTestClass
 		ac.getInput().setID("input");
 		ac.getOptions().addOption("option 1");
 		System.out.println(ac.toString(true));
-		Assert.assertEquals(""
+		Assertions.assertEquals(""
 				                    + "<div class=\"ui-widget\" id=\"id\">\n"
 				                    + "	<label for=\"autocomplete\" id=\"label\">autocomplete</label>\n"
 				                    + "	<input id=\"input\" type=\"text\">\n"
@@ -62,7 +62,7 @@ public class JQUIAutoCompleteTest extends BaseTestClass
 				+ "}]\n"
 				+ "});\n";
 		String rendered = ac.renderJavascript().toString();
-		Assert.assertEquals(expected, rendered);
+		Assertions.assertEquals(expected, rendered);
 	}
 	
 	@Test
@@ -86,7 +86,7 @@ public class JQUIAutoCompleteTest extends BaseTestClass
 		String rendered = ac.renderJavascript().toString();
 		
 		//super.writeValuesToFile(expected, rendered);
-		Assert.assertEquals(expected, rendered);
+		Assertions.assertEquals(expected, rendered);
 	}
 	
 	@Test
@@ -106,6 +106,6 @@ public class JQUIAutoCompleteTest extends BaseTestClass
 		String rendered = ac.renderJavascript().toString();
 		
 		//super.writeValuesToFile(expected, rendered);
-		Assert.assertEquals(expected, rendered);
+		Assertions.assertEquals(expected, rendered);
 	}
 }

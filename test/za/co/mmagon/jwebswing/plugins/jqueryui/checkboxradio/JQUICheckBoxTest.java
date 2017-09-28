@@ -5,7 +5,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author GedMarc

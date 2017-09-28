@@ -1,10 +1,10 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.position;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.base.html.Div;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author MMagon

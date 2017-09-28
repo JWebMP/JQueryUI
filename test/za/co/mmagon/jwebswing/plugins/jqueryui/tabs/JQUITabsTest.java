@@ -16,7 +16,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.tabs;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author GedMarc
