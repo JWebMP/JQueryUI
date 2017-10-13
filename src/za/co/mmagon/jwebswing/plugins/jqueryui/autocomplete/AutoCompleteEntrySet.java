@@ -31,7 +31,7 @@ import java.util.List;
  */
 public class AutoCompleteEntrySet extends JavaScriptPart
 {
-
+	
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The available category selections
@@ -44,14 +44,16 @@ public class AutoCompleteEntrySet extends JavaScriptPart
 	 * both, e.g., if you provide only value properties, the value will also be used as the label.
 	 */
 	private List<AutoCompleteEntries> source;
-
+	
+	/**
+	 * Constructs a default set
+	 */
 	public AutoCompleteEntrySet()
 	{
-
+		//Nothing needed
 	}
-
-	@JsonRawValue
-	@JsonValue
+	
+	
 	/**
 	 * Array: An array can be used for local data. There are two supported formats:
 	 * <p>
@@ -62,6 +64,8 @@ public class AutoCompleteEntrySet extends JavaScriptPart
 	 *
 	 * @return
 	 */
+	@JsonRawValue
+	@JsonValue
 	public List<AutoCompleteEntries> getSource()
 	{
 		if (source == null)
@@ -70,5 +74,5 @@ public class AutoCompleteEntrySet extends JavaScriptPart
 		}
 		return source;
 	}
-
+	
 }
