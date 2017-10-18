@@ -18,14 +18,13 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.accordion;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.base.html.attributes.HeaderTypes;
 import za.co.mmagon.jwebswing.generics.Direction;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTypes;
 import za.co.mmagon.jwebswing.plugins.easingeffects.JQEasingEffects;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 /**
  * @author GedMarc
@@ -38,7 +37,7 @@ public class JQUIAccordionTest extends BaseTestClass
 	}
 	
 	@Test
-	public void testDefault() throws UnsupportedEncodingException, IOException
+	public void testDefault() throws IOException
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
@@ -50,7 +49,7 @@ public class JQUIAccordionTest extends BaseTestClass
 	}
 	
 	@Test
-	public void testIcons() throws UnsupportedEncodingException, IOException
+	public void testIcons() throws IOException
 	{
 		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
@@ -71,7 +70,7 @@ public class JQUIAccordionTest extends BaseTestClass
 	}
 	
 	@Test
-	public void testActive() throws UnsupportedEncodingException, IOException
+	public void testActive() throws IOException
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
@@ -87,7 +86,7 @@ public class JQUIAccordionTest extends BaseTestClass
 	}
 	
 	@Test
-	public void testCollapsible() throws UnsupportedEncodingException, IOException
+	public void testCollapsible() throws IOException
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
@@ -104,7 +103,7 @@ public class JQUIAccordionTest extends BaseTestClass
 	}
 	
 	@Test
-	public void testAnimate() throws UnsupportedEncodingException, IOException
+	public void testAnimate() throws IOException
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
@@ -125,7 +124,7 @@ public class JQUIAccordionTest extends BaseTestClass
 	}
 	
 	@Test
-	public void testEvent() throws UnsupportedEncodingException, IOException
+	public void testEvent() throws IOException
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
@@ -142,7 +141,7 @@ public class JQUIAccordionTest extends BaseTestClass
 	}
 	
 	@Test
-	public void testHeader() throws UnsupportedEncodingException, IOException
+	public void testHeader() throws IOException
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
@@ -159,7 +158,7 @@ public class JQUIAccordionTest extends BaseTestClass
 	}
 	
 	@Test
-	public void testStructure() throws UnsupportedEncodingException, IOException
+	public void testStructure() throws IOException
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
