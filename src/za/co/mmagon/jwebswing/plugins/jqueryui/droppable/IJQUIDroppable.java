@@ -20,6 +20,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.droppable;
  * @author GedMarc
  * @since 27 Feb 2017
  */
+@FunctionalInterface
 public interface IJQUIDroppable
 {
 

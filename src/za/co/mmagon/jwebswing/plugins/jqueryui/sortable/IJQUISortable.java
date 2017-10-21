@@ -20,6 +20,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.sortable;
  * @author GedMarc
  * @since 28 Feb 2017
  */
+@FunctionalInterface
 public interface IJQUISortable
 {
 	
