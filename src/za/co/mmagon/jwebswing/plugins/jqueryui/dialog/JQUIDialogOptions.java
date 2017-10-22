@@ -17,8 +17,12 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.dialog;
 
 import za.co.mmagon.jwebswing.Component;
+import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The options available for the JQuery Dialog feature
@@ -38,9 +42,9 @@ public class JQUIDialogOptions extends JavaScriptPart
 	 */
 	private Boolean autoOpen;
 	/**
-	 * TODO : buttons implementation
+	 * The buttons on the widget
 	 */
-	private Component[] buttons;
+	private List<ComponentHierarchyBase> buttons;
 	/**
 	 * if it should close on esc key
 	 */
@@ -472,5 +476,19 @@ public class JQUIDialogOptions extends JavaScriptPart
 	public void setWidth(Integer width)
 	{
 		this.width = width;
+	}
+
+	public List<ComponentHierarchyBase> getButtons()
+	{
+		if (buttons == null)
+		{
+			buttons = new ArrayList<>();
+		}
+		return buttons;
+	}
+
+	public void setButtons(List<ComponentHierarchyBase> buttons)
+	{
+		this.buttons = buttons;
 	}
 }

@@ -45,13 +45,6 @@ public class ThemePackItem extends ListItem
 	private Image image;
 	private Span span;
 
-	/*
-	 * public ThemePackItem() {
-	 *
-	 * }
-	 *
-	 * public ThemePackItem(String cssClass) { this.cssClass = cssClass; }
-	 */
 	public ThemePackItem(String name, String cssClass)
 	{
 		this(name, cssClass, null);
@@ -81,12 +74,10 @@ public class ThemePackItem extends ListItem
 		span = new Span();
 		span.addClass("themeName");
 		span.setText(this.name);
-		//span.setWidth(250);
 
 		addClass(JQUIThemeBlocks.UI_Widget.toString());
 		addClass(JQUIThemeBlocks.UI_Widget_Input.toString());
 		addClass(JQUIThemeBlocks.UI_State_Active.toString());
-		//addClass(CSSThemeBlockNames.UI_Priority_Primary);
 
 		link.add(span);
 	}
@@ -129,5 +120,59 @@ public class ThemePackItem extends ListItem
 	public void setIconImageLocation(String iconImageLocation)
 	{
 		this.iconImageLocation = iconImageLocation;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof ThemePackItem))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		ThemePackItem that = (ThemePackItem) o;
+
+		if (getName() != null ? !getName().equals(that.getName()) : that.getName() != null)
+		{
+			return false;
+		}
+		if (getCssClass() != null ? !getCssClass().equals(that.getCssClass()) : that.getCssClass() != null)
+		{
+			return false;
+		}
+		if (getIconImageLocation() != null ? !getIconImageLocation().equals(that.getIconImageLocation()) : that.getIconImageLocation() != null)
+		{
+			return false;
+		}
+		if (link != null ? !link.equals(that.link) : that.link != null)
+		{
+			return false;
+		}
+		if (image != null ? !image.equals(that.image) : that.image != null)
+		{
+			return false;
+		}
+		return span != null ? span.equals(that.span) : that.span == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (getName() != null ? getName().hashCode() : 0);
+		result = 31 * result + (getCssClass() != null ? getCssClass().hashCode() : 0);
+		result = 31 * result + (getIconImageLocation() != null ? getIconImageLocation().hashCode() : 0);
+		result = 31 * result + (link != null ? link.hashCode() : 0);
+		result = 31 * result + (image != null ? image.hashCode() : 0);
+		result = 31 * result + (span != null ? span.hashCode() : 0);
+		return result;
 	}
 }

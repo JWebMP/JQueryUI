@@ -22,6 +22,7 @@ import za.co.mmagon.jwebswing.htmlbuilder.css.fonts.FontWeights;
 import za.co.mmagon.jwebswing.htmlbuilder.css.measurement.MeasurementCSSImpl;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author MMagon
@@ -30,19 +31,18 @@ import java.util.ArrayList;
 public class ThemeCSSObject
 {
 
-
 	public class FontSettingsBlock extends CSSBlock
 	{
-		private ArrayList<FontFamilies> fontFamilies = new ArrayList();
+		private List<FontFamilies> fontFamilies = new ArrayList();
 		private FontWeights fontWeight = FontWeights.Normal;
 		private MeasurementCSSImpl fontSize = new MeasurementCSSImpl();
 
-		public ArrayList<FontFamilies> getFontFamilies()
+		public List<FontFamilies> getFontFamilies()
 		{
 			return fontFamilies;
 		}
 
-		public void setFontFamilies(ArrayList<FontFamilies> fontFamilies)
+		public void setFontFamilies(List<FontFamilies> fontFamilies)
 		{
 			this.fontFamilies = fontFamilies;
 		}
@@ -66,6 +66,8 @@ public class ThemeCSSObject
 		{
 			this.fontSize = fontSize;
 		}
+
+
 	}
 
 	public class HeaderToolbarBlock extends CSSBlock

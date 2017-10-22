@@ -66,6 +66,7 @@ public class JQUISelectableOptions extends JavaScriptPart
 	 */
 	public JQUISelectableOptions()
 	{
+		//Nothing Needed
 	}
 
 	/**

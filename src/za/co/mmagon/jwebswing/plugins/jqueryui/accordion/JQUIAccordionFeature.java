@@ -88,19 +88,19 @@ public class JQUIAccordionFeature extends Feature<JQUIAccordionOptions, JQUIAcco
 
 		JQUIAccordionFeature that = (JQUIAccordionFeature) o;
 
-		if (accordion != null ? !accordion.equals(that.accordion) : that.accordion != null)
+		if (!accordion.equals(that.accordion))
 		{
 			return false;
 		}
-		return getOptions() != null ? getOptions().equals(that.getOptions()) : that.getOptions() == null;
+		return getOptions().equals(that.getOptions());
 	}
 
 	@Override
 	public int hashCode()
 	{
 		int result = super.hashCode();
-		result = 31 * result + (accordion != null ? accordion.hashCode() : 0);
-		result = 31 * result + (getOptions() != null ? getOptions().hashCode() : 0);
+		result = 31 * result + accordion.hashCode();
+		result = 31 * result + getOptions().hashCode();
 		return result;
 	}
 }

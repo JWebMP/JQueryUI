@@ -41,7 +41,7 @@ public class JQUIMenu extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvent
 {
 
 	private static final long serialVersionUID = 1L;
-	private final Orientation orientation;
+	private Orientation orientation;
 	private JQUIMenuFeature feature;
 
 	/**
@@ -90,6 +90,15 @@ public class JQUIMenu extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvent
 	public IJQUIMenu asMe()
 	{
 		return this;
+	}
+
+	public Orientation getOrientation()
+	{
+		if (orientation == null)
+		{
+			orientation = Orientation.HORIZONTAL;
+		}
+		return orientation;
 	}
 
 	@Override
