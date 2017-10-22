@@ -45,7 +45,8 @@ public class JQUIAutoCompleteFeature extends Feature<JQUIAutoCompleteOptions, JQ
 	/**
 	 * Constructs a new Auto Complete feature
 	 *
-	 * @param menuDisplayAtComponent The component to display at
+	 * @param menuDisplayAtComponent
+	 * 		The component to display at
 	 */
 	public JQUIAutoCompleteFeature(Input menuDisplayAtComponent)
 	{
@@ -90,4 +91,37 @@ public class JQUIAutoCompleteFeature extends Feature<JQUIAutoCompleteOptions, JQ
 		return options;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIAutoCompleteFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIAutoCompleteFeature that = (JQUIAutoCompleteFeature) o;
+
+		if (menuDisplayAtComponent != null ? !menuDisplayAtComponent.equals(that.menuDisplayAtComponent) : that.menuDisplayAtComponent != null)
+		{
+			return false;
+		}
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (menuDisplayAtComponent != null ? menuDisplayAtComponent.hashCode() : 0);
+		result = 31 * result + getOptions().hashCode();
+		return result;
+	}
 }

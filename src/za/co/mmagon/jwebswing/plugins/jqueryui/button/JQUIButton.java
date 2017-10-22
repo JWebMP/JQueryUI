@@ -32,8 +32,8 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionChildren;
  *
  * @author MMagon
  * @version 1.0
- * <p>
- * Update 2014/07/09 - Added attribute for identification in JQuery. Minimizing the JavaScript being sent through.
+ * 		<p>
+ * 		Update 2014/07/09 - Added attribute for identification in JQuery. Minimizing the JavaScript being sent through.
  * @since 09 Mar 2013
  */
 @ComponentInformation(name = "JQuery UI Button", description = "Enhances standard form elements like buttons, inputs and anchors to themeable buttons with appropriate hover and active styles.",
@@ -93,4 +93,32 @@ public class JQUIButton<J extends JQUIButton<J>>
 		return feature;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIButton))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIButton<?> that = (JQUIButton<?>) o;
+
+		return getFeature().equals(that.getFeature());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		return result;
+	}
 }

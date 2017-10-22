@@ -21,6 +21,7 @@ import za.co.mmagon.jwebswing.base.html.ListItem;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 
 /**
@@ -74,19 +75,19 @@ public class JQUITabs extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatur
 		return this;
 	}
 
-	/**
-	 * Returns the feature for the JQUITabs object
-	 * <p>
-	 *
-	 * @return
-	 */
-	public final JQUITabsFeature getFeature()
+	@Override
+	public void init()
 	{
-		if (feature == null)
+		if (!isInitialized())
 		{
-			feature = new JQUITabsFeature(this);
+			add(getUnorderedList());
+			getTabs().forEach(next ->
+			                  {
+				                  getUnorderedList().add(next.getTabHeader());
+				                  add(next.getTabDisplayComponent());
+			                  });
 		}
-		return feature;
+		super.init();
 	}
 
 	/**
@@ -115,6 +116,7 @@ public class JQUITabs extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatur
 	 *
 	 * @return
 	 */
+	@NotNull
 	protected JQUITabList getUnorderedList()
 	{
 		if (unorderedList == null)
@@ -152,6 +154,7 @@ public class JQUITabs extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatur
 	 * @return
 	 */
 	@Override
+	@NotNull
 	public java.util.List<JQUITab> getTabs()
 	{
 		if (tabs == null)
@@ -173,18 +176,57 @@ public class JQUITabs extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatur
 	}
 
 	@Override
-	public void init()
+	public boolean equals(Object o)
 	{
-		if (!isInitialized())
+		if (this == o)
 		{
-			add(getUnorderedList());
-			getTabs().stream().forEach(next ->
-			                           {
-				                           getUnorderedList().add(next.getTabHeader());
-				                           add(next.getTabDisplayComponent());
-			                           });
+			return true;
 		}
-		super.init();
+		if (!(o instanceof JQUITabs))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUITabs jquiTabs = (JQUITabs) o;
+
+		if (!getFeature().equals(jquiTabs.getFeature()))
+		{
+			return false;
+		}
+		if (!getUnorderedList().equals(jquiTabs.getUnorderedList()))
+		{
+			return false;
+		}
+		return getTabs().equals(jquiTabs.getTabs());
 	}
 
+	/**
+	 * Returns the feature for the JQUITabs object
+	 * <p>
+	 *
+	 * @return
+	 */
+	@NotNull
+	public final JQUITabsFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUITabsFeature(this);
+		}
+		return feature;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		result = 31 * result + getUnorderedList().hashCode();
+		result = 31 * result + getTabs().hashCode();
+		return result;
+	}
 }

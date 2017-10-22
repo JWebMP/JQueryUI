@@ -23,8 +23,8 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 public class JQUIButtonGroupFeature extends Feature<JQUIButtonGroupOptions, JQUIButtonGroupFeature> implements JQUIButtonFeatures
@@ -39,7 +39,8 @@ public class JQUIButtonGroupFeature extends Feature<JQUIButtonGroupOptions, JQUI
 	 * Configures a new check box group
 	 * <p>
 	 *
-	 * @param buttonGroup The group to apply to
+	 * @param buttonGroup
+	 * 		The group to apply to
 	 */
 	public JQUIButtonGroupFeature(Component buttonGroup)
 	{
@@ -69,7 +70,40 @@ public class JQUIButtonGroupFeature extends Feature<JQUIButtonGroupOptions, JQUI
 		{
 			buttongGroupOptions = new JQUIButtonGroupOptions();
 		}
-		return buttongGroupOptions; //To change body of generated methods, choose Tools | Templates.
+		return buttongGroupOptions;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIButtonGroupFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIButtonGroupFeature that = (JQUIButtonGroupFeature) o;
+
+		if (!buttonGroup.equals(that.buttonGroup))
+		{
+			return false;
+		}
+		return buttongGroupOptions != null ? buttongGroupOptions.equals(that.buttongGroupOptions) : that.buttongGroupOptions == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + buttonGroup.hashCode();
+		result = 31 * result + (buttongGroupOptions != null ? buttongGroupOptions.hashCode() : 0);
+		return result;
+	}
 }

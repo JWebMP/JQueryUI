@@ -21,9 +21,6 @@ import za.co.mmagon.jwebswing.PageConfigurator;
 import za.co.mmagon.jwebswing.plugins.PluginInformation;
 import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQueryUIReferencePool;
-import za.co.mmagon.logger.LogFactory;
-
-import java.util.logging.Logger;
 
 /**
  * Checks if a UI component is used on the page and adds
@@ -49,11 +46,9 @@ import java.util.logging.Logger;
 )
 public class JQUIPageConfigurator extends PageConfigurator
 {
-	
-	private static final Logger log = LogFactory.getInstance().getLogger("JQueryUIConfigurator");
+
 	private static final long serialVersionUID = 1L;
-	public static String JQueryUIEnabled = "jquery-ui-enabled";
-	
+
 	@Override
 	public Page configure(Page page)
 	{

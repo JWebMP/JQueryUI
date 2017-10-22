@@ -21,20 +21,20 @@ import za.co.mmagon.jwebswing.base.references.JavascriptReference;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 class JQUISpinnerJavaScriptReference extends JavascriptReference
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 *
 	 */
 	public JQUISpinnerJavaScriptReference()
 	{
-		super("JWSpinnerJavaScriptReferenceJS", 1.114, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js");//spinner.js");
+		super("JWSpinnerJavaScriptReferenceJS", 1.114, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js");
 	}
 }

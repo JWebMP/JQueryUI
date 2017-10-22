@@ -22,7 +22,7 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 public class JQUISliderFeature extends Feature<JQUISliderOptions, JQUISliderFeature> implements JQUISliderFeatures
@@ -73,4 +73,37 @@ public class JQUISliderFeature extends Feature<JQUISliderOptions, JQUISliderFeat
 		return options;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUISliderFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUISliderFeature that = (JQUISliderFeature) o;
+
+		if (!selectMenu.equals(that.selectMenu))
+		{
+			return false;
+		}
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + selectMenu.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
+	}
 }

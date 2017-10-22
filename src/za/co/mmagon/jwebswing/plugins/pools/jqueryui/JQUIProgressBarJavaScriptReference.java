@@ -21,19 +21,19 @@ import za.co.mmagon.jwebswing.base.references.JavascriptReference;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 class JQUIProgressBarJavaScriptReference extends JavascriptReference
 {
-	
+
 	/**
 	 *
 	 */
 	public JQUIProgressBarJavaScriptReference()
 	{
-		super("JWProgressBarJS", 1.11, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js");//progressbar.js");
+		super("JWProgressBarJS", 1.11, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js");
 		setSortOrder(15);
 	}
 }

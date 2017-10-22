@@ -30,12 +30,12 @@ import java.util.List;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 public class JQUIAutoCompleteOptions extends JavaScriptPart
 {
-	
+
 	/**
 	 * Version 1
 	 */
@@ -49,7 +49,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	 * <p>
 	 */
 	private String appendTo;
-	
+
 	/**
 	 * The available category selections
 	 * <p>
@@ -71,7 +71,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	 * $( ".selector" ).autocomplete({ autoFocus: true });
 	 */
 	private Boolean autoFocus;
-	
+
 	/**
 	 * delay
 	 * <p>
@@ -148,16 +148,16 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	 */
 	@JsonIgnore
 	private JQUIAutoComplete autoComplete;
-	
+
 	/**
 	 * Constructs a new Auto Complete Options Array
 	 * <p>
 	 */
 	public JQUIAutoCompleteOptions()
 	{
-
+		//Nothing needed
 	}
-	
+
 	/**
 	 * appendTo Type: Selector Default: null
 	 * <p>
@@ -171,7 +171,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		return appendTo;
 	}
-	
+
 	/**
 	 * appendTo Type: Selector Default: null
 	 * <p>
@@ -179,7 +179,8 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	 * menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body. Note: The appendTo option should not be changed while the
 	 * suggestions menu is open.
 	 *
-	 * @param appendTo set the string to the # id
+	 * @param appendTo
+	 * 		set the string to the # id
 	 *
 	 * @return
 	 */
@@ -188,7 +189,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 		this.appendTo = appendTo;
 		return this;
 	}
-	
+
 	/**
 	 * appendTo Type: Selector Default: null
 	 * <p>
@@ -196,7 +197,8 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	 * menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body. Note: The appendTo option should not be changed while the
 	 * suggestions menu is open.
 	 *
-	 * @param appendTo Sets the string to the #id
+	 * @param appendTo
+	 * 		Sets the string to the #id
 	 *
 	 * @return
 	 */
@@ -205,7 +207,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 		this.appendTo = appendTo.getID(true);
 		return this;
 	}
-	
+
 	/**
 	 * Adds a label option that is grouped into a category
 	 *
@@ -218,7 +220,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		return addOption(label, label, category);
 	}
-	
+
 	/**
 	 * Adds a label only option
 	 *
@@ -230,7 +232,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		return addOption(label, null, null);
 	}
-	
+
 	/**
 	 * Adds a label with a value and category
 	 *
@@ -246,7 +248,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 		getSource().add(entry);
 		return entry;
 	}
-	
+
 	/**
 	 * Array: An array can be used for local data. There are two supported formats:
 	 * <p>
@@ -265,7 +267,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 		}
 		return source;
 	}
-	
+
 	/**
 	 * Sets this source list
 	 *
@@ -275,7 +277,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		this.source = source;
 	}
-	
+
 	/**
 	 * Gets whether the first item should be highlighted on open
 	 *
@@ -285,7 +287,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		return autoFocus;
 	}
-	
+
 	/**
 	 * Sets if the first item should be highlighted on opening
 	 *
@@ -295,7 +297,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		this.autoFocus = autoFocus;
 	}
-	
+
 	/**
 	 * Gets the delay to open
 	 *
@@ -305,7 +307,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		return delay;
 	}
-	
+
 	/**
 	 * Sets the delay to open
 	 *
@@ -315,7 +317,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		this.delay = delay;
 	}
-	
+
 	/**
 	 * gets disabled or not
 	 *
@@ -325,7 +327,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		return disabled;
 	}
-	
+
 	/**
 	 * Sets disabled or not
 	 *
@@ -335,7 +337,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		this.disabled = disabled;
 	}
-	
+
 	/**
 	 * gets the minimum length
 	 *
@@ -365,7 +367,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		return position;
 	}
-	
+
 	/**
 	 * Sets the position of the auto complete box
 	 *
@@ -375,7 +377,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		this.position = position;
 	}
-	
+
 	/**
 	 * Renders the source string
 	 *
@@ -397,7 +399,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 			return set.toString();
 		}
 	}
-	
+
 	/**
 	 * If this auto complete uses ajax
 	 *
@@ -407,7 +409,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		return ajax;
 	}
-	
+
 	/**
 	 * If the auto complete uses ajax
 	 *
@@ -419,7 +421,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 		this.ajax = ajax;
 		this.autoComplete = accordion;
 	}
-	
+
 	/**
 	 * Returns the autoComplete
 	 *
@@ -429,7 +431,7 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		return autoComplete;
 	}
-	
+
 	/**
 	 * Sets the referenced autoComplete
 	 *
@@ -439,5 +441,5 @@ public class JQUIAutoCompleteOptions extends JavaScriptPart
 	{
 		this.autoComplete = autoComplete;
 	}
-	
+
 }

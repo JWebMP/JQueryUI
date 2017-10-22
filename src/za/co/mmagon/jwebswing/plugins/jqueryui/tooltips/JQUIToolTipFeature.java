@@ -65,7 +65,7 @@ public class JQUIToolTipFeature extends Feature<JQUITooltipOptions, JQUIToolTipF
 	{
 		super("JWTooltip");
 		setComponent(forComponent);
-		if (!(tooltipText == null))
+		if (tooltipText != null)
 		{
 			getComponent().addAttribute(GlobalAttributes.Title, tooltipText);
 		}
@@ -97,6 +97,8 @@ public class JQUIToolTipFeature extends Feature<JQUITooltipOptions, JQUIToolTipF
 
 		getJavascriptReferences().add(JQUIReferencePool.Tooltip.getJavaScriptReference());
 		getCssReferences().add(JQUIReferencePool.Tooltip.getCssReference());
+
+		getComponent().add(divToDisplayForComponent);
 	}
 
 	/**
@@ -123,5 +125,34 @@ public class JQUIToolTipFeature extends Feature<JQUITooltipOptions, JQUIToolTipF
 		requiredString += ");" + getNewLine();
 
 		addQuery(requiredString);
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIToolTipFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIToolTipFeature that = (JQUIToolTipFeature) o;
+
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
 	}
 }

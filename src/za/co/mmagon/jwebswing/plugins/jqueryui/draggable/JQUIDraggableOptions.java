@@ -19,17 +19,18 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.draggable;
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.htmlbuilder.css.displays.Cursors;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Provides all the options available to the Draggable Feature Implementation
  * <p>
  *
  * @author MMagon
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @version 1.0
  * @since 2014/09/09
  */
@@ -50,11 +51,10 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	 * Constrains dragging to either the horizontal (x) or vertical (y) axis. Possible values: "x", "y".
 	 */
 	private Axis axis;
-
 	/**
 	 * Prevents dragging from starting on specified elements. Default: "input,textarea,button,select,option"
 	 */
-	private ArrayList<String> cancelObjects = new ArrayList();
+	private List<String> cancelObjects;
 	/**
 	 * Allows the draggable to be dropped onto the specified sortables. If this option is used, a draggable can be dropped onto a sortable list and then becomes part of it. Note: The helper option
 	 * must be set to "clone" in order to work flawlessly.
@@ -179,7 +179,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * If set to false, will prevent the ui-draggable class from being added. This may be desired as a performance optimization when calling .draggable() on hundreds of elements.
 	 *
-	 * @param addClasses True or false denoting add classes or not
+	 * @param addClasses
+	 * 		True or false denoting add classes or not
 	 */
 	public void setAddClasses(Boolean addClasses)
 	{
@@ -199,7 +200,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * Which element the draggable helper should be appended to while dragging.
 	 *
-	 * @param appendTo Which element the draggable helper should be appended to while dragging.
+	 * @param appendTo
+	 * 		Which element the draggable helper should be appended to while dragging.
 	 */
 	public void setAppendTo(Component appendTo)
 	{
@@ -231,17 +233,23 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	 *
 	 * @return The component array that is set as prevent dragging
 	 */
-	public ArrayList<String> getCancelObjects()
+	@NotNull
+	public List<String> getCancelObjects()
 	{
+		if (cancelObjects == null)
+		{
+			cancelObjects = new ArrayList<>();
+		}
 		return cancelObjects;
 	}
 
 	/**
 	 * Prevents dragging from starting on specified elements.
 	 *
-	 * @param cancelObjects An ArrayList of objects to exclude from the Draggable element
+	 * @param cancelObjects
+	 * 		An ArrayList of objects to exclude from the Draggable element
 	 */
-	public void setCancelObjects(ArrayList<String> cancelObjects)
+	public void setCancelObjects(List<String> cancelObjects)
 	{
 
 		this.cancelObjects = cancelObjects;
@@ -262,7 +270,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	 * Allows the draggable to be dropped onto the specified sortables. If this option is used, a draggable can be dropped onto a sortable list and then becomes part of it. Note: The helper option
 	 * must be set to "clone" in order to work flawlessly. Requires the jQuery UI Sortable plugin to be included.
 	 *
-	 * @param connectToSortableType The component to add
+	 * @param connectToSortableType
+	 * 		The component to add
 	 */
 	public void setConnectToSortableType(Component connectToSortableType)
 	{
@@ -282,7 +291,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * Constrains dragging to within the bounds of the specified element or region.
 	 *
-	 * @param containment The component to contain to
+	 * @param containment
+	 * 		The component to contain to
 	 */
 	public void setContainment(Component containment)
 	{
@@ -302,7 +312,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * Sets the cursor during drag operation or NULL to remove setting
 	 *
-	 * @param cursor The cursor to set to
+	 * @param cursor
+	 * 		The cursor to set to
 	 */
 	public void setCursor(Cursors cursor)
 	{
@@ -322,7 +333,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * Time in milliseconds after mousedown until dragging should start. This option can be used to prevent unwanted drags when clicking on an element.
 	 *
-	 * @param delay The delay in milliseconds to set
+	 * @param delay
+	 * 		The delay in milliseconds to set
 	 */
 	public void setDelay(Integer delay)
 	{
@@ -342,7 +354,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * Sets the disabled value of the draggable feature
 	 *
-	 * @param disabled True sets this disabled. Should update on an AJAX call.
+	 * @param disabled
+	 * 		True sets this disabled. Should update on an AJAX call.
 	 */
 	public void setDisabled(Boolean disabled)
 	{
@@ -362,7 +375,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * Distance in pixels after mousedown the mouse must move before dragging should start. This option can be used to prevent unwanted drags when clicking on an element.
 	 *
-	 * @param distance The distance to set
+	 * @param distance
+	 * 		The distance to set
 	 */
 	public void setDistance(Integer distance)
 	{
@@ -382,15 +396,17 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * Snaps the dragging helper to a grid, every x and y pixels. The array must be of the form [ x, y ].
 	 *
-	 * @param x The X Axis
-	 * @param y The Y Axis
+	 * @param x
+	 * 		The X Axis
+	 * @param y
+	 * 		The Y Axis
 	 */
 	public void setGrid(Integer x, Integer y)
 	{
 		this.grid = new Integer[]
-				{
-						x, y
-				};
+				            {
+						            x, y
+				            };
 	}
 
 	/**
@@ -406,7 +422,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * If specified, restricts dragging from starting unless the mousedown occurs on the specified element(s). Only elements that descend from the draggable element are permitted.
 	 *
-	 * @param handle The component to set the handle on
+	 * @param handle
+	 * 		The component to set the handle on
 	 */
 	public void setHandle(Component handle)
 	{
@@ -430,7 +447,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	 * <p>
 	 * The element will be cloned and the clone will be dragged.
 	 *
-	 * @param helper Set to clone the element or not
+	 * @param helper
+	 * 		Set to clone the element or not
 	 */
 	public void setHelper(Boolean helper)
 	{
@@ -450,7 +468,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * Specify a component to use as a helper component. Warning : This component will be made invisible.
 	 *
-	 * @param helperComponent The component to set it to
+	 * @param helperComponent
+	 * 		The component to set it to
 	 */
 	public void setHelperComponent(Component helperComponent)
 	{
@@ -470,7 +489,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * Prevent iframes from capturing the mousemove events during a drag. Useful in combination with the cursorAt option, or in any case where the mouse cursor may not be over the helper.
 	 *
-	 * @param iFrameFix Set if IFrames will be covered
+	 * @param iFrameFix
+	 * 		Set if IFrames will be covered
 	 */
 	public void setiFrameFix(Boolean iFrameFix)
 	{
@@ -490,7 +510,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * Opacity for the helper while being dragged.
 	 *
-	 * @param opacity Sets the opacity to a maximum of 1.0 = 0.0 removes all opacity
+	 * @param opacity
+	 * 		Sets the opacity to a maximum of 1.0 = 0.0 removes all opacity
 	 */
 	public void setOpacity(Double opacity)
 	{
@@ -510,7 +531,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * If set to true, all droppable positions are calculated on every mousemove. Caution: This solves issues on highly dynamic pages, but dramatically decreases performance.
 	 *
-	 * @param refreshPositions Sets the refresh position value
+	 * @param refreshPositions
+	 * 		Sets the refresh position value
 	 */
 	public void setRefreshPositions(Boolean refreshPositions)
 	{
@@ -528,7 +550,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * Whether the element should revert to its start position when dragging stops.
 	 *
-	 * @param revert Whether the element should revert to its start position when dragging stops.
+	 * @param revert
+	 * 		Whether the element should revert to its start position when dragging stops.
 	 */
 	public void setRevert(Boolean revert)
 	{
@@ -544,7 +567,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param revertOption If set to "invalid", revert will only occur if the draggable has not been dropped on a droppable. For "valid", it's the other way around.
+	 * @param revertOption
+	 * 		If set to "invalid", revert will only occur if the draggable has not been dropped on a droppable. For "valid", it's the other way around.
 	 */
 	public void setRevertOption(JQUIDraggableRevertOptions revertOption)
 	{
@@ -560,7 +584,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param revertDuration The duration of the revert animation, in milliseconds. Ignored if the revert option is false.
+	 * @param revertDuration
+	 * 		The duration of the revert animation, in milliseconds. Ignored if the revert option is false.
 	 */
 	public void setRevertDuration(Integer revertDuration)
 	{
@@ -580,7 +605,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	/**
 	 * Used to group sets of draggable and droppable items, in addition to droppable's accept option. A draggable with the same scope value as a droppable will be accepted by the droppable.
 	 *
-	 * @param scope The scope to set for this draggable
+	 * @param scope
+	 * 		The scope to set for this draggable
 	 */
 	public final void setScope(String scope)
 	{
@@ -596,7 +622,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param scroll If set to true, container auto-scrolls while dragging.
+	 * @param scroll
+	 * 		If set to true, container auto-scrolls while dragging.
 	 */
 	public void setScroll(Boolean scroll)
 	{
@@ -612,8 +639,9 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param scrollSensitivity Distance in pixels from the edge of the viewport after which the viewport should scroll. Distance is relative to pointer, not the draggable. Ignored if the scroll
-	 *                          option is false.
+	 * @param scrollSensitivity
+	 * 		Distance in pixels from the edge of the viewport after which the viewport should scroll. Distance is relative to pointer, not the draggable. Ignored if the scroll
+	 * 		option is false.
 	 */
 	public void setScrollSensitivity(Integer scrollSensitivity)
 	{
@@ -629,7 +657,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param scrollSpeed The speed at which the window should scroll once the mouse pointer gets within the scrollSensitivity distance. Ignored if the scroll option is false.
+	 * @param scrollSpeed
+	 * 		The speed at which the window should scroll once the mouse pointer gets within the scrollSensitivity distance. Ignored if the scroll option is false.
 	 */
 	public void setScrollSpeed(Integer scrollSpeed)
 	{
@@ -645,7 +674,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param snap Whether the element should snap to other elements.
+	 * @param snap
+	 * 		Whether the element should snap to other elements.
 	 */
 	public void setSnap(Boolean snap)
 	{
@@ -661,7 +691,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param snapComponent A selector specifying which elements to snap to.
+	 * @param snapComponent
+	 * 		A selector specifying which elements to snap to.
 	 */
 	public void setSnapComponent(Component snapComponent)
 	{
@@ -677,7 +708,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param snapMode Determines which edges of snap elements the draggable will snap to. Ignored if the snap option is false. Possible values: "inner", "outer", "both".
+	 * @param snapMode
+	 * 		Determines which edges of snap elements the draggable will snap to. Ignored if the snap option is false. Possible values: "inner", "outer", "both".
 	 */
 	public void setSnapMode(JQUIDraggableSnapModes snapMode)
 	{
@@ -693,7 +725,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param snapToleranceType The distance in pixels from the snap element edges at which snapping should occur. Ignored if the snap option is false.
+	 * @param snapToleranceType
+	 * 		The distance in pixels from the snap element edges at which snapping should occur. Ignored if the snap option is false.
 	 */
 	public void setSnapToleranceType(Integer snapToleranceType)
 	{
@@ -709,7 +742,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param snapTolerance The distance in pixels from the snap element edges at which snapping should occur. Ignored if the snap option is false.
+	 * @param snapTolerance
+	 * 		The distance in pixels from the snap element edges at which snapping should occur. Ignored if the snap option is false.
 	 */
 	public void setSnapTolerance(Integer snapTolerance)
 	{
@@ -725,7 +759,8 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param stack Controls the z-index of the set of elements that match the selector, always brings the currently dragged item to the front. Very useful in things like window managers.
+	 * @param stack
+	 * 		Controls the z-index of the set of elements that match the selector, always brings the currently dragged item to the front. Very useful in things like window managers.
 	 */
 	public void setStack(Component stack)
 	{
@@ -741,16 +776,12 @@ public class JQUIDraggableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param zIndex Z-index for the helper while being dragged.
+	 * @param zIndex
+	 * 		Z-index for the helper while being dragged.
 	 */
 	public void setzIndex(Integer zIndex)
 	{
 		this.zIndex = zIndex;
 	}
 
-	@Override
-	public JavascriptPartType getJavascriptType()
-	{
-		return JavascriptPartType.Javascript;
-	}
 }

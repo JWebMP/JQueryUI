@@ -27,7 +27,7 @@ import java.util.List;
  *
  * @author GedMarc
  * @version 1.0
- * <p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 public class JQUIDatePickerOptions extends JavaScriptPart
@@ -254,8 +254,6 @@ public class JQUIDatePickerOptions extends JavaScriptPart
 	private String showOn;
 	/**
 	 * If using one of the jQuery UI effects for the showAnim option, you can provide additional properties for that animation using this option.
-	 *
-	 * @deprecated
 	 */
 	private Boolean showOptions;
 	/**
@@ -1193,8 +1191,6 @@ public class JQUIDatePickerOptions extends JavaScriptPart
 	 * If using one of the jQuery UI effects for the showAnim option, you can provide additional properties for that animation using this option.
 	 *
 	 * @return
-	 *
-	 * @deprecated
 	 */
 	public Boolean getShowOptions()
 	{
@@ -1205,8 +1201,6 @@ public class JQUIDatePickerOptions extends JavaScriptPart
 	 * If using one of the jQuery UI effects for the showAnim option, you can provide additional properties for that animation using this option.
 	 *
 	 * @param showOptions
-	 *
-	 * @deprecated
 	 */
 	public void setShowOptions(Boolean showOptions)
 	{

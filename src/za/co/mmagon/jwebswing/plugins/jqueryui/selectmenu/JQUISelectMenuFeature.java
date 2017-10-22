@@ -23,7 +23,7 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 public class JQUISelectMenuFeature extends Feature<JQUISelectMenuOptions, JQUISelectMenuFeature> implements JQUISelectMenuFeatures
@@ -42,7 +42,8 @@ public class JQUISelectMenuFeature extends Feature<JQUISelectMenuOptions, JQUISe
 	/**
 	 * Constructs a new Select Menu Add Options or Option Groups to configure
 	 *
-	 * @param selectMenu Because off css classing
+	 * @param selectMenu
+	 * 		Because off css classing
 	 */
 	public JQUISelectMenuFeature(Component selectMenu)
 	{
@@ -77,4 +78,37 @@ public class JQUISelectMenuFeature extends Feature<JQUISelectMenuOptions, JQUISe
 		return options;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUISelectMenuFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUISelectMenuFeature that = (JQUISelectMenuFeature) o;
+
+		if (!selectMenu.equals(that.selectMenu))
+		{
+			return false;
+		}
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + selectMenu.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
+	}
 }

@@ -57,4 +57,32 @@ public class JQUICheckBoxRadioFeature extends Feature
 		addQuery(getComponent().getJQueryID() + "checkboxradio(" + getOptions() + ");");
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUICheckBoxRadioFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUICheckBoxRadioFeature that = (JQUICheckBoxRadioFeature) o;
+
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
+	}
 }

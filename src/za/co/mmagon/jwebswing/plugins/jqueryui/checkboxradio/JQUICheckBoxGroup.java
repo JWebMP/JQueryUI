@@ -23,8 +23,8 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.controlgroup.JQUIControlGroupFeat
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 public class JQUICheckBoxGroup extends FieldSet
@@ -48,8 +48,10 @@ public class JQUICheckBoxGroup extends FieldSet
 	 * Adds a new Check Box to the group
 	 * <p>
 	 *
-	 * @param label    the label to create
-	 * @param checkBox the check box to add
+	 * @param label
+	 * 		the label to create
+	 * @param checkBox
+	 * 		the check box to add
 	 *
 	 * @return
 	 */
@@ -113,4 +115,37 @@ public class JQUICheckBoxGroup extends FieldSet
 		return feature;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUICheckBoxGroup))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUICheckBoxGroup that = (JQUICheckBoxGroup) o;
+
+		if (!getFeature().equals(that.getFeature()))
+		{
+			return false;
+		}
+		return getLegendTitle() != null ? getLegendTitle().equals(that.getLegendTitle()) : that.getLegendTitle() == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		result = 31 * result + (getLegendTitle() != null ? getLegendTitle().hashCode() : 0);
+		return result;
+	}
 }

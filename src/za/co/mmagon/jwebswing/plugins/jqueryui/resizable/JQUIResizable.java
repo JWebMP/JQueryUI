@@ -42,7 +42,8 @@ public class JQUIResizable extends Div<JQUIResizableChildren, NoAttributes, JQUI
 	 */
 	public JQUIResizable()
 	{
-		addFeature(feature = new JQUIResizableFeature(this));
+		feature = new JQUIResizableFeature(this);
+		addFeature(feature);
 	}
 
 	/**
@@ -89,5 +90,34 @@ public class JQUIResizable extends Div<JQUIResizableChildren, NoAttributes, JQUI
 	public IJQUIResizable asMe()
 	{
 		return this;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIResizable))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIResizable that = (JQUIResizable) o;
+
+		return getFeature().equals(that.getFeature());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		return result;
 	}
 }

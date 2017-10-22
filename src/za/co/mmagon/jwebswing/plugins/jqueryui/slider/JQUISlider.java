@@ -23,8 +23,8 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 9, 2015
  */
 @ComponentInformation(name = "JQuery UI Slider",
@@ -88,4 +88,37 @@ public class JQUISlider extends Div<JQUISliderChildren, NoAttributes, JQUISlider
 		return this;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUISlider))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUISlider that = (JQUISlider) o;
+
+		if (!getSlider().equals(that.getSlider()))
+		{
+			return false;
+		}
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getSlider().hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
+	}
 }

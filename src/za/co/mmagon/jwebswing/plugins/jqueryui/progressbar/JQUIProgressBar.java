@@ -26,8 +26,8 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  *
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 @ComponentInformation(name = "JQuery UI Progress Bar", description = "The progress bar is designed to display the current percent complete for a process. The bar is coded to be flexibly sized through CSS and will scale to fit inside its parent container by default.",
@@ -46,7 +46,8 @@ public class JQUIProgressBar extends Div<JQUIProgressBarChildren, NoAttributes, 
 	 */
 	public JQUIProgressBar()
 	{
-		addFeature(feature = new JQUIProgressBarFeature(this));
+		feature = new JQUIProgressBarFeature(this);
+		addFeature(feature);
 	}
 
 	/**
@@ -84,5 +85,34 @@ public class JQUIProgressBar extends Div<JQUIProgressBarChildren, NoAttributes, 
 	public IJQUIProgressBar asMe()
 	{
 		return this;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIProgressBar))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIProgressBar that = (JQUIProgressBar) o;
+
+		return getFeature().equals(that.getFeature());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		return result;
 	}
 }

@@ -16,7 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio;
 
-import za.co.mmagon.jwebswing.base.html.Input;
 import za.co.mmagon.jwebswing.base.html.InputRadioType;
 import za.co.mmagon.jwebswing.base.html.Label;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
@@ -25,7 +24,7 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 @ComponentInformation(name = "JQuery UI Radio Button", description = "Enhances standard checkbox and radio input element to themeable buttons with appropriate hover and active styles.",
@@ -51,12 +50,14 @@ public class JQUIRadioButton extends InputRadioType implements IJQUICheckBox
 	 */
 	public JQUIRadioButton()
 	{
-		addFeature(feature = new JQUICheckBoxRadioFeature(this));
+		feature = new JQUICheckBoxRadioFeature(this);
+		addFeature(feature);
 	}
 
 	public JQUIRadioButton(String label)
 	{
-		addFeature(feature = new JQUICheckBoxRadioFeature(this));
+		feature = new JQUICheckBoxRadioFeature(this);
+		addFeature(feature);
 		this.label = label;
 	}
 
@@ -91,12 +92,6 @@ public class JQUIRadioButton extends InputRadioType implements IJQUICheckBox
 	public String getValue()
 	{
 		return super.getAttribute(GlobalAttributes.Value);
-	}
-
-	@Override
-	public Input setValue(String value)
-	{
-		return super.setValue(value); //To change body of generated methods, choose Tools | Templates.
 	}
 
 	/**
@@ -136,4 +131,37 @@ public class JQUIRadioButton extends InputRadioType implements IJQUICheckBox
 		return new StringBuilder().append(getCurrentTabIndentString()).append(legend.toString(true)).append(getNewLine());
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIRadioButton))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIRadioButton that = (JQUIRadioButton) o;
+
+		if (!getFeature().equals(that.getFeature()))
+		{
+			return false;
+		}
+		return getLabel() != null ? getLabel().equals(that.getLabel()) : that.getLabel() == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		result = 31 * result + (getLabel() != null ? getLabel().hashCode() : 0);
+		return result;
+	}
 }

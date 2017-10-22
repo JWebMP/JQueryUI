@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.themes;
 import za.co.mmagon.jwebswing.base.interfaces.ICSSClassName;
 
 import java.util.EnumSet;
+import java.util.Set;
 
 /**
  * All the class names to work with JQuery UI Themes
@@ -132,35 +133,35 @@ public enum JQUIThemeBlocks implements ICSSClassName
 	/**
 	 * Enabled or Disabled States
 	 */
-	protected static final EnumSet<JQUIThemeBlocks> ThemeStates = EnumSet.of(UI_State_Enabled, UI_State_Disabled);
+	protected static final Set<JQUIThemeBlocks> ThemeStates = EnumSet.of(UI_State_Enabled, UI_State_Disabled);
 
 	/**
 	 * Priorities
 	 * <p>
 	 */
-	protected static final EnumSet<JQUIThemeBlocks> ThemePriorities = EnumSet.of(UI_Priority_Primary, UI_Priority_Secondary);
+	protected static final Set<JQUIThemeBlocks> ThemePriorities = EnumSet.of(UI_Priority_Primary, UI_Priority_Secondary);
 
 	/**
 	 * Link Types
 	 */
-	protected static final EnumSet<JQUIThemeBlocks> ThemeLinks = EnumSet.of(UI_State_Active, UI_State_Hover, UI_State_Link, UI_State_Visited);
+	protected static final Set<JQUIThemeBlocks> ThemeLinks = EnumSet.of(UI_State_Active, UI_State_Hover, UI_State_Link, UI_State_Visited);
 
 	/**
 	 * Theme Status (Error,Highlight,Default)
 	 */
-	protected static final EnumSet<JQUIThemeBlocks> ThemeStatus = EnumSet.of(UI_State_Error, UI_State_Highlight, UI_State_Default);
+	protected static final Set<JQUIThemeBlocks> ThemeStatus = EnumSet.of(UI_State_Error, UI_State_Highlight, UI_State_Default);
 
 	/**
 	 * Radius Settings
 	 */
-	protected static final EnumSet<JQUIThemeBlocks> ThemeCorners = EnumSet.of(UI_Corner_All, UI_Corner_Top, UI_Corner_Left, UI_Corner_Right, UI_Corner_Bottom);
+	protected static final Set<JQUIThemeBlocks> ThemeCorners = EnumSet.of(UI_Corner_All, UI_Corner_Top, UI_Corner_Left, UI_Corner_Right, UI_Corner_Bottom);
 
 	/**
 	 * Returns the theme states
 	 *
 	 * @return
 	 */
-	public static EnumSet<JQUIThemeBlocks> getThemeStates()
+	public static Set<JQUIThemeBlocks> getThemeStates()
 	{
 		return ThemeStates;
 	}
@@ -170,7 +171,7 @@ public enum JQUIThemeBlocks implements ICSSClassName
 	 *
 	 * @return
 	 */
-	public static EnumSet<JQUIThemeBlocks> getThemePriorities()
+	public static Set<JQUIThemeBlocks> getThemePriorities()
 	{
 		return ThemePriorities;
 	}
@@ -180,7 +181,7 @@ public enum JQUIThemeBlocks implements ICSSClassName
 	 *
 	 * @return
 	 */
-	public static EnumSet<JQUIThemeBlocks> getThemeLinks()
+	public static Set<JQUIThemeBlocks> getThemeLinks()
 	{
 		return ThemeLinks;
 	}
@@ -190,7 +191,7 @@ public enum JQUIThemeBlocks implements ICSSClassName
 	 *
 	 * @return
 	 */
-	public static EnumSet<JQUIThemeBlocks> getThemeStatus()
+	public static Set<JQUIThemeBlocks> getThemeStatus()
 	{
 		return ThemeStatus;
 	}
@@ -200,7 +201,7 @@ public enum JQUIThemeBlocks implements ICSSClassName
 	 *
 	 * @return
 	 */
-	public static EnumSet<JQUIThemeBlocks> getThemeCorners()
+	public static Set<JQUIThemeBlocks> getThemeCorners()
 	{
 		return ThemeCorners;
 	}

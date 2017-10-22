@@ -26,7 +26,7 @@ import za.co.mmagon.jwebswing.plugins.easingeffects.JQEasingAnimationEffectsPart
  *
  * @author GedMarc
  * @version 1.0
- * <p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 public class JQUIAccordionOptions extends JavaScriptPart
@@ -72,6 +72,7 @@ public class JQUIAccordionOptions extends JavaScriptPart
 	 */
 	public JQUIAccordionOptions()
 	{
+		//Nothing needed
 	}
 
 	/**

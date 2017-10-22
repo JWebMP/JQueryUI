@@ -22,6 +22,7 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Displays collapsible content panels for presenting information in a limited amount of space. https://jqueryui.com/accordion/
@@ -45,7 +46,7 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 	/**
 	 * The list of accordion tabs
 	 */
-	private ArrayList<JQUIAccordionTab> accordionTabs;
+	private List<JQUIAccordionTab> accordionTabs;
 	/**
 	 * The attached accordion feature
 	 */
@@ -69,7 +70,8 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 	public JQUIAccordion(JQUIAccordionHeightStyle heightStyle)
 	{
 		this.accordionTabs = new ArrayList();
-		addFeature(feature = new JQUIAccordionFeature(this));
+		feature = new JQUIAccordionFeature(this);
+		addFeature(feature);
 		getOptions().setHeightStyle(heightStyle);
 		addAttribute(GlobalAttributes.JWType, "accordion");
 	}
@@ -112,52 +114,13 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 	}
 
 	/**
-	 * Returns this collection of accordion tabs
-	 *
-	 * @return
-	 */
-	public ArrayList<JQUIAccordionTab> getAccordionTabs()
-	{
-		if (accordionTabs == null)
-		{
-			accordionTabs = new ArrayList<>();
-		}
-		return accordionTabs;
-	}
-
-	/**
-	 * Sets the collection of accordion tabs
-	 * <p>
-	 *
-	 * @param accordianTabs
-	 */
-	public void setAccordionTabs(ArrayList<JQUIAccordionTab> accordianTabs)
-	{
-		this.accordionTabs = accordianTabs;
-	}
-
-	/**
 	 * Adds a new accordion tab
 	 * <p>
 	 *
-	 * @param tabName     The name of the accordion
-	 * @param tabContents The content of the accordion
-	 *
-	 * @return The accordion tab
-	 */
-	public JQUIAccordionTab addAccordianTab(JQUIAccordionHeader tabName, JQUIAccordionContent tabContents)
-	{
-		JQUIAccordionTab accTab = new JQUIAccordionTab(tabName, tabContents);
-		addAccordianTab(accTab);
-		return accTab;
-	}
-
-	/**
-	 * Adds a new accordion tab
-	 * <p>
-	 *
-	 * @param tabName     The name of the accordion
-	 * @param tabContents The content of the accordion
+	 * @param tabName
+	 * 		The name of the accordion
+	 * @param tabContents
+	 * 		The content of the accordion
 	 *
 	 * @return The accordion tab
 	 */
@@ -177,10 +140,29 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 	}
 
 	/**
+	 * Adds a new accordion tab
+	 * <p>
+	 *
+	 * @param tabName
+	 * 		The name of the accordion
+	 * @param tabContents
+	 * 		The content of the accordion
+	 *
+	 * @return The accordion tab
+	 */
+	public JQUIAccordionTab addAccordianTab(JQUIAccordionHeader tabName, JQUIAccordionContent tabContents)
+	{
+		JQUIAccordionTab accTab = new JQUIAccordionTab(tabName, tabContents);
+		addAccordianTab(accTab);
+		return accTab;
+	}
+
+	/**
 	 * Adds a physical accordion tab
 	 * <p>
 	 *
-	 * @param accordianTab The accordion tab to add to this accordion
+	 * @param accordianTab
+	 * 		The accordion tab to add to this accordion
 	 *
 	 * @return
 	 */
@@ -190,5 +172,64 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 		add(accordianTab.getHeader());
 		add(accordianTab.getComponent());
 		return accordianTab;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIAccordion))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIAccordion that = (JQUIAccordion) o;
+
+		if (getAccordionTabs() != null ? !getAccordionTabs().equals(that.getAccordionTabs()) : that.getAccordionTabs() != null)
+		{
+			return false;
+		}
+		return getFeature() != null ? getFeature().equals(that.getFeature()) : that.getFeature() == null;
+	}
+
+	/**
+	 * Returns this collection of accordion tabs
+	 *
+	 * @return
+	 */
+	public List<JQUIAccordionTab> getAccordionTabs()
+	{
+		if (accordionTabs == null)
+		{
+			accordionTabs = new ArrayList<>();
+		}
+		return accordionTabs;
+	}
+
+	/**
+	 * Sets the collection of accordion tabs
+	 * <p>
+	 *
+	 * @param accordianTabs
+	 */
+	public void setAccordionTabs(List<JQUIAccordionTab> accordianTabs)
+	{
+		this.accordionTabs = accordianTabs;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (getAccordionTabs() != null ? getAccordionTabs().hashCode() : 0);
+		result = 31 * result + (getFeature() != null ? getFeature().hashCode() : 0);
+		return result;
 	}
 }

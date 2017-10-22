@@ -24,8 +24,8 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.JQUISelectMenuChildren
 /**
  * @author GedMarcs
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 17, 2015
  */
 @ComponentInformation(name = "JQuery UI Selectable",
@@ -42,7 +42,8 @@ public class JQUISelectable extends Div<JQUISelectMenuChildren, NoAttributes, JQ
 	 */
 	public JQUISelectable()
 	{
-		addFeature(feature = new JQUISelectableFeature(this));
+		feature = new JQUISelectableFeature(this);
+		addFeature(feature);
 	}
 
 	/**
@@ -91,4 +92,32 @@ public class JQUISelectable extends Div<JQUISelectMenuChildren, NoAttributes, JQ
 		this.feature = feature;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUISelectable))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUISelectable that = (JQUISelectable) o;
+
+		return getFeature().equals(that.getFeature());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		return result;
+	}
 }

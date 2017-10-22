@@ -27,8 +27,8 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  *
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 9, 2015
  */
 @ComponentInformation(name = "JQuery UI Select Menu",
@@ -90,4 +90,32 @@ public class JQUISelectMenu extends Div<JQUISelectMenuChildren, NoAttributes, JQ
 		return getFeature().getOptions();
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUISelectMenu))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUISelectMenu that = (JQUISelectMenu) o;
+
+		return getFeature().equals(that.getFeature());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		return result;
+	}
 }

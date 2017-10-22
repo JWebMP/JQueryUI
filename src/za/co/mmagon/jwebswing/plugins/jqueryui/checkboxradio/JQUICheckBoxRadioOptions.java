@@ -48,7 +48,7 @@ public class JQUICheckBoxRadioOptions extends JavaScriptPart
 
 	public JQUICheckBoxRadioOptions()
 	{
-
+		//Nothing Needed
 	}
 
 	/**

@@ -16,7 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio;
 
-import za.co.mmagon.jwebswing.base.html.Input;
 import za.co.mmagon.jwebswing.base.html.InputCheckBoxType;
 import za.co.mmagon.jwebswing.base.html.Label;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
@@ -25,7 +24,7 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 @ComponentInformation(name = "JQuery UI Checkbox", description = "Enhances standard checkbox and radio input element to themeable buttons with appropriate hover and active styles.",
@@ -33,7 +32,7 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 public class JQUICheckBox extends InputCheckBoxType implements IJQUICheckBox
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The feature
@@ -43,23 +42,26 @@ public class JQUICheckBox extends InputCheckBoxType implements IJQUICheckBox
 	 * The label of this checkbox
 	 */
 	private String label;
-	
+
 	/**
 	 * Constructs a new Check Box with the Button feature applied
-	 *
-	 * @param label
 	 */
 	public JQUICheckBox()
 	{
-		addFeature(feature = new JQUICheckBoxRadioFeature(this));
+		feature = new JQUICheckBoxRadioFeature(this);
+		addFeature(feature);
 	}
-	
+
+	/**
+	 * @param label
+	 */
 	public JQUICheckBox(String label)
 	{
-		addFeature(feature = new JQUICheckBoxRadioFeature(this));
+		feature = new JQUICheckBoxRadioFeature(this);
+		addFeature(feature);
 		this.label = label;
 	}
-	
+
 	/**
 	 * Sets the label of this checkbox
 	 *
@@ -70,7 +72,7 @@ public class JQUICheckBox extends InputCheckBoxType implements IJQUICheckBox
 	{
 		return label;
 	}
-	
+
 	/**
 	 * Sets the label of this checkbox
 	 *
@@ -81,7 +83,7 @@ public class JQUICheckBox extends InputCheckBoxType implements IJQUICheckBox
 	{
 		this.label = label;
 	}
-	
+
 	/**
 	 * Gets the value of this checkbox
 	 *
@@ -92,23 +94,18 @@ public class JQUICheckBox extends InputCheckBoxType implements IJQUICheckBox
 	{
 		return super.getAttribute(GlobalAttributes.Value);
 	}
-	
-	@Override
-	public Input setValue(String value)
-	{
-		return super.setValue(value); //To change body of generated methods, choose Tools | Templates.
-	}
-	
+
 	/**
 	 * A cleaner view of the check box
 	 *
 	 * @return
 	 */
+
 	public IJQUICheckBox asMe()
 	{
 		return this;
 	}
-	
+
 	/**
 	 * Returns the feature
 	 *
@@ -118,13 +115,13 @@ public class JQUICheckBox extends InputCheckBoxType implements IJQUICheckBox
 	{
 		return feature;
 	}
-	
+
 	@Override
 	public JQUICheckBoxRadioOptions getOptions()
 	{
 		return getFeature().getOptions();
 	}
-	
+
 	@Override
 	protected StringBuilder renderBeforeTag()
 	{
@@ -132,8 +129,41 @@ public class JQUICheckBox extends InputCheckBoxType implements IJQUICheckBox
 		legend.setText(label);
 		legend.setTiny(true);
 		legend.setForInputComponent(this);
-		
+
 		return new StringBuilder().append(getCurrentTabIndentString()).append(legend.toString(true)).append(getNewLine());
 	}
-	
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUICheckBox))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUICheckBox that = (JQUICheckBox) o;
+
+		if (!getFeature().equals(that.getFeature()))
+		{
+			return false;
+		}
+		return getLabel() != null ? getLabel().equals(that.getLabel()) : that.getLabel() == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		result = 31 * result + (getLabel() != null ? getLabel().hashCode() : 0);
+		return result;
+	}
 }

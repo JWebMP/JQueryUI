@@ -22,7 +22,7 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 public class JQUIMenuFeature extends Feature<JQUIMenuOptions, JQUIMenuFeature> implements JQUIMenuFeatures
@@ -37,7 +37,8 @@ public class JQUIMenuFeature extends Feature<JQUIMenuOptions, JQUIMenuFeature> i
 	private JQUIMenuOptions options;
 
 	/**
-	 * @param menu The menu creating for
+	 * @param menu
+	 * 		The menu creating for
 	 */
 	public JQUIMenuFeature(JQUIMenu menu)
 	{
@@ -73,4 +74,37 @@ public class JQUIMenuFeature extends Feature<JQUIMenuOptions, JQUIMenuFeature> i
 		return options;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIMenuFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIMenuFeature that = (JQUIMenuFeature) o;
+
+		if (!menu.equals(that.menu))
+		{
+			return false;
+		}
+		return getOptions() != null ? getOptions().equals(that.getOptions()) : that.getOptions() == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + menu.hashCode();
+		result = 31 * result + (getOptions() != null ? getOptions().hashCode() : 0);
+		return result;
+	}
 }

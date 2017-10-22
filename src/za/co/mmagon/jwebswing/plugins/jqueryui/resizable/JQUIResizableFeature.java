@@ -66,4 +66,32 @@ public class JQUIResizableFeature extends Feature<JQUIResizableOptions, JQUIResi
 		return options;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIResizableFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIResizableFeature that = (JQUIResizableFeature) o;
+
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
+	}
 }

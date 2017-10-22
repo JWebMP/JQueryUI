@@ -31,18 +31,19 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  *
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 @ComponentInformation(name = "JQuery UI Menu", description = "A menu with the default configuration, disabled items and nested menus. A list is transformed, adding theming, mouse and keyboard navigation support. Try to tab to the menu then use the cursor keys to navigate.",
 		url = "http://jqueryui.com/menu/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIMenu extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvents, JQUIMenu> implements IJQUIMenu
 {
-	
+
 	private static final long serialVersionUID = 1L;
+	private final Orientation orientation;
 	private JQUIMenuFeature feature;
-	
+
 	/**
 	 * Creates an ordered list
 	 *
@@ -50,10 +51,11 @@ public class JQUIMenu extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvent
 	 */
 	public JQUIMenu(Orientation orientation)
 	{
+		this.orientation = orientation;
 		addFeature(getFeature());
-		
+
 	}
-	
+
 	/**
 	 * Returns an instance of this feature
 	 * <p>
@@ -68,7 +70,7 @@ public class JQUIMenu extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvent
 		}
 		return feature;
 	}
-	
+
 	/**
 	 * Gets the options of the menu
 	 *
@@ -79,7 +81,7 @@ public class JQUIMenu extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvent
 	{
 		return getFeature().getOptions();
 	}
-	
+
 	/**
 	 * Returns a cleaner view of this object
 	 *
@@ -88,5 +90,34 @@ public class JQUIMenu extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvent
 	public IJQUIMenu asMe()
 	{
 		return this;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIMenu))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIMenu jquiMenu = (JQUIMenu) o;
+
+		return getFeature().equals(jquiMenu.getFeature());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		return result;
 	}
 }

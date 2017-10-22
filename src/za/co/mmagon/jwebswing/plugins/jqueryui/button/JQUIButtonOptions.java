@@ -33,7 +33,6 @@ public class JQUIButtonOptions extends JavaScriptPart
 	/**
 	 * The icons to display for the button
 	 */
-	@Deprecated
 	private JQUIButtonIconOptions icons;
 	/**
 	 * The new icon class for 1.12
@@ -80,7 +79,6 @@ public class JQUIButtonOptions extends JavaScriptPart
 	 *
 	 * @return
 	 */
-	@Deprecated
 	public JQUIButtonIconOptions getIcons()
 	{
 		if (icons == null)
@@ -97,7 +95,6 @@ public class JQUIButtonOptions extends JavaScriptPart
 	 *
 	 * @return
 	 */
-	@Deprecated
 	public JQUIButtonOptions setIcons(JQUIButtonIconOptions icons)
 	{
 		this.icons = icons;

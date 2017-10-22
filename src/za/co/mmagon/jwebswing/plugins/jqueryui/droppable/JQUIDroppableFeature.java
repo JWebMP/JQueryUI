@@ -29,8 +29,8 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
  * <p>
  *
  * @author MMagon
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @version 1.0
  * @since 2014/04/14
  */
@@ -49,13 +49,13 @@ public class JQUIDroppableFeature extends Feature<JQUIDroppableOptions, JQUIDrop
 		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
 
 		getJavascriptReferences().add(JQUIReferencePool.Droppable.getJavaScriptReference());
-		setComponent(component);
+		setComponent(componentFor);
 	}
 
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(component.getJQueryID() + "droppable(" + getOptions() + ");");
+		addQuery(getComponent().getJQueryID() + "droppable(" + getOptions() + ");");
 	}
 
 	/**
@@ -74,4 +74,32 @@ public class JQUIDroppableFeature extends Feature<JQUIDroppableOptions, JQUIDrop
 		return options;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIDroppableFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIDroppableFeature that = (JQUIDroppableFeature) o;
+
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
+	}
 }

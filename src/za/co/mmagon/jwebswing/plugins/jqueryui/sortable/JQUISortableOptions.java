@@ -32,8 +32,8 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
  *
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 17, 2015
  */
 public class JQUISortableOptions extends JavaScriptPart
@@ -320,7 +320,7 @@ public class JQUISortableOptions extends JavaScriptPart
 
 	/**
 	 * Moves the sorting element or helper so the cursor always appears to drag from the same position. Coordinates can be given as a hash using a combination of one or two keys: { top, left, right,
-	 * bottom }. TODO Redo this implementation
+	 * bottom }.
 	 * <p>
 	 *
 	 * @return

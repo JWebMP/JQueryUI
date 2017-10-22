@@ -24,22 +24,22 @@ import za.co.mmagon.jwebswing.base.servlets.enumarations.RequirementsPriority;
  * <p>
  *
  * @author MMagon
- * <p>
- * I have moved these from the features to make it easier to specify remote or local references.
- * <p>
+ * 		<p>
+ * 		I have moved these from the features to make it easier to specify remote or local references.
+ * 		<p>
  * @version 1.0
  * @since 2014/12/09
  */
 class JQueryUIMouseJavaScriptReference extends JavascriptReference
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	public JQueryUIMouseJavaScriptReference()
 	{
-		super("JQueryUIMouse", 1.113, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js");//mouse.js");
+		super("JQueryUIMouse", 1.113, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js");
 		setSortOrder(12);
 		setPriority(RequirementsPriority.Fourth);
 	}
-	
+
 }

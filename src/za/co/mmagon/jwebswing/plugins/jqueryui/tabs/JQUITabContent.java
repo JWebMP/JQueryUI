@@ -32,6 +32,6 @@ public class JQUITabContent extends Div implements JQUITabsChildren
 	 */
 	public JQUITabContent()
 	{
-
+		//Nothing Needed
 	}
 }

@@ -24,7 +24,7 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
+ * 		<p>
  * @since Mar 9, 2015
  */
 @ComponentInformation(name = "JQuery UI Spinner",
@@ -65,7 +65,8 @@ public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpin
 	 * Constructs a new spinner paragraph object
 	 * <p>
 	 *
-	 * @param labelText THe label of the Spinner
+	 * @param labelText
+	 * 		THe label of the Spinner
 	 */
 	public JQUISpinner(String labelText)
 	{
@@ -216,4 +217,47 @@ public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpin
 		super.preConfigure();
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUISpinner))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUISpinner that = (JQUISpinner) o;
+
+		if (getHeaderText() != null ? !getHeaderText().equals(that.getHeaderText()) : that.getHeaderText() != null)
+		{
+			return false;
+		}
+		if (getInput() != null ? !getInput().equals(that.getInput()) : that.getInput() != null)
+		{
+			return false;
+		}
+		if (getLabel() != null ? !getLabel().equals(that.getLabel()) : that.getLabel() != null)
+		{
+			return false;
+		}
+		return getFeature().equals(that.getFeature());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (getHeaderText() != null ? getHeaderText().hashCode() : 0);
+		result = 31 * result + (getInput() != null ? getInput().hashCode() : 0);
+		result = 31 * result + (getLabel() != null ? getLabel().hashCode() : 0);
+		result = 31 * result + getFeature().hashCode();
+		return result;
+	}
 }

@@ -24,8 +24,8 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 public class JQUIControlGroupFeature extends Feature<JavaScriptPart, JQUIControlGroupFeature>
@@ -39,7 +39,8 @@ public class JQUIControlGroupFeature extends Feature<JavaScriptPart, JQUIControl
 	 * Configures a new check box group
 	 * <p>
 	 *
-	 * @param checkBoxGroup The group to apply to
+	 * @param checkBoxGroup
+	 * 		The group to apply to
 	 */
 	public JQUIControlGroupFeature(Component checkBoxGroup)
 	{
@@ -55,5 +56,34 @@ public class JQUIControlGroupFeature extends Feature<JavaScriptPart, JQUIControl
 	public void assignFunctionsToComponent()
 	{
 		addQuery(checkBoxGroup.getJQueryID() + "controlgroup({});");
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIControlGroupFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIControlGroupFeature that = (JQUIControlGroupFeature) o;
+
+		return checkBoxGroup != null ? checkBoxGroup.equals(that.checkBoxGroup) : that.checkBoxGroup == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (checkBoxGroup != null ? checkBoxGroup.hashCode() : 0);
+		return result;
 	}
 }

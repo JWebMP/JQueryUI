@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.button;
 
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 
 /**
  * The button icon options, This has been deprecated from version 1-11
@@ -25,10 +24,8 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
  * @author GedMarc
  * @version 1.0
  * @since Mar 8, 2015
- * @deprecated <p>
- * <p>
+ * 		<p>
  */
-@Deprecated
 public class JQUIButtonIconOptions extends JavaScriptPart
 {
 
@@ -48,7 +45,7 @@ public class JQUIButtonIconOptions extends JavaScriptPart
 	 */
 	public JQUIButtonIconOptions()
 	{
-
+		//Nothing Needed
 	}
 
 	/**
@@ -66,7 +63,8 @@ public class JQUIButtonIconOptions extends JavaScriptPart
 	 * Sets the primary icon
 	 * <p>
 	 *
-	 * @param primaryIcon CSS Class Type
+	 * @param primaryIcon
+	 * 		CSS Class Type
 	 *
 	 * @return
 	 */
@@ -102,9 +100,4 @@ public class JQUIButtonIconOptions extends JavaScriptPart
 		return this;
 	}
 
-	@Override
-	public JavascriptPartType getJavascriptType()
-	{
-		return JavascriptPartType.Javascript;
-	}
 }

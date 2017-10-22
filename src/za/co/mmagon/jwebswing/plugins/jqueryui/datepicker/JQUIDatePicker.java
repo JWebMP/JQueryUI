@@ -104,4 +104,32 @@ public class JQUIDatePicker extends Div<JQUIDatePickerChildren, NoAttributes, JQ
 		return inputFeature;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIDatePicker))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIDatePicker that = (JQUIDatePicker) o;
+
+		return getInputFeature().equals(that.getInputFeature());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getInputFeature().hashCode();
+		return result;
+	}
 }

@@ -75,6 +75,34 @@ public class JQUIDialogFeature extends Feature<JavaScriptPart, JQUIDialogFeature
 		sb.append(panel.getOptions());
 		sb.append(");").append(getNewLine());
 		addQuery(sb.toString());
+	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIDialogFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIDialogFeature that = (JQUIDialogFeature) o;
+
+		return getPanel().equals(that.getPanel());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getPanel().hashCode();
+		return result;
 	}
 }

@@ -100,5 +100,38 @@ public class JQUIRadioButtonGroup extends FieldSet
 		}
 		return feature;
 	}
-	
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIRadioButtonGroup))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIRadioButtonGroup that = (JQUIRadioButtonGroup) o;
+
+		if (!getFeature().equals(that.getFeature()))
+		{
+			return false;
+		}
+		return getLegendTitle() != null ? getLegendTitle().equals(that.getLegendTitle()) : that.getLegendTitle() == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		result = 31 * result + (getLegendTitle() != null ? getLegendTitle().hashCode() : 0);
+		return result;
+	}
 }

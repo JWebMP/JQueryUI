@@ -23,17 +23,17 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
  * @author MMagon
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @version 1.0
  * @since Forever
  */
 public class JQUIPositionFeature extends Feature<JavaScriptPart, JQUIPositionFeature>
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	private final Position position;
-	
+
 	public JQUIPositionFeature(Component positionComponent, Position position)
 	{
 		super("JWPosition");
@@ -43,13 +43,42 @@ public class JQUIPositionFeature extends Feature<JavaScriptPart, JQUIPositionFea
 		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
 		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
 		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-		
+
 		getJavascriptReferences().add(JQUIReferencePool.Position.getJavaScriptReference());
 	}
-	
+
 	@Override
 	public void assignFunctionsToComponent()
 	{
 		addQuery(getComponent().getJQueryID() + "position(" + position.toString() + ");");
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIPositionFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIPositionFeature that = (JQUIPositionFeature) o;
+
+		return position.equals(that.position);
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + position.hashCode();
+		return result;
 	}
 }

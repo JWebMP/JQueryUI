@@ -72,13 +72,23 @@ public class JQUIDroppableOptions extends JavaScriptPart
 	 * Sets the acceptable to a specific class
 	 * <p>
 	 *
-	 * @param <E>             A component to set the class of accepted drop objects
-	 * @param componentClass  The component class to set
-	 * @param classAllocation A boolean place holder to specify the association is for a class
+	 * @param <E>
+	 * 		A component to set the class of accepted drop objects
+	 * @param componentClass
+	 * 		The component class to set
+	 * @param classAllocation
+	 * 		A boolean place holder to specify the association is for a class
 	 */
 	public <E extends Component> void setAccept(E componentClass, boolean classAllocation)
 	{
-		accept = "." + componentClass.getClass().getSimpleName();
+		if (classAllocation)
+		{
+			accept = "." + componentClass.getClass().getSimpleName();
+		}
+		else
+		{
+			setAccept(componentClass);
+		}
 	}
 
 	/**
@@ -93,7 +103,8 @@ public class JQUIDroppableOptions extends JavaScriptPart
 	 * Sets the component that must be draggable
 	 * <p>
 	 *
-	 * @param component The component to accept dragging from
+	 * @param component
+	 * 		The component to accept dragging from
 	 */
 	public void setAccept(Component component)
 	{
@@ -109,15 +120,17 @@ public class JQUIDroppableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param activeClassType If specified, the class will be added to the droppable while an acceptable draggable is being dragged.
+	 * @param activeClassType
+	 * 		If specified, the class will be added to the droppable while an acceptable draggable is being dragged.
 	 */
 	public void setActiveClassType(JQUIThemeBlocks activeClassType)
 	{
 		this.activeClassType = activeClassType.toString();
 	}
-	
+
 	/**
-	 * @param activeClassType If specified, the class will be added to the droppable while an acceptable draggable is being dragged.
+	 * @param activeClassType
+	 * 		If specified, the class will be added to the droppable while an acceptable draggable is being dragged.
 	 */
 	public void setActiveClassType(String activeClassType)
 	{
@@ -133,8 +146,9 @@ public class JQUIDroppableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param activeClass If set to false, will prevent the ui-droppable class from being added. This may be desired as a performance optimization when calling .droppable() init on hundreds of
-	 *                    elements.
+	 * @param activeClass
+	 * 		If set to false, will prevent the ui-droppable class from being added. This may be desired as a performance optimization when calling .droppable() init on hundreds of
+	 * 		elements.
 	 */
 	public void setActiveClass(boolean activeClass)
 	{
@@ -143,7 +157,7 @@ public class JQUIDroppableOptions extends JavaScriptPart
 
 	/**
 	 * @return By default, when an element is dropped on nested droppables, each droppable will receive the element. However, by setting this option to true, any parent droppables will not receive the
-	 * element. The drop event will still bubble normally, but the event.target can be checked to see which droppable received the draggable element.
+	 * 		element. The drop event will still bubble normally, but the event.target can be checked to see which droppable received the draggable element.
 	 */
 	public boolean isGreedy()
 	{
@@ -151,8 +165,9 @@ public class JQUIDroppableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param greedy By default, when an element is dropped on nested droppables, each droppable will receive the element. However, by setting this option to true, any parent droppables will not
-	 *               receive the element. The drop event will still bubble normally, but the event.target can be checked to see which droppable received the draggable element.
+	 * @param greedy
+	 * 		By default, when an element is dropped on nested droppables, each droppable will receive the element. However, by setting this option to true, any parent droppables will not
+	 * 		receive the element. The drop event will still bubble normally, but the event.target can be checked to see which droppable received the draggable element.
 	 */
 	public void setGreedy(boolean greedy)
 	{
@@ -168,15 +183,17 @@ public class JQUIDroppableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param hoverClass If specified, the class will be added to the droppable while an acceptable draggable is being hovered over the droppable.
+	 * @param hoverClass
+	 * 		If specified, the class will be added to the droppable while an acceptable draggable is being hovered over the droppable.
 	 */
 	public void setHoverClass(String hoverClass)
 	{
 		this.hoverClass = hoverClass;
 	}
-	
+
 	/**
-	 * @param hoverClass If specified, the class will be added to the droppable while an acceptable draggable is being hovered over the droppable.
+	 * @param hoverClass
+	 * 		If specified, the class will be added to the droppable while an acceptable draggable is being hovered over the droppable.
 	 */
 	public void setHoverClass(JQUIThemeBlocks hoverClass)
 	{
@@ -192,7 +209,8 @@ public class JQUIDroppableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param scope Used to group sets of draggable and droppable items, in addition to the accept option. A draggable with the same scope value as a droppable will be accepted.
+	 * @param scope
+	 * 		Used to group sets of draggable and droppable items, in addition to the accept option. A draggable with the same scope value as a droppable will be accepted.
 	 */
 	public void setScope(String scope)
 	{
@@ -208,7 +226,8 @@ public class JQUIDroppableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * @param tolerance Specifies which mode to use for testing whether a draggable is hovering over a droppable
+	 * @param tolerance
+	 * 		Specifies which mode to use for testing whether a draggable is hovering over a droppable
 	 */
 	public void setTolerance(JQUIDroppableTolerances tolerance)
 	{

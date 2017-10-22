@@ -39,7 +39,8 @@ public class JQUISelectableFeature extends Feature<JQUISelectableOptions, JQUISe
 	/**
 	 * Construct a new instance of a selectable feature Sets name to JWSelectableFeature
 	 *
-	 * @param component The component to assign the feature to
+	 * @param component
+	 * 		The component to assign the feature to
 	 */
 	public JQUISelectableFeature(Component component)
 	{
@@ -77,4 +78,32 @@ public class JQUISelectableFeature extends Feature<JQUISelectableOptions, JQUISe
 		return options;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUISelectableFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUISelectableFeature that = (JQUISelectableFeature) o;
+
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
+	}
 }

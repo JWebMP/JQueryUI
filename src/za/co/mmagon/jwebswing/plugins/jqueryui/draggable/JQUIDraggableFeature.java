@@ -24,18 +24,17 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
  * Implements the JQuery Draggable functionality on an object
  *
  * @author MMagon
- * <p>
- * 1.0 Complete API implemented
+ * 		<p>
+ * 		1.0 Complete API implemented
  * @version 1.0
  * @since 2014/04/13
  */
 public class JQUIDraggableFeature extends Feature<JQUIDraggableOptions, JQUIDraggableFeature> implements JQUIDraggableFeatures
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	private final Component component;
 	private JQUIDraggableOptions draggableOptions = new JQUIDraggableOptions();
-	
+
 	/**
 	 * Add the draggable to a component
 	 * <p>
@@ -43,26 +42,28 @@ public class JQUIDraggableFeature extends Feature<JQUIDraggableOptions, JQUIDrag
 	 * A draggable with the same scope value as a droppable will be accepted by the droppable.
 	 * <p>
 	 *
-	 * @param component The component that must get the feature
-	 * @param scope     The scope of this component.
+	 * @param component
+	 * 		The component that must get the feature
+	 * @param scope
+	 * 		The scope of this component.
 	 */
 	public JQUIDraggableFeature(Component component, String scope)
 	{
 		super("JWDraggableFeature");
-		
+
 		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
 		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
 		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
 		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-		
+
 		getJavascriptReferences().add(JQUIReferencePool.Mouse.getJavaScriptReference());
 		getJavascriptReferences().add(JQUIReferencePool.Draggable.getJavaScriptReference());
 		getCssReferences().add(JQUIReferencePool.Draggable.getCssReference());
-		this.component = component;
+		setComponent(component);
 		getOptions().setScope(scope);
-		this.component.addFeature(this);
+		getComponent().addFeature(this);
 	}
-	
+
 	/**
 	 * Creates the JQuery String for this feature
 	 * <p>
@@ -75,7 +76,7 @@ public class JQUIDraggableFeature extends Feature<JQUIDraggableOptions, JQUIDrag
 		draggableString += ");" + getNewLine();
 		addQuery(draggableString);
 	}
-	
+
 	/**
 	 * Gets this features available options
 	 * <p>
@@ -91,5 +92,38 @@ public class JQUIDraggableFeature extends Feature<JQUIDraggableOptions, JQUIDrag
 		}
 		return draggableOptions;
 	}
-	
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIDraggableFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIDraggableFeature that = (JQUIDraggableFeature) o;
+
+		if (!getComponent().equals(that.getComponent()))
+		{
+			return false;
+		}
+		return draggableOptions != null ? draggableOptions.equals(that.draggableOptions) : that.draggableOptions == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getComponent().hashCode();
+		result = 31 * result + (draggableOptions != null ? draggableOptions.hashCode() : 0);
+		return result;
+	}
 }

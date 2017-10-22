@@ -69,4 +69,38 @@ public class JQUIAccordionFeature extends Feature<JQUIAccordionOptions, JQUIAcco
 		}
 		return options;
 	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIAccordionFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIAccordionFeature that = (JQUIAccordionFeature) o;
+
+		if (accordion != null ? !accordion.equals(that.accordion) : that.accordion != null)
+		{
+			return false;
+		}
+		return getOptions() != null ? getOptions().equals(that.getOptions()) : that.getOptions() == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (accordion != null ? accordion.hashCode() : 0);
+		result = 31 * result + (getOptions() != null ? getOptions().hashCode() : 0);
+		return result;
+	}
 }

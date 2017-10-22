@@ -82,4 +82,37 @@ public class JQUITabsFeature extends Feature<JQUITabOptions, JQUITabsFeature> im
 		return options;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUITabsFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUITabsFeature that = (JQUITabsFeature) o;
+
+		if (!tab.equals(that.tab))
+		{
+			return false;
+		}
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + tab.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
+	}
 }

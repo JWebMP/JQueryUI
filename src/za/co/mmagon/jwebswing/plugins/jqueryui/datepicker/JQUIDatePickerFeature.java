@@ -78,4 +78,38 @@ public class JQUIDatePickerFeature extends Feature<JQUIDatePickerOptions, JQUIDa
 		}
 		return options;
 	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIDatePickerFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIDatePickerFeature that = (JQUIDatePickerFeature) o;
+
+		if (!dateInput.equals(that.dateInput))
+		{
+			return false;
+		}
+		return getOptions() != null ? getOptions().equals(that.getOptions()) : that.getOptions() == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + dateInput.hashCode();
+		result = 31 * result + (getOptions() != null ? getOptions().hashCode() : 0);
+		return result;
+	}
 }

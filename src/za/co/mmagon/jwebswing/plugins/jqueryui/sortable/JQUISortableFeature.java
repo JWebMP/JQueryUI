@@ -23,12 +23,12 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 public class JQUISortableFeature extends Feature<JQUISortableOptions, JQUISortableFeature> implements JQUISortableFeatures
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The sortable linked component
@@ -38,7 +38,7 @@ public class JQUISortableFeature extends Feature<JQUISortableOptions, JQUISortab
 	 * The options for the sortablke feature
 	 */
 	private JQUISortableOptions options;
-	
+
 	/**
 	 * Constructs a new slider
 	 *
@@ -48,22 +48,22 @@ public class JQUISortableFeature extends Feature<JQUISortableOptions, JQUISortab
 	{
 		super("JWSortableFeature");
 		this.selectMenu = selectMenu;
-		
+
 		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
 		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
 		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
 		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-		
+
 		getJavascriptReferences().add(JQUIReferencePool.Sortable.getJavaScriptReference());
 		getCssReferences().add(JQUIReferencePool.Sortable.getCssReference());
 	}
-	
+
 	@Override
 	public void assignFunctionsToComponent()
 	{
 		addQuery(selectMenu.getJQueryID() + "sortable(" + getOptions() + ");" + getNewLine());
 	}
-	
+
 	@Override
 	public JQUISortableOptions getOptions()
 	{
@@ -73,5 +73,38 @@ public class JQUISortableFeature extends Feature<JQUISortableOptions, JQUISortab
 		}
 		return options;
 	}
-	
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUISortableFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUISortableFeature that = (JQUISortableFeature) o;
+
+		if (!selectMenu.equals(that.selectMenu))
+		{
+			return false;
+		}
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + selectMenu.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
+	}
 }

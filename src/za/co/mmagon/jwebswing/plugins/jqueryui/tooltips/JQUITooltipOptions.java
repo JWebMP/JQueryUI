@@ -27,13 +27,13 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
  *
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 4, 2015
  */
 public class JQUITooltipOptions extends JavaScriptPart
 {
-	
+
 	/**
 	 * Version 2.0
 	 */
@@ -72,7 +72,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	 * Whether the tooltip should track (follow) the mouse.
 	 */
 	private Boolean track;
-	
+
 	/**
 	 * Constructs a new tooltip options
 	 */
@@ -80,7 +80,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 //nothing needed here
 	}
-	
+
 	/**
 	 * The position of the tooltip
 	 * <p>
@@ -91,7 +91,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		return position;
 	}
-	
+
 	/**
 	 * The position of the tooltip
 	 * <p>
@@ -102,7 +102,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		this.position = position;
 	}
-	
+
 	/**
 	 * The content for the tooltip
 	 * <p>
@@ -113,7 +113,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		return content;
 	}
-	
+
 	/**
 	 * The content for the tooltip
 	 * <p>
@@ -123,9 +123,9 @@ public class JQUITooltipOptions extends JavaScriptPart
 	public void setContent(Div content)
 	{
 		content.setTiny(true);
-		this.content = content.toString(true).toString();
+		this.content = content.toString(true);
 	}
-	
+
 	/**
 	 * If the tooltip is disabled or not
 	 * <p>
@@ -136,7 +136,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		return disabled;
 	}
-	
+
 	/**
 	 * *
 	 * If the tooltip is disabled or not
@@ -148,7 +148,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		this.disabled = disabled;
 	}
-	
+
 	/**
 	 * The animation to apply on hide
 	 * <p>
@@ -159,7 +159,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		return hide;
 	}
-	
+
 	/**
 	 * The animation to apply on hide
 	 * <p>
@@ -170,7 +170,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		this.hide = hide;
 	}
-	
+
 	/**
 	 * The component type that makes up a tooltip. E.G. img[alt] or *[title]
 	 * <p>
@@ -181,7 +181,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		return items;
 	}
-	
+
 	/**
 	 * The component type that makes up a tooltip. E.G. img[alt] or *[title]
 	 * <p>
@@ -192,7 +192,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		this.items = items;
 	}
-	
+
 	/**
 	 * The animation to apply on show
 	 * <p>
@@ -203,7 +203,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		return show;
 	}
-	
+
 	/**
 	 * The animation to apply on show
 	 * <p>
@@ -214,7 +214,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		this.show = show;
 	}
-	
+
 	/**
 	 * A class to add to the widget, can be used to display various tooltip types, like warnings or errors.
 	 * <p>
@@ -227,7 +227,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		return tooltipClass;
 	}
-	
+
 	/**
 	 * A class to add to the widget, can be used to display various tooltip types, like warnings or errors.
 	 * <p>
@@ -240,7 +240,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		this.tooltipClass = tooltipClass;
 	}
-	
+
 	/**
 	 * Whether the tooltip should track (follow) the mouse.
 	 * <p>
@@ -251,7 +251,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	{
 		return track;
 	}
-	
+
 	/**
 	 * Whether the tooltip should track (follow) the mouse.
 	 * <p>

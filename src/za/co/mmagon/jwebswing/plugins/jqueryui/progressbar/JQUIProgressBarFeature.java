@@ -22,7 +22,7 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 public class JQUIProgressBarFeature extends Feature<JQUIProgressBarOptions, JQUIProgressBarFeature> implements JQUIProgressBarFeatures
@@ -69,4 +69,37 @@ public class JQUIProgressBarFeature extends Feature<JQUIProgressBarOptions, JQUI
 		return options;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIProgressBarFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIProgressBarFeature that = (JQUIProgressBarFeature) o;
+
+		if (!progressBar.equals(that.progressBar))
+		{
+			return false;
+		}
+		return getOptions() != null ? getOptions().equals(that.getOptions()) : that.getOptions() == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + progressBar.hashCode();
+		result = 31 * result + (getOptions() != null ? getOptions().hashCode() : 0);
+		return result;
+	}
 }

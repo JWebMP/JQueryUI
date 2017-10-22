@@ -21,6 +21,8 @@ import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.ListItem;
 import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
 
+import java.io.Serializable;
+
 /**
  * A specific tab for the JWAccordion
  * <p>
@@ -29,9 +31,10 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
  * @version 1.0
  * @since 29 Mar 2013
  */
-public class JQUITab
+public class JQUITab implements Serializable
 {
 
+	private static final long serialVersionUID = 1L;
 	/**
 	 * The header for a tab
 	 */

@@ -21,19 +21,19 @@ import za.co.mmagon.jwebswing.base.references.JavascriptReference;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 class JQUIMenuJavaScriptReference extends JavascriptReference
 {
-	
+
 	/**
 	 *
 	 */
 	public JQUIMenuJavaScriptReference()
 	{
-		super("JWMenuJS", 1.114, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js");//menu.js");
+		super("JWMenuJS", 1.114, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js");
 		setSortOrder(15);
 	}
 }

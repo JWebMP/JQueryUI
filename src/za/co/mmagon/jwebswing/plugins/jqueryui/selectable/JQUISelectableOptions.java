@@ -22,12 +22,13 @@ import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		TODO CRP this guy	<p>
  * @since Mar 17, 2015
  */
 public class JQUISelectableOptions extends JavaScriptPart
@@ -37,11 +38,11 @@ public class JQUISelectableOptions extends JavaScriptPart
 	/**
 	 * Prevents selecting if you start on elements matching the selector
 	 */
-	private final ArrayList<CssClass> cancel = new ArrayList<>();
+	private List<CssClass> cancel;
 	/**
 	 * The matching child elements will be made selectees (able to be selected).
 	 */
-	private final ArrayList<ComponentTypes> filter = new ArrayList<>();
+	private List<ComponentTypes> filter;
 	/**
 	 * Which element the selectable helper should be appended to while dragging.
 	 */
@@ -65,7 +66,6 @@ public class JQUISelectableOptions extends JavaScriptPart
 	 */
 	public JQUISelectableOptions()
 	{
-		//Nothing needed here
 	}
 
 	/**
@@ -81,7 +81,8 @@ public class JQUISelectableOptions extends JavaScriptPart
 	/**
 	 * Which element the selectable helper should be appended to while dragging.
 	 *
-	 * @param appendTo Which element the selectable helper should be appended to while dragging.
+	 * @param appendTo
+	 * 		Which element the selectable helper should be appended to while dragging.
 	 */
 	public void setAppendTo(Component appendTo)
 	{
@@ -100,24 +101,27 @@ public class JQUISelectableOptions extends JavaScriptPart
 	}
 
 	/**
-	 * This determines whether to refresh (recalculate) the position and size of each selectee at the beginning of each select operation. If you have many items, you may want to set this to false and
-	 * call the refresh() method manually.
-	 *
-	 * @param autoRefresh Whether to refresh on call
-	 */
-	public void setAutoRefresh(Boolean autoRefresh)
-	{
-		this.autoRefresh = autoRefresh;
-	}
-
-	/**
 	 * Prevents selecting if you start on elements matching the selector
 	 *
 	 * @return The list of CssClasses that don't start on the selector
 	 */
-	public ArrayList<CssClass> getCancel()
+	public List<CssClass> getCancel()
 	{
+		if (cancel == null)
+		{
+			cancel = new ArrayList<>();
+		}
 		return cancel;
+	}
+
+	/**
+	 * Sets the cancel list
+	 *
+	 * @param cancel
+	 */
+	public void setCancel(List<CssClass> cancel)
+	{
+		this.cancel = cancel;
 	}
 
 	/**
@@ -133,7 +137,8 @@ public class JQUISelectableOptions extends JavaScriptPart
 	/**
 	 * Time in milliseconds to define when the selecting should start. This helps prevent unwanted selections when clicking on an element.
 	 *
-	 * @param delay The delay to set
+	 * @param delay
+	 * 		The delay to set
 	 */
 	public void setDelay(Integer delay)
 	{
@@ -153,10 +158,67 @@ public class JQUISelectableOptions extends JavaScriptPart
 	/**
 	 * Tolerance, in pixels, for when selecting should start. If specified, selecting will not start until the mouse has been dragged beyond the specified distance.
 	 *
-	 * @param distance Sets the distance in pixels
+	 * @param distance
+	 * 		Sets the distance in pixels
 	 */
 	public void setDistance(Integer distance)
 	{
 		this.distance = distance;
+	}
+
+	/**
+	 * Returns the list of filters
+	 *
+	 * @return
+	 */
+	public List<ComponentTypes> getFilter()
+	{
+		if (filter == null)
+		{
+			filter = new ArrayList<>();
+		}
+		return filter;
+	}
+
+	/**
+	 * Sets the filter list
+	 *
+	 * @param filter
+	 */
+	public void setFilter(List<ComponentTypes> filter)
+	{
+		this.filter = filter;
+	}
+
+	/**
+	 * Sets the append to string
+	 *
+	 * @param appendTo
+	 */
+	public void setAppendTo(String appendTo)
+	{
+		this.appendTo = appendTo;
+	}
+
+	/**
+	 * Return if auto refresh is enabled
+	 *
+	 * @return
+	 */
+	public Boolean getAutoRefresh()
+	{
+		return autoRefresh;
+	}
+
+	/**
+	 * This determines whether to refresh (recalculate) the position and size of each selectee at the beginning of each select operation. If you have many items, you may want to set this to false and
+	 * call the refresh() method manually.
+	 *
+	 * @param autoRefresh
+	 * 		Whether to refresh on call
+	 */
+	public void setAutoRefresh(Boolean autoRefresh)
+	{
+		this.autoRefresh = autoRefresh;
 	}
 }

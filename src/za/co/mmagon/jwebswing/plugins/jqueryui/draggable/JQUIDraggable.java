@@ -109,4 +109,37 @@ public class JQUIDraggable extends Div<JQUIDraggableChildren, NoAttributes, JQUI
 		return this;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIDraggable))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIDraggable that = (JQUIDraggable) o;
+
+		if (!getFeature().equals(that.getFeature()))
+		{
+			return false;
+		}
+		return getScope() != null ? getScope().equals(that.getScope()) : that.getScope() == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		result = 31 * result + (getScope() != null ? getScope().hashCode() : 0);
+		return result;
+	}
 }

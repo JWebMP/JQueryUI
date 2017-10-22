@@ -40,7 +40,7 @@ public class JQUIDialogOptions extends JavaScriptPart
 	/**
 	 * TODO : buttons implementation
 	 */
-	//private Component[] buttons;
+	private Component[] buttons;
 	/**
 	 * if it should close on esc key
 	 */

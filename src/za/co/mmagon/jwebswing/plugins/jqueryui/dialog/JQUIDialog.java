@@ -40,7 +40,8 @@ public class JQUIDialog extends Div<JQUIDialogChildren, NoAttributes, JQUIDialog
 	 * Constructs a new JQuery Dialog with the given title as an attribute
 	 * <p>
 	 *
-	 * @param title The title to build with
+	 * @param title
+	 * 		The title to build with
 	 */
 	public JQUIDialog(String title)
 	{
@@ -73,5 +74,39 @@ public class JQUIDialog extends Div<JQUIDialogChildren, NoAttributes, JQUIDialog
 	public IJQUIDialog asMe()
 	{
 		return this;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIDialog))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIDialog that = (JQUIDialog) o;
+
+		if (!jwDialogFeature.equals(that.jwDialogFeature))
+		{
+			return false;
+		}
+		return getOptions() != null ? getOptions().equals(that.getOptions()) : that.getOptions() == null;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + jwDialogFeature.hashCode();
+		result = 31 * result + (getOptions() != null ? getOptions().hashCode() : 0);
+		return result;
 	}
 }

@@ -25,8 +25,8 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 public class JQUIButtonGroup extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, JQUIButtonGroup>
@@ -71,4 +71,32 @@ public class JQUIButtonGroup extends Div<GlobalChildren, NoAttributes, GlobalFea
 		return getGroupFeature().getOptions();
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIButtonGroup))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIButtonGroup that = (JQUIButtonGroup) o;
+
+		return getGroupFeature().equals(that.getGroupFeature());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getGroupFeature().hashCode();
+		return result;
+	}
 }

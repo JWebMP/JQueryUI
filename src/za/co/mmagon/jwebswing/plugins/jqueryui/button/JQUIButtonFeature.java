@@ -50,7 +50,6 @@ public class JQUIButtonFeature extends Feature<JQUIButtonOptions, JQUIButtonFeat
 	{
 		super("JWButtonFeature");
 		this.comp = comp;
-		//comp.addAttribute(GlobalAttributes.JWType, "button");
 		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
 		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
 		getJavascriptReferences().add(JQUIReferencePool.Button.getJavaScriptReference());
@@ -79,5 +78,39 @@ public class JQUIButtonFeature extends Feature<JQUIButtonOptions, JQUIButtonFeat
 			options = new JQUIButtonOptions();
 		}
 		return options;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof JQUIButtonFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		JQUIButtonFeature that = (JQUIButtonFeature) o;
+
+		if (comp != null ? !comp.equals(that.comp) : that.comp != null)
+		{
+			return false;
+		}
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (comp != null ? comp.hashCode() : 0);
+		result = 31 * result + getOptions().hashCode();
+		return result;
 	}
 }
