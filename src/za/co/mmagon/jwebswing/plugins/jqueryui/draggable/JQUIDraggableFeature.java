@@ -71,7 +71,7 @@ public class JQUIDraggableFeature extends Feature<JQUIDraggableOptions, JQUIDrag
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		String draggableString = component.getJQueryID() + "draggable(";
+		String draggableString = getComponent().getJQueryID() + "draggable(";
 		draggableString += draggableOptions;
 		draggableString += ");" + getNewLine();
 		addQuery(draggableString);
