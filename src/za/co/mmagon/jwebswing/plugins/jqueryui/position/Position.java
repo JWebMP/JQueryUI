@@ -21,6 +21,8 @@ import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_SPACE;
+
 /**
  * This defines the JavaScript part for JQuery UI for Position
  *
@@ -166,7 +168,7 @@ public class Position extends JavaScriptPart
 	 */
 	public String getMyString()
 	{
-		return myX.name() + " " + myY.name() + "";
+		return myX.name() + STRING_SPACE + myY.name() + "";
 	}
 	
 	/**
@@ -176,7 +178,7 @@ public class Position extends JavaScriptPart
 	 */
 	public String getAtString()
 	{
-		return atX.name() + " " + atY.name() + "";
+		return atX.name() + STRING_SPACE + atY.name() + "";
 	}
 	
 	/**

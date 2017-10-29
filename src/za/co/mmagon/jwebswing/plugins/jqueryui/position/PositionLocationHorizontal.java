@@ -16,6 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.position;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_SPACE;
+
 /**
  * Positions for the location horizontal
  * <p>
@@ -47,7 +49,7 @@ public enum PositionLocationHorizontal
 	@Override
 	public String toString()
 	{
-		return super.toString().toLowerCase().replace('_', ' ');
+		return super.toString().toLowerCase().replace('_', CHAR_SPACE);
 	}
 	
 }
