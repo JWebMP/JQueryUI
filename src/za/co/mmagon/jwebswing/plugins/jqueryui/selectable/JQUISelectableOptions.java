@@ -28,7 +28,6 @@ import java.util.List;
  * @author GedMarc
  * @version 1.0
  * 		<p>
- * 		TODO CRP this guy	<p>
  * @since Mar 17, 2015
  */
 public class JQUISelectableOptions extends JavaScriptPart

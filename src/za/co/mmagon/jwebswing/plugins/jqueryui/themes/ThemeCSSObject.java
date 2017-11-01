@@ -27,7 +27,6 @@ import java.util.List;
 /**
  * @author MMagon
  */
-
 public class ThemeCSSObject
 {
 
@@ -67,7 +66,44 @@ public class ThemeCSSObject
 			this.fontSize = fontSize;
 		}
 
+		@Override
+		public boolean equals(Object o)
+		{
+			if (this == o)
+			{
+				return true;
+			}
+			if (o == null || getClass() != o.getClass())
+			{
+				return false;
+			}
+			if (!super.equals(o))
+			{
+				return false;
+			}
 
+			FontSettingsBlock that = (FontSettingsBlock) o;
+
+			if (getFontFamilies() != null ? !getFontFamilies().equals(that.getFontFamilies()) : that.getFontFamilies() != null)
+			{
+				return false;
+			}
+			if (getFontWeight() != that.getFontWeight())
+			{
+				return false;
+			}
+			return getFontSize() != null ? getFontSize().equals(that.getFontSize()) : that.getFontSize() == null;
+		}
+
+		@Override
+		public int hashCode()
+		{
+			int result = super.hashCode();
+			result = 31 * result + (getFontFamilies() != null ? getFontFamilies().hashCode() : 0);
+			result = 31 * result + (getFontWeight() != null ? getFontWeight().hashCode() : 0);
+			result = 31 * result + (getFontSize() != null ? getFontSize().hashCode() : 0);
+			return result;
+		}
 	}
 
 	public class HeaderToolbarBlock extends CSSBlock

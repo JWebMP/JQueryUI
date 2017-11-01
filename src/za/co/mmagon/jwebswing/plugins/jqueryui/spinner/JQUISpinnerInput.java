@@ -21,7 +21,6 @@ import za.co.mmagon.jwebswing.base.html.Input;
 /**
  * @author GedMarc
  * @since 28 Feb 2017
- * 		TODO this
  */
 public class JQUISpinnerInput extends Input implements JQUISpinnerChildren
 {

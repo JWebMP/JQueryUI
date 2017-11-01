@@ -68,7 +68,8 @@ public class JQUIAutoComplete
 		this.label = new JQUIAutoCompleteLabel(label, input);
 		getChildren().add(this.label);
 		getChildren().add(input);
-		addFeature(feature = new JQUIAutoCompleteFeature(input));
+		feature = new JQUIAutoCompleteFeature(input);
+		addFeature(feature);
 		addClass(JQUIThemeBlocks.UI_Widget.toString());
 	}
 
@@ -111,7 +112,8 @@ public class JQUIAutoComplete
 	public void setInput(Input input)
 	{
 		getChildren().remove(input);
-		input.addFeature(feature = new JQUIAutoCompleteFeature(input));
+		feature = new JQUIAutoCompleteFeature(input);
+		input.addFeature(feature);
 		this.input = input;
 	}
 
@@ -158,13 +160,51 @@ public class JQUIAutoComplete
 	{
 		AutoCompleteEntrySet entrySet = new AutoCompleteEntrySet();
 		String searchTerm = params.get("term").toString();
-		getOptions().getSource().stream().filter((next) -> (next.getValue().toLowerCase().startsWith(searchTerm.toLowerCase())))
-				.forEachOrdered(next ->
-				                {
-					                entrySet.getSource().add(next);
-				                });
+		getOptions().getSource().forEach(next->{
+			if(next.toString().toLowerCase().startsWith(searchTerm.toLowerCase()))
+			{
+				entrySet.getSource().add(next);
+			}
+		});
 		return entrySet;
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (o == null || getClass() != o.getClass())
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
 
+		JQUIAutoComplete that = (JQUIAutoComplete) o;
+
+		if (!getFeature().equals(that.getFeature()))
+		{
+			return false;
+		}
+		if (getLabel() != null ? !getLabel().equals(that.getLabel()) : that.getLabel() != null)
+		{
+			return false;
+		}
+		return getInput().equals(that.getInput());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		result = 31 * result + (getLabel() != null ? getLabel().hashCode() : 0);
+		result = 31 * result + getInput().hashCode();
+		return result;
+	}
 }
