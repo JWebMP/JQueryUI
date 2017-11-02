@@ -23,6 +23,8 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
 
 import java.io.Serializable;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_HASH;
+
 /**
  * A specific tab for the JWAccordion
  * <p>
@@ -54,7 +56,7 @@ public class JQUITab implements Serializable
 	{
 		if (tabDisplayComponent != null)
 		{
-			Link tabLink = new Link("#" + Component.class.cast(tabDisplayComponent).getID(), null, tabHeader.getText(0).toString());
+			Link tabLink = new Link(STRING_HASH + Component.class.cast(tabDisplayComponent).getID(), null, tabHeader.getText(0).toString());
 			tabHeader.setText((String) null);
 			tabHeader.add(tabLink);
 		}
