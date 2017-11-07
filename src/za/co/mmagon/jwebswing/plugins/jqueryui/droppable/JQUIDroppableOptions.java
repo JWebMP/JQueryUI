@@ -20,6 +20,7 @@ import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * @author Marc Magon
@@ -83,7 +84,7 @@ public class JQUIDroppableOptions extends JavaScriptPart
 	{
 		if (classAllocation)
 		{
-			accept = "." + componentClass.getClass().getSimpleName();
+			accept = StaticStrings.STRING_DOT + componentClass.getClass().getSimpleName();
 		}
 		else
 		{
