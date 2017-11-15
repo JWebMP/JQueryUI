@@ -55,10 +55,11 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 	/**
 	 * Constructs a new accordion object
 	 */
+
 	public JQUIAccordion()
 	{
 		this(null);
-		this.accordionTabs = new ArrayList();
+		this.accordionTabs = new ArrayList<>();
 	}
 
 	/**
@@ -69,7 +70,7 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 	 */
 	public JQUIAccordion(JQUIAccordionHeightStyle heightStyle)
 	{
-		this.accordionTabs = new ArrayList();
+		this.accordionTabs = new ArrayList<>();
 		feature = new JQUIAccordionFeature(this);
 		addFeature(feature);
 		getOptions().setHeightStyle(heightStyle);
