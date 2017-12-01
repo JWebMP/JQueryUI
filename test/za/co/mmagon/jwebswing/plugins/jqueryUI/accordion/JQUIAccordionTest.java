@@ -24,69 +24,67 @@ import za.co.mmagon.jwebswing.generics.Direction;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTypes;
 import za.co.mmagon.jwebswing.plugins.easingeffects.JQEasingEffects;
 
-import java.io.IOException;
-
 /**
  * @author GedMarc
  */
 public class JQUIAccordionTest extends BaseTestClass
 {
-	
+
 	public JQUIAccordionTest()
 	{
 	}
-	
+
 	@Test
-	public void testDefault() throws IOException
+	public void testDefault()
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
 		String rendered = accordion.renderJavascript().toString();
-		String expected = "$('#id').accordion();\n";
+		String expected = "$(\"#id\").accordion();\n";
 		System.out.println(rendered);
 		Assertions.assertEquals(expected, rendered);
-		
+
 	}
-	
+
 	@Test
-	public void testIcons() throws IOException
+	public void testIcons()
 	{
 		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
 		accordion.getOptions().getIcons().setHeader("headerIcons");
 		accordion.getOptions().getIcons().setActiveHeader("activeHeaderIcons");
-		String expected = "$('#id').accordion({\n"
-				+ "  \"icons\" : {\n"
-				+ "    \"header\" : \"headerIcons\",\n"
-				+ "    \"activeHeader\" : \"activeHeaderIcons\"\n"
-				+ "  }\n"
-				+ "});\n"
-				+ "";
+		String expected = "$(\"#id\").accordion({\n"
+				                  + "  \"icons\" : {\n"
+				                  + "    \"header\" : \"headerIcons\",\n"
+				                  + "    \"activeHeader\" : \"activeHeaderIcons\"\n"
+				                  + "  }\n"
+				                  + "});\n"
+				                  + "";
 		String rendered = accordion.renderJavascript().toString();
 		System.out.println(rendered);
-		
+
 		//super.writeValuesToFile(expected, rendered);
 		Assertions.assertEquals(expected, rendered);
 	}
-	
+
 	@Test
-	public void testActive() throws IOException
+	public void testActive()
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
 		accordion.getOptions().setActive(1);
-		
+
 		String rendered = accordion.renderJavascript().toString();
-		String expected = "$('#id').accordion({\n"
-				+ "  \"active\" : 1\n"
-				+ "});\n";
+		String expected = "$(\"#id\").accordion({\n"
+				                  + "  \"active\" : 1\n"
+				                  + "});\n";
 		System.out.println(rendered);
 		//super.writeValuesToFile(expected, rendered);
 		Assertions.assertEquals(expected, rendered);
 	}
-	
+
 	@Test
-	public void testCollapsible() throws IOException
+	public void testCollapsible()
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
@@ -94,16 +92,16 @@ public class JQUIAccordionTest extends BaseTestClass
 		String sss = accordion.renderJavascriptAll().toString();
 		System.out.println("ssss : " + sss);
 		String rendered = accordion.renderJavascript().toString();
-		String expected = "$('#id').accordion({\n"
-				+ "  \"collapsible\" : true\n"
-				+ "});\n";
+		String expected = "$(\"#id\").accordion({\n"
+				                  + "  \"collapsible\" : true\n"
+				                  + "});\n";
 		System.out.println(rendered);
 		//super.writeValuesToFile(expected, rendered);
 		Assertions.assertEquals(expected, rendered);
 	}
-	
+
 	@Test
-	public void testAnimate() throws IOException
+	public void testAnimate()
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
@@ -111,54 +109,54 @@ public class JQUIAccordionTest extends BaseTestClass
 		accordion.getOptions().getAnimate().setDirection(Direction.Vertical);
 		accordion.getOptions().getAnimate().setEasing(JQEasingEffects.easeInBack);
 		String rendered = accordion.renderJavascript().toString();
-		String expected = "$('#id').accordion({\n"
-				+ "  \"animate\" : {\n"
-				+ "    \"easing\" : \"easeInBack\",\n"
-				+ "    \"duration\" : 200,\n"
-				+ "    \"direction\" : \"vertical\"\n"
-				+ "  }\n"
-				+ "});\n";
+		String expected = "$(\"#id\").accordion({\n"
+				                  + "  \"animate\" : {\n"
+				                  + "    \"easing\" : \"easeInBack\",\n"
+				                  + "    \"duration\" : 200,\n"
+				                  + "    \"direction\" : \"vertical\"\n"
+				                  + "  }\n"
+				                  + "});\n";
 		System.out.println(rendered);
 		//super.writeValuesToFile(expected, rendered);
 		Assertions.assertEquals(expected, rendered);
 	}
-	
+
 	@Test
-	public void testEvent() throws IOException
+	public void testEvent()
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
-		
+
 		accordion.getOptions().setEvent(EventTypes.mouseOver);
-		
+
 		String rendered = accordion.renderJavascript().toString();
-		String expected = "$('#id').accordion({\n"
-				+ "  \"event\" : \"mouseover\"\n"
-				+ "});\n";
+		String expected = "$(\"#id\").accordion({\n"
+				                  + "  \"event\" : \"mouseover\"\n"
+				                  + "});\n";
 		System.out.println(rendered);
 		//super.writeValuesToFile(expected, rendered);
 		Assertions.assertEquals(expected, rendered);
 	}
-	
+
 	@Test
-	public void testHeader() throws IOException
+	public void testHeader()
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
-		
+
 		accordion.getOptions().setHeader(HeaderTypes.H3);
-		
+
 		String rendered = accordion.renderJavascript().toString();
-		String expected = "$('#id').accordion({\n"
-				+ "  \"header\" : \"h3\"\n"
-				+ "});\n";
+		String expected = "$(\"#id\").accordion({\n"
+				                  + "  \"header\" : \"h3\"\n"
+				                  + "});\n";
 		System.out.println(rendered);
 		//super.writeValuesToFile(expected, rendered);
 		Assertions.assertEquals(expected, rendered);
 	}
-	
+
 	@Test
-	public void testStructure() throws IOException
+	public void testStructure()
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
@@ -170,19 +168,19 @@ public class JQUIAccordionTest extends BaseTestClass
 		tab1.getHeader().setID("h1");
 		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab tab2 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab("tab2", d2);
 		tab2.getHeader().setID("h2");
-		
+
 		accordion.addAccordianTab(tab1);
 		accordion.addAccordianTab(tab2);
-		
+
 		accordion.getOptions().setHeader(HeaderTypes.H3);
-		
+
 		String rendered = accordion.toString(true).toString();
-		String expected = "<div id=\"id\" jwtype=\"accordion\">\n"
-				+ "	<h3 id=\"h1\">tab1</h3>\n"
-				+ "	<div id=\"d1\"></div>\n"
-				+ "	<h3 id=\"h2\">tab2</h3>\n"
-				+ "	<div id=\"d2\"></div>\n"
-				+ "</div>";
+		String expected = "<div id=\"id\" jwtype=\"accordion\">\n" +
+				                  "\t<H3 id=\"h1\">tab1</H3>\n" +
+				                  "\t<div id=\"d1\"></div>\n" +
+				                  "\t<H3 id=\"h2\">tab2</H3>\n" +
+				                  "\t<div id=\"d2\"></div>\n" +
+				                  "</div>";
 		System.out.println(rendered);
 		//super.writeValuesToFile(expected, rendered);
 		Assertions.assertEquals(expected, rendered);

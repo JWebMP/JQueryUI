@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -98,9 +98,6 @@ public class JQUIAccordionFeature extends Feature<JQUIAccordionOptions, JQUIAcco
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + accordion.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

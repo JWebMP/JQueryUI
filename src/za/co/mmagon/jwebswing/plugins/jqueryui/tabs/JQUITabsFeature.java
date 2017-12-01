@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -110,9 +110,6 @@ public class JQUITabsFeature extends Feature<JQUITabOptions, JQUITabsFeature> im
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + tab.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }
