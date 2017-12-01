@@ -19,7 +19,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRawValue;
-import za.co.mmagon.SiteBinder;
+import za.co.mmagon.jwebswing.annotations.SiteBinder;
 import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;

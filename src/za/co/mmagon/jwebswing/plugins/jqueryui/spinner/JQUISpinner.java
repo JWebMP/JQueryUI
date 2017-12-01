@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,8 +18,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.spinner;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
-import za.co.mmagon.jwebswing.components.globalize.cultures.GlobalizeCultures;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.globalize.cultures.GlobalizeCultures;
 
 /**
  * @author GedMarc
@@ -138,8 +138,7 @@ public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpin
 	@Override
 	public JQUISpinner addGlobalization(GlobalizeCultures culture)
 	{
-		getFeature().getJavascriptReferences().add(culture.getJavascriptCoreReference());
-		getJavascriptReferences().add(culture.getJavascriptReference());
+		getJavascriptReferences().add(GlobalizeCultures.getJavascriptReference());
 		getOptions().setCulture(culture.toString());
 		return this;
 	}
