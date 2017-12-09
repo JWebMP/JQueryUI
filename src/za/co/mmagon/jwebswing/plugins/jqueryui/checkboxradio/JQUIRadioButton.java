@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -45,8 +45,6 @@ public class JQUIRadioButton extends InputRadioType implements IJQUICheckBox
 
 	/**
 	 * Constructs a new Check Box with the Button feature applied
-	 *
-	 * @param label
 	 */
 	public JQUIRadioButton()
 	{

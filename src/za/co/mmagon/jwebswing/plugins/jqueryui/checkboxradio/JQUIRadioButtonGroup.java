@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -29,13 +29,13 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.controlgroup.JQUIControlGroupFeat
  */
 public class JQUIRadioButtonGroup extends FieldSet
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private JQUIControlGroupFeature feature;
-	
+
 	private String legendTitle;
-	
+
 	/**
 	 * Constructs a new Check Box Group
 	 */
@@ -43,12 +43,11 @@ public class JQUIRadioButtonGroup extends FieldSet
 	{
 		addFeature(getFeature());
 	}
-	
+
 	/**
 	 * Adds a new Check Box to the group
 	 * <p>
 	 *
-	 * @param label    the label to create
 	 * @param checkBox the check box to add
 	 *
 	 * @return
@@ -58,18 +57,18 @@ public class JQUIRadioButtonGroup extends FieldSet
 		add(checkBox);
 		return this;
 	}
-	
+
 	public String getLegendTitle()
 	{
 		return legendTitle;
 	}
-	
+
 	public JQUIRadioButtonGroup setLegendTitle(String legendTitle)
 	{
 		this.legendTitle = legendTitle;
 		return this;
 	}
-	
+
 	@Override
 	protected StringBuilder renderBeforeChildren()
 	{
@@ -78,7 +77,7 @@ public class JQUIRadioButtonGroup extends FieldSet
 		leg.setTiny(true);
 		return new StringBuilder().append(getCurrentTabIndents()).append(leg.toString(true)).append(getNewLine());
 	}
-	
+
 	/**
 	 * Adds a new Check Box to the group
 	 * <p>
