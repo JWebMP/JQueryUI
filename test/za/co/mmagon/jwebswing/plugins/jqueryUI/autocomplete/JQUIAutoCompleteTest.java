@@ -39,11 +39,11 @@ public class JQUIAutoCompleteTest extends BaseTestClass
 		ac.getInput().setID("input");
 		ac.getOptions().addOption("option 1");
 		System.out.println(ac.toString(true));
-		Assertions.assertEquals(""
-				                    + "<div class=\"ui-widget\" id=\"id\">\n"
-				                    + "	<label for=\"autocomplete\" id=\"label\">autocomplete</label>\n"
-				                    + "	<input id=\"input\" type=\"text\">\n"
-				                    + "</div>", ac.toString(true).toString());
+		ac.getInput().setID("id");
+		Assertions.assertEquals("<div class=\"ui-widget\" id=\"id\">\n" +
+				                        "\t<label for=\"autocomplete\" id=\"label\">autocomplete</label>\n" +
+				                        "\t<input id=\"id\" name=\"input\" type=\"text\">\n" +
+				                        "</div>", ac.toString(true).toString());
 	}
 
 	@Test
