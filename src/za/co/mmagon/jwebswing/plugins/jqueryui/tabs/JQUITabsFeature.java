@@ -19,6 +19,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.tabs;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
+
 /**
  * The JQuery UI Tabs Implementation
  * <p>
@@ -63,7 +65,7 @@ public class JQUITabsFeature extends Feature<JQUITabOptions, JQUITabsFeature> im
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(tab.getJQueryID() + "tabs(" + getOptions() + ");");
+		addQuery(tab.getJQueryID() + "tabs(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON);
 	}
 
 	/**

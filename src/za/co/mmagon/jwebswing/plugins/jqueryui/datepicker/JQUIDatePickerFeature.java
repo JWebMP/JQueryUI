@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.datepicker;
 
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
 /**
  * @author mmagon
@@ -59,7 +61,7 @@ public class JQUIDatePickerFeature extends Feature<JQUIDatePickerOptions, JQUIDa
 	public void assignFunctionsToComponent()
 	{
 		addQuery(dateInput.getJQueryID() + "datepicker("
-				         + getOptions() + ");" + getNewLine());
+				         + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
 
 	}
 

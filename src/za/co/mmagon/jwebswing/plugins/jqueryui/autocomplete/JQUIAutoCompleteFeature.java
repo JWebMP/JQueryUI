@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,6 +20,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.html.Input;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
 /**
  * @author MMagon
@@ -72,7 +74,7 @@ public class JQUIAutoCompleteFeature extends Feature<JQUIAutoCompleteOptions, JQ
 	public void assignFunctionsToComponent()
 	{
 		addQuery(menuDisplayAtComponent.getJQueryID() + "autocomplete("
-				         + getOptions() + ");" + getNewLine());
+				         + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
 	}
 
 	/**

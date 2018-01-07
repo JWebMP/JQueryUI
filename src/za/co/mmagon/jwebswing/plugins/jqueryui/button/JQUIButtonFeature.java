@@ -20,6 +20,8 @@ import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
+
 /**
  * The JavaScript implementation of the JWButton
  *
@@ -61,7 +63,7 @@ public class JQUIButtonFeature extends Feature<JQUIButtonOptions, JQUIButtonFeat
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(comp.getJQueryID() + "button(" + getOptions() + ");" + getNewLine());
+		addQuery(comp.getJQueryID() + "button(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
 	}
 
 	/**

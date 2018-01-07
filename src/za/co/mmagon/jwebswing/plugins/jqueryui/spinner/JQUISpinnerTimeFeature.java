@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.spinner;
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
 /**
  * @author GedMarc
@@ -66,7 +68,7 @@ public class JQUISpinnerTimeFeature extends Feature<JQUISpinnerOptions, JQUISpin
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(selectMenu.getJQueryID() + "timespinner(" + getOptions() + ");" + getNewLine());
+		addQuery(selectMenu.getJQueryID() + "timespinner(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
 	}
 
 	/**

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.progressbar;
 
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
 /**
  * @author GedMarc
@@ -56,7 +58,7 @@ public class JQUIProgressBarFeature extends Feature<JQUIProgressBarOptions, JQUI
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(progressBar.getJQueryID() + "progressbar(" + getOptions() + ");");
+		addQuery(progressBar.getJQueryID() + "progressbar(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON);
 	}
 
 	@Override

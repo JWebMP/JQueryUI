@@ -54,7 +54,7 @@ public class JQUIPageConfigurator extends PageConfigurator
 	{
 		if (!page.isConfigured())
 		{
-			JQueryPageConfigurator.setRequired(page.getBody(), true);
+			JQueryPageConfigurator.setRequired(true);
 			page.getBody().getJavascriptReferences().add(JQueryUIReferencePool.Core.getJavaScriptReference());
 			page.getBody().getCssReferences().add(JQueryUIReferencePool.Core.getCssReference());
 		}

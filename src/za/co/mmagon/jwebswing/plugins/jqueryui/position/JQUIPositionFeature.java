@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,6 +20,8 @@ import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
 /**
  * @author MMagon
@@ -50,7 +52,7 @@ public class JQUIPositionFeature extends Feature<JavaScriptPart, JQUIPositionFea
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(getComponent().getJQueryID() + "position(" + position.toString() + ");");
+		addQuery(getComponent().getJQueryID() + "position(" + position.toString() + STRING_CLOSING_BRACKET_SEMICOLON);
 	}
 
 	@Override

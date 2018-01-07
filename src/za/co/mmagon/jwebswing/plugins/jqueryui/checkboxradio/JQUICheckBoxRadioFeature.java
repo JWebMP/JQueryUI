@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio;
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
+
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
 /**
  * @author GedMarc
@@ -54,7 +56,7 @@ public class JQUICheckBoxRadioFeature extends Feature
 	@Override
 	protected void assignFunctionsToComponent()
 	{
-		addQuery(getComponent().getJQueryID() + "checkboxradio(" + getOptions() + ");");
+		addQuery(getComponent().getJQueryID() + "checkboxradio(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON);
 	}
 
 	@Override

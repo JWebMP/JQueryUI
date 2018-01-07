@@ -19,6 +19,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.accordion;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
+
 /**
  * @author MMagon
  */
@@ -50,7 +52,7 @@ public class JQUIAccordionFeature extends Feature<JQUIAccordionOptions, JQUIAcco
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		String additionalString = accordion.getJQueryID() + "accordion(" + getOptions() + ");" + getNewLine();
+		String additionalString = accordion.getJQueryID() + "accordion(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine();
 		addQuery(additionalString);
 	}
 
