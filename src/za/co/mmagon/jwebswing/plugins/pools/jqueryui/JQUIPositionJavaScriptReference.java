@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -36,6 +36,6 @@ class JQUIPositionJavaScriptReference extends JavascriptReference
 	public JQUIPositionJavaScriptReference()
 	{
 		super("JWPositionJS", 1.114, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js");
-		setSortOrder(15);
+		setSortOrder(22);
 	}
 }
