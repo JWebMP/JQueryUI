@@ -63,7 +63,6 @@ public class JQUIAutoCompleteFeature extends Feature<JQUIAutoCompleteOptions, JQ
 		getJavascriptReferences().add(JQUIReferencePool.Position.getJavaScriptReference());
 		getJavascriptReferences().add(JQUIReferencePool.Menu.getJavaScriptReference());
 		getCssReferences().add(JQUIReferencePool.Menu.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Position.getCssReference());
 
 		getJavascriptReferences().add(JQUIReferencePool.AutoComplete.getJavaScriptReference());
 		getCssReferences().add(JQUIReferencePool.AutoComplete.getCssReference());
