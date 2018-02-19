@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.sortable;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.sortable.interfaces.JQUISortableFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.sortable.options.JQUISortableOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
@@ -28,7 +30,8 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * 		<p>
  * @since Mar 8, 2015
  */
-public class JQUISortableFeature extends Feature<JQUISortableOptions, JQUISortableFeature> implements JQUISortableFeatures
+public class JQUISortableFeature<J extends JQUISortableFeature<J>> extends Feature<JQUISortableOptions<?>, J>
+		implements JQUISortableFeatures
 {
 
 	private static final long serialVersionUID = 1L;
@@ -39,7 +42,7 @@ public class JQUISortableFeature extends Feature<JQUISortableOptions, JQUISortab
 	/**
 	 * The options for the sortablke feature
 	 */
-	private JQUISortableOptions options;
+	private JQUISortableOptions<?> options;
 
 	/**
 	 * Constructs a new slider
@@ -67,11 +70,11 @@ public class JQUISortableFeature extends Feature<JQUISortableOptions, JQUISortab
 	}
 
 	@Override
-	public JQUISortableOptions getOptions()
+	public JQUISortableOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUISortableOptions();
+			options = new JQUISortableOptions<>();
 		}
 		return options;
 	}
@@ -79,34 +82,12 @@ public class JQUISortableFeature extends Feature<JQUISortableOptions, JQUISortab
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUISortableFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUISortableFeature that = (JQUISortableFeature) o;
-
-		if (!selectMenu.equals(that.selectMenu))
-		{
-			return false;
-		}
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + selectMenu.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

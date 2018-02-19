@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,13 +17,15 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.menu;
 
 import za.co.mmagon.jwebswing.base.html.ListItem;
+import za.co.mmagon.jwebswing.plugins.jqueryui.menu.interfaces.JQUIMenuChildren;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 /**
  * @author Marc Magon
  * @version 1.0
  * @since 30 Oct 2015
  */
-public class JQUIMenuItemDivider extends ListItem implements JQUIMenuChildren
+public class JQUIMenuItemDivider<J extends JQUIMenuItemDivider<J>> extends ListItem<J> implements JQUIMenuChildren
 {
 
 	private static final long serialVersionUID = 1L;
@@ -33,7 +35,7 @@ public class JQUIMenuItemDivider extends ListItem implements JQUIMenuChildren
 	 */
 	public JQUIMenuItemDivider()
 	{
-		super("-");
+		super(StaticStrings.STRING_DASH);
 	}
 
 }

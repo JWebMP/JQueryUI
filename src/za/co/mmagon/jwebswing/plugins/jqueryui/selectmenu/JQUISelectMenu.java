@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,6 +20,11 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.interfaces.IJQUISelectMenu;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.options.JQUISelectMenuOptions;
 
 /**
  * The Select Menu from the JQuery UI
@@ -31,10 +36,12 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  * 		<p>
  * @since Mar 9, 2015
  */
-@ComponentInformation(name = "JQuery UI Select Menu",
-		description = "Enable a DOM element (or group of elements) to be selectable. Draw a box with your cursor to select items. Hold down the Ctrl key to make multiple non-adjacent selections.",
-		url = "http://jqueryui.com/selectmenu/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUISelectMenu extends Div<JQUISelectMenuChildren, NoAttributes, JQUISelectMenuFeatures, JQUISelectMenuEvents, JQUISelectMenu> implements IJQUISelectMenu
+@ComponentInformation(name = "JQuery UI Select Menu", description = "Enable a DOM element (or group of elements) to be selectable. Draw "
+		                                                                    + "a" + " box with your cursor to select items. Hold down the " +
+		                                                                    "" + "" + "" + "" + "" + "Ctrl key" + " to make multiple " +
+		                                                                    "non-adjacent " + "selections" + ".", url = "http://jqueryui.com/selectmenu/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUISelectMenu<J extends JQUISelectMenu<J>>
+		extends Div<JQUISelectMenuChildren, NoAttributes, JQUISelectMenuFeatures, JQUISelectMenuEvents, J> implements IJQUISelectMenu
 {
 
 	private static final long serialVersionUID = 1L;
@@ -42,7 +49,7 @@ public class JQUISelectMenu extends Div<JQUISelectMenuChildren, NoAttributes, JQ
 	/**
 	 * The select menu feature
 	 */
-	private JQUISelectMenuFeature feature;
+	private JQUISelectMenuFeature<?> feature;
 
 	/**
 	 * Constructs a new select menu
@@ -54,18 +61,15 @@ public class JQUISelectMenu extends Div<JQUISelectMenuChildren, NoAttributes, JQ
 	}
 
 	/**
-	 * Returns the select menu feature
+	 * Returns the options for the select menu
 	 * <p>
 	 *
 	 * @return
 	 */
-	public final JQUISelectMenuFeature getFeature()
+	@Override
+	public JQUISelectMenuOptions<?> getOptions()
 	{
-		if (feature == null)
-		{
-			feature = new JQUISelectMenuFeature(this);
-		}
-		return feature;
+		return getFeature().getOptions();
 	}
 
 	/**
@@ -79,43 +83,29 @@ public class JQUISelectMenu extends Div<JQUISelectMenuChildren, NoAttributes, JQ
 	}
 
 	/**
-	 * Returns the options for the select menu
+	 * Returns the select menu feature
 	 * <p>
 	 *
 	 * @return
 	 */
-	@Override
-	public JQUISelectMenuOptions getOptions()
+	public final JQUISelectMenuFeature<?> getFeature()
 	{
-		return getFeature().getOptions();
+		if (feature == null)
+		{
+			feature = new JQUISelectMenuFeature<>(this);
+		}
+		return feature;
 	}
 
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUISelectMenu))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUISelectMenu that = (JQUISelectMenu) o;
-
-		return getFeature().equals(that.getFeature());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.tooltips;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.plugins.easingeffects.JQEasingAnimationEffectsPart;
-import za.co.mmagon.jwebswing.plugins.jqueryui.position.Position;
+import za.co.mmagon.jwebswing.plugins.jqueryui.position.options.PositionOptions;
 
 /**
  * All the options for the tooltip library
@@ -41,7 +41,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	/**
 	 * The position of the tooltip
 	 */
-	private Position position;
+	private PositionOptions positionOptions;
 	/**
 	 * The content for the tooltip
 	 */
@@ -53,7 +53,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	/**
 	 * The animation to apply on hide
 	 */
-	private JQEasingAnimationEffectsPart hide;
+	private JQEasingAnimationEffectsPart<?> hide;
 	/**
 	 * The component type that makes up a tooltip. E.G. img[alt] or *[title]
 	 */
@@ -61,7 +61,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	/**
 	 * The animation to apply on show
 	 */
-	private JQEasingAnimationEffectsPart show;
+	private JQEasingAnimationEffectsPart<?> show;
 	/**
 	 * A class to add to the widget, can be used to display various tooltip types, like warnings or errors.
 	 * <p>
@@ -78,7 +78,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	 */
 	public JQUITooltipOptions()
 	{
-//nothing needed here
+		//nothing needed here
 	}
 
 	/**
@@ -87,20 +87,20 @@ public class JQUITooltipOptions extends JavaScriptPart
 	 *
 	 * @return
 	 */
-	public Position getPosition()
+	public PositionOptions getPositionOptions()
 	{
-		return position;
+		return positionOptions;
 	}
 
 	/**
 	 * The position of the tooltip
 	 * <p>
 	 *
-	 * @param position
+	 * @param positionOptions
 	 */
-	public void setPosition(Position position)
+	public void setPositionOptions(PositionOptions positionOptions)
 	{
-		this.position = position;
+		this.positionOptions = positionOptions;
 	}
 
 	/**
@@ -155,7 +155,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	 *
 	 * @return
 	 */
-	public JQEasingAnimationEffectsPart getHide()
+	public JQEasingAnimationEffectsPart<?> getHide()
 	{
 		return hide;
 	}
@@ -166,7 +166,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	 *
 	 * @param hide
 	 */
-	public void setHide(JQEasingAnimationEffectsPart hide)
+	public void setHide(JQEasingAnimationEffectsPart<?> hide)
 	{
 		this.hide = hide;
 	}
@@ -199,7 +199,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	 *
 	 * @return
 	 */
-	public JQEasingAnimationEffectsPart getShow()
+	public JQEasingAnimationEffectsPart<?> getShow()
 	{
 		return show;
 	}
@@ -210,7 +210,7 @@ public class JQUITooltipOptions extends JavaScriptPart
 	 *
 	 * @param show
 	 */
-	public void setShow(JQEasingAnimationEffectsPart show)
+	public void setShow(JQEasingAnimationEffectsPart<?> show)
 	{
 		this.show = show;
 	}

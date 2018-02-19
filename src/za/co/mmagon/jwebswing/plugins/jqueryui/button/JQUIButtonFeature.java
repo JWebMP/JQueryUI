@@ -18,7 +18,11 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.button;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.button.interfaces.JQUIButtonFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.button.options.JQUIButtonOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
+
+import javax.validation.constraints.NotNull;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -29,7 +33,7 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * @version 1.0
  * @since 09 Mar 2013
  */
-public class JQUIButtonFeature extends Feature<JQUIButtonOptions, JQUIButtonFeature> implements JQUIButtonFeatures
+public class JQUIButtonFeature<J extends JQUIButtonFeature<J>> extends Feature<JQUIButtonOptions, J> implements JQUIButtonFeatures
 {
 
 	private static final long serialVersionUID = 1L;
@@ -40,7 +44,7 @@ public class JQUIButtonFeature extends Feature<JQUIButtonOptions, JQUIButtonFeat
 	/**
 	 * The specified options
 	 */
-	private JQUIButtonOptions options;
+	private JQUIButtonOptions<?> options;
 
 	/**
 	 * Turns a component into a button
@@ -73,6 +77,7 @@ public class JQUIButtonFeature extends Feature<JQUIButtonOptions, JQUIButtonFeat
 	 * @return
 	 */
 	@Override
+	@NotNull
 	public JQUIButtonOptions getOptions()
 	{
 		if (options == null)
@@ -85,26 +90,7 @@ public class JQUIButtonFeature extends Feature<JQUIButtonOptions, JQUIButtonFeat
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIButtonFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIButtonFeature that = (JQUIButtonFeature) o;
-
-		if (comp != null ? !comp.equals(that.comp) : that.comp != null)
-		{
-			return false;
-		}
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,17 +23,23 @@ import za.co.mmagon.jwebswing.base.html.attributes.LabelAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.servlets.interfaces.IDataComponent;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.options.JQUIAutoCompleteOptions;
 import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
 
 /**
- * Description: Autocomplete enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering.
+ * Description: Autocomplete enables users to quickly find and select from a pre-populated list of values as they type, leveraging
+ * searching and filtering.
  *
  * @author Marc Magon
  * @version 1.0
  * @since 06 Aug 2015
  */
-@ComponentInformation(name = "JQuery UI Auto Complete", description = "Enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering.",
-		url = "http://jqueryui.com/autocomplete/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+@ComponentInformation(name = "JQuery UI Auto Complete", description = "Enables users to quickly find and select from a pre-populated " +
+		                                                                      "list" + " of values as they type, leveraging searching and " +
+		                                                                      "" + "" + "" + "filtering" + ".", url = "http://jqueryui.com/autocomplete/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIAutoComplete
 		extends Div<JQUIAutoCompleteChildren, NoAttributes, JQUIAutoCompleteFeatures, JQUIAutoCompleteEvents, JQUIAutoComplete>
 		implements IDataComponent
@@ -58,7 +64,8 @@ public class JQUIAutoComplete
 	private Input input;
 
 	/**
-	 * Description: Autocomplete enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering.
+	 * Description: Autocomplete enables users to quickly find and select from a pre-populated list of values as they type, leveraging
+	 * searching and filtering.
 	 *
 	 * @param label
 	 */
@@ -159,52 +166,31 @@ public class JQUIAutoComplete
 	public AutoCompleteEntrySet getData(java.util.Map params)
 	{
 		AutoCompleteEntrySet entrySet = new AutoCompleteEntrySet();
-		String searchTerm = params.get("term").toString();
-		getOptions().getSource().forEach(next->{
-			if(next.toString().toLowerCase().startsWith(searchTerm.toLowerCase()))
-			{
-				entrySet.getSource().add(next);
-			}
-		});
+		String searchTerm = params.get("term")
+				                    .toString();
+		getOptions().getSource()
+				.forEach(next ->
+				         {
+					         if (next.toString()
+							             .toLowerCase()
+							             .startsWith(searchTerm.toLowerCase()))
+					         {
+						         entrySet.getSource()
+								         .add(next);
+					         }
+				         });
 		return entrySet;
 	}
 
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (o == null || getClass() != o.getClass())
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIAutoComplete that = (JQUIAutoComplete) o;
-
-		if (!getFeature().equals(that.getFeature()))
-		{
-			return false;
-		}
-		if (getLabel() != null ? !getLabel().equals(that.getLabel()) : that.getLabel() != null)
-		{
-			return false;
-		}
-		return getInput().equals(that.getInput());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		result = 31 * result + (getLabel() != null ? getLabel().hashCode() : 0);
-		result = 31 * result + getInput().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

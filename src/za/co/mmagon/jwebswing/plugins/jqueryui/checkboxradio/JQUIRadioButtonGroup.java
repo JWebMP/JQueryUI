@@ -23,8 +23,8 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.controlgroup.JQUIControlGroupFeat
 /**
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 8, 2015
  */
 public class JQUIRadioButtonGroup extends FieldSet
@@ -48,7 +48,8 @@ public class JQUIRadioButtonGroup extends FieldSet
 	 * Adds a new Check Box to the group
 	 * <p>
 	 *
-	 * @param checkBox the check box to add
+	 * @param checkBox
+	 * 		the check box to add
 	 *
 	 * @return
 	 */
@@ -75,7 +76,9 @@ public class JQUIRadioButtonGroup extends FieldSet
 		Legend leg = new Legend();
 		leg.setText(legendTitle);
 		leg.setTiny(true);
-		return new StringBuilder().append(getCurrentTabIndents()).append(leg.toString(true)).append(getNewLine());
+		return new StringBuilder().append(getCurrentTabIndents())
+				       .append(leg.toString(true))
+				       .append(getNewLine());
 	}
 
 	/**
@@ -103,34 +106,12 @@ public class JQUIRadioButtonGroup extends FieldSet
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIRadioButtonGroup))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIRadioButtonGroup that = (JQUIRadioButtonGroup) o;
-
-		if (!getFeature().equals(that.getFeature()))
-		{
-			return false;
-		}
-		return getLegendTitle() != null ? getLegendTitle().equals(that.getLegendTitle()) : that.getLegendTitle() == null;
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		result = 31 * result + (getLegendTitle() != null ? getLegendTitle().hashCode() : 0);
-		return result;
+		return super.hashCode();
 	}
 }

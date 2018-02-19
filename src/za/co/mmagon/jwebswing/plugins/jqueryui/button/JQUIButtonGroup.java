@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,6 +21,9 @@ import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.button.options.JQUIButtonGroupOptions;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * @author GedMarc
@@ -34,7 +37,7 @@ public class JQUIButtonGroup extends Div<GlobalChildren, NoAttributes, GlobalFea
 
 	private static final long serialVersionUID = 1L;
 
-	private JQUIButtonGroupFeature groupFeature;
+	private JQUIButtonGroupFeature<?> groupFeature;
 
 	/**
 	 *
@@ -50,11 +53,12 @@ public class JQUIButtonGroup extends Div<GlobalChildren, NoAttributes, GlobalFea
 	 *
 	 * @return
 	 */
-	public final JQUIButtonGroupFeature getGroupFeature()
+	@NotNull
+	public JQUIButtonGroupFeature<?> getGroupFeature()
 	{
 		if (groupFeature == null)
 		{
-			groupFeature = new JQUIButtonGroupFeature(this);
+			groupFeature = new JQUIButtonGroupFeature<>(this);
 		}
 		return groupFeature;
 	}
@@ -74,29 +78,12 @@ public class JQUIButtonGroup extends Div<GlobalChildren, NoAttributes, GlobalFea
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIButtonGroup))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIButtonGroup that = (JQUIButtonGroup) o;
-
-		return getGroupFeature().equals(that.getGroupFeature());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getGroupFeature().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

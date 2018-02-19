@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,13 +18,17 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu;
 
 import za.co.mmagon.jwebswing.base.html.Option;
 import za.co.mmagon.jwebswing.base.html.attributes.InputAttributes;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.interfaces.IJQUISelectMenuItem;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuChildren;
 import za.co.mmagon.jwebswing.utilities.GUIDGenerator;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * @author GedMarc
  * @since 28 Feb 2017
  */
-public class JQUISelectMenuItem extends Option implements JQUISelectMenuChildren, IJQUISelectMenuItem
+public class JQUISelectMenuItem<J extends JQUISelectMenuItem<J>> extends Option<J> implements JQUISelectMenuChildren, IJQUISelectMenuItem
 {
 
 	private static final long serialVersionUID = 1L;
@@ -66,32 +70,12 @@ public class JQUISelectMenuItem extends Option implements JQUISelectMenuChildren
 	 * @return
 	 */
 	@Override
-	public JQUISelectMenuItem setLabel(String label)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setLabel(String label)
 	{
 		super.setLabel(label);
-		return this;
-	}
-
-	/**
-	 * If the item is selected
-	 *
-	 * @param selected
-	 *
-	 * @return
-	 */
-	@Override
-	public JQUISelectMenuItem setSelected(boolean selected)
-	{
-		if (selected)
-		{
-			addAttribute(selectedString, selectedString);
-		}
-		else
-		{
-			getAttributes().remove(selectedString);
-		}
-
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -102,13 +86,39 @@ public class JQUISelectMenuItem extends Option implements JQUISelectMenuChildren
 	 * @return
 	 */
 	@Override
-	public JQUISelectMenuItem setDisabled(boolean disabled)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setDisabled(boolean disabled)
 	{
 		if (disabled)
 		{
 			addAttribute(InputAttributes.Disabled.toString(), null);
 		}
-		return this;
+		return (J) this;
+	}
+
+	/**
+	 * If the item is selected
+	 *
+	 * @param selected
+	 *
+	 * @return
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setSelected(boolean selected)
+	{
+		if (selected)
+		{
+			addAttribute(selectedString, selectedString);
+		}
+		else
+		{
+			getAttributes().remove(selectedString);
+		}
+
+		return (J) this;
 	}
 
 }

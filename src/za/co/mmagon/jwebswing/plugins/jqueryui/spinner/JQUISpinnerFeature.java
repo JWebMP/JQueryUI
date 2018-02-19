@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.spinner;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.interfaces.JQUISpinnerFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.options.JQUISpinnerOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;

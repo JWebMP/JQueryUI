@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,13 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.enumerations.JQUIAccordionHeightStyle;
+import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.interfaces.JQUIAccordionEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.interfaces.JQUIAccordionFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.options.JQUIAccordionOptions;
 
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,24 +35,25 @@ import java.util.List;
  * <p>
  * <p>
  * <p>
- * Click headers to expand/collapse content that is broken into logical sections, much like tabs. Optionally, toggle sections open/closed on mouseover.
+ * Click headers to expand/collapse content that is broken into logical sections, much like tabs. Optionally, toggle sections open/closed
+ * on mouseover.
  * <p>
  * The underlying HTML markup is a series of headers (H3 tags) and content divs so the content is usable without JavaScript.
  *
  * @author Marc Magon
  * @since 2013/01/15
  */
-@ComponentInformation(name = "JQuery UI Accordion", description = "Displays collapsible content panels for presenting information in a limited amount of space.",
-		url = "http://jqueryui.com/accordion/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUIAccordionFeatures, JQUIAccordionEvents, JQUIAccordion>
-		implements JQUIAccordionChildren
+@ComponentInformation(name = "JQuery UI Accordion", description = "Displays collapsible content panels for presenting information in a "
+		                                                                  + "limited amount of space.", url = "http://jqueryui.com/accordion/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIAccordion<J extends JQUIAccordion<J>>
+		extends Div<JQUIAccordionChildren, NoAttributes, JQUIAccordionFeatures, JQUIAccordionEvents, J> implements JQUIAccordionChildren
 {
 
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The list of accordion tabs
 	 */
-	private List<JQUIAccordionTab> accordionTabs;
+	private List<JQUIAccordionTab<?>> accordionTabs;
 	/**
 	 * The attached accordion feature
 	 */
@@ -55,7 +62,6 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 	/**
 	 * Constructs a new accordion object
 	 */
-
 	public JQUIAccordion()
 	{
 		this(null);
@@ -78,12 +84,40 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 	}
 
 	/**
+	 * Adds a new accordion tab
+	 * <p>
+	 *
+	 * @param tabName
+	 * 		The name of the accordion
+	 * @param tabContents
+	 * 		The content of the accordion
+	 *
+	 * @return The accordion tab
+	 */
+	@NotNull
+	public JQUIAccordionTab addAccordianTab(String tabName, @NotNull JQUIAccordionContent tabContents)
+	{
+		JQUIAccordionHeader header;
+		if (getOptions().getHeader() == null)
+		{
+			header = new JQUIAccordionHeader(tabName);
+		}
+		else
+		{
+			return addAccordianTab(new JQUIAccordionHeader(tabName), tabContents);
+		}
+
+		return addAccordianTab(header, tabContents);
+	}
+
+	/**
 	 * Never null
 	 * <p>
 	 *
 	 * @return
 	 */
 	@Override
+	@NotNull
 	public final JQUIAccordionOptions getOptions()
 	{
 		return getFeature().getOptions();
@@ -94,6 +128,7 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 	 *
 	 * @return
 	 */
+	@NotNull
 	public JQUIAccordionFeature getFeature()
 	{
 		if (feature == null)
@@ -108,36 +143,13 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 	 *
 	 * @param feature
 	 */
-	public void setFeature(JQUIAccordionFeature feature)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setFeature(JQUIAccordionFeature feature)
 	{
 
 		this.feature = feature;
-	}
-
-	/**
-	 * Adds a new accordion tab
-	 * <p>
-	 *
-	 * @param tabName
-	 * 		The name of the accordion
-	 * @param tabContents
-	 * 		The content of the accordion
-	 *
-	 * @return The accordion tab
-	 */
-	public JQUIAccordionTab addAccordianTab(String tabName, JQUIAccordionContent tabContents)
-	{
-		JQUIAccordionHeader header;
-		if (getOptions().getHeader() == null)
-		{
-			header = new JQUIAccordionHeader(tabName);
-		}
-		else
-		{
-			return addAccordianTab(new JQUIAccordionHeader(tabName), tabContents);
-		}
-
-		return addAccordianTab(header, tabContents);
+		return (J) this;
 	}
 
 	/**
@@ -167,37 +179,11 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 	 *
 	 * @return
 	 */
-	public JQUIAccordionTab addAccordianTab(JQUIAccordionTab accordianTab)
+	@NotNull
+	public JQUIAccordionTab addAccordianTab(@NotNull JQUIAccordionTab accordianTab)
 	{
-		accordionTabs.add(accordianTab);
-		add(accordianTab.getHeader());
-		add(accordianTab.getComponent());
+		getAccordionTabs().add(accordianTab);
 		return accordianTab;
-	}
-
-	@Override
-	public boolean equals(Object o)
-	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIAccordion))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIAccordion that = (JQUIAccordion) o;
-
-		if (getAccordionTabs() != null ? !getAccordionTabs().equals(that.getAccordionTabs()) : that.getAccordionTabs() != null)
-		{
-			return false;
-		}
-		return getFeature() != null ? getFeature().equals(that.getFeature()) : that.getFeature() == null;
 	}
 
 	/**
@@ -205,7 +191,8 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 	 *
 	 * @return
 	 */
-	public List<JQUIAccordionTab> getAccordionTabs()
+	@NotNull
+	public List<JQUIAccordionTab<?>> getAccordionTabs()
 	{
 		if (accordionTabs == null)
 		{
@@ -220,17 +207,23 @@ public class JQUIAccordion extends Div<JQUIAccordionChildren, NoAttributes, JQUI
 	 *
 	 * @param accordianTabs
 	 */
-	public void setAccordionTabs(List<JQUIAccordionTab> accordianTabs)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setAccordionTabs(List<JQUIAccordionTab<?>> accordianTabs)
 	{
 		this.accordionTabs = accordianTabs;
+		return (J) this;
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + (getAccordionTabs() != null ? getAccordionTabs().hashCode() : 0);
-		result = 31 * result + (getFeature() != null ? getFeature().hashCode() : 0);
-		return result;
+		return super.hashCode();
 	}
 }

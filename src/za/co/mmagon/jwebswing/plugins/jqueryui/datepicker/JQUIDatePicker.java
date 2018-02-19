@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,27 +19,35 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.datepicker;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.jqueryui.datepicker.interfaces.IJQUIDatePicker;
+import za.co.mmagon.jwebswing.plugins.jqueryui.datepicker.interfaces.JQUIDatePickerChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.datepicker.interfaces.JQUIDatePickerEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.datepicker.interfaces.JQUIDatePickerFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.datepicker.options.JQUIDatePickerOptions;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
  * The DatePicker is tied to a standard form input field.
  * <p>
- * Focus on the input (click, or use the tab key) to open an interactive calendar in a small overlay. Choose a date, click elsewhere on the page (blur the input), or hit the Esc key to close.
+ * Focus on the input (click, or use the tab key) to open an interactive calendar in a small overlay. Choose a date, click elsewhere on
+ * the page (blur the input), or hit the Esc key to close.
  * <p>
  * If a date is chosen, feedback is shown as the input's value.
  * <p>
  *
  * @author mmagon
  */
-@ComponentInformation(name = "JQuery UI Date Picker", description = "Select a date from a popup or inline calendar",
-		url = "http://jqueryui.com/datepicker/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUIDatePicker extends Div<JQUIDatePickerChildren, NoAttributes, JQUIDatePickerFeatures, JQUIDatePickerEvents, JQUIDatePicker> implements IJQUIDatePicker
+@ComponentInformation(name = "JQuery UI Date Picker", description = "Select a date from a popup or inline calendar", url =
+		                                                                                                                     "http://jqueryui.com/datepicker/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIDatePicker<J extends JQUIDatePicker<J>>
+		extends Div<JQUIDatePickerChildren, NoAttributes, JQUIDatePickerFeatures, JQUIDatePickerEvents, J> implements IJQUIDatePicker
 {
 
 	private static final long serialVersionUID = 1L;
 
-	private JQUIDatePickerFeature inputFeature;
+	private JQUIDatePickerFeature<?> inputFeature;
 
 	/**
 	 * Creates a new JWDatePicker for the selected date
@@ -53,7 +61,8 @@ public class JQUIDatePicker extends Div<JQUIDatePickerChildren, NoAttributes, JQ
 		inputFeature = new JQUIDatePickerFeature(this);
 		if (selectedDate != null)
 		{
-			inputFeature.getOptions().setDefaultDate(selectedDate.toString());
+			inputFeature.getOptions()
+					.setDefaultDate(selectedDate.toString());
 		}
 		addFeature(inputFeature);
 	}
@@ -83,7 +92,8 @@ public class JQUIDatePicker extends Div<JQUIDatePickerChildren, NoAttributes, JQ
 	 * @return
 	 */
 	@Override
-	public JQUIDatePickerOptions getOptions()
+	@NotNull
+	public JQUIDatePickerOptions<?> getOptions()
 	{
 		return getInputFeature().getOptions();
 	}
@@ -95,11 +105,12 @@ public class JQUIDatePicker extends Div<JQUIDatePickerChildren, NoAttributes, JQ
 	 * @return
 	 */
 	@Override
-	public JQUIDatePickerFeature getInputFeature()
+	@NotNull
+	public JQUIDatePickerFeature<?> getInputFeature()
 	{
 		if (inputFeature == null)
 		{
-			inputFeature = new JQUIDatePickerFeature(this);
+			inputFeature = new JQUIDatePickerFeature<>(this);
 		}
 		return inputFeature;
 	}
@@ -107,29 +118,12 @@ public class JQUIDatePicker extends Div<JQUIDatePickerChildren, NoAttributes, JQ
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIDatePicker))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIDatePicker that = (JQUIDatePicker) o;
-
-		return getInputFeature().equals(that.getInputFeature());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getInputFeature().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

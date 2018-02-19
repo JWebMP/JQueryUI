@@ -23,7 +23,13 @@ import za.co.mmagon.jwebswing.base.html.interfaces.NoNewLineBeforeClosingTag;
 import za.co.mmagon.jwebswing.base.html.interfaces.NoNewLineForRawText;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.button.interfaces.JQUIButtonChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.button.interfaces.JQUIButtonEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.button.interfaces.JQUIButtonFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.button.options.JQUIButtonOptions;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * This class implements the JQuery UI implementation of a normal button
@@ -36,8 +42,8 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionChildren;
  * 		Update 2014/07/09 - Added attribute for identification in JQuery. Minimizing the JavaScript being sent through.
  * @since 09 Mar 2013
  */
-@ComponentInformation(name = "JQuery UI Button", description = "Enhances standard form elements like buttons, inputs and anchors to themeable buttons with appropriate hover and active styles.",
-		url = "http://jqueryui.com/button/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+@ComponentInformation(name = "JQuery UI Button", description = "Enhances standard form elements like buttons, inputs and anchors to " +
+		                                                               "themeable buttons with appropriate hover and active styles.", url = "http://jqueryui.com/button/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIButton<J extends JQUIButton<J>>
 		extends Component<JQUIButtonChildren, ButtonAttributes, JQUIButtonFeatures, JQUIButtonEvents, J>
 		implements GlobalChildren, NoNewLineBeforeClosingTag, NoNewLineForRawText, JQUIAccordionChildren
@@ -73,6 +79,7 @@ public class JQUIButton<J extends JQUIButton<J>>
 	 * @return
 	 */
 	@Override
+	@NotNull
 	public JQUIButtonOptions getOptions()
 	{
 		return getFeature().getOptions();
@@ -96,29 +103,12 @@ public class JQUIButton<J extends JQUIButton<J>>
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIButton))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIButton<?> that = (JQUIButton<?>) o;
-
-		return getFeature().equals(that.getFeature());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

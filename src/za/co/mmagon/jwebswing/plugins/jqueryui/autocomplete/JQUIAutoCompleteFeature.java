@@ -19,6 +19,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.html.Input;
+import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.options.JQUIAutoCompleteOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
@@ -28,7 +30,8 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * @version 1.0
  * @since 30 Mar 2013
  */
-public class JQUIAutoCompleteFeature extends Feature<JQUIAutoCompleteOptions, JQUIAutoCompleteFeature> implements JQUIAutoCompleteFeatures
+public class JQUIAutoCompleteFeature<J extends JQUIAutoCompleteFeature<J>> extends Feature<JQUIAutoCompleteOptions, J>
+		implements JQUIAutoCompleteFeatures
 {
 
 	private static final long serialVersionUID = 1L;
@@ -72,8 +75,7 @@ public class JQUIAutoCompleteFeature extends Feature<JQUIAutoCompleteOptions, JQ
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(menuDisplayAtComponent.getJQueryID() + "autocomplete("
-				         + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
+		addQuery(menuDisplayAtComponent.getJQueryID() + "autocomplete(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
 	}
 
 	/**
@@ -95,34 +97,12 @@ public class JQUIAutoCompleteFeature extends Feature<JQUIAutoCompleteOptions, JQ
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIAutoCompleteFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIAutoCompleteFeature that = (JQUIAutoCompleteFeature) o;
-
-		if (menuDisplayAtComponent != null ? !menuDisplayAtComponent.equals(that.menuDisplayAtComponent) : that.menuDisplayAtComponent != null)
-		{
-			return false;
-		}
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + (menuDisplayAtComponent != null ? menuDisplayAtComponent.hashCode() : 0);
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

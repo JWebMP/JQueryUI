@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,24 +17,25 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.menu;
 
 import za.co.mmagon.jwebswing.base.html.ListItem;
+import za.co.mmagon.jwebswing.plugins.jqueryui.menu.interfaces.JQUIMenuChildren;
 
 /**
  * @author Marc Magon
  * @version 1.0
  * @since 30 Oct 2015
  */
-public class JQUIMenuItem extends ListItem implements JQUIMenuChildren
+public class JQUIMenuItem<J extends JQUIMenuItem<J>> extends ListItem<J> implements JQUIMenuChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	public JQUIMenuItem(String text)
 	{
 		super(text);
 	}
-	
+
 	public JQUIMenuItem()
 	{
 	}
-	
+
 }

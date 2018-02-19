@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,11 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.progressbar;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.jqueryui.progressbar.interfaces.IJQUIProgressBar;
+import za.co.mmagon.jwebswing.plugins.jqueryui.progressbar.interfaces.JQUIProgressBarChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.progressbar.interfaces.JQUIProgressBarEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.progressbar.interfaces.JQUIProgressBarFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.progressbar.options.JQUIProgressBarOptions;
 
 /**
  * The Query UI Implementation of a progress bar
@@ -30,24 +35,39 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  * 		<p>
  * @since Mar 8, 2015
  */
-@ComponentInformation(name = "JQuery UI Progress Bar", description = "The progress bar is designed to display the current percent complete for a process. The bar is coded to be flexibly sized through CSS and will scale to fit inside its parent container by default.",
-		url = "http://jqueryui.com/progressbar/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUIProgressBar extends Div<JQUIProgressBarChildren, NoAttributes, JQUIProgressBarFeatures, JQUIProgressBarEvents, JQUIProgressBar> implements IJQUIProgressBar
+@ComponentInformation(name = "JQuery UI Progress Bar", description = "The progress bar is designed to display the current percent " +
+		                                                                     "complete for a process. The bar is coded to be flexibly " +
+		                                                                     "sized through CSS and will scale to fit inside its parent "
+		                                                                     + "container by default.", url = "http://jqueryui.com/progressbar/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIProgressBar<J extends JQUIProgressBar<J>>
+		extends Div<JQUIProgressBarChildren, NoAttributes, JQUIProgressBarFeatures, JQUIProgressBarEvents, J> implements IJQUIProgressBar
 {
 
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The feature for the progress bar
 	 */
-	private JQUIProgressBarFeature feature;
+	private JQUIProgressBarFeature<?> feature;
 
 	/**
 	 *
 	 */
 	public JQUIProgressBar()
 	{
-		feature = new JQUIProgressBarFeature(this);
+		feature = new JQUIProgressBarFeature<>(this);
 		addFeature(feature);
+	}
+
+	/**
+	 * Returns the Progress bar options
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUIProgressBarOptions<?> getOptions()
+	{
+		return getFeature().getOptions();
 	}
 
 	/**
@@ -60,21 +80,9 @@ public class JQUIProgressBar extends Div<JQUIProgressBarChildren, NoAttributes, 
 	{
 		if (feature == null)
 		{
-			feature = new JQUIProgressBarFeature(this);
+			feature = new JQUIProgressBarFeature<>(this);
 		}
 		return feature;
-	}
-
-	/**
-	 * Returns the Progress bar options
-	 * <p>
-	 *
-	 * @return
-	 */
-	@Override
-	public JQUIProgressBarOptions getOptions()
-	{
-		return getFeature().getOptions();
 	}
 
 	/**
@@ -90,29 +98,12 @@ public class JQUIProgressBar extends Div<JQUIProgressBarChildren, NoAttributes, 
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIProgressBar))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIProgressBar that = (JQUIProgressBar) o;
-
-		return getFeature().equals(that.getFeature());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

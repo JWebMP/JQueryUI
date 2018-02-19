@@ -17,7 +17,11 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.accordion;
 
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.interfaces.JQUIAccordionFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.options.JQUIAccordionOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
+
+import javax.validation.constraints.NotNull;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -29,12 +33,12 @@ public class JQUIAccordionFeature extends Feature<JQUIAccordionOptions, JQUIAcco
 
 	private static final long serialVersionUID = 1L;
 
-	private final JQUIAccordion accordion;
+	private final JQUIAccordion<?> accordion;
 
 	/**
 	 * The options for the accordion
 	 */
-	private JQUIAccordionOptions options;
+	private JQUIAccordionOptions<?> options;
 
 	public JQUIAccordionFeature(JQUIAccordion accordion)
 	{
@@ -63,11 +67,12 @@ public class JQUIAccordionFeature extends Feature<JQUIAccordionOptions, JQUIAcco
 	 * @return
 	 */
 	@Override
-	public final JQUIAccordionOptions getOptions()
+	@NotNull
+	public final JQUIAccordionOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUIAccordionOptions();
+			options = new JQUIAccordionOptions<>();
 		}
 		return options;
 	}
@@ -75,26 +80,7 @@ public class JQUIAccordionFeature extends Feature<JQUIAccordionOptions, JQUIAcco
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIAccordionFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIAccordionFeature that = (JQUIAccordionFeature) o;
-
-		if (!accordion.equals(that.accordion))
-		{
-			return false;
-		}
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	@Override

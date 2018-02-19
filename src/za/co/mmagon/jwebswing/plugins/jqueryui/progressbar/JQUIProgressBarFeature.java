@@ -17,7 +17,11 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.progressbar;
 
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.progressbar.interfaces.JQUIProgressBarFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.progressbar.options.JQUIProgressBarOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
+
+import javax.validation.constraints.NotNull;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -27,13 +31,14 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * 		<p>
  * @since Mar 8, 2015
  */
-public class JQUIProgressBarFeature extends Feature<JQUIProgressBarOptions, JQUIProgressBarFeature> implements JQUIProgressBarFeatures
+public class JQUIProgressBarFeature<J extends JQUIProgressBarFeature<J>> extends Feature<JQUIProgressBarOptions, J>
+		implements JQUIProgressBarFeatures
 {
 
 	private static final long serialVersionUID = 1L;
 
 	private final JQUIProgressBar progressBar;
-	private JQUIProgressBarOptions options;
+	private JQUIProgressBarOptions<?> options;
 
 	/**
 	 * Constructs a new progress bar
@@ -62,11 +67,12 @@ public class JQUIProgressBarFeature extends Feature<JQUIProgressBarOptions, JQUI
 	}
 
 	@Override
-	public JQUIProgressBarOptions getOptions()
+	@NotNull
+	public JQUIProgressBarOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUIProgressBarOptions();
+			options = new JQUIProgressBarOptions<>();
 		}
 		return options;
 	}
@@ -74,34 +80,12 @@ public class JQUIProgressBarFeature extends Feature<JQUIProgressBarOptions, JQUI
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIProgressBarFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIProgressBarFeature that = (JQUIProgressBarFeature) o;
-
-		if (!progressBar.equals(that.progressBar))
-		{
-			return false;
-		}
-		return getOptions() != null ? getOptions().equals(that.getOptions()) : that.getOptions() == null;
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + progressBar.hashCode();
-		result = 31 * result + (getOptions() != null ? getOptions().hashCode() : 0);
-		return result;
+		return super.hashCode();
 	}
 }

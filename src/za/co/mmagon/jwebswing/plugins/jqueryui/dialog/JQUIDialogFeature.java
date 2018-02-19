@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.dialog;
 
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+import za.co.mmagon.jwebswing.plugins.jqueryui.dialog.interfaces.JQUIDialogFeatures;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
@@ -27,12 +28,12 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
  * @version 1.0
  * @since 28 Mar 2013
  */
-public class JQUIDialogFeature extends Feature<JavaScriptPart, JQUIDialogFeature> implements JQUIDialogFeatures
+public class JQUIDialogFeature<J extends JQUIDialogFeature<J>> extends Feature<JavaScriptPart, J> implements JQUIDialogFeatures
 {
 
 	private static final long serialVersionUID = 1L;
 
-	private final JQUIDialog panel;
+	private final JQUIDialog<?> panel;
 
 	public JQUIDialogFeature(JQUIDialog panel)
 	{
@@ -62,7 +63,7 @@ public class JQUIDialogFeature extends Feature<JavaScriptPart, JQUIDialogFeature
 	 *
 	 * @return
 	 */
-	public JQUIDialog getPanel()
+	public JQUIDialog<?> getPanel()
 	{
 		return panel;
 	}
@@ -71,38 +72,23 @@ public class JQUIDialogFeature extends Feature<JavaScriptPart, JQUIDialogFeature
 	public void assignFunctionsToComponent()
 	{
 		StringBuilder sb = new StringBuilder();
-		sb.append(panel.getJQueryID()).append("dialog(");
+		sb.append(panel.getJQueryID())
+				.append("dialog(");
 		sb.append(panel.getOptions());
-		sb.append(");").append(getNewLine());
+		sb.append(");")
+				.append(getNewLine());
 		addQuery(sb.toString());
 	}
 
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIDialogFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIDialogFeature that = (JQUIDialogFeature) o;
-
-		return getPanel().equals(that.getPanel());
+		return equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getPanel().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

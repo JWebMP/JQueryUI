@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,8 +20,9 @@ import com.fasterxml.jackson.annotation.JsonRawValue;
 import com.fasterxml.jackson.annotation.JsonValue;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.validation.constraints.NotNull;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * The data auto complete entry set
@@ -29,22 +30,24 @@ import java.util.List;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public class AutoCompleteEntrySet extends JavaScriptPart
+public class AutoCompleteEntrySet<J extends AutoCompleteEntries<J>> extends JavaScriptPart<J>
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The available category selections
 	 * <p>
 	 * Array: An array can be used for local data. There are two supported formats:
 	 * <p>
-	 * An array of strings: [ "Choice1", "Choice2" ] An array of objects with label and value properties: [ { label: "Choice1", value: "value1" }, ... ]
+	 * An array of strings: [ "Choice1", "Choice2" ] An array of objects with label and value properties: [ { label: "Choice1", value:
+	 * "value1" }, ... ]
 	 * <p>
-	 * The label property is displayed in the suggestion menu. The value will be inserted into the input element when a user selects an item. If just one property is specified, it will be used for
+	 * The label property is displayed in the suggestion menu. The value will be inserted into the input element when a user selects an
+	 * item. If just one property is specified, it will be used for
 	 * both, e.g., if you provide only value properties, the value will also be used as the label.
 	 */
-	private List<AutoCompleteEntries> source;
-	
+	private Set<AutoCompleteEntries> source;
+
 	/**
 	 * Constructs a default set
 	 */
@@ -52,27 +55,29 @@ public class AutoCompleteEntrySet extends JavaScriptPart
 	{
 		//Nothing needed
 	}
-	
-	
+
 	/**
 	 * Array: An array can be used for local data. There are two supported formats:
 	 * <p>
-	 * An array of strings: [ "Choice1", "Choice2" ] An array of objects with label and value properties: [ { label: "Choice1", value: "value1" }, ... ]
+	 * An array of strings: [ "Choice1", "Choice2" ] An array of objects with label and value properties: [ { label: "Choice1", value:
+	 * "value1" }, ... ]
 	 * <p>
-	 * The label property is displayed in the suggestion menu. The value will be inserted into the input element when a user selects an item. If just one property is specified, it will be used for
+	 * The label property is displayed in the suggestion menu. The value will be inserted into the input element when a user selects an
+	 * item. If just one property is specified, it will be used for
 	 * both, e.g., if you provide only value properties, the value will also be used as the label.
 	 *
 	 * @return
 	 */
 	@JsonRawValue
 	@JsonValue
-	public List<AutoCompleteEntries> getSource()
+	@NotNull
+	public Set<AutoCompleteEntries> getSource()
 	{
 		if (source == null)
 		{
-			source = new ArrayList<>();
+			source = new LinkedHashSet<>();
 		}
 		return source;
 	}
-	
+
 }

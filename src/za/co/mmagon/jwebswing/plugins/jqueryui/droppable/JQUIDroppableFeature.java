@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.droppable;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.droppable.interfaces.JQUIDroppableFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.droppable.options.JQUIDroppableOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
@@ -36,10 +38,11 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * @version 1.0
  * @since 2014/04/14
  */
-public class JQUIDroppableFeature extends Feature<JQUIDroppableOptions, JQUIDroppableFeature> implements JQUIDroppableFeatures
+public class JQUIDroppableFeature<J extends JQUIDroppableFeature<J>> extends Feature<JQUIDroppableOptions, J>
+		implements JQUIDroppableFeatures
 {
 
-	private JQUIDroppableOptions options;
+	private JQUIDroppableOptions<?> options;
 
 	public JQUIDroppableFeature(Component componentFor)
 	{
@@ -67,11 +70,11 @@ public class JQUIDroppableFeature extends Feature<JQUIDroppableOptions, JQUIDrop
 	 * @return
 	 */
 	@Override
-	public JQUIDroppableOptions getOptions()
+	public JQUIDroppableOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUIDroppableOptions();
+			options = new JQUIDroppableOptions<>();
 		}
 		return options;
 	}
@@ -79,29 +82,12 @@ public class JQUIDroppableFeature extends Feature<JQUIDroppableOptions, JQUIDrop
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIDroppableFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIDroppableFeature that = (JQUIDroppableFeature) o;
-
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

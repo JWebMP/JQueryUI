@@ -17,6 +17,8 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.datepicker;
 
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.datepicker.interfaces.JQUIDatePickerFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.datepicker.options.JQUIDatePickerOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
@@ -24,7 +26,8 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
 /**
  * @author mmagon
  */
-public class JQUIDatePickerFeature extends Feature<JQUIDatePickerOptions, JQUIDatePickerFeature> implements JQUIDatePickerFeatures
+public class JQUIDatePickerFeature<J extends JQUIDatePickerFeature<J>> extends Feature<JQUIDatePickerOptions, J>
+		implements JQUIDatePickerFeatures
 {
 
 	private static final long serialVersionUID = 1L;
@@ -32,11 +35,11 @@ public class JQUIDatePickerFeature extends Feature<JQUIDatePickerOptions, JQUIDa
 	/**
 	 * The circular reference for the Date Picker
 	 */
-	private final JQUIDatePicker dateInput;
+	private final JQUIDatePicker<?> dateInput;
 	/**
 	 * The date picker options
 	 */
-	private JQUIDatePickerOptions options;
+	private JQUIDatePickerOptions<?> options;
 
 	/**
 	 * Constructs a new date picker JS for the given object
@@ -60,8 +63,7 @@ public class JQUIDatePickerFeature extends Feature<JQUIDatePickerOptions, JQUIDa
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(dateInput.getJQueryID() + "datepicker("
-				         + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
+		addQuery(dateInput.getJQueryID() + "datepicker(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
 
 	}
 
@@ -72,11 +74,11 @@ public class JQUIDatePickerFeature extends Feature<JQUIDatePickerOptions, JQUIDa
 	 * @return
 	 */
 	@Override
-	public JQUIDatePickerOptions getOptions()
+	public JQUIDatePickerOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUIDatePickerOptions();
+			options = new JQUIDatePickerOptions<>();
 		}
 		return options;
 	}
@@ -84,34 +86,12 @@ public class JQUIDatePickerFeature extends Feature<JQUIDatePickerOptions, JQUIDa
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIDatePickerFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIDatePickerFeature that = (JQUIDatePickerFeature) o;
-
-		if (!dateInput.equals(that.dateInput))
-		{
-			return false;
-		}
-		return getOptions() != null ? getOptions().equals(that.getOptions()) : that.getOptions() == null;
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + dateInput.hashCode();
-		result = 31 * result + (getOptions() != null ? getOptions().hashCode() : 0);
-		return result;
+		return super.hashCode();
 	}
 }

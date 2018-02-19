@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,11 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.slider;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.jqueryui.slider.interfaces.IJQUISlider;
+import za.co.mmagon.jwebswing.plugins.jqueryui.slider.interfaces.JQUISliderChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.slider.interfaces.JQUISliderEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.slider.interfaces.JQUISliderFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.slider.options.JQUISliderOptions;
 
 /**
  * @author GedMarc
@@ -27,28 +32,29 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  * 		<p>
  * @since Mar 9, 2015
  */
-@ComponentInformation(name = "JQuery UI Slider",
-		description = "The jQuery UI Slider plugin makes selected elements into sliders. There are various options such as multiple handles and ranges. The handle can be moved with the mouse or the arrow keys.",
-		url = "http://jqueryui.com/slider/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUISlider extends Div<JQUISliderChildren, NoAttributes, JQUISliderFeatures, JQUISliderEvents, JQUISlider> implements IJQUISlider
+@ComponentInformation(name = "JQuery UI Slider", description = "The jQuery UI Slider plugin makes selected elements into sliders. There "
+		                                                               + "are various options such as multiple handles and ranges. The " +
+		                                                               "handle can be moved with the mouse or the arrow keys.", url = "http://jqueryui.com/slider/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUISlider<J extends JQUISlider<J>> extends Div<JQUISliderChildren, NoAttributes, JQUISliderFeatures, JQUISliderEvents, J>
+		implements IJQUISlider
 {
 
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The feature for this component
 	 */
-	private final JQUISliderFeature slider;
+	private final JQUISliderFeature<?> slider;
 	/**
 	 * The options for this component
 	 */
-	private JQUISliderOptions options;
+	private JQUISliderOptions<?> options;
 
 	/**
 	 *
 	 */
 	public JQUISlider()
 	{
-		slider = new JQUISliderFeature(this);
+		slider = new JQUISliderFeature<>(this);
 		addFeature(slider);
 	}
 
@@ -57,7 +63,7 @@ public class JQUISlider extends Div<JQUISliderChildren, NoAttributes, JQUISlider
 	 *
 	 * @return
 	 */
-	public JQUISliderFeature getSlider()
+	public JQUISliderFeature<?> getSlider()
 	{
 		return slider;
 	}
@@ -69,7 +75,7 @@ public class JQUISlider extends Div<JQUISliderChildren, NoAttributes, JQUISlider
 	 * @return
 	 */
 	@Override
-	public JQUISliderOptions getOptions()
+	public JQUISliderOptions<?> getOptions()
 	{
 		if (this.options == null)
 		{
@@ -91,34 +97,12 @@ public class JQUISlider extends Div<JQUISliderChildren, NoAttributes, JQUISlider
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUISlider))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUISlider that = (JQUISlider) o;
-
-		if (!getSlider().equals(that.getSlider()))
-		{
-			return false;
-		}
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getSlider().hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

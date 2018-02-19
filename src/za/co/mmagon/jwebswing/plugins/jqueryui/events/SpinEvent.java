@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.events;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.events.spin.SpinAdapter;
-import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.JQUISpinnerEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.interfaces.JQUISpinnerEvents;
 
 /**
  * @author GedMarc

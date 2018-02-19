@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,16 +16,15 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.accordion;
 
-import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.DivSimple;
+import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
 
 /**
  * @author GedMarc
  * @since 26 Feb 2017
  */
-public class JQUIAccordionContent extends Div
-		implements JQUIAccordionChildren
+public class JQUIAccordionContent<J extends JQUIAccordionContent<J>> extends DivSimple<J> implements JQUIAccordionChildren
 {
-
 	private static final long serialVersionUID = 1L;
 
 	/**

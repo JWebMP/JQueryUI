@@ -20,6 +20,11 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.globalize.cultures.GlobalizeCultures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.interfaces.IJQUISpinner;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.interfaces.JQUISpinnerChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.interfaces.JQUISpinnerEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.interfaces.JQUISpinnerFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.options.JQUISpinnerOptions;
 
 /**
  * @author GedMarc
@@ -30,7 +35,8 @@ import za.co.mmagon.jwebswing.plugins.globalize.cultures.GlobalizeCultures;
 @ComponentInformation(name = "JQuery UI Spinner",
 		description = "The Spinner, or number stepper widget, is perfect for handling all kinds of numeric input. It allows users to type a value directly, or modify an existing value by spinning with the keyboard, mouse or scrollwheel. When combined with Globalize, you can even spin currencies and dates in a variety of locales.",
 		url = "http://jqueryui.com/spinner/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpinnerFeatures, JQUISpinnerEvents, JQUISpinner> implements IJQUISpinner
+public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpinnerFeatures, JQUISpinnerEvents, JQUISpinner>
+		implements IJQUISpinner
 {
 
 	private static final long serialVersionUID = 1L;

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.tabs;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.events.enumerations.EventTypes;
 import za.co.mmagon.jwebswing.plugins.easingeffects.JQEasingAnimationEffectsPart;
-import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionHeightStyle;
+import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.enumerations.JQUIAccordionHeightStyle;
 
 /**
  * The options for the tab component
@@ -56,11 +56,11 @@ public class JQUITabOptions extends JavaScriptPart
 	/**
 	 * The animation effect for hide
 	 */
-	private JQEasingAnimationEffectsPart hide;
+	private JQEasingAnimationEffectsPart<?> hide;
 	/**
 	 * The animation effect for show
 	 */
-	private JQEasingAnimationEffectsPart show;
+	private JQEasingAnimationEffectsPart<?> show;
 
 	/**
 	 * Construct a new instance of tab options
@@ -73,7 +73,8 @@ public class JQUITabOptions extends JavaScriptPart
 	/**
 	 * Which panel is currently open. Multiple types supported:
 	 * <p>
-	 * Boolean: Setting active to false will collapse all panels. This requires the collapsible option to be true. Integer: The zero-based index of the panel that is active (open). A negative value
+	 * Boolean: Setting active to false will collapse all panels. This requires the collapsible option to be true. Integer: The zero-based
+	 * index of the panel that is active (open). A negative value
 	 * selects panels going backward from the last panel.
 	 * <p>
 	 *
@@ -87,7 +88,8 @@ public class JQUITabOptions extends JavaScriptPart
 	/**
 	 * Which panel is currently open. Multiple types supported:
 	 * <p>
-	 * Boolean: Setting active to false will collapse all panels. This requires the collapsible option to be true. Integer: The zero-based index of the panel that is active (open). A negative value
+	 * Boolean: Setting active to false will collapse all panels. This requires the collapsible option to be true. Integer: The zero-based
+	 * index of the panel that is active (open). A negative value
 	 * selects panels going backward from the last panel.
 	 * <p>
 	 *
@@ -175,7 +177,8 @@ public class JQUITabOptions extends JavaScriptPart
 	/**
 	 * Controls the height of the tabs widget and each panel. Possible values:
 	 * <p>
-	 * "auto": All panels will be set to the height of the tallest panel. "fill": Expand to the available height based on the tabs' parent height. "content": Each panel will be only as tall as its
+	 * "auto": All panels will be set to the height of the tallest panel. "fill": Expand to the available height based on the tabs' parent
+	 * height. "content": Each panel will be only as tall as its
 	 * content.
 	 * <p>
 	 *
@@ -189,7 +192,8 @@ public class JQUITabOptions extends JavaScriptPart
 	/**
 	 * Controls the height of the tabs widget and each panel. Possible values:
 	 * <p>
-	 * "auto": All panels will be set to the height of the tallest panel. "fill": Expand to the available height based on the tabs' parent height. "content": Each panel will be only as tall as its
+	 * "auto": All panels will be set to the height of the tallest panel. "fill": Expand to the available height based on the tabs' parent
+	 * height. "content": Each panel will be only as tall as its
 	 * content.
 	 * <p>
 	 *
@@ -206,7 +210,7 @@ public class JQUITabOptions extends JavaScriptPart
 	 *
 	 * @return
 	 */
-	public JQEasingAnimationEffectsPart getHide()
+	public JQEasingAnimationEffectsPart<?> getHide()
 	{
 		return hide;
 	}
@@ -217,7 +221,7 @@ public class JQUITabOptions extends JavaScriptPart
 	 *
 	 * @param hide
 	 */
-	public void setHide(JQEasingAnimationEffectsPart hide)
+	public void setHide(JQEasingAnimationEffectsPart<?> hide)
 	{
 		this.hide = hide;
 	}
@@ -228,7 +232,7 @@ public class JQUITabOptions extends JavaScriptPart
 	 *
 	 * @return
 	 */
-	public JQEasingAnimationEffectsPart getShow()
+	public JQEasingAnimationEffectsPart<?> getShow()
 	{
 		return show;
 	}
@@ -239,7 +243,7 @@ public class JQUITabOptions extends JavaScriptPart
 	 *
 	 * @param show
 	 */
-	public void setShow(JQEasingAnimationEffectsPart show)
+	public void setShow(JQEasingAnimationEffectsPart<?> show)
 	{
 		this.show = show;
 	}

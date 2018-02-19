@@ -17,6 +17,8 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.slider;
 
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.slider.interfaces.JQUISliderFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.slider.options.JQUISliderOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
@@ -27,18 +29,18 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * 		<p>
  * @since Mar 8, 2015
  */
-public class JQUISliderFeature extends Feature<JQUISliderOptions, JQUISliderFeature> implements JQUISliderFeatures
+public class JQUISliderFeature<J extends JQUISliderFeature<J>> extends Feature<JQUISliderOptions, J> implements JQUISliderFeatures
 {
 
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The actual slider for the menu
 	 */
-	private final JQUISlider selectMenu;
+	private final JQUISlider<?> selectMenu;
 	/**
 	 * The options for the select menu
 	 */
-	private JQUISliderOptions options;
+	private JQUISliderOptions<?> options;
 
 	/**
 	 * Constructs a new slider
@@ -78,34 +80,12 @@ public class JQUISliderFeature extends Feature<JQUISliderOptions, JQUISliderFeat
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUISliderFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUISliderFeature that = (JQUISliderFeature) o;
-
-		if (!selectMenu.equals(that.selectMenu))
-		{
-			return false;
-		}
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + selectMenu.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

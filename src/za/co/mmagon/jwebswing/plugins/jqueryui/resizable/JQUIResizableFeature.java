@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,6 +19,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.resizable;
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.servlets.interfaces.IFeature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.resizable.options.JQUIResizableOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
@@ -27,7 +28,7 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
  * @author Marc Magon
  * @since Forever
  */
-public class JQUIResizableFeature extends Feature<JQUIResizableOptions, JQUIResizableFeature> implements IFeature
+public class JQUIResizableFeature<J extends JQUIResizableFeature<J>> extends Feature<JQUIResizableOptions, J> implements IFeature
 {
 
 	private static final long serialVersionUID = 1L;
@@ -52,7 +53,8 @@ public class JQUIResizableFeature extends Feature<JQUIResizableOptions, JQUIResi
 	{
 		StringBuilder resizableString = new StringBuilder(getComponent().getJQueryID() + "resizable(");
 		resizableString.append(getOptions().toString());
-		resizableString.append(");").append(getNewLine());
+		resizableString.append(");")
+				.append(getNewLine());
 		addQuery(resizableString.toString());
 	}
 
@@ -69,29 +71,12 @@ public class JQUIResizableFeature extends Feature<JQUIResizableOptions, JQUIResi
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIResizableFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIResizableFeature that = (JQUIResizableFeature) o;
-
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

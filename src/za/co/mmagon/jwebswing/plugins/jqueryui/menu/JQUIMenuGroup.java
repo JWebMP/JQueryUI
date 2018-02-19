@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.menu;
 
 import za.co.mmagon.jwebswing.base.html.List;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
+import za.co.mmagon.jwebswing.plugins.jqueryui.menu.interfaces.JQUIMenuChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.menu.interfaces.JQUIMenuEvents;
 import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
 
 /**
@@ -25,14 +27,15 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
  * @version 1.0
  * @since 30 Oct 2015
  */
-public class JQUIMenuGroup extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvents, JQUIMenuGroup> implements JQUIMenuChildren
+public class JQUIMenuGroup<J extends JQUIMenuGroup<J>> extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvents, J>
+		implements JQUIMenuChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	public JQUIMenuGroup()
 	{
 		addClass(JQUIThemeBlocks.UI_Widget_Header.toString());
 	}
-	
+
 }
