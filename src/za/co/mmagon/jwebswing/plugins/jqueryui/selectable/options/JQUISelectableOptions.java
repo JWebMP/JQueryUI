@@ -86,6 +86,8 @@ public class JQUISelectableOptions<J extends JQUISelectableOptions<J>> extends J
 	 * @param appendTo
 	 * 		Which element the selectable helper should be appended to while dragging.
 	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
 	public J setAppendTo(Component appendTo)
 	{
 		this.appendTo = appendTo.getID(true);
@@ -124,6 +126,8 @@ public class JQUISelectableOptions<J extends JQUISelectableOptions<J>> extends J
 	 *
 	 * @param cancel
 	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
 	public J setCancel(List<CssClass> cancel)
 	{
 		this.cancel = cancel;
@@ -146,6 +150,8 @@ public class JQUISelectableOptions<J extends JQUISelectableOptions<J>> extends J
 	 * @param delay
 	 * 		The delay to set
 	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
 	public J setDelay(Integer delay)
 	{
 		this.delay = delay;
@@ -170,6 +176,8 @@ public class JQUISelectableOptions<J extends JQUISelectableOptions<J>> extends J
 	 * @param distance
 	 * 		Sets the distance in pixels
 	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
 	public J setDistance(Integer distance)
 	{
 		this.distance = distance;
@@ -196,6 +204,8 @@ public class JQUISelectableOptions<J extends JQUISelectableOptions<J>> extends J
 	 *
 	 * @param filter
 	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
 	public J setFilter(List<ComponentTypes> filter)
 	{
 		this.filter = filter;
@@ -207,6 +217,8 @@ public class JQUISelectableOptions<J extends JQUISelectableOptions<J>> extends J
 	 *
 	 * @param appendTo
 	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
 	public J setAppendTo(String appendTo)
 	{
 		this.appendTo = appendTo;
@@ -231,6 +243,8 @@ public class JQUISelectableOptions<J extends JQUISelectableOptions<J>> extends J
 	 * @param autoRefresh
 	 * 		Whether to refresh on call
 	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
 	public J setAutoRefresh(Boolean autoRefresh)
 	{
 		this.autoRefresh = autoRefresh;
