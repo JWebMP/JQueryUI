@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,6 +20,11 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.ListItem;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.interfaces.IJQUITabs;
+import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.interfaces.JQUITabsChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.interfaces.JQUITabsEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.interfaces.JQUITabsFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.options.JQUITabOptions;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -31,22 +36,21 @@ import java.util.ArrayList;
  * @version 1.0
  * @since 09 Mar 2013
  */
-@ComponentInformation(name = "JQuery UI Tabs",
-		description = "Tabs are generally used to break content into multiple sections that can be swapped to save space, much like an accordion",
-		url = "http://jqueryui.com/tabs/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUITabs extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatures, JQUITabsEvents, JQUITabs> implements IJQUITabs
+@ComponentInformation(name = "JQuery UI Tabs", description = "Tabs are generally used to break content into multiple sections that can "
+		                                                             + "be" + " swapped to save space, much like an accordion", url = "http://jqueryui.com/tabs/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki") public class JQUITabs<J extends JQUITabs<J>>
+		extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatures, JQUITabsEvents, J> implements IJQUITabs<J>
 {
 
 	private static final long serialVersionUID = 1L;
 	/**
 	 * the feature list
 	 */
-	private JQUITabsFeature feature;
+	private JQUITabsFeature<?> feature;
 
 	/**
 	 * The Unordered List
 	 */
-	private JQUITabList unorderedList;
+	private JQUITabList<?> unorderedList;
 
 	/**
 	 * A list of all the tabs
@@ -131,9 +135,12 @@ public class JQUITabs extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatur
 	 *
 	 * @param unorderedList
 	 */
-	protected void setUnorderedList(JQUITabList unorderedList)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	protected J setUnorderedList(JQUITabList unorderedList)
 	{
 		this.unorderedList = unorderedList;
+		return (J) this;
 	}
 
 	/**
@@ -143,6 +150,7 @@ public class JQUITabs extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatur
 	 * @return
 	 */
 	@Override
+	@NotNull
 	public JQUITabOptions getOptions()
 	{
 		return feature.getOptions();
@@ -170,38 +178,24 @@ public class JQUITabs extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatur
 	 * @param tabs
 	 */
 	@Override
-	public void setTabs(java.util.List<JQUITab> tabs)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setTabs(java.util.List<JQUITab> tabs)
 	{
 		this.tabs = tabs;
+		return (J) this;
 	}
 
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUITabs))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
+		return super.equals(o);
+	}
 
-		JQUITabs jquiTabs = (JQUITabs) o;
-
-		if (!getFeature().equals(jquiTabs.getFeature()))
-		{
-			return false;
-		}
-		if (!getUnorderedList().equals(jquiTabs.getUnorderedList()))
-		{
-			return false;
-		}
-		return getTabs().equals(jquiTabs.getTabs());
+	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
 	}
 
 	/**
@@ -211,22 +205,12 @@ public class JQUITabs extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatur
 	 * @return
 	 */
 	@NotNull
-	public final JQUITabsFeature getFeature()
+	public final JQUITabsFeature<?> getFeature()
 	{
 		if (feature == null)
 		{
-			feature = new JQUITabsFeature(this);
+			feature = new JQUITabsFeature<>(this);
 		}
 		return feature;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		result = 31 * result + getUnorderedList().hashCode();
-		result = 31 * result + getTabs().hashCode();
-		return result;
 	}
 }

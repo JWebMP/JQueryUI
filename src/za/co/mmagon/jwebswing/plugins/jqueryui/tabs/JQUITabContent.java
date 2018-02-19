@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,13 +16,14 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.tabs;
 
-import za.co.mmagon.jwebswing.base.html.Div;
+import za.co.mmagon.jwebswing.base.html.DivSimple;
+import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.interfaces.JQUITabsChildren;
 
 /**
  * @author GedMarc
  * @since 28 Feb 2017
  */
-public class JQUITabContent extends Div implements JQUITabsChildren
+public class JQUITabContent<J extends JQUITabContent<J>> extends DivSimple<J> implements JQUITabsChildren
 {
 
 	private static final long serialVersionUID = 1L;

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,21 +20,31 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.jqueryui.dialog.interfaces.IJQUIDialog;
+import za.co.mmagon.jwebswing.plugins.jqueryui.dialog.interfaces.JQUIDialogChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.dialog.interfaces.JQUIDialogEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.dialog.interfaces.JQUIDialogFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.dialog.options.JQUIDialogOptions;
 
 /**
  * A JQuery UI Panel with all bells
  *
  * @author Marc Magon
  */
-@ComponentInformation(name = "JQuery UI Dialog", description = "The basic dialog window is an overlay positioned within the viewport and is protected from page content (like select elements) shining through with an iframe. It has a title bar and a content area, and can be moved, resized and closed with the 'x' icon by default.",
-		url = "http://jqueryui.com/dialog/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUIDialog extends Div<JQUIDialogChildren, NoAttributes, JQUIDialogFeatures, JQUIDialogEvents, JQUIDialog> implements IJQUIDialog
+@ComponentInformation(name = "JQuery UI Dialog", description = "The basic dialog window is an overlay positioned within the viewport and " +
+		                                                               "" + "" + "" + "" + "is protected from page content (like select "
+		                                                               + "elements) " + "shining" + " " + "through with an iframe. It has " +
+		                                                               "a " + "title bar and a" + " content " + "area, and" + " can be " +
+		                                                               "moved, " + "resized and closed with" + " the 'x' icon " + "by " +
+		                                                               "default.", url = "http://jqueryui.com/dialog/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIDialog<J extends JQUIDialog<J>> extends Div<JQUIDialogChildren, NoAttributes, JQUIDialogFeatures, JQUIDialogEvents, J>
+		implements IJQUIDialog
 {
 
 	private static final long serialVersionUID = 1L;
 
-	private final JQUIDialogFeature jwDialogFeature;
-	private JQUIDialogOptions options;
+	private final JQUIDialogFeature<?> jwDialogFeature;
+	private JQUIDialogOptions<?> options;
 
 	/**
 	 * Constructs a new JQuery Dialog with the given title as an attribute
@@ -45,7 +55,7 @@ public class JQUIDialog extends Div<JQUIDialogChildren, NoAttributes, JQUIDialog
 	 */
 	public JQUIDialog(String title)
 	{
-		jwDialogFeature = new JQUIDialogFeature(this);
+		jwDialogFeature = new JQUIDialogFeature<>(this);
 		addFeature(jwDialogFeature);
 		addAttribute(GlobalAttributes.Title, title);
 	}
@@ -57,11 +67,11 @@ public class JQUIDialog extends Div<JQUIDialogChildren, NoAttributes, JQUIDialog
 	 * @return
 	 */
 	@Override
-	public JQUIDialogOptions getOptions()
+	public JQUIDialogOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUIDialogOptions();
+			options = new JQUIDialogOptions<>();
 		}
 		return options;
 	}
@@ -79,34 +89,12 @@ public class JQUIDialog extends Div<JQUIDialogChildren, NoAttributes, JQUIDialog
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIDialog))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIDialog that = (JQUIDialog) o;
-
-		if (!jwDialogFeature.equals(that.jwDialogFeature))
-		{
-			return false;
-		}
-		return getOptions() != null ? getOptions().equals(that.getOptions()) : that.getOptions() == null;
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + jwDialogFeature.hashCode();
-		result = 31 * result + (getOptions() != null ? getOptions().hashCode() : 0);
-		return result;
+		return super.hashCode();
 	}
 }

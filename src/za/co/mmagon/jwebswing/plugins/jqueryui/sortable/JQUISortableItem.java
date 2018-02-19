@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,13 +17,16 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.sortable;
 
 import za.co.mmagon.jwebswing.base.html.ListItem;
+import za.co.mmagon.jwebswing.plugins.jqueryui.sortable.interfaces.JQUISortableChildren;
 import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * @author GedMarc
  * @since 28 Feb 2017
  */
-public class JQUISortableItem extends ListItem implements JQUISortableChildren
+public class JQUISortableItem<J extends JQUISortableItem<J>> extends ListItem<J> implements JQUISortableChildren
 {
 
 	private static final long serialVersionUID = 1L;
@@ -53,7 +56,9 @@ public class JQUISortableItem extends ListItem implements JQUISortableChildren
 	 *
 	 * @return
 	 */
-	public JQUISortableItem setDisabled(boolean disabled)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setDisabled(boolean disabled)
 	{
 		if (disabled)
 		{
@@ -63,6 +68,6 @@ public class JQUISortableItem extends ListItem implements JQUISortableChildren
 		{
 			removeClass(JQUIThemeBlocks.UI_State_Default.toString());
 		}
-		return this;
+		return (J) this;
 	}
 }

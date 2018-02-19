@@ -28,7 +28,7 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
  * 		<p>
  * @since Mar 8, 2015
  */
-public class JQUIControlGroupFeature extends Feature<JavaScriptPart, JQUIControlGroupFeature>
+public class JQUIControlGroupFeature<J extends JQUIControlGroupFeature<J>> extends Feature<JavaScriptPart, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -61,29 +61,12 @@ public class JQUIControlGroupFeature extends Feature<JavaScriptPart, JQUIControl
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIControlGroupFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIControlGroupFeature that = (JQUIControlGroupFeature) o;
-
-		return checkBoxGroup != null ? checkBoxGroup.equals(that.checkBoxGroup) : that.checkBoxGroup == null;
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + (checkBoxGroup != null ? checkBoxGroup.hashCode() : 0);
-		return result;
+		return super.hashCode();
 	}
 }

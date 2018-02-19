@@ -27,7 +27,7 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.controlgroup.JQUIControlGroupFeat
  * 		<p>
  * @since Mar 8, 2015
  */
-public class JQUICheckBoxGroup extends FieldSet
+public class JQUICheckBoxGroup<J extends JQUICheckBoxGroup<J>> extends FieldSet<J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -76,10 +76,10 @@ public class JQUICheckBoxGroup extends FieldSet
 	 *
 	 * @return
 	 */
-	public JQUICheckBoxGroup setLegendTitle(String legendTitle)
+	public J setLegendTitle(String legendTitle)
 	{
 		this.legendTitle = legendTitle;
-		return this;
+		return (J) this;
 	}
 
 	@Override
@@ -88,7 +88,9 @@ public class JQUICheckBoxGroup extends FieldSet
 		Legend leg = new Legend();
 		leg.setText(legendTitle);
 		leg.setTiny(true);
-		return new StringBuilder().append(getCurrentTabIndents()).append(leg.toString(true)).append(getNewLine());
+		return new StringBuilder().append(getCurrentTabIndents())
+				       .append(leg.toString(true))
+				       .append(getNewLine());
 	}
 
 	/**
@@ -116,34 +118,12 @@ public class JQUICheckBoxGroup extends FieldSet
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUICheckBoxGroup))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUICheckBoxGroup that = (JQUICheckBoxGroup) o;
-
-		if (!getFeature().equals(that.getFeature()))
-		{
-			return false;
-		}
-		return getLegendTitle() != null ? getLegendTitle().equals(that.getLegendTitle()) : that.getLegendTitle() == null;
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		result = 31 * result + (getLegendTitle() != null ? getLegendTitle().hashCode() : 0);
-		return result;
+		return super.hashCode();
 	}
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,19 +19,26 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.draggable;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.jqueryui.draggable.interfaces.IJQUIDraggable;
+import za.co.mmagon.jwebswing.plugins.jqueryui.draggable.interfaces.JQUIDraggableChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.draggable.interfaces.JQUIDraggableEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.draggable.interfaces.JQUIDraggableFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.draggable.options.JQUIDraggableOptions;
 
 /**
  * @author Marc Magon
  * @version 1.0
  * @since 07 Aug 2015
  */
-@ComponentInformation(name = "JQuery UI Draggable", description = "Enable draggable functionality on any DOM element. Move the draggable object by clicking on it with the mouse and dragging it anywhere within the viewport.",
-		url = "http://jqueryui.com/draggable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUIDraggable extends Div<JQUIDraggableChildren, NoAttributes, JQUIDraggableFeatures, JQUIDraggableEvents, JQUIDraggable> implements IJQUIDraggable
+@ComponentInformation(name = "JQuery UI Draggable", description = "Enable draggable functionality on any DOM element. Move the draggable " +
+		                                                                  "" + "" + "" + "object by clicking on it with the mouse and " +
+		                                                                  "dragging " + "it " + "anywhere within the viewport.", url = "http://jqueryui.com/draggable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIDraggable<J extends JQUIDraggable<J>>
+		extends Div<JQUIDraggableChildren, NoAttributes, JQUIDraggableFeatures, JQUIDraggableEvents, J> implements IJQUIDraggable
 {
 
 	private static final long serialVersionUID = 1L;
-	private JQUIDraggableFeature feature;
+	private JQUIDraggableFeature<?> feature;
 	private String scope;
 
 	public JQUIDraggable()
@@ -51,17 +58,6 @@ public class JQUIDraggable extends Div<JQUIDraggableChildren, NoAttributes, JQUI
 		addFeature(getFeature());
 	}
 
-	@Override
-	public JQUIDraggableFeature getFeature()
-	{
-		if (feature == null)
-		{
-			feature = new JQUIDraggableFeature(this, scope);
-		}
-
-		return feature;
-	}
-
 	/**
 	 * Gets this features available options
 	 * <p>
@@ -69,9 +65,20 @@ public class JQUIDraggable extends Div<JQUIDraggableChildren, NoAttributes, JQUI
 	 * @return
 	 */
 	@Override
-	public final JQUIDraggableOptions getOptions()
+	public final JQUIDraggableOptions<?> getOptions()
 	{
 		return getFeature().getOptions();
+	}
+
+	@Override
+	public JQUIDraggableFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUIDraggableFeature<>(this, scope);
+		}
+
+		return feature;
 	}
 
 	/**
@@ -96,7 +103,8 @@ public class JQUIDraggable extends Div<JQUIDraggableChildren, NoAttributes, JQUI
 	public void setScope(String scope)
 	{
 		this.scope = scope;
-		getFeature().getOptions().setScope(scope);
+		getFeature().getOptions()
+				.setScope(scope);
 	}
 
 	/**
@@ -112,34 +120,12 @@ public class JQUIDraggable extends Div<JQUIDraggableChildren, NoAttributes, JQUI
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIDraggable))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIDraggable that = (JQUIDraggable) o;
-
-		if (!getFeature().equals(that.getFeature()))
-		{
-			return false;
-		}
-		return getScope() != null ? getScope().equals(that.getScope()) : that.getScope() == null;
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		result = 31 * result + (getScope() != null ? getScope().hashCode() : 0);
-		return result;
+		return super.hashCode();
 	}
 }

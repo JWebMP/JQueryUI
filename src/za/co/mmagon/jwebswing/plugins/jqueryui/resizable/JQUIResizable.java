@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,30 +19,36 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.resizable;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.jqueryui.resizable.interfaces.IJQUIResizable;
+import za.co.mmagon.jwebswing.plugins.jqueryui.resizable.interfaces.JQUIResizableChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.resizable.interfaces.JQUIResizableEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.resizable.interfaces.JQUIResizableFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.resizable.options.JQUIResizableOptions;
 
 /**
  * @author Marc Magon
  * @version 1.0
  * @since 07 Aug 2015
  */
-@ComponentInformation(name = "JQuery UI Resizable",
-		description = "Enable any DOM element to be resizable. With the cursor grab the right or bottom border and drag to the desired width or height.",
-		url = "http://jqueryui.com/resizable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUIResizable extends Div<JQUIResizableChildren, NoAttributes, JQUIResizableFeatures, JQUIResizableEvents, JQUIResizable> implements IJQUIResizable
+@ComponentInformation(name = "JQuery UI Resizable", description = "Enable any DOM element to be resizable. With the cursor grab the " +
+		                                                                  "right" + " or bottom border and drag to the desired width or "
+		                                                                  + "height.", url = "http://jqueryui.com/resizable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIResizable<J extends JQUIResizable<J>>
+		extends Div<JQUIResizableChildren, NoAttributes, JQUIResizableFeatures, JQUIResizableEvents, J> implements IJQUIResizable
 {
 
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The resizable feature
 	 */
-	private JQUIResizableFeature feature;
+	private JQUIResizableFeature<?> feature;
 
 	/**
 	 * Adds the feature to the resizable
 	 */
 	public JQUIResizable()
 	{
-		feature = new JQUIResizableFeature(this);
+		feature = new JQUIResizableFeature<>(this);
 		addFeature(feature);
 	}
 
@@ -53,7 +59,7 @@ public class JQUIResizable extends Div<JQUIResizableChildren, NoAttributes, JQUI
 	 * @return
 	 */
 	@Override
-	public JQUIResizableOptions getOptions()
+	public JQUIResizableOptions<?> getOptions()
 	{
 		return feature.getOptions();
 	}
@@ -67,7 +73,7 @@ public class JQUIResizable extends Div<JQUIResizableChildren, NoAttributes, JQUI
 	{
 		if (feature == null)
 		{
-			feature = new JQUIResizableFeature(this);
+			feature = new JQUIResizableFeature<>(this);
 		}
 		return feature;
 	}
@@ -77,7 +83,7 @@ public class JQUIResizable extends Div<JQUIResizableChildren, NoAttributes, JQUI
 	 *
 	 * @param feature
 	 */
-	public void setFeature(JQUIResizableFeature feature)
+	public void setFeature(JQUIResizableFeature<?> feature)
 	{
 		this.feature = feature;
 	}
@@ -95,29 +101,12 @@ public class JQUIResizable extends Div<JQUIResizableChildren, NoAttributes, JQUI
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIResizable))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIResizable that = (JQUIResizable) o;
-
-		return getFeature().equals(that.getFeature());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

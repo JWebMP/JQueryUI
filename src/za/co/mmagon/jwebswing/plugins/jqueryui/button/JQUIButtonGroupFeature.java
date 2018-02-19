@@ -18,7 +18,11 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.button;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.button.interfaces.JQUIButtonFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.button.options.JQUIButtonGroupOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
+
+import javax.validation.constraints.NotNull;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -29,7 +33,8 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * 		<p>
  * @since Mar 8, 2015
  */
-public class JQUIButtonGroupFeature extends Feature<JQUIButtonGroupOptions, JQUIButtonGroupFeature> implements JQUIButtonFeatures
+public class JQUIButtonGroupFeature<J extends JQUIButtonGroupFeature<J>> extends Feature<JQUIButtonGroupOptions, J>
+		implements JQUIButtonFeatures
 {
 
 	private static final long serialVersionUID = 1L;
@@ -54,9 +59,7 @@ public class JQUIButtonGroupFeature extends Feature<JQUIButtonGroupOptions, JQUI
 	@Override
 	public void assignFunctionsToComponent()
 	{
-
 		addQuery(buttonGroup.getJQueryID() + "buttonset(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
-
 	}
 
 	/**
@@ -66,6 +69,7 @@ public class JQUIButtonGroupFeature extends Feature<JQUIButtonGroupOptions, JQUI
 	 * @return
 	 */
 	@Override
+	@NotNull
 	public JQUIButtonGroupOptions getOptions()
 	{
 		if (buttongGroupOptions == null)
@@ -78,34 +82,12 @@ public class JQUIButtonGroupFeature extends Feature<JQUIButtonGroupOptions, JQUI
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIButtonGroupFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIButtonGroupFeature that = (JQUIButtonGroupFeature) o;
-
-		if (!buttonGroup.equals(that.buttonGroup))
-		{
-			return false;
-		}
-		return buttongGroupOptions != null ? buttongGroupOptions.equals(that.buttongGroupOptions) : that.buttongGroupOptions == null;
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + buttonGroup.hashCode();
-		result = 31 * result + (buttongGroupOptions != null ? buttongGroupOptions.hashCode() : 0);
-		return result;
+		return super.hashCode();
 	}
 }

@@ -16,9 +16,10 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.position;
 
-import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+import za.co.mmagon.jwebswing.plugins.jqueryui.position.options.PositionOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
@@ -30,17 +31,17 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * @version 1.0
  * @since Forever
  */
-public class JQUIPositionFeature extends Feature<JavaScriptPart, JQUIPositionFeature>
+public class JQUIPositionFeature<J extends JQUIPositionFeature<J>> extends Feature<JavaScriptPart, J>
 {
 
 	private static final long serialVersionUID = 1L;
-	private final Position position;
+	private final PositionOptions<?> positionOptions;
 
-	public JQUIPositionFeature(Component positionComponent, Position position)
+	public JQUIPositionFeature(ComponentHierarchyBase positionComponent, PositionOptions positionOptions)
 	{
 		super("JWPosition");
 		setComponent(positionComponent);
-		this.position = position;
+		this.positionOptions = positionOptions;
 		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
 		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
 		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
@@ -52,35 +53,18 @@ public class JQUIPositionFeature extends Feature<JavaScriptPart, JQUIPositionFea
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(getComponent().getJQueryID() + "position(" + position.toString() + STRING_CLOSING_BRACKET_SEMICOLON);
+		addQuery(getComponent().getJQueryID() + "position(" + positionOptions.toString() + STRING_CLOSING_BRACKET_SEMICOLON);
 	}
 
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIPositionFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIPositionFeature that = (JQUIPositionFeature) o;
-
-		return position.equals(that.position);
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + position.hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

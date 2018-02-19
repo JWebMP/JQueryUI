@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,12 +17,13 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.tabs;
 
 import za.co.mmagon.jwebswing.base.html.List;
+import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.interfaces.JQUITabsChildren;
 
 /**
  * @author GedMarc
  * @since 28 Feb 2017
  */
-public class JQUITabList extends List implements JQUITabsChildren
+public class JQUITabList<J extends JQUITabList<J>> extends List implements JQUITabsChildren
 {
 
 	private static final long serialVersionUID = 1L;

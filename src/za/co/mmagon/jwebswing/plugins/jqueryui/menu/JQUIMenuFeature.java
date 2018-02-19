@@ -17,6 +17,8 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.menu;
 
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.menu.interfaces.JQUIMenuFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.menu.options.JQUIMenuOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
@@ -27,16 +29,16 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * 		<p>
  * @since Mar 8, 2015
  */
-public class JQUIMenuFeature extends Feature<JQUIMenuOptions, JQUIMenuFeature> implements JQUIMenuFeatures
+public class JQUIMenuFeature<J extends JQUIMenuFeature<J>> extends Feature<JQUIMenuOptions, J> implements JQUIMenuFeatures
 {
 
 	private static final long serialVersionUID = 1L;
 
-	private final JQUIMenu menu;
+	private JQUIMenu<?> menu;
 	/**
 	 * The options of the menu
 	 */
-	private JQUIMenuOptions options;
+	private JQUIMenuOptions<?> options;
 
 	/**
 	 * @param menu
@@ -67,11 +69,11 @@ public class JQUIMenuFeature extends Feature<JQUIMenuOptions, JQUIMenuFeature> i
 	 * @return
 	 */
 	@Override
-	public JQUIMenuOptions getOptions()
+	public JQUIMenuOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUIMenuOptions();
+			options = new JQUIMenuOptions<>();
 		}
 		return options;
 	}
@@ -79,34 +81,12 @@ public class JQUIMenuFeature extends Feature<JQUIMenuOptions, JQUIMenuFeature> i
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIMenuFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIMenuFeature that = (JQUIMenuFeature) o;
-
-		if (!menu.equals(that.menu))
-		{
-			return false;
-		}
-		return getOptions() != null ? getOptions().equals(that.getOptions()) : that.getOptions() == null;
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + menu.hashCode();
-		result = 31 * result + (getOptions() != null ? getOptions().hashCode() : 0);
-		return result;
+		return super.hashCode();
 	}
 }

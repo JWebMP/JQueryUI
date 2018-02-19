@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.draggable;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.draggable.interfaces.JQUIDraggableFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.draggable.options.JQUIDraggableOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
@@ -29,7 +31,8 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
  * @version 1.0
  * @since 2014/04/13
  */
-public class JQUIDraggableFeature extends Feature<JQUIDraggableOptions, JQUIDraggableFeature> implements JQUIDraggableFeatures
+public class JQUIDraggableFeature<J extends JQUIDraggableFeature<J>> extends Feature<JQUIDraggableOptions, J>
+		implements JQUIDraggableFeatures
 {
 
 	private static final long serialVersionUID = 1L;
@@ -96,34 +99,12 @@ public class JQUIDraggableFeature extends Feature<JQUIDraggableOptions, JQUIDrag
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIDraggableFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIDraggableFeature that = (JQUIDraggableFeature) o;
-
-		if (!getComponent().equals(that.getComponent()))
-		{
-			return false;
-		}
-		return draggableOptions != null ? draggableOptions.equals(that.draggableOptions) : that.draggableOptions == null;
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getComponent().hashCode();
-		result = 31 * result + (draggableOptions != null ? draggableOptions.hashCode() : 0);
-		return result;
+		return super.hashCode();
 	}
 }

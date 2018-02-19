@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,12 +18,13 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.spinner;
 
 import za.co.mmagon.jwebswing.base.html.Input;
 import za.co.mmagon.jwebswing.base.html.Label;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.interfaces.JQUISpinnerChildren;
 
 /**
  * @author GedMarc
  * @since 28 Feb 2017
  */
-public class JQUISpinnerLabel extends Label<JQUISpinnerLabel> implements JQUISpinnerChildren
+public class JQUISpinnerLabel<J extends JQUISpinnerLabel<J>> extends Label<J> implements JQUISpinnerChildren
 {
 
 	private static final long serialVersionUID = 1L;

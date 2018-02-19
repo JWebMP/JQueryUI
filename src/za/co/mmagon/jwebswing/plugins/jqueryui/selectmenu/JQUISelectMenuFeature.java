@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.options.JQUISelectMenuOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
@@ -28,7 +30,8 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * 		<p>
  * @since Mar 8, 2015
  */
-public class JQUISelectMenuFeature extends Feature<JQUISelectMenuOptions, JQUISelectMenuFeature> implements JQUISelectMenuFeatures
+public class JQUISelectMenuFeature<J extends JQUISelectMenuFeature<J>> extends Feature<JQUISelectMenuOptions, J>
+		implements JQUISelectMenuFeatures
 {
 
 	private static final long serialVersionUID = 1L;
@@ -39,7 +42,7 @@ public class JQUISelectMenuFeature extends Feature<JQUISelectMenuOptions, JQUISe
 	/**
 	 * The options associated
 	 */
-	private JQUISelectMenuOptions options;
+	private JQUISelectMenuOptions<?> options;
 
 	/**
 	 * Constructs a new Select Menu Add Options or Option Groups to configure
@@ -71,11 +74,11 @@ public class JQUISelectMenuFeature extends Feature<JQUISelectMenuOptions, JQUISe
 	}
 
 	@Override
-	public JQUISelectMenuOptions getOptions()
+	public JQUISelectMenuOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUISelectMenuOptions();
+			options = new JQUISelectMenuOptions<>();
 		}
 		return options;
 	}
@@ -83,34 +86,12 @@ public class JQUISelectMenuFeature extends Feature<JQUISelectMenuOptions, JQUISe
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUISelectMenuFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUISelectMenuFeature that = (JQUISelectMenuFeature) o;
-
-		if (!selectMenu.equals(that.selectMenu))
-		{
-			return false;
-		}
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + selectMenu.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

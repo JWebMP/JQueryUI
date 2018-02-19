@@ -24,12 +24,14 @@ import za.co.mmagon.jwebswing.base.servlets.enumarations.RequirementsPriority;
  */
 class JQueryUICoreCSSReference extends CSSReference
 {
-	
+
 	public JQueryUICoreCSSReference()
 	{
-		super("JQueryUICore", 1.114, "bower_components/jquery-ui/themes/base/core.min.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css");
+		super("JQueryUICore", 1.114, "bower_components/jquery-ui/themes/base/core.min.css",
+		      "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css");
 		setSortOrder(10);
 		setPriority(RequirementsPriority.Third);
+		setSpecifiedClassName("jquitheme");
 	}
-	
+
 }

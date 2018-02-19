@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.events;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.events.response.ResponseAdapter;
-import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.JQUIAutoCompleteEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteEvents;
 
 /**
  * @author GedMarc

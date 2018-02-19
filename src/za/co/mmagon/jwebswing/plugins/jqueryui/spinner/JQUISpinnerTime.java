@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.spinner;
  * 		<p>
  * @since Mar 9, 2015
  */
-public final class JQUISpinnerTime extends JQUISpinner
+public final class JQUISpinnerTime<J extends JQUISpinnerTime<J>> extends JQUISpinner<J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -66,29 +66,12 @@ public final class JQUISpinnerTime extends JQUISpinner
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUISpinnerTime))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUISpinnerTime that = (JQUISpinnerTime) o;
-
-		return getFeature().equals(that.getFeature());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

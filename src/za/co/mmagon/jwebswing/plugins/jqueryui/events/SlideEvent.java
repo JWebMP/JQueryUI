@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,9 +18,9 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.events;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.events.slide.SlideAdapter;
-import za.co.mmagon.jwebswing.plugins.jqueryui.draggable.JQUIDraggableEvents;
-import za.co.mmagon.jwebswing.plugins.jqueryui.resizable.JQUIResizableEvents;
-import za.co.mmagon.jwebswing.plugins.jqueryui.slider.JQUISliderEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.draggable.interfaces.JQUIDraggableEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.resizable.interfaces.JQUIResizableEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.slider.interfaces.JQUISliderEvents;
 
 /**
  * @author GedMarc

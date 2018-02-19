@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,6 +20,10 @@ import za.co.mmagon.jwebswing.base.html.List;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.Orientation;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.jqueryui.menu.interfaces.IJQUIMenu;
+import za.co.mmagon.jwebswing.plugins.jqueryui.menu.interfaces.JQUIMenuChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.menu.interfaces.JQUIMenuEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.menu.options.JQUIMenuOptions;
 
 /**
  * A menu with the default configuration, disabled items and nested menus.
@@ -35,14 +39,16 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
  * 		<p>
  * @since Mar 8, 2015
  */
-@ComponentInformation(name = "JQuery UI Menu", description = "A menu with the default configuration, disabled items and nested menus. A list is transformed, adding theming, mouse and keyboard navigation support. Try to tab to the menu then use the cursor keys to navigate.",
-		url = "http://jqueryui.com/menu/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUIMenu extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvents, JQUIMenu> implements IJQUIMenu
+@ComponentInformation(name = "JQuery UI Menu", description = "A menu with the default configuration, disabled items and nested menus. A "
+		                                                             + "list is transformed, adding theming, mouse and keyboard " +
+		                                                             "navigation" + " " + "support. Try to tab to the menu then use the "
+		                                                             + "cursor keys to " + "navigate" + ".", url = "http://jqueryui.com/menu/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIMenu<J extends JQUIMenu<J>> extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvents, J> implements IJQUIMenu
 {
 
 	private static final long serialVersionUID = 1L;
 	private Orientation orientation;
-	private JQUIMenuFeature feature;
+	private JQUIMenuFeature<?> feature;
 
 	/**
 	 * Creates an ordered list
@@ -57,6 +63,17 @@ public class JQUIMenu extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvent
 	}
 
 	/**
+	 * Gets the options of the menu
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUIMenuOptions<?> getOptions()
+	{
+		return getFeature().getOptions();
+	}
+
+	/**
 	 * Returns an instance of this feature
 	 * <p>
 	 *
@@ -66,20 +83,9 @@ public class JQUIMenu extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvent
 	{
 		if (feature == null)
 		{
-			feature = new JQUIMenuFeature(this);
+			feature = new JQUIMenuFeature<>(this);
 		}
 		return feature;
-	}
-
-	/**
-	 * Gets the options of the menu
-	 *
-	 * @return
-	 */
-	@Override
-	public JQUIMenuOptions getOptions()
-	{
-		return getFeature().getOptions();
 	}
 
 	/**
@@ -104,29 +110,12 @@ public class JQUIMenu extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvent
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIMenu))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIMenu jquiMenu = (JQUIMenu) o;
-
-		return getFeature().equals(jquiMenu.getFeature());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

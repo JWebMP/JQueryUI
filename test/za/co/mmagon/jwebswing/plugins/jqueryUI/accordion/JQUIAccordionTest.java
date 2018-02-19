@@ -160,13 +160,18 @@ public class JQUIAccordionTest extends BaseTestClass
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
-		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent d1 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent();
+		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent<?> d1 = new za.co.mmagon.jwebswing.plugins.jqueryui
+				                                                                                   .accordion.JQUIAccordionContent();
 		d1.setID("d1");
-		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent d2 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent();
+		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionContent<?> d2 = new za.co.mmagon.jwebswing.plugins.jqueryui
+				                                                                                   .accordion.JQUIAccordionContent();
 		d2.setID("d2");
-		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab tab1 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab("tab1", d1);
+		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab<?> tab1 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion
+				                                                                                 .JQUIAccordionTab(
+				"tab1", d1);
 		tab1.getHeader().setID("h1");
-		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab tab2 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab("tab2", d2);
+		za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab<?> tab2 = new za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionTab(
+				"tab2", d2);
 		tab2.getHeader().setID("h2");
 
 		accordion.addAccordianTab(tab1);
@@ -174,7 +179,8 @@ public class JQUIAccordionTest extends BaseTestClass
 
 		accordion.getOptions().setHeader(HeaderTypes.H3);
 
-		String rendered = accordion.toString(true).toString();
+		String rendered = accordion.toString(true);
+
 		String expected = "<div id=\"id\" jwtype=\"accordion\">\n" +
 				                  "\t<H3 id=\"h1\">tab1</H3>\n" +
 				                  "\t<div id=\"d1\"></div>\n" +

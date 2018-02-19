@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.events;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.events.load.LoadAdapter;
-import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.JQUITabsEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.interfaces.JQUITabsEvents;
 
 /**
  * @author GedMarc

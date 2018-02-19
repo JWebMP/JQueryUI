@@ -18,7 +18,10 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
+
+import javax.validation.constraints.NotNull;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -26,11 +29,11 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public class JQUICheckBoxRadioFeature extends Feature
+public class JQUICheckBoxRadioFeature<J extends JQUICheckBoxRadioFeature<J>> extends Feature<JQUICheckBoxRadioOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;
-	private JQUICheckBoxRadioOptions options;
+	private JQUICheckBoxRadioOptions<?> options;
 
 	public JQUICheckBoxRadioFeature(Component component)
 	{
@@ -43,13 +46,13 @@ public class JQUICheckBoxRadioFeature extends Feature
 	}
 
 	@Override
-	public JQUICheckBoxRadioOptions getOptions()
+	@NotNull
+	public JQUICheckBoxRadioOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUICheckBoxRadioOptions();
+			options = new JQUICheckBoxRadioOptions<>();
 		}
-
 		return options;
 	}
 
@@ -62,29 +65,12 @@ public class JQUICheckBoxRadioFeature extends Feature
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUICheckBoxRadioFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUICheckBoxRadioFeature that = (JQUICheckBoxRadioFeature) o;
-
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

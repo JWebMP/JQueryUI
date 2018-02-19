@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,12 +17,13 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu;
 
 import za.co.mmagon.jwebswing.base.html.OptionGroup;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuChildren;
 
 /**
  * @author GedMarc
  * @since 28 Feb 2017
  */
-public class JQUISelectMenuGroup extends OptionGroup implements JQUISelectMenuChildren
+public class JQUISelectMenuGroup<J extends JQUISelectMenuGroup<J>> extends OptionGroup<J> implements JQUISelectMenuChildren
 {
 
 	private static final long serialVersionUID = 1L;

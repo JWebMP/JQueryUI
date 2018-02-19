@@ -20,6 +20,13 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.globalize.cultures.GlobalizeCultures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.interfaces.IJQUISpinner;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.interfaces.JQUISpinnerChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.interfaces.JQUISpinnerEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.interfaces.JQUISpinnerFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.options.JQUISpinnerOptions;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * @author GedMarc
@@ -27,30 +34,36 @@ import za.co.mmagon.jwebswing.plugins.globalize.cultures.GlobalizeCultures;
  * 		<p>
  * @since Mar 9, 2015
  */
-@ComponentInformation(name = "JQuery UI Spinner",
-		description = "The Spinner, or number stepper widget, is perfect for handling all kinds of numeric input. It allows users to type a value directly, or modify an existing value by spinning with the keyboard, mouse or scrollwheel. When combined with Globalize, you can even spin currencies and dates in a variety of locales.",
-		url = "http://jqueryui.com/spinner/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpinnerFeatures, JQUISpinnerEvents, JQUISpinner> implements IJQUISpinner
+@ComponentInformation(name = "JQuery UI Spinner", description = "The Spinner, or number stepper widget, is perfect for handling all " +
+		                                                                "kinds" + " of numeric input. It allows users to type a value " +
+		                                                                "directly, or " + "modify an existing value by spinning with the "
+		                                                                + "keyboard, mouse or " + "scrollwheel. When combined with " +
+		                                                                "Globalize, you can even spin " + "currencies and dates in a " +
+		                                                                "variety of locales.", url = "http://jqueryui.com/spinner/",
+		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+
+public class JQUISpinner<J extends JQUISpinner<J>> extends Div<JQUISpinnerChildren, NoAttributes, JQUISpinnerFeatures, JQUISpinnerEvents, J>
+		implements IJQUISpinner
 {
 
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The header text for the spinner
 	 */
-	private String headerText = "JQuery UI Spinner Demo";
+	private String headerText;
 	/**
 	 * The actual input
 	 */
-	private JQUISpinnerInput input;
+	private JQUISpinnerInput<?, ?> input;
 
 	/**
 	 * The pre-child labour
 	 */
-	private JQUISpinnerLabel label;
+	private JQUISpinnerLabel<?> label;
 	/**
 	 * The spinner feature
 	 */
-	private JQUISpinnerFeature feature;
+	private JQUISpinnerFeature<?> feature;
 
 	/**
 	 * Constructs a new spinner paragraph object
@@ -80,46 +93,7 @@ public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpin
 		}
 	}
 
-	/**
-	 * Returns the label object with this spinner
-	 * <p>
-	 *
-	 * @return
-	 */
-	@Override
-	public JQUISpinnerLabel getLabel()
-	{
-		return label;
-	}
-
-	/**
-	 * Sets the entry label with this spinner
-	 * <p>
-	 *
-	 * @param label
-	 *
-	 * @return
-	 */
-	@Override
-	public JQUISpinner setLabel(JQUISpinnerLabel label)
-	{
-		this.label = label;
-		return this;
-	}
-
-	/**
-	 * Returns the options associated with this spinner
-	 * <p>
-	 *
-	 * @return
-	 */
-	@Override
-	public JQUISpinnerOptions getOptions()
-	{
-		return feature.getOptions();
-	}
-
-	public final JQUISpinnerFeature getFeature()
+	public final JQUISpinnerFeature<?> getFeature()
 	{
 		if (feature == null)
 		{
@@ -136,11 +110,50 @@ public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpin
 	 * @return
 	 */
 	@Override
-	public JQUISpinner addGlobalization(GlobalizeCultures culture)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J addGlobalization(GlobalizeCultures culture)
 	{
 		getJavascriptReferences().add(GlobalizeCultures.getJavascriptReference());
 		getOptions().setCulture(culture.toString());
-		return this;
+		return (J) this;
+	}
+
+	/**
+	 * Returns the options associated with this spinner
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public JQUISpinnerOptions<?> getOptions()
+	{
+		return feature.getOptions();
+	}
+
+	/**
+	 * Returns the input option
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUISpinnerInput<?, ?> getInput()
+	{
+		return input;
+	}
+
+	/**
+	 * Returns the label object with this spinner
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUISpinnerLabel<?> getLabel()
+	{
+		return label;
 	}
 
 	/**
@@ -155,6 +168,23 @@ public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpin
 	}
 
 	/**
+	 * Sets the entry label with this spinner
+	 * <p>
+	 *
+	 * @param label
+	 *
+	 * @return
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setLabel(JQUISpinnerLabel<?> label)
+	{
+		this.label = label;
+		return (J) this;
+	}
+
+	/**
 	 * Gets the header text
 	 *
 	 * @param headerText
@@ -162,21 +192,12 @@ public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpin
 	 * @return
 	 */
 	@Override
-	public JQUISpinner setHeaderText(String headerText)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setHeaderText(String headerText)
 	{
 		this.headerText = headerText;
-		return this;
-	}
-
-	/**
-	 * Returns the input option
-	 *
-	 * @return
-	 */
-	@Override
-	public JQUISpinnerInput getInput()
-	{
-		return input;
+		return (J) this;
 	}
 
 	/**
@@ -187,10 +208,10 @@ public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpin
 	 * @return
 	 */
 	@Override
-	public JQUISpinner setInput(JQUISpinnerInput input)
+	public J setInput(JQUISpinnerInput<?, ?> input)
 	{
 		this.input = input;
-		return this;
+		return (J) this;
 	}
 
 	@Override
@@ -198,7 +219,9 @@ public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpin
 	{
 		if (getLabel() != null)
 		{
-			return new StringBuilder().append(getCurrentTabIndentString()).append(getLabel().toString(true)).append(getNewLine());
+			return new StringBuilder().append(getCurrentTabIndentString())
+					       .append(getLabel().toString(true))
+					       .append(getNewLine());
 		}
 		else
 		{
@@ -219,44 +242,12 @@ public class JQUISpinner extends Div<JQUISpinnerChildren, NoAttributes, JQUISpin
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUISpinner))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUISpinner that = (JQUISpinner) o;
-
-		if (getHeaderText() != null ? !getHeaderText().equals(that.getHeaderText()) : that.getHeaderText() != null)
-		{
-			return false;
-		}
-		if (getInput() != null ? !getInput().equals(that.getInput()) : that.getInput() != null)
-		{
-			return false;
-		}
-		if (getLabel() != null ? !getLabel().equals(that.getLabel()) : that.getLabel() != null)
-		{
-			return false;
-		}
-		return getFeature().equals(that.getFeature());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + (getHeaderText() != null ? getHeaderText().hashCode() : 0);
-		result = 31 * result + (getInput() != null ? getInput().hashCode() : 0);
-		result = 31 * result + (getLabel() != null ? getLabel().hashCode() : 0);
-		result = 31 * result + getFeature().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

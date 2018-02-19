@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,25 +17,25 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.accordion;
 
 import za.co.mmagon.jwebswing.base.html.H3;
+import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
 
 /**
  * @author GedMarc
  * @since 26 Feb 2017
  */
-public class JQUIAccordionHeader extends H3<JQUIAccordionHeader>
-		implements JQUIAccordionChildren
+public class JQUIAccordionHeader<J extends JQUIAccordionHeader<J>> extends H3<J> implements JQUIAccordionChildren
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * An accordion header
 	 */
 	public JQUIAccordionHeader()
 	{
-	
+
 	}
-	
+
 	/**
 	 * Constructs with a text
 	 *
@@ -45,5 +45,5 @@ public class JQUIAccordionHeader extends H3<JQUIAccordionHeader>
 	{
 		super(text);
 	}
-	
+
 }

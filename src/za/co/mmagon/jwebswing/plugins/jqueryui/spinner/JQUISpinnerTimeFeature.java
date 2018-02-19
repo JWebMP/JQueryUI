@@ -18,6 +18,8 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.spinner;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.interfaces.JQUISpinnerFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.options.JQUISpinnerOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
@@ -28,7 +30,8 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * 		<p>
  * @since Mar 8, 2015
  */
-public class JQUISpinnerTimeFeature extends Feature<JQUISpinnerOptions, JQUISpinnerTimeFeature> implements JQUISpinnerFeatures
+public class JQUISpinnerTimeFeature<J extends JQUISpinnerTimeFeature<J>> extends Feature<JQUISpinnerOptions, J>
+		implements JQUISpinnerFeatures
 {
 
 	private static final long serialVersionUID = 1L;
@@ -39,7 +42,7 @@ public class JQUISpinnerTimeFeature extends Feature<JQUISpinnerOptions, JQUISpin
 	/**
 	 * The options for the time spinner
 	 */
-	private JQUISpinnerOptions options;
+	private JQUISpinnerOptions<?> options;
 
 	/**
 	 * Constructs a new slider
@@ -78,11 +81,11 @@ public class JQUISpinnerTimeFeature extends Feature<JQUISpinnerOptions, JQUISpin
 	 * @return
 	 */
 	@Override
-	public JQUISpinnerOptions getOptions()
+	public JQUISpinnerOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUISpinnerOptions();
+			options = new JQUISpinnerOptions<>();
 		}
 		return options;
 	}
@@ -90,34 +93,12 @@ public class JQUISpinnerTimeFeature extends Feature<JQUISpinnerOptions, JQUISpin
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUISpinnerTimeFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUISpinnerTimeFeature that = (JQUISpinnerTimeFeature) o;
-
-		if (!selectMenu.equals(that.selectMenu))
-		{
-			return false;
-		}
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + selectMenu.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

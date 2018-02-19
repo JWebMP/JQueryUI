@@ -17,6 +17,8 @@
 package za.co.mmagon.jwebswing.plugins.jqueryui.tabs;
 
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.interfaces.JQUITabsFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.options.JQUITabOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
@@ -29,18 +31,18 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * @version 1.0
  * @since 29 Mar 2013
  */
-public class JQUITabsFeature extends Feature<JQUITabOptions, JQUITabsFeature> implements JQUITabsFeatures
+public class JQUITabsFeature<J extends JQUITabsFeature<J>> extends Feature<JQUITabOptions, J> implements JQUITabsFeatures
 {
 
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The actual tab
 	 */
-	private final JQUITabs tab;
+	private final JQUITabs<?> tab;
 	/**
 	 * The options for this tab
 	 */
-	private JQUITabOptions options;
+	private JQUITabOptions<?> options;
 
 	/**
 	 * The JW Tabs feature
@@ -48,7 +50,7 @@ public class JQUITabsFeature extends Feature<JQUITabOptions, JQUITabsFeature> im
 	 *
 	 * @param tab
 	 */
-	public JQUITabsFeature(JQUITabs tab)
+	public JQUITabsFeature(JQUITabs<?> tab)
 	{
 		super("JWTabs");
 		this.tab = tab;
@@ -75,11 +77,11 @@ public class JQUITabsFeature extends Feature<JQUITabOptions, JQUITabsFeature> im
 	 * @return
 	 */
 	@Override
-	public JQUITabOptions getOptions()
+	public JQUITabOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUITabOptions();
+			options = new JQUITabOptions<>();
 		}
 		return options;
 	}
@@ -87,26 +89,7 @@ public class JQUITabsFeature extends Feature<JQUITabOptions, JQUITabsFeature> im
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUITabsFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUITabsFeature that = (JQUITabsFeature) o;
-
-		if (!tab.equals(that.tab))
-		{
-			return false;
-		}
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	@Override

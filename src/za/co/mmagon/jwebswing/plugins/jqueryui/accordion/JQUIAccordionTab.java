@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,6 +18,7 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.accordion;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
 
 /**
  * An Accordion Tab.
@@ -27,7 +28,7 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
  * @author GedMarc
  * @since 22 Feb 2016
  */
-public class JQUIAccordionTab extends JavaScriptPart implements JQUIAccordionChildren
+public class JQUIAccordionTab<J extends JQUIAccordionTab<J>> extends JavaScriptPart<J> implements JQUIAccordionChildren
 {
 
 	private static final long serialVersionUID = 1L;
@@ -47,8 +48,10 @@ public class JQUIAccordionTab extends JavaScriptPart implements JQUIAccordionChi
 	 * Constructs a new accordion tab
 	 * <p>
 	 *
-	 * @param header    The header to use
-	 * @param component The component to use
+	 * @param header
+	 * 		The header to use
+	 * @param component
+	 * 		The component to use
 	 */
 	public JQUIAccordionTab(JQUIAccordionHeader header, JQUIAccordionContent component)
 	{
@@ -60,8 +63,10 @@ public class JQUIAccordionTab extends JavaScriptPart implements JQUIAccordionChi
 	 * Constructs a new accordion tab
 	 * <p>
 	 *
-	 * @param header    The header to use
-	 * @param component The component to use
+	 * @param header
+	 * 		The header to use
+	 * @param component
+	 * 		The component to use
 	 */
 	public JQUIAccordionTab(String header, JQUIAccordionContent component)
 	{
@@ -116,29 +121,13 @@ public class JQUIAccordionTab extends JavaScriptPart implements JQUIAccordionChi
 	@Override
 	public int hashCode()
 	{
-		int hash = 7;
-		hash = 31 * hash + (this.header != null ? this.header.hashCode() : 0);
-		hash = 31 * hash + (this.component != null ? this.component.hashCode() : 0);
-		return hash;
+		return super.hashCode();
 	}
 
 	@Override
 	public boolean equals(Object obj)
 	{
-		if (obj == null)
-		{
-			return false;
-		}
-		if (getClass() != obj.getClass())
-		{
-			return false;
-		}
-		final JQUIAccordionTab other = (JQUIAccordionTab) obj;
-		if (this.header != other.header && (this.header == null || !this.header.equals(other.header)))
-		{
-			return false;
-		}
-		return !(this.component != other.component && (this.component == null || !this.component.equals(other.component)));
+		return super.equals(obj);
 	}
 
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,11 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.selectable;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.JQUISelectMenuChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectable.interfaces.IJQUISelectable;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectable.interfaces.JQUISelectableEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectable.interfaces.JQUISelectableFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectable.options.JQUISelectableOptions;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuChildren;
 
 /**
  * @author GedMarcs
@@ -31,7 +35,8 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.JQUISelectMenuChildren
 @ComponentInformation(name = "JQuery UI Selectable",
 		description = "Enable a DOM element (or group of elements) to be selectable. Draw a box with your cursor to select items. Hold down the Ctrl key to make multiple non-adjacent selections.",
 		url = "http://jqueryui.com/selectable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUISelectable extends Div<JQUISelectMenuChildren, NoAttributes, JQUISelectableFeatures, JQUISelectableEvents, JQUISelectable> implements IJQUISelectable
+public class JQUISelectable extends Div<JQUISelectMenuChildren, NoAttributes, JQUISelectableFeatures, JQUISelectableEvents, JQUISelectable>
+		implements IJQUISelectable
 {
 
 	private static final long serialVersionUID = 1L;

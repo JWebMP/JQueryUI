@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,22 +19,30 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.sortable;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.jqueryui.sortable.interfaces.IJQUISortable;
+import za.co.mmagon.jwebswing.plugins.jqueryui.sortable.interfaces.JQUISortableChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.sortable.interfaces.JQUISortableEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.sortable.interfaces.JQUISortableFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.sortable.options.JQUISortableOptions;
 
 /**
  * @author GedMarc
  * @since 20150807
  */
-@ComponentInformation(name = "JQuery UI Sortable",
-		description = "The jQuery UI Slider plugin makes selected elements into sliders. There are various options such as multiple handles and ranges. The handle can be moved with the mouse or the arrow keys.",
-		url = "http://jqueryui.com/sortable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISortableFeatures, JQUISortableEvents, JQUISortable> implements IJQUISortable
+@ComponentInformation(name = "JQuery UI Sortable", description = "The jQuery UI Slider plugin makes selected elements into sliders. " +
+		                                                                 "There" + " are various options such as multiple handles and " +
+		                                                                 "ranges. The " + "handle can be moved with the mouse or the " +
+		                                                                 "arrow" + " keys.", url = "http://jqueryui.com/sortable/",
+                      wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISortableFeatures, JQUISortableEvents, JQUISortable>
+		implements IJQUISortable
 {
 
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The sortable feature
 	 */
-	private JQUISortableFeature feature;
+	private JQUISortableFeature<?> feature;
 
 	/**
 	 * Constructs a new Selectable Ordered List
@@ -46,28 +54,28 @@ public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISo
 	}
 
 	/**
-	 * Returns the feature associated with the sortable feature
-	 *
-	 * @return
-	 */
-	public final JQUISortableFeature getFeature()
-	{
-		if (feature == null)
-		{
-			feature = new JQUISortableFeature(this);
-		}
-		return feature;
-	}
-
-	/**
 	 * Returns the sortable options
 	 *
 	 * @return
 	 */
 	@Override
-	public JQUISortableOptions getOptions()
+	public JQUISortableOptions<?> getOptions()
 	{
 		return getFeature().getOptions();
+	}
+
+	/**
+	 * Returns the feature associated with the sortable feature
+	 *
+	 * @return
+	 */
+	public final JQUISortableFeature<?> getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUISortableFeature<>(this);
+		}
+		return feature;
 	}
 
 	/**
@@ -83,29 +91,12 @@ public class JQUISortable extends Div<JQUISortableChildren, NoAttributes, JQUISo
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUISortable))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUISortable that = (JQUISortable) o;
-
-		return getFeature().equals(that.getFeature());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

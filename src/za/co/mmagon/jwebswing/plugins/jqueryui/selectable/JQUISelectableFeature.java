@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,8 +16,10 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.selectable;
 
-import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
+import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectable.interfaces.JQUISelectableFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectable.options.JQUISelectableOptions;
 import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
@@ -29,12 +31,13 @@ import za.co.mmagon.jwebswing.plugins.pools.jqueryui.JQUIReferencePool;
  * @version 1.0
  * @since 2014/05/16
  */
-public class JQUISelectableFeature extends Feature<JQUISelectableOptions, JQUISelectableFeature> implements JQUISelectableFeatures
+public class JQUISelectableFeature<J extends JQUISelectableFeature<J>> extends Feature<JQUISelectableOptions, J>
+		implements JQUISelectableFeatures
 {
 
 	private static final long serialVersionUID = 1L;
 
-	private JQUISelectableOptions options;
+	private JQUISelectableOptions<?> options;
 
 	/**
 	 * Construct a new instance of a selectable feature Sets name to JWSelectableFeature
@@ -42,7 +45,7 @@ public class JQUISelectableFeature extends Feature<JQUISelectableOptions, JQUISe
 	 * @param component
 	 * 		The component to assign the feature to
 	 */
-	public JQUISelectableFeature(Component component)
+	public JQUISelectableFeature(ComponentHierarchyBase component)
 	{
 		super("JWSelectableFeature");
 		setComponent(component);
@@ -64,16 +67,17 @@ public class JQUISelectableFeature extends Feature<JQUISelectableOptions, JQUISe
 	{
 		StringBuilder selectableString = new StringBuilder(getComponent().getJQueryID() + "selectable(");
 		selectableString.append(getOptions().toString());
-		selectableString.append(");").append(getNewLine());
+		selectableString.append(");")
+				.append(getNewLine());
 		addQuery(selectableString.toString());
 	}
 
 	@Override
-	public JQUISelectableOptions getOptions()
+	public JQUISelectableOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUISelectableOptions();
+			options = new JQUISelectableOptions<>();
 		}
 		return options;
 	}
@@ -81,29 +85,12 @@ public class JQUISelectableFeature extends Feature<JQUISelectableOptions, JQUISe
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUISelectableFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUISelectableFeature that = (JQUISelectableFeature) o;
-
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

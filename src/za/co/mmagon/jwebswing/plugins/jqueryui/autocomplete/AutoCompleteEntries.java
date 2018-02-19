@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,13 +18,15 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete;
 
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * Specifies a single entry for a JQUI Auto Complete Moved from inner class to object
  *
  * @author GedMarc
  * @since 22 Feb 2016
  */
-public class AutoCompleteEntries extends JavaScriptPart
+public class AutoCompleteEntries<J extends AutoCompleteEntries<J>> extends JavaScriptPart<J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -84,9 +86,12 @@ public class AutoCompleteEntries extends JavaScriptPart
 	 *
 	 * @param label
 	 */
-	public void setLabel(String label)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setLabel(String label)
 	{
 		this.label = label;
+		return (J) this;
 	}
 
 	/**
@@ -104,9 +109,12 @@ public class AutoCompleteEntries extends JavaScriptPart
 	 *
 	 * @param category
 	 */
-	public void setCategory(String category)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setCategory(String category)
 	{
 		this.category = category;
+		return (J) this;
 	}
 
 	/**
@@ -124,9 +132,12 @@ public class AutoCompleteEntries extends JavaScriptPart
 	 *
 	 * @param value
 	 */
-	public void setValue(String value)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setValue(String value)
 	{
 		this.value = value;
+		return (J) this;
 	}
 
 }

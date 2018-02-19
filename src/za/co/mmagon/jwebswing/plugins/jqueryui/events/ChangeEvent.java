@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,11 +18,11 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.events;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.events.change.ChangeAdapter;
-import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.JQUIAutoCompleteEvents;
-import za.co.mmagon.jwebswing.plugins.jqueryui.progressbar.JQUIProgressBarEvents;
-import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.JQUISelectMenuEvents;
-import za.co.mmagon.jwebswing.plugins.jqueryui.slider.JQUISliderEvents;
-import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.JQUISpinnerEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.progressbar.interfaces.JQUIProgressBarEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.slider.interfaces.JQUISliderEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.spinner.interfaces.JQUISpinnerEvents;
 
 /**
  * @author GedMarc

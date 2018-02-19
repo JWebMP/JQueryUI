@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,32 +19,31 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.droppable;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.plugins.jqueryui.droppable.interfaces.IJQUIDroppable;
+import za.co.mmagon.jwebswing.plugins.jqueryui.droppable.interfaces.JQUIDroppableChildren;
+import za.co.mmagon.jwebswing.plugins.jqueryui.droppable.interfaces.JQUIDroppableEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.droppable.interfaces.JQUIDroppableFeatures;
+import za.co.mmagon.jwebswing.plugins.jqueryui.droppable.options.JQUIDroppableOptions;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * @author Marc Magon
  * @version 1.0
  * @since 07 Aug 2015
  */
-@ComponentInformation(name = "JQuery UI Droppable", description = "Enable any DOM element to be droppable, a target for draggable elements.",
-		url = "http://jqueryui.com/droppable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUIDroppable extends Div<JQUIDroppableChildren, NoAttributes, JQUIDroppableFeatures, JQUIDroppableEvents, JQUIDroppable> implements IJQUIDroppable
+@ComponentInformation(name = "JQuery UI Droppable", description = "Enable any DOM element to be droppable, a target for draggable " +
+		                                                                  "elements.", url = "http://jqueryui.com/droppable/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUIDroppable extends Div<JQUIDroppableChildren, NoAttributes, JQUIDroppableFeatures, JQUIDroppableEvents, JQUIDroppable>
+		implements IJQUIDroppable
 {
 
 	private static final long serialVersionUID = 1L;
-	private JQUIDroppableFeature feature;
+	private JQUIDroppableFeature<?> feature;
 
 	public JQUIDroppable()
 	{
 		addFeature(getFeature());
-	}
-
-	public final JQUIDroppableFeature getFeature()
-	{
-		if (feature == null)
-		{
-			feature = new JQUIDroppableFeature(this);
-		}
-		return feature;
 	}
 
 	/**
@@ -54,9 +53,19 @@ public class JQUIDroppable extends Div<JQUIDroppableChildren, NoAttributes, JQUI
 	 * @return
 	 */
 	@Override
-	public JQUIDroppableOptions getOptions()
+	public JQUIDroppableOptions<?> getOptions()
 	{
 		return getFeature().getOptions();
+	}
+
+	@NotNull
+	public final JQUIDroppableFeature getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUIDroppableFeature<>(this);
+		}
+		return feature;
 	}
 
 	/**
@@ -72,29 +81,12 @@ public class JQUIDroppable extends Div<JQUIDroppableChildren, NoAttributes, JQUI
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIDroppable))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIDroppable that = (JQUIDroppable) o;
-
-		return getFeature().equals(that.getFeature());
+		return super.equals(o);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }

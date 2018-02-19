@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,9 +18,9 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.events;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.events.activate.ActivateAdapter;
-import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.JQUIAccordionEvents;
-import za.co.mmagon.jwebswing.plugins.jqueryui.droppable.JQUIDroppableEvents;
-import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.JQUITabsEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.accordion.interfaces.JQUIAccordionEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.droppable.interfaces.JQUIDroppableEvents;
+import za.co.mmagon.jwebswing.plugins.jqueryui.tabs.interfaces.JQUITabsEvents;
 
 /**
  * @author GedMarc
@@ -36,7 +36,7 @@ public abstract class ActivateEvent extends ActivateAdapter
 	{
 		super(component);
 	}
-	
+
 	/**
 	 * This object is never equal to another as an event
 	 * @param obj
@@ -47,7 +47,7 @@ public abstract class ActivateEvent extends ActivateAdapter
 	{
 		return false;
 	}
-	
+
 	/**
 	 * A hash code
 	 * @return

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,6 +21,7 @@ import za.co.mmagon.jwebswing.base.html.Link;
 import za.co.mmagon.jwebswing.base.html.ListItem;
 import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_HASH;
@@ -33,7 +34,7 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_HASH;
  * @version 1.0
  * @since 29 Mar 2013
  */
-public class JQUITab implements Serializable
+public class JQUITab<J extends JQUITab<J>> implements Serializable
 {
 
 	private static final long serialVersionUID = 1L;
@@ -56,13 +57,19 @@ public class JQUITab implements Serializable
 	{
 		if (tabDisplayComponent != null)
 		{
-			Link tabLink = new Link(STRING_HASH + Component.class.cast(tabDisplayComponent).getID(), null, tabHeader.getText(0).toString());
+			Link tabLink = new Link(STRING_HASH + Component.class.cast(tabDisplayComponent)
+					                                      .getID(), null, tabHeader.getText(0)
+							                                                      .toString());
 			tabHeader.setText((String) null);
 			tabHeader.add(tabLink);
 		}
 		this.tabHeader = tabHeader;
 		this.tabDisplayComponent = tabDisplayComponent;
-		Component.class.cast(tabDisplayComponent).addClass(JQUIThemeBlocks.UI_Widget_Content.toString());
+		if (tabDisplayComponent != null)
+		{
+			Component.class.cast(tabDisplayComponent)
+					.addClass(JQUIThemeBlocks.UI_Widget_Content.toString());
+		}
 	}
 
 	/**
@@ -80,9 +87,12 @@ public class JQUITab implements Serializable
 	 *
 	 * @param tabHeader
 	 */
-	public void setTabHeader(ListItem tabHeader)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setTabHeader(ListItem tabHeader)
 	{
 		this.tabHeader = tabHeader;
+		return (J) this;
 	}
 
 	/**
@@ -100,8 +110,11 @@ public class JQUITab implements Serializable
 	 *
 	 * @param tabDisplayComponent
 	 */
-	public void setTabDisplayComponent(JQUITabContent tabDisplayComponent)
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setTabDisplayComponent(JQUITabContent tabDisplayComponent)
 	{
 		this.tabDisplayComponent = tabDisplayComponent;
+		return (J) this;
 	}
 }
