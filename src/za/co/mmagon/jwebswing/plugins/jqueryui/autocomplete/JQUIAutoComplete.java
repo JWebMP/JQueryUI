@@ -18,9 +18,9 @@ package za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete;
 
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.Input;
-import za.co.mmagon.jwebswing.base.html.InputTextType;
 import za.co.mmagon.jwebswing.base.html.attributes.LabelAttributes;
 import za.co.mmagon.jwebswing.base.html.attributes.NoAttributes;
+import za.co.mmagon.jwebswing.base.html.inputs.InputTextType;
 import za.co.mmagon.jwebswing.base.servlets.interfaces.IDataComponent;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteChildren;
@@ -37,9 +37,11 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.themes.JQUIThemeBlocks;
  * @version 1.0
  * @since 06 Aug 2015
  */
-@ComponentInformation(name = "JQuery UI Auto Complete", description = "Enables users to quickly find and select from a pre-populated " +
-		                                                                      "list" + " of values as they type, leveraging searching and " +
-		                                                                      "" + "" + "" + "filtering" + ".", url = "http://jqueryui.com/autocomplete/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+@ComponentInformation(name = "JQuery UI Auto Complete",
+		description = "Enables users to quickly find and select from a pre-populated " + "list" + " of values as they type, leveraging " +
+				              "searching and " + "" + "" + "" + "filtering" + ".",
+		url = "http://jqueryui.com/autocomplete/",
+		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIAutoComplete
 		extends Div<JQUIAutoCompleteChildren, NoAttributes, JQUIAutoCompleteFeatures, JQUIAutoCompleteEvents, JQUIAutoComplete>
 		implements IDataComponent
@@ -124,6 +126,38 @@ public class JQUIAutoComplete
 		this.input = input;
 	}
 
+	@Override
+	public AutoCompleteEntrySet getData(java.util.Map params)
+	{
+		AutoCompleteEntrySet entrySet = new AutoCompleteEntrySet();
+		String searchTerm = params.get("term")
+		                          .toString();
+		getOptions().getSource()
+		            .forEach(next ->
+		                     {
+			                     if (next.toString()
+			                             .toLowerCase()
+			                             .startsWith(searchTerm.toLowerCase()))
+			                     {
+				                     entrySet.getSource()
+				                             .add(next);
+			                     }
+		                     });
+		return entrySet;
+	}
+
+	/**
+	 * Returns the options supported for the auto complete
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public JQUIAutoCompleteOptions getOptions()
+	{
+		return getFeature().getOptions();
+	}
+
 	/**
 	 * Returns the feature attached to this component
 	 * <p>
@@ -148,38 +182,6 @@ public class JQUIAutoComplete
 	public void setFeature(JQUIAutoCompleteFeature feature)
 	{
 		this.feature = feature;
-	}
-
-	/**
-	 * Returns the options supported for the auto complete
-	 * <p>
-	 *
-	 * @return
-	 */
-	@Override
-	public JQUIAutoCompleteOptions getOptions()
-	{
-		return getFeature().getOptions();
-	}
-
-	@Override
-	public AutoCompleteEntrySet getData(java.util.Map params)
-	{
-		AutoCompleteEntrySet entrySet = new AutoCompleteEntrySet();
-		String searchTerm = params.get("term")
-				                    .toString();
-		getOptions().getSource()
-				.forEach(next ->
-				         {
-					         if (next.toString()
-							             .toLowerCase()
-							             .startsWith(searchTerm.toLowerCase()))
-					         {
-						         entrySet.getSource()
-								         .add(next);
-					         }
-				         });
-		return entrySet;
 	}
 
 	@Override

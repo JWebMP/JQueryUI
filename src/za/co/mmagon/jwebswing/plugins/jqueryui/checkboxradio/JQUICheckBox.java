@@ -16,9 +16,9 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio;
 
-import za.co.mmagon.jwebswing.base.html.InputCheckBoxType;
 import za.co.mmagon.jwebswing.base.html.Label;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
+import za.co.mmagon.jwebswing.base.html.inputs.InputCheckBoxType;
 import za.co.mmagon.jwebswing.base.html.interfaces.children.FieldSetChildren;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio.interfaces.IJQUICheckBox;
@@ -30,10 +30,15 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio.options.JQUICheckBo
  * 		<p>
  * @since Mar 8, 2015
  */
-@ComponentInformation(name = "JQuery UI Checkbox", description = "Enhances standard checkbox and radio input element to themeable " +
-		                                                                 "buttons" + " with appropriate hover and active styles.", url = "http://jqueryui.com/button/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+@ComponentInformation(name = "JQuery UI Checkbox",
+		description = "Enhances standard checkbox and radio input element to themeable " + "buttons" + " with appropriate hover and " +
+				              "active" + " styles.",
+		url = "http://jqueryui.com/button/",
+		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 
-public class JQUICheckBox<J extends JQUICheckBox<J>> extends InputCheckBoxType<J> implements IJQUICheckBox, FieldSetChildren
+public class JQUICheckBox<J extends JQUICheckBox<J>>
+		extends InputCheckBoxType<J>
+		implements IJQUICheckBox, FieldSetChildren
 {
 
 	private static final long serialVersionUID = 1L;
@@ -135,8 +140,8 @@ public class JQUICheckBox<J extends JQUICheckBox<J>> extends InputCheckBoxType<J
 		legend.setForInputComponent(this);
 
 		return new StringBuilder().append(getCurrentTabIndentString())
-				       .append(legend.toString(true))
-				       .append(getNewLine());
+		                          .append(legend.toString(true))
+		                          .append(getNewLine());
 	}
 
 	@Override

@@ -16,9 +16,9 @@
  */
 package za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio;
 
-import za.co.mmagon.jwebswing.base.html.InputRadioType;
 import za.co.mmagon.jwebswing.base.html.Label;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
+import za.co.mmagon.jwebswing.base.html.inputs.InputRadioType;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio.interfaces.IJQUICheckBox;
 import za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOptions;
@@ -29,10 +29,15 @@ import za.co.mmagon.jwebswing.plugins.jqueryui.checkboxradio.options.JQUICheckBo
  * 		<p>
  * @since Mar 8, 2015
  */
-@ComponentInformation(name = "JQuery UI Radio Button", description = "Enhances standard checkbox and radio input element to themeable " +
-		                                                                     "buttons with appropriate hover and active styles.", url = "http://jqueryui.com/button/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+@ComponentInformation(name = "JQuery UI Radio Button",
+		description = "Enhances standard checkbox and radio input element to themeable " + "buttons with appropriate hover and active " +
+				              "styles.",
+		url = "http://jqueryui.com/button/",
+		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 
-public class JQUIRadioButton extends InputRadioType implements IJQUICheckBox
+public class JQUIRadioButton
+		extends InputRadioType
+		implements IJQUICheckBox
 {
 
 	private static final long serialVersionUID = 1L;
@@ -104,6 +109,12 @@ public class JQUIRadioButton extends InputRadioType implements IJQUICheckBox
 		return this;
 	}
 
+	@Override
+	public JQUICheckBoxRadioOptions getOptions()
+	{
+		return getFeature().getOptions();
+	}
+
 	/**
 	 * Returns the feature
 	 *
@@ -112,12 +123,6 @@ public class JQUIRadioButton extends InputRadioType implements IJQUICheckBox
 	public JQUICheckBoxRadioFeature<?> getFeature()
 	{
 		return feature;
-	}
-
-	@Override
-	public JQUICheckBoxRadioOptions getOptions()
-	{
-		return getFeature().getOptions();
 	}
 
 	@Override
@@ -130,8 +135,8 @@ public class JQUIRadioButton extends InputRadioType implements IJQUICheckBox
 		legend.setForInputComponent(this);
 
 		return new StringBuilder().append(getCurrentTabIndentString())
-				       .append(legend.toString(true))
-				       .append(getNewLine());
+		                          .append(legend.toString(true))
+		                          .append(getNewLine());
 	}
 
 	@Override
