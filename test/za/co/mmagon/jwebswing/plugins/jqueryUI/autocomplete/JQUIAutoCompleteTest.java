@@ -23,7 +23,8 @@ import za.co.mmagon.jwebswing.BaseTestClass;
 /**
  * @author GedMarc
  */
-public class JQUIAutoCompleteTest extends BaseTestClass
+public class JQUIAutoCompleteTest
+		extends BaseTestClass
 {
 
 	public JQUIAutoCompleteTest()
@@ -35,15 +36,22 @@ public class JQUIAutoCompleteTest extends BaseTestClass
 	{
 		JQUIAutoComplete ac = new JQUIAutoComplete("autocomplete");
 		ac.setID("id");
-		ac.getLabel().setID("label");
-		ac.getInput().setID("input");
-		ac.getOptions().addOption("option 1");
+		ac.getLabel()
+		  .setID("label");
+		ac.getInput()
+		  .setID("input");
+		ac.getOptions()
+		  .addOption("option 1");
 		System.out.println(ac.toString(true));
-		ac.getInput().setID("id");
-		Assertions.assertEquals("<div class=\"ui-widget\" id=\"id\">\n" +
-				                        "\t<label for=\"autocomplete\" id=\"label\">autocomplete</label>\n" +
-				                        "\t<input id=\"id\" name=\"input\" type=\"text\">\n" +
-				                        "</div>", ac.toString(true).toString());
+		ac.getInput()
+		  .setID("id");
+		Assertions.assertEquals(
+				"<div class=\"ui-widget\" id=\"id\">\n" + "\t<label for=\"autocomplete\" id=\"label\">autocomplete</label>\n" + "\t<input " +
+						"" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" +
+						"" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "id=\"id\" " + "name=\"input\" " +
+						"type=\"text\"/>\n" + "</div>",
+				ac.toString(true)
+				  .toString());
 	}
 
 	@Test
@@ -51,17 +59,18 @@ public class JQUIAutoCompleteTest extends BaseTestClass
 	{
 		JQUIAutoComplete ac = new JQUIAutoComplete("autocomplete");
 		ac.setID("id");
-		ac.getLabel().setID("label");
-		ac.getInput().setID("input");
-		ac.getOptions().addOption("option 1");
+		ac.getLabel()
+		  .setID("label");
+		ac.getInput()
+		  .setID("input");
+		ac.getOptions()
+		  .addOption("option 1");
 		ac.toString(true);
-		System.out.println(ac.renderJavascript().toString());
-		String expected = "$(\"#input\").autocomplete({\n" +
-				                  "  \"source\" : [{\n" +
-				                  "  \"label\" : \"option 1\"\n" +
-				                  "}]\n" +
-				                  "});\n";
-		String rendered = ac.renderJavascript().toString();
+		System.out.println(ac.renderJavascript()
+		                     .toString());
+		String expected = "$(\"#input\").autocomplete({\n" + "  \"source\" : [{\n" + "  \"label\" : \"option 1\"\n" + "}]\n" + "});\n";
+		String rendered = ac.renderJavascript()
+		                    .toString();
 		Assertions.assertEquals(expected, rendered);
 	}
 
@@ -70,19 +79,19 @@ public class JQUIAutoCompleteTest extends BaseTestClass
 	{
 		JQUIAutoComplete ac = new JQUIAutoComplete("autocomplete");
 		ac.setID("id");
-		ac.getLabel().setID("label");
-		ac.getInput().setID("input");
-		ac.getOptions().addOption("option 1", "value1", "category1");
-		System.out.println(ac.renderJavascript().toString());
+		ac.getLabel()
+		  .setID("label");
+		ac.getInput()
+		  .setID("input");
+		ac.getOptions()
+		  .addOption("option 1", "value1", "category1");
+		System.out.println(ac.renderJavascript()
+		                     .toString());
 
-		String expected = "$(\"#input\").autocomplete({\n" +
-				                  "  \"source\" : [{\n" +
-				                  "  \"label\" : \"option 1\",\n" +
-				                  "  \"value\" : \"value1\",\n" +
-				                  "  \"category\" : \"category1\"\n" +
-				                  "}]\n" +
-				                  "});\n";
-		String rendered = ac.renderJavascript().toString();
+		String expected = "$(\"#input\").autocomplete({\n" + "  \"source\" : [{\n" + "  \"label\" : \"option 1\",\n" + "  \"value\" : " +
+				                  "\"value1\",\n" + "  \"category\" : \"category1\"\n" + "}]\n" + "});\n";
+		String rendered = ac.renderJavascript()
+		                    .toString();
 
 		//super.writeValuesToFile(expected, rendered);
 		Assertions.assertEquals(expected, rendered);
@@ -93,16 +102,20 @@ public class JQUIAutoCompleteTest extends BaseTestClass
 	{
 		JQUIAutoComplete ac = new JQUIAutoComplete("autocomplete");
 		ac.setID("id");
-		ac.getLabel().setID("label");
-		ac.getInput().setID("input");
-		ac.getOptions().setAjax(true, ac);
-		ac.getOptions().addOption("option 1", "value1", "category1");
-		System.out.println(ac.renderJavascript().toString());
+		ac.getLabel()
+		  .setID("label");
+		ac.getInput()
+		  .setID("input");
+		ac.getOptions()
+		  .setAjax(true, ac);
+		ac.getOptions()
+		  .addOption("option 1", "value1", "category1");
+		System.out.println(ac.renderJavascript()
+		                     .toString());
 
-		String expected = "$(\"#input\").autocomplete({\n" +
-				                  "  \"source\" : \"jwdata?component=id\"\n" +
-				                  "});\n";
-		String rendered = ac.renderJavascript().toString();
+		String expected = "$(\"#input\").autocomplete({\n" + "  \"source\" : \"jwdata?component=id\"\n" + "});\n";
+		String rendered = ac.renderJavascript()
+		                    .toString();
 
 		//super.writeValuesToFile(expected, rendered);
 		Assertions.assertEquals(expected, rendered);
