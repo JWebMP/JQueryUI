@@ -36,9 +36,13 @@ import java.util.ArrayList;
  * @version 1.0
  * @since 09 Mar 2013
  */
-@ComponentInformation(name = "JQuery UI Tabs", description = "Tabs are generally used to break content into multiple sections that can "
-		                                                             + "be" + " swapped to save space, much like an accordion", url = "http://jqueryui.com/tabs/", wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki") public class JQUITabs<J extends JQUITabs<J>>
-		extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatures, JQUITabsEvents, J> implements IJQUITabs<J>
+@ComponentInformation(name = "JQuery UI Tabs",
+		description = "Tabs are generally used to break content into multiple sections that can " + "be" + " swapped to save space, much like an accordion",
+		url = "http://jqueryui.com/tabs/",
+		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+public class JQUITabs<J extends JQUITabs<J>>
+		extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatures, JQUITabsEvents, J>
+		implements IJQUITabs<J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -70,6 +74,22 @@ import java.util.ArrayList;
 	}
 
 	/**
+	 * Returns the feature for the JQUITabs object
+	 * <p>
+	 *
+	 * @return
+	 */
+	@NotNull
+	public final JQUITabsFeature<?> getFeature()
+	{
+		if (feature == null)
+		{
+			feature = new JQUITabsFeature<>(this);
+		}
+		return feature;
+	}
+
+	/**
 	 * As Me
 	 *
 	 * @return
@@ -92,9 +112,7 @@ import java.util.ArrayList;
 			                  });
 		}
 		super.init();
-	}
-
-	/**
+	}	/**
 	 * Adds a tab to the collection
 	 * <p>
 	 *
@@ -107,12 +125,6 @@ import java.util.ArrayList;
 	{
 		getTabs().add(tab);
 		return tab;
-	}
-
-	@Override
-	public JQUITab addTab(String title, JQUITabContent displayComponent)
-	{
-		return addTab(new JQUITab(new ListItem(title), displayComponent));
 	}
 
 	/**
@@ -128,6 +140,10 @@ import java.util.ArrayList;
 			unorderedList = new JQUITabList();
 		}
 		return unorderedList;
+	}	@Override
+	public JQUITab addTab(String title, JQUITabContent displayComponent)
+	{
+		return addTab(new JQUITab(new ListItem(title), displayComponent));
 	}
 
 	/**
@@ -156,7 +172,17 @@ import java.util.ArrayList;
 		return feature.getOptions();
 	}
 
-	/**
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
+	}	/**
 	 * Returns a list of tabs
 	 *
 	 * @return
@@ -186,31 +212,9 @@ import java.util.ArrayList;
 		return (J) this;
 	}
 
-	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
 
-	@Override
-	public int hashCode()
-	{
-		return super.hashCode();
-	}
 
-	/**
-	 * Returns the feature for the JQUITabs object
-	 * <p>
-	 *
-	 * @return
-	 */
-	@NotNull
-	public final JQUITabsFeature<?> getFeature()
-	{
-		if (feature == null)
-		{
-			feature = new JQUITabsFeature<>(this);
-		}
-		return feature;
-	}
+
+
+
 }
