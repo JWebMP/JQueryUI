@@ -46,10 +46,7 @@ public class JQUIAutoCompleteTest
 		ac.getInput()
 		  .setID("id");
 		Assertions.assertEquals(
-				"<div class=\"ui-widget\" id=\"id\">\n" + "\t<label for=\"autocomplete\" id=\"label\">autocomplete</label>\n" + "\t<input " +
-						"" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" +
-						"" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "" + "id=\"id\" " +
-						"name=\"input\" " + "type=\"text\"/>\n" + "</div>",
+				"<div class=\"ui-widget\" id=\"id\">\n" + "\t<label for=\"autocomplete\" id=\"label\">autocomplete</label>\n" + "\t<input id=\"id\" name=\"id\" type=\"text\"/>\n" + "</div>",
 				ac.toString(true)
 				  .toString());
 	}
@@ -88,8 +85,7 @@ public class JQUIAutoCompleteTest
 		System.out.println(ac.renderJavascript()
 		                     .toString());
 
-		String expected = "$(\"#input\").autocomplete({\n" + "  \"source\" : [{\n" + "  \"label\" : \"option 1\",\n" + "  \"value\" : " +
-				                  "\"value1\",\n" + "  \"category\" : \"category1\"\n" + "}]\n" + "});\n";
+		String expected = "$(\"#input\").autocomplete({\n" + "  \"source\" : [{\n" + "  \"label\" : \"option 1\",\n" + "  \"value\" : " + "\"value1\",\n" + "  \"category\" : \"category1\"\n" + "}]\n" + "});\n";
 		String rendered = ac.renderJavascript()
 		                    .toString();
 
