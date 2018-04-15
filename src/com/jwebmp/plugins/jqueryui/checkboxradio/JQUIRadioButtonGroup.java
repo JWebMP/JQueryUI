@@ -90,11 +90,6 @@ public class JQUIRadioButtonGroup
 	 * Adds a new Check Box to the group
 	 * <p>
 	 *
-	 * @param label
-	 * 		the label to create
-	 * @param checkBox
-	 * 		the check box to add
-	 *
 	 * @return The label object that is created
 	 */
 
@@ -110,14 +105,14 @@ public class JQUIRadioButtonGroup
 	}
 
 	@Override
-	public int hashCode()
-	{
-		return super.hashCode();
-	}
-
-	@Override
 	public boolean equals(Object o)
 	{
 		return super.equals(o);
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
 	}
 }

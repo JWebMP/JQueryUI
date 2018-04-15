@@ -98,17 +98,6 @@ public class JQUICheckBoxGroup<J extends JQUICheckBoxGroup<J>>
 		return (J) this;
 	}
 
-	/**
-	 * Adds a new Check Box to the group
-	 * <p>
-	 *
-	 * @param label
-	 * 		the label to create
-	 * @param checkBox
-	 * 		the check box to add
-	 *
-	 * @return The label object that is created
-	 */
 
 	@Override
 	protected StringBuilder renderBeforeChildren()
@@ -122,14 +111,14 @@ public class JQUICheckBoxGroup<J extends JQUICheckBoxGroup<J>>
 	}
 
 	@Override
-	public int hashCode()
-	{
-		return super.hashCode();
-	}
-
-	@Override
 	public boolean equals(Object o)
 	{
 		return super.equals(o);
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
 	}
 }
