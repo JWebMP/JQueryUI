@@ -17,7 +17,6 @@
 
 package com.jwebmp.plugins.jqueryui.position;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.base.html.Div;
 import com.jwebmp.plugins.jqueryui.position.enumerations.PositionLocationHorizontal;
 import com.jwebmp.plugins.jqueryui.position.enumerations.PositionLocationVertical;
@@ -30,7 +29,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @author MMagon
  */
 public class PositionOptionsTest
-		extends BaseTestClass
+
 {
 
 	public PositionOptionsTest()
@@ -51,7 +50,7 @@ public class PositionOptionsTest
 		System.out.println(instance.toString());
 		String expResult = "{\n" + "  \"myX\" : \"left\",\n" + "  \"myY\" : \"top\",\n" + "  \"atX\" : \"left\",\n" + "  \"atY\" : " + "\"top\",\n" + "  \"of\" : \"#of\"\n" + "}" + "";
 		String result = instance.toString();
-		super.writeValuesToFile(expResult, result);
+		//super.writeValuesToFile(expResult, result);
 		assertEquals(expResult, result);
 	}
 

@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.jqueryui.accordion;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.base.html.attributes.HeaderTypes;
 import com.jwebmp.generics.Direction;
 import com.jwebmp.htmlbuilder.javascript.events.enumerations.EventTypes;
@@ -28,7 +27,7 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class JQUIAccordionTest
-		extends BaseTestClass
+
 {
 
 	public JQUIAccordionTest()

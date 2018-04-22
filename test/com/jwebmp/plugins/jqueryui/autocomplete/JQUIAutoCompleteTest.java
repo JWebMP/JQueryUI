@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.jqueryui.autocomplete;
 
-import com.jwebmp.BaseTestClass;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -24,7 +23,7 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class JQUIAutoCompleteTest
-		extends BaseTestClass
+
 {
 
 	public JQUIAutoCompleteTest()

@@ -16,14 +16,13 @@
  */
 package com.jwebmp.plugins.jqueryui.button;
 
-import com.jwebmp.BaseTestClass;
 import org.junit.jupiter.api.Test;
 
 /**
  * @author GedMarc
  */
 public class JQUIButtonTest
-		extends BaseTestClass
+
 {
 
 	public JQUIButtonTest()
