@@ -75,6 +75,10 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 */
 	private String cursor;
 	/**
+	 * Placement of the cursor in relation to the attached object.
+	 */
+	private CursorAt cursorAt;
+	/**
 	 * Time in milliseconds after mousedown until dragging should start. This option can be used to prevent unwanted drags when clicking
 	 * on an element.
 	 */
@@ -200,6 +204,7 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 * @param addClasses
 	 * 		True or false denoting add classes or not
 	 */
+	@SuppressWarnings("unchecked")
 	public J setAddClasses(Boolean addClasses)
 	{
 		this.addClasses = addClasses;
@@ -357,6 +362,37 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	public J setCursor(Cursors cursor)
 	{
 		this.cursor = cursor.toString();
+		return (J) this;
+	}
+
+	/**
+	 * Position of the block in relation to the cursor
+	 *
+	 * @return
+	 */
+	@NotNull
+	@SuppressWarnings("unchecked")
+	public CursorAt getCursorAt()
+	{
+		if (cursorAt == null)
+		{
+			cursorAt = new CursorAt();
+		}
+		return cursorAt;
+	}
+
+	/**
+	 * Position of the block in relation to the cursor
+	 *
+	 * @param cursorAt
+	 *
+	 * @return
+	 */
+	@NotNull
+	@SuppressWarnings("unchecked")
+	public J setCursorAt(CursorAt cursorAt)
+	{
+		this.cursorAt = cursorAt;
 		return (J) this;
 	}
 
@@ -915,4 +951,80 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 		return (J) this;
 	}
 
+	public static class CursorAt
+			extends JavaScriptPart<CursorAt>
+	{
+		private static final long serialVersionUID = 1L;
+		private Integer top;
+		private Integer left;
+		private Integer right;
+		private Integer bottom;
+
+		public CursorAt()
+		{
+		}
+
+		public CursorAt(Integer top, Integer left)
+		{
+			this.top = top;
+			this.left = left;
+		}
+
+		public CursorAt(Integer top)
+		{
+			this.top = top;
+		}
+
+		public CursorAt(Integer top, Integer left, Integer right, Integer bottom)
+		{
+			this.top = top;
+			this.left = left;
+			this.right = right;
+			this.bottom = bottom;
+		}
+
+		public Integer getTop()
+		{
+			return top;
+		}
+
+		public CursorAt setTop(Integer top)
+		{
+			this.top = top;
+			return this;
+		}
+
+		public Integer getLeft()
+		{
+			return left;
+		}
+
+		public CursorAt setLeft(Integer left)
+		{
+			this.left = left;
+			return this;
+		}
+
+		public Integer getRight()
+		{
+			return right;
+		}
+
+		public CursorAt setRight(Integer right)
+		{
+			this.right = right;
+			return this;
+		}
+
+		public Integer getBottom()
+		{
+			return bottom;
+		}
+
+		public CursorAt setBottom(Integer bottom)
+		{
+			this.bottom = bottom;
+			return this;
+		}
+	}
 }

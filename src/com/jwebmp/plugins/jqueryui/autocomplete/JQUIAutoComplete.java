@@ -132,16 +132,12 @@ public class JQUIAutoComplete
 		String searchTerm = params.get("term")
 		                          .toString();
 		getOptions().getSource()
-		            .forEach(next ->
-		                     {
-			                     if (next.toString()
-			                             .toLowerCase()
-			                             .startsWith(searchTerm.toLowerCase()))
-			                     {
-				                     entrySet.getSource()
-				                             .add(next);
-			                     }
-		                     });
+		            .stream()
+		            .filter(next -> next.toString()
+		                                .toLowerCase()
+		                                .startsWith(searchTerm.toLowerCase()))
+		            .forEach(next -> entrySet.getSource()
+		                                     .add(next));
 		return entrySet;
 	}
 
@@ -152,7 +148,7 @@ public class JQUIAutoComplete
 	 * @return
 	 */
 	@Override
-	public JQUIAutoCompleteOptions getOptions()
+	public JQUIAutoCompleteOptions<?> getOptions()
 	{
 		return getFeature().getOptions();
 	}
@@ -184,14 +180,14 @@ public class JQUIAutoComplete
 	}
 
 	@Override
-	public int hashCode()
-	{
-		return super.hashCode();
-	}
-
-	@Override
 	public boolean equals(Object o)
 	{
 		return super.equals(o);
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
 	}
 }

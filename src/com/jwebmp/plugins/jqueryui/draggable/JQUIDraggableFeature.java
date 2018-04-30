@@ -20,7 +20,6 @@ import com.jwebmp.Component;
 import com.jwebmp.Feature;
 import com.jwebmp.plugins.jqueryui.draggable.interfaces.JQUIDraggableFeatures;
 import com.jwebmp.plugins.jqueryui.draggable.options.JQUIDraggableOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
  * Implements the JQuery Draggable functionality on an object
@@ -48,23 +47,32 @@ public class JQUIDraggableFeature<J extends JQUIDraggableFeature<J>>
 	 *
 	 * @param component
 	 * 		The component that must get the feature
+	 */
+	public JQUIDraggableFeature(Component component)
+	{
+		this(component, null);
+	}
+
+	/**
+	 * Add the draggable to a component
+	 * <p>
+	 * Used to group sets of draggable and droppable items, in addition to droppable's accept option.
+	 * A draggable with the same scope value as a droppable will be accepted by the droppable.
+	 * <p>
+	 *
+	 * @param component
+	 * 		The component that must get the feature
 	 * @param scope
 	 * 		The scope of this component.
 	 */
 	public JQUIDraggableFeature(Component component, String scope)
 	{
 		super("JWDraggableFeature");
-
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Mouse.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Draggable.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Draggable.getCssReference());
 		setComponent(component);
-		getOptions().setScope(scope);
+		if (scope != null)
+		{
+			getOptions().setScope(scope);
+		}
 		getComponent().addFeature(this);
 	}
 
