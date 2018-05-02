@@ -19,7 +19,6 @@ package com.jwebmp.plugins.jqueryui.datepicker;
 import com.jwebmp.Feature;
 import com.jwebmp.plugins.jqueryui.datepicker.interfaces.JQUIDatePickerFeatures;
 import com.jwebmp.plugins.jqueryui.datepicker.options.JQUIDatePickerOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static com.jwebmp.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -52,13 +51,6 @@ public class JQUIDatePickerFeature<J extends JQUIDatePickerFeature<J>>
 	{
 		super("dateinput");
 		this.dateInput = dateInput;
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.DatePicker.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.DatePicker.getCssReference());
 	}
 
 	@Override

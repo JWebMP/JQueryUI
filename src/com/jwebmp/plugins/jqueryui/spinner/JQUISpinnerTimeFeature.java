@@ -20,7 +20,6 @@ import com.jwebmp.Component;
 import com.jwebmp.Feature;
 import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerFeatures;
 import com.jwebmp.plugins.jqueryui.spinner.options.JQUISpinnerOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static com.jwebmp.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -54,19 +53,7 @@ public class JQUISpinnerTimeFeature<J extends JQUISpinnerTimeFeature<J>>
 	{
 		super("JWSpinnerTimeFeature");
 		this.selectMenu = selectMenu;
-
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Button.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Spinner.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.SpinnerTime.getJavaScriptReference());
-
-		getCssReferences().add(JQUIReferencePool.Button.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Spinner.getCssReference());
-
+		setComponent(selectMenu);
 	}
 
 	@Override

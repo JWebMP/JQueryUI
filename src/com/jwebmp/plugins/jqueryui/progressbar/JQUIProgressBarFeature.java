@@ -19,7 +19,6 @@ package com.jwebmp.plugins.jqueryui.progressbar;
 import com.jwebmp.Feature;
 import com.jwebmp.plugins.jqueryui.progressbar.interfaces.JQUIProgressBarFeatures;
 import com.jwebmp.plugins.jqueryui.progressbar.options.JQUIProgressBarOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 import javax.validation.constraints.NotNull;
 
@@ -50,15 +49,6 @@ public class JQUIProgressBarFeature<J extends JQUIProgressBarFeature<J>>
 	{
 		super("JWProgressBarFeature");
 		this.progressBar = progressBar;
-
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.ProgressBar.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.ProgressBar.getCssReference());
-
 	}
 
 	@Override

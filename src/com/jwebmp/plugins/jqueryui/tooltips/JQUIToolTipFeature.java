@@ -24,7 +24,6 @@ import com.jwebmp.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.tooltips.interfaces.JQUIToolTipFeatures;
 import com.jwebmp.plugins.jqueryui.tooltips.options.JQUITooltipOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
@@ -74,14 +73,6 @@ public class JQUIToolTipFeature
 		{
 			getComponent().addAttribute(GlobalAttributes.Title, tooltipText);
 		}
-
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Tooltip.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Tooltip.getCssReference());
 	}
 
 	/**
@@ -95,44 +86,19 @@ public class JQUIToolTipFeature
 	{
 		super("JWTooltip");
 		setComponent(forComponent);
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Tooltip.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Tooltip.getCssReference());
-
 		getComponent().add(divToDisplayForComponent);
 	}
 
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof JQUIToolTipFeature))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		JQUIToolTipFeature that = (JQUIToolTipFeature) o;
-
-		return getOptions().equals(that.getOptions());
+		return super.equals(o);
 	}
 
 	/**

@@ -19,7 +19,6 @@ package com.jwebmp.plugins.jqueryui.checkboxradio;
 import com.jwebmp.Component;
 import com.jwebmp.Feature;
 import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 import javax.validation.constraints.NotNull;
 
@@ -40,10 +39,6 @@ public class JQUICheckBoxRadioFeature<J extends JQUICheckBoxRadioFeature<J>>
 	{
 		super("JQUICHeckBoxRadioFeature");
 		setComponent(component);
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
 	}
 
 	@Override

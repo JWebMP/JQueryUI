@@ -20,7 +20,6 @@ import com.jwebmp.Component;
 import com.jwebmp.Feature;
 import com.jwebmp.base.servlets.interfaces.IFeature;
 import com.jwebmp.plugins.jqueryui.resizable.options.JQUIResizableOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
  * Controls items being resizable
@@ -40,13 +39,6 @@ public class JQUIResizableFeature<J extends JQUIResizableFeature<J>>
 	public JQUIResizableFeature(Component component)
 	{
 		super("JWResizableFeature");
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Mouse.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Resizable.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Resizable.getCssReference());
 		setComponent(component);
 	}
 

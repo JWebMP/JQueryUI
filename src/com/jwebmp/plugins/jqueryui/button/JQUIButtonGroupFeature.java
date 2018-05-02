@@ -20,7 +20,6 @@ import com.jwebmp.Component;
 import com.jwebmp.Feature;
 import com.jwebmp.plugins.jqueryui.button.interfaces.JQUIButtonFeatures;
 import com.jwebmp.plugins.jqueryui.button.options.JQUIButtonGroupOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 import javax.validation.constraints.NotNull;
 
@@ -54,7 +53,6 @@ public class JQUIButtonGroupFeature<J extends JQUIButtonGroupFeature<J>>
 	{
 		super("JWCheckBoxGroupFeature");
 		this.buttonGroup = buttonGroup;
-		getJavascriptReferences().add(JQUIReferencePool.Button.getJavaScriptReference());
 	}
 
 	@Override

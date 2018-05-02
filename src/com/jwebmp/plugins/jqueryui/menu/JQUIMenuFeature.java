@@ -19,7 +19,6 @@ package com.jwebmp.plugins.jqueryui.menu;
 import com.jwebmp.Feature;
 import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuFeatures;
 import com.jwebmp.plugins.jqueryui.menu.options.JQUIMenuOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static com.jwebmp.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -50,13 +49,6 @@ public class JQUIMenuFeature<J extends JQUIMenuFeature<J>>
 	{
 		super("JWMenuFeature");
 		this.menu = menu;
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Menu.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Menu.getCssReference());
 	}
 
 	@Override

@@ -20,7 +20,6 @@ import com.jwebmp.Feature;
 import com.jwebmp.base.ComponentHierarchyBase;
 import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static com.jwebmp.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -43,12 +42,6 @@ public class JQUIPositionFeature<J extends JQUIPositionFeature<J>>
 		super("JWPosition");
 		setComponent(positionComponent);
 		this.positionOptions = positionOptions;
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Position.getJavaScriptReference());
 	}
 
 	@Override

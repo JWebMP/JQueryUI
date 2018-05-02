@@ -20,7 +20,6 @@ import com.jwebmp.Component;
 import com.jwebmp.Feature;
 import com.jwebmp.plugins.jqueryui.sortable.interfaces.JQUISortableFeatures;
 import com.jwebmp.plugins.jqueryui.sortable.options.JQUISortableOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static com.jwebmp.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -54,14 +53,7 @@ public class JQUISortableFeature<J extends JQUISortableFeature<J>>
 	{
 		super("JWSortableFeature");
 		this.selectMenu = selectMenu;
-
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Sortable.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Sortable.getCssReference());
+		setComponent(selectMenu);
 	}
 
 	@Override

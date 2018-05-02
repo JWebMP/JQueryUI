@@ -19,7 +19,6 @@ package com.jwebmp.plugins.jqueryui.slider;
 import com.jwebmp.Feature;
 import com.jwebmp.plugins.jqueryui.slider.interfaces.JQUISliderFeatures;
 import com.jwebmp.plugins.jqueryui.slider.options.JQUISliderOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static com.jwebmp.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -53,14 +52,7 @@ public class JQUISliderFeature<J extends JQUISliderFeature<J>>
 	{
 		super("JWPSelectMenuFeature");
 		this.selectMenu = selectMenu;
-
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Slider.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Slider.getCssReference());
+		setComponent(selectMenu);
 	}
 
 	@Override

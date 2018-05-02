@@ -20,7 +20,6 @@ import com.jwebmp.Component;
 import com.jwebmp.Feature;
 import com.jwebmp.plugins.jqueryui.droppable.interfaces.JQUIDroppableFeatures;
 import com.jwebmp.plugins.jqueryui.droppable.options.JQUIDroppableOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static com.jwebmp.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -48,13 +47,6 @@ public class JQUIDroppableFeature<J extends JQUIDroppableFeature<J>>
 	public JQUIDroppableFeature(Component componentFor)
 	{
 		super("JWDroppableFeature");
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Mouse.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Droppable.getJavaScriptReference());
 		setComponent(componentFor);
 	}
 

@@ -19,7 +19,6 @@ package com.jwebmp.plugins.jqueryui.accordion;
 import com.jwebmp.Feature;
 import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionFeatures;
 import com.jwebmp.plugins.jqueryui.accordion.options.JQUIAccordionOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 import javax.validation.constraints.NotNull;
 
@@ -46,13 +45,6 @@ public class JQUIAccordionFeature
 	{
 		super("JWAccordianFeature");
 		this.accordion = accordion;
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Accordion.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Accordion.getCssReference());
 	}
 
 	@Override

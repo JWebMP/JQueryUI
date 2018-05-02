@@ -19,7 +19,6 @@ package com.jwebmp.plugins.jqueryui.dialog;
 import com.jwebmp.Feature;
 import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.dialog.interfaces.JQUIDialogFeatures;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
  * Implements the JQuery UI Dialog
@@ -41,22 +40,6 @@ public class JQUIDialogFeature<J extends JQUIDialogFeature<J>>
 	{
 		super("JWDialog");
 		this.panel = panel;
-
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Button.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Mouse.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Resizable.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Draggable.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Dialog.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Button.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Resizable.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Draggable.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Dialog.getCssReference());
-
 	}
 
 	/**

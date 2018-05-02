@@ -19,9 +19,7 @@ package com.jwebmp.plugins.jqueryui.draggable.options;
 import com.jwebmp.Component;
 import com.jwebmp.htmlbuilder.css.displays.Cursors;
 import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
-import com.jwebmp.plugins.jqueryui.draggable.enumerations.Axis;
-import com.jwebmp.plugins.jqueryui.draggable.enumerations.JQUIDraggableRevertOptions;
-import com.jwebmp.plugins.jqueryui.draggable.enumerations.JQUIDraggableSnapModes;
+import com.jwebmp.plugins.jqueryui.draggable.enumerations.*;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -56,6 +54,10 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 * Constrains dragging to either the horizontal (x) or vertical (y) axis. Possible values: "x", "y".
 	 */
 	private Axis axis;
+	/**
+	 * JQuery Selector Of the stuff to not allow
+	 */
+	private String cancel;
 	/**
 	 * Prevents dragging from starting on specified elements. Default: "input,textarea,button,select,option"
 	 */
@@ -106,7 +108,7 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 * <p>
 	 * The element will be cloned and the clone will be dragged.
 	 */
-	private Boolean helper;
+	private JQUIDraggablesHelper helper;
 	/**
 	 * Specify a component to use as a helper component. Warning : This component will be made invisible.
 	 */
@@ -131,7 +133,7 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 * <p>
 	 * Boolean: If set to true the element will always revert.
 	 */
-	private Boolean revert;
+	private JQUIDraggablesRevertTypes revert;
 	/**
 	 * If set to "invalid", revert will only occur if the draggable has not been dropped on a droppable. For "valid", it's the other way
 	 * around.
@@ -531,7 +533,7 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 *
 	 * @return If the element must be cloned
 	 */
-	public Boolean isHelper()
+	public JQUIDraggablesHelper isHelper()
 	{
 		return helper;
 	}
@@ -546,7 +548,7 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 */
 	@NotNull
 	@SuppressWarnings("unchecked")
-	public J setHelper(Boolean helper)
+	public J setHelper(JQUIDraggablesHelper helper)
 	{
 		this.helper = helper;
 		return (J) this;
@@ -655,7 +657,7 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	/**
 	 * @return Whether the element should revert to its start position when dragging stops.
 	 */
-	public Boolean isRevert()
+	public JQUIDraggablesRevertTypes isRevert()
 	{
 		return revert;
 	}
@@ -668,7 +670,7 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 */
 	@NotNull
 	@SuppressWarnings("unchecked")
-	public J setRevert(Boolean revert)
+	public J setRevert(JQUIDraggablesRevertTypes revert)
 	{
 		this.revert = revert;
 		return (J) this;
@@ -948,6 +950,29 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	public J setzIndex(Integer zIndex)
 	{
 		this.zIndex = zIndex;
+		return (J) this;
+	}
+
+	/**
+	 * JQuery Selector Of the stuff to not allow
+	 *
+	 * @return
+	 */
+	public String getCancel()
+	{
+		return cancel;
+	}
+
+	/**
+	 * JQuery Selector Of the stuff to not allow
+	 *
+	 * @param cancel
+	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setCancel(String cancel)
+	{
+		this.cancel = cancel;
 		return (J) this;
 	}
 

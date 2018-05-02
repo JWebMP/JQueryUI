@@ -19,7 +19,6 @@ package com.jwebmp.plugins.jqueryui.tabs;
 import com.jwebmp.Feature;
 import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsFeatures;
 import com.jwebmp.plugins.jqueryui.tabs.options.JQUITabOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static com.jwebmp.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -56,14 +55,6 @@ public class JQUITabsFeature<J extends JQUITabsFeature<J>>
 	{
 		super("JWTabs");
 		this.tab = tab;
-
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Tabs.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Tabs.getCssReference());
 	}
 
 	@Override

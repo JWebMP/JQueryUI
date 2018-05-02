@@ -20,7 +20,6 @@ import com.jwebmp.Feature;
 import com.jwebmp.base.ComponentHierarchyBase;
 import com.jwebmp.plugins.jqueryui.selectable.interfaces.JQUISelectableFeatures;
 import com.jwebmp.plugins.jqueryui.selectable.options.JQUISelectableOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
  * Handles selectable objects.
@@ -50,13 +49,6 @@ public class JQUISelectableFeature<J extends JQUISelectableFeature<J>>
 	{
 		super("JWSelectableFeature");
 		setComponent(component);
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Selectable.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Selectable.getCssReference());
 	}
 
 	@Override

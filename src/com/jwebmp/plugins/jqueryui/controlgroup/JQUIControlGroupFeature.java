@@ -19,7 +19,6 @@ package com.jwebmp.plugins.jqueryui.controlgroup;
 import com.jwebmp.Component;
 import com.jwebmp.Feature;
 import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 /**
  * @author GedMarc
@@ -47,10 +46,6 @@ public class JQUIControlGroupFeature<J extends JQUIControlGroupFeature<J>>
 	{
 		super("JWCheckBoxGroupFeature");
 		this.checkBoxGroup = checkBoxGroup;
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
 	}
 
 	@Override

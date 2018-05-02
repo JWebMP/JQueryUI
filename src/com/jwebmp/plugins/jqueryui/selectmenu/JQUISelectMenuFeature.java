@@ -20,7 +20,6 @@ import com.jwebmp.Component;
 import com.jwebmp.Feature;
 import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuFeatures;
 import com.jwebmp.plugins.jqueryui.selectmenu.options.JQUISelectMenuOptions;
-import com.jwebmp.plugins.pools.jqueryui.JQUIReferencePool;
 
 import static com.jwebmp.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
@@ -55,17 +54,6 @@ public class JQUISelectMenuFeature<J extends JQUISelectMenuFeature<J>>
 	{
 		super("JWSelectMenuFeature");
 		this.selectMenu = selectMenu;
-
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Menu.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.SelectMenu.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.SelectMenuIcons.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.SelectMenu.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Menu.getCssReference());
 	}
 
 	@Override
