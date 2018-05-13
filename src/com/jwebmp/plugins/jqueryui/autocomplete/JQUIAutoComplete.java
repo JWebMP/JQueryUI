@@ -21,7 +21,6 @@ import com.jwebmp.base.html.Input;
 import com.jwebmp.base.html.attributes.LabelAttributes;
 import com.jwebmp.base.html.attributes.NoAttributes;
 import com.jwebmp.base.html.inputs.InputTextType;
-import com.jwebmp.base.servlets.interfaces.IDataComponent;
 import com.jwebmp.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteChildren;
 import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteEvents;
@@ -43,7 +42,6 @@ import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;
 		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIAutoComplete
 		extends Div<JQUIAutoCompleteChildren, NoAttributes, JQUIAutoCompleteFeatures, JQUIAutoCompleteEvents, JQUIAutoComplete>
-		implements IDataComponent
 {
 
 	/**
@@ -123,22 +121,6 @@ public class JQUIAutoComplete
 		feature = new JQUIAutoCompleteFeature(input);
 		input.addFeature(feature);
 		this.input = input;
-	}
-
-	@Override
-	public AutoCompleteEntrySet getData(java.util.Map params)
-	{
-		AutoCompleteEntrySet entrySet = new AutoCompleteEntrySet();
-		String searchTerm = params.get("term")
-		                          .toString();
-		getOptions().getSource()
-		            .stream()
-		            .filter(next -> next.toString()
-		                                .toLowerCase()
-		                                .startsWith(searchTerm.toLowerCase()))
-		            .forEach(next -> entrySet.getSource()
-		                                     .add(next));
-		return entrySet;
 	}
 
 	/**
