@@ -44,7 +44,7 @@ import java.util.List;
  * @since 2013/01/15
  */
 @ComponentInformation(name = "JQuery UI Accordion",
-		description = "Displays collapsible content panels for presenting information in a " + "limited amount of space.",
+		description = "Displays collapsible content panels for presenting information in a limited amount of space.",
 		url = "http://jqueryui.com/accordion/",
 		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIAccordion<J extends JQUIAccordion<J>>
@@ -235,14 +235,14 @@ public class JQUIAccordion<J extends JQUIAccordion<J>>
 	}
 
 	@Override
-	public int hashCode()
-	{
-		return super.hashCode();
-	}
-
-	@Override
 	public boolean equals(Object o)
 	{
 		return super.equals(o);
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
 	}
 }
