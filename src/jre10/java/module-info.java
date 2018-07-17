@@ -79,4 +79,5 @@ module com.jwebmp.plugins.jqueryui {
 	requires java.logging;
 	requires com.jwebmp.plugins.easingeffects;
 	requires com.jwebmp.plugins.globalize.cultures;
+	requires com.jwebmp.guicedservlets;
 }
