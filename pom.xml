@@ -42,6 +42,7 @@
             <artifactId>jwebmp-core</artifactId>
             <version>${project.version}</version>
             <classifier>${jwebmp.runtime.classifier}</classifier>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -49,6 +50,7 @@
             <artifactId>jwebmp-easing-effects</artifactId>
             <version>${project.version}</version>
             <classifier>${jwebmp.runtime.classifier}</classifier>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -56,12 +58,14 @@
             <artifactId>jwebmp-globalize</artifactId>
             <version>${project.version}</version>
             <classifier>${jwebmp.runtime.classifier}</classifier>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>jwebmp-log-master</artifactId>
             <version>${project.version}</version>
             <classifier>${jwebmp.runtime.classifier}</classifier>
+            <optional>true</optional>
             <type>jar</type>
         </dependency>
         <dependency>
@@ -69,6 +73,7 @@
             <artifactId>guiced-servlets</artifactId>
             <version>${project.version}</version>
             <classifier>${jwebmp.runtime.classifier}</classifier>
+            <optional>true</optional>
             <type>jar</type>
         </dependency>
         <dependency>
@@ -76,6 +81,7 @@
             <artifactId>guiced-injection</artifactId>
             <version>${project.version}</version>
             <classifier>${jwebmp.runtime.classifier}</classifier>
+            <optional>true</optional>
             <type>jar</type>
         </dependency>
     </dependencies>
