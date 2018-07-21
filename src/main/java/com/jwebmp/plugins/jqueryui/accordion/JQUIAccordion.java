@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.jqueryui.accordion;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.base.html.attributes.NoAttributes;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.attributes.NoAttributes;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.accordion.enumerations.JQUIAccordionHeightStyle;
 import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
 import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionEvents;

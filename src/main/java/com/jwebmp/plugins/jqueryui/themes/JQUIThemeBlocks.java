@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.themes;
 
-import com.jwebmp.base.interfaces.ICSSClassName;
+import com.jwebmp.core.base.interfaces.ICSSClassName;
 
 import java.util.EnumSet;
 import java.util.Set;

@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.controlgroup;
 
-import com.jwebmp.base.html.DivSimple;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.DivSimple;
+import com.jwebmp.core.plugins.ComponentInformation;
 
 /**
  * @author GedMarc

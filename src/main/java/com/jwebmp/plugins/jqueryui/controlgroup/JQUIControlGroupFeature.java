@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.jqueryui.controlgroup;
 
-import com.jwebmp.Component;
-import com.jwebmp.Feature;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.Feature;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 /**
  * @author GedMarc

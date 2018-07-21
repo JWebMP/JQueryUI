@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.menu.interfaces;
 
-import com.jwebmp.base.html.interfaces.children.ListChildren;
+import com.jwebmp.core.base.html.interfaces.children.ListChildren;
 
 /**
  * @author Marc Magon

@@ -16,13 +16,13 @@
  */
 package com.jwebmp.plugins.jqueryui.accordion;
 
-import com.jwebmp.Feature;
+import com.jwebmp.core.Feature;
 import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionFeatures;
 import com.jwebmp.plugins.jqueryui.accordion.options.JQUIAccordionOptions;
 
 import javax.validation.constraints.NotNull;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author MMagon

@@ -17,7 +17,7 @@
 package com.jwebmp.plugins.jqueryui.accordion;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
 
 /**

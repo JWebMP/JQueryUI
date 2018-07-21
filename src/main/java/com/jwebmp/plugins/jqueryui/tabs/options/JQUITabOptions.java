@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.tabs.options;
 
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
-import com.jwebmp.htmlbuilder.javascript.events.enumerations.EventTypes;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.events.enumerations.EventTypes;
 import com.jwebmp.plugins.easingeffects.JQEasingAnimationEffectsPart;
 import com.jwebmp.plugins.jqueryui.accordion.enumerations.JQUIAccordionHeightStyle;
 

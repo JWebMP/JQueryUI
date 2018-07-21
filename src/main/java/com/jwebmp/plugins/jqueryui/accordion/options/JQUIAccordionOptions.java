@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.jqueryui.accordion.options;
 
-import com.jwebmp.base.html.attributes.HeaderTypes;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
-import com.jwebmp.htmlbuilder.javascript.events.enumerations.EventTypes;
+import com.jwebmp.core.base.html.attributes.HeaderTypes;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.events.enumerations.EventTypes;
 import com.jwebmp.plugins.easingeffects.JQEasingAnimationEffectsPart;
 import com.jwebmp.plugins.jqueryui.accordion.enumerations.JQUIAccordionHeightStyle;
 

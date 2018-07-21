@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.accordion.interfaces;
 
-import com.jwebmp.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
 
 /**
  * Specifies all events for accordions

@@ -16,13 +16,13 @@
  */
 package com.jwebmp.plugins.jqueryui.progressbar;
 
-import com.jwebmp.Feature;
+import com.jwebmp.core.Feature;
 import com.jwebmp.plugins.jqueryui.progressbar.interfaces.JQUIProgressBarFeatures;
 import com.jwebmp.plugins.jqueryui.progressbar.options.JQUIProgressBarOptions;
 
 import javax.validation.constraints.NotNull;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc

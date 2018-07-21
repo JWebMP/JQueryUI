@@ -17,7 +17,7 @@
 
 package com.jwebmp.plugins.jqueryui.position;
 
-import com.jwebmp.base.html.Div;
+import com.jwebmp.core.base.html.Div;
 import com.jwebmp.plugins.jqueryui.position.enumerations.PositionLocationHorizontal;
 import com.jwebmp.plugins.jqueryui.position.enumerations.PositionLocationVertical;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;

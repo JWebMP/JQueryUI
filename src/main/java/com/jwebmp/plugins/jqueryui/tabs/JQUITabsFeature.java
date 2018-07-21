@@ -16,11 +16,11 @@
  */
 package com.jwebmp.plugins.jqueryui.tabs;
 
-import com.jwebmp.Feature;
+import com.jwebmp.core.Feature;
 import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsFeatures;
 import com.jwebmp.plugins.jqueryui.tabs.options.JQUITabOptions;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * The JQuery UI Tabs Implementation

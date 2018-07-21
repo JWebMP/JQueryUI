@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.jqueryui.checkboxradio;
 
-import com.jwebmp.base.html.Label;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.base.html.inputs.InputRadioType;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.Label;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.inputs.InputRadioType;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.checkboxradio.interfaces.IJQUICheckBox;
 import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOptions;
 

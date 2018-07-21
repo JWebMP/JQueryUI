@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.themes;
 
-import com.jwebmp.base.interfaces.ICSSClassName;
+import com.jwebmp.core.base.interfaces.ICSSClassName;
 
 /**
  * Defines the blocks available to UI-Themes for Icons

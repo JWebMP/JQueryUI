@@ -17,10 +17,10 @@
 package com.jwebmp.plugins.jqueryui.resizable.options;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.jwebmp.Component;
-import com.jwebmp.base.html.interfaces.CssClass;
-import com.jwebmp.generics.CompassPoints;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.html.interfaces.CssClass;
+import com.jwebmp.core.generics.CompassPoints;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.easingeffects.JQEasingEffects;
 
 import javax.validation.constraints.NotNull;

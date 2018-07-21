@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.events;
 
-import com.jwebmp.Component;
-import com.jwebmp.events.open.OpenAdapter;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.events.open.OpenAdapter;
 import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteEvents;
 import com.jwebmp.plugins.jqueryui.dialog.interfaces.JQUIDialogEvents;
 import com.jwebmp.plugins.jqueryui.draggable.interfaces.JQUIDraggableEvents;

@@ -16,12 +16,12 @@
  */
 package com.jwebmp.plugins.jqueryui.themes;
 
-import com.jwebmp.base.html.Image;
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.ListItem;
-import com.jwebmp.base.html.Span;
-import com.jwebmp.htmlbuilder.css.heightwidth.HeightWidthCSS;
-import com.jwebmp.htmlbuilder.css.measurement.MeasurementCSS;
+import com.jwebmp.core.base.html.Image;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.ListItem;
+import com.jwebmp.core.base.html.Span;
+import com.jwebmp.core.htmlbuilder.css.heightwidth.HeightWidthCSS;
+import com.jwebmp.core.htmlbuilder.css.measurement.MeasurementCSS;
 
 /**
  * A default theme pack item

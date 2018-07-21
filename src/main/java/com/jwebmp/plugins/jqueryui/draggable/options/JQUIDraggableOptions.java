@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.jqueryui.draggable.options;
 
-import com.jwebmp.Component;
-import com.jwebmp.htmlbuilder.css.displays.Cursors;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.htmlbuilder.css.displays.Cursors;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.draggable.enumerations.*;
 
 import javax.validation.constraints.NotNull;

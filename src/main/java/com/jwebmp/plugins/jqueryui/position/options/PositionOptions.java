@@ -16,16 +16,16 @@
  */
 package com.jwebmp.plugins.jqueryui.position.options;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.position.enumerations.PositionLocationHorizontal;
 import com.jwebmp.plugins.jqueryui.position.enumerations.PositionLocationVertical;
 
 import javax.validation.constraints.NotNull;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * This defines the JavaScript part for JQuery UI for Position

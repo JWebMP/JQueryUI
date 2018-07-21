@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.sortable;
 
-import com.jwebmp.base.html.ListItem;
+import com.jwebmp.core.base.html.ListItem;
 import com.jwebmp.plugins.jqueryui.sortable.interfaces.JQUISortableChildren;
 import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;
 

@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.events;
 
-import com.jwebmp.Component;
-import com.jwebmp.events.change.ChangeAdapter;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.events.change.ChangeAdapter;
 import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteEvents;
 import com.jwebmp.plugins.jqueryui.progressbar.interfaces.JQUIProgressBarEvents;
 import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuEvents;

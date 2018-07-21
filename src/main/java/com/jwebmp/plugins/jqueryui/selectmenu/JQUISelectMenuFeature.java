@@ -16,12 +16,12 @@
  */
 package com.jwebmp.plugins.jqueryui.selectmenu;
 
-import com.jwebmp.Component;
-import com.jwebmp.Feature;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.Feature;
 import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuFeatures;
 import com.jwebmp.plugins.jqueryui.selectmenu.options.JQUISelectMenuOptions;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc

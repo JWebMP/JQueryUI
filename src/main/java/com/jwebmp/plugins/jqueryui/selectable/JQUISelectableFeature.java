@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.selectable;
 
-import com.jwebmp.Feature;
-import com.jwebmp.base.ComponentHierarchyBase;
+import com.jwebmp.core.Feature;
+import com.jwebmp.core.base.ComponentHierarchyBase;
 import com.jwebmp.plugins.jqueryui.selectable.interfaces.JQUISelectableFeatures;
 import com.jwebmp.plugins.jqueryui.selectable.options.JQUISelectableOptions;
 

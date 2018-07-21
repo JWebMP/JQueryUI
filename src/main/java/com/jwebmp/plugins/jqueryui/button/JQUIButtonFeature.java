@@ -16,15 +16,15 @@
  */
 package com.jwebmp.plugins.jqueryui.button;
 
-import com.jwebmp.Component;
-import com.jwebmp.Feature;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.Feature;
 import com.jwebmp.plugins.jqueryui.button.interfaces.JQUIButtonFeatures;
 import com.jwebmp.plugins.jqueryui.button.options.JQUIButtonOptions;
 import com.jwebmp.plugins.jqueryui.pools.JQUIReferencePool;
 
 import javax.validation.constraints.NotNull;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * The JavaScript implementation of the JWButton

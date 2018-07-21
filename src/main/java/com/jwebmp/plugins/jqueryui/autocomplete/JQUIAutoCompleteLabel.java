@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.autocomplete;
 
-import com.jwebmp.base.html.Input;
-import com.jwebmp.base.html.Label;
+import com.jwebmp.core.base.html.Input;
+import com.jwebmp.core.base.html.Label;
 
 /**
  * @param <J>

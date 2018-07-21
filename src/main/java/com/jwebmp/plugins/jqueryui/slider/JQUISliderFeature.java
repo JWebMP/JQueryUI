@@ -16,11 +16,11 @@
  */
 package com.jwebmp.plugins.jqueryui.slider;
 
-import com.jwebmp.Feature;
+import com.jwebmp.core.Feature;
 import com.jwebmp.plugins.jqueryui.slider.interfaces.JQUISliderFeatures;
 import com.jwebmp.plugins.jqueryui.slider.options.JQUISliderOptions;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc

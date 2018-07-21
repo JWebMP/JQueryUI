@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.checkboxradio.options;
 
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 import javax.validation.constraints.NotNull;
 import java.util.HashMap;

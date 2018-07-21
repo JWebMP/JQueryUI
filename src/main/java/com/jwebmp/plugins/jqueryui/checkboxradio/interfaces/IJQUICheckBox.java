@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.checkboxradio.interfaces;
 
-import com.jwebmp.base.html.Input;
+import com.jwebmp.core.base.html.Input;
 import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOptions;
 
 /**

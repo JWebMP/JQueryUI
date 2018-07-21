@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.jqueryui.menu;
 
-import com.jwebmp.base.html.List;
-import com.jwebmp.base.html.attributes.NoAttributes;
-import com.jwebmp.base.servlets.enumarations.Orientation;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.List;
+import com.jwebmp.core.base.html.attributes.NoAttributes;
+import com.jwebmp.core.base.servlets.enumarations.Orientation;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.menu.interfaces.IJQUIMenu;
 import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuChildren;
 import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuEvents;

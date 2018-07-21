@@ -16,13 +16,13 @@
  */
 package com.jwebmp.plugins.jqueryui.spinner;
 
-import com.jwebmp.Component;
-import com.jwebmp.Feature;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.Feature;
 import com.jwebmp.plugins.jqueryui.pools.JQUIReferencePool;
 import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerFeatures;
 import com.jwebmp.plugins.jqueryui.spinner.options.JQUISpinnerOptions;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc

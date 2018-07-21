@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.selectmenu;
 
-import com.jwebmp.base.html.OptionGroup;
+import com.jwebmp.core.base.html.OptionGroup;
 import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuChildren;
 
 /**

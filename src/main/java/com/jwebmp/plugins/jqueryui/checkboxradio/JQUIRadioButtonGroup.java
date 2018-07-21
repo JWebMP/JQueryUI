@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.checkboxradio;
 
-import com.jwebmp.base.html.FieldSet;
-import com.jwebmp.base.html.Legend;
+import com.jwebmp.core.base.html.FieldSet;
+import com.jwebmp.core.base.html.Legend;
 import com.jwebmp.plugins.jqueryui.controlgroup.JQUIControlGroupFeature;
 
 /**

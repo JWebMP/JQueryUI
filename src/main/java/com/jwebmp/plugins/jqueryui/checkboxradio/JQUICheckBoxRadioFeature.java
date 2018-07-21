@@ -16,13 +16,13 @@
  */
 package com.jwebmp.plugins.jqueryui.checkboxradio;
 
-import com.jwebmp.Component;
-import com.jwebmp.Feature;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.Feature;
 import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOptions;
 
 import javax.validation.constraints.NotNull;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc

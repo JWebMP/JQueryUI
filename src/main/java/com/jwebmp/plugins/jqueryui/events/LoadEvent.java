@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.events;
 
-import com.jwebmp.Component;
-import com.jwebmp.events.load.LoadAdapter;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.events.load.LoadAdapter;
 import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsEvents;
 
 /**

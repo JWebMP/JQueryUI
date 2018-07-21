@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.accordion;
 
-import com.jwebmp.base.html.H3;
+import com.jwebmp.core.base.html.H3;
 import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
 
 /**

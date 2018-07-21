@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.pools;
 
-import com.jwebmp.base.references.JavascriptReference;
+import com.jwebmp.core.base.references.JavascriptReference;
 
 /**
  * @author GedMarc

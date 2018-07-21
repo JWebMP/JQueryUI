@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.events;
 
-import com.jwebmp.Component;
-import com.jwebmp.events.beforeactivate.BeforeActivateAdapter;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.events.beforeactivate.BeforeActivateAdapter;
 import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionEvents;
 import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsEvents;
 

@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.jqueryui.selectable.options;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.html.interfaces.CssClass;
-import com.jwebmp.base.servlets.enumarations.ComponentTypes;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.html.interfaces.CssClass;
+import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;

@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.jqueryui.spinner;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.attributes.NoAttributes;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.attributes.NoAttributes;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.globalize.cultures.GlobalizeCultures;
 import com.jwebmp.plugins.jqueryui.spinner.interfaces.IJQUISpinner;
 import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerChildren;

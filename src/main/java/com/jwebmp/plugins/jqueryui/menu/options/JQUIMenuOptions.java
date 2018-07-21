@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.menu.options;
 
-import com.jwebmp.base.servlets.enumarations.ComponentTypes;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
 
 import javax.validation.constraints.NotNull;

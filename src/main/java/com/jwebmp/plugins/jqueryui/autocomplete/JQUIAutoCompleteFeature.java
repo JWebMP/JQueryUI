@@ -17,12 +17,12 @@
 package com.jwebmp.plugins.jqueryui.autocomplete;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.jwebmp.Feature;
-import com.jwebmp.base.html.Input;
+import com.jwebmp.core.Feature;
+import com.jwebmp.core.base.html.Input;
 import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteFeatures;
 import com.jwebmp.plugins.jqueryui.autocomplete.options.JQUIAutoCompleteOptions;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author MMagon

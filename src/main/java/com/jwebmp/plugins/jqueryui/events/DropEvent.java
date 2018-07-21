@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.events;
 
-import com.jwebmp.Component;
-import com.jwebmp.events.drop.DropAdapter;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.events.drop.DropAdapter;
 import com.jwebmp.plugins.jqueryui.droppable.interfaces.JQUIDroppableEvents;
 
 /**

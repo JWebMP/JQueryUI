@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.menu;
 
-import com.jwebmp.base.html.List;
-import com.jwebmp.base.html.attributes.NoAttributes;
+import com.jwebmp.core.base.html.List;
+import com.jwebmp.core.base.html.attributes.NoAttributes;
 import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuChildren;
 import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuEvents;
 import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;

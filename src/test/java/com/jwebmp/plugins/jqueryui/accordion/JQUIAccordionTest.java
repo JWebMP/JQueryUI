@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.jqueryui.accordion;
 
-import com.jwebmp.base.html.attributes.HeaderTypes;
-import com.jwebmp.generics.Direction;
-import com.jwebmp.htmlbuilder.javascript.events.enumerations.EventTypes;
+import com.jwebmp.core.base.html.attributes.HeaderTypes;
+import com.jwebmp.core.generics.Direction;
+import com.jwebmp.core.htmlbuilder.javascript.events.enumerations.EventTypes;
 import com.jwebmp.plugins.easingeffects.JQEasingEffects;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

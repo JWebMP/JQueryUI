@@ -16,13 +16,13 @@
  */
 package com.jwebmp.plugins.jqueryui.button;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.html.attributes.ButtonAttributes;
-import com.jwebmp.base.html.interfaces.GlobalChildren;
-import com.jwebmp.base.html.interfaces.NoNewLineBeforeClosingTag;
-import com.jwebmp.base.html.interfaces.NoNewLineForRawText;
-import com.jwebmp.base.servlets.enumarations.ComponentTypes;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.html.attributes.ButtonAttributes;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.html.interfaces.NoNewLineBeforeClosingTag;
+import com.jwebmp.core.base.html.interfaces.NoNewLineForRawText;
+import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
 import com.jwebmp.plugins.jqueryui.button.interfaces.JQUIButtonChildren;
 import com.jwebmp.plugins.jqueryui.button.interfaces.JQUIButtonEvents;

@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.jqueryui.selectable;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.attributes.NoAttributes;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.attributes.NoAttributes;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.selectable.interfaces.IJQUISelectable;
 import com.jwebmp.plugins.jqueryui.selectable.interfaces.JQUISelectableEvents;
 import com.jwebmp.plugins.jqueryui.selectable.interfaces.JQUISelectableFeatures;

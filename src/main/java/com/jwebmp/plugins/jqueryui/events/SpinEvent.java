@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.events;
 
-import com.jwebmp.Component;
-import com.jwebmp.events.spin.SpinAdapter;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.events.spin.SpinAdapter;
 import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerEvents;
 
 /**

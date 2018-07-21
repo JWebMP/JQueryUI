@@ -16,12 +16,12 @@
  */
 package com.jwebmp.plugins.jqueryui.position;
 
-import com.jwebmp.Feature;
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.Feature;
+import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author MMagon

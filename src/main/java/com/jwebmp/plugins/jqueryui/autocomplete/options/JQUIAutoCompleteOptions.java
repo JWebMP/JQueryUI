@@ -19,9 +19,9 @@ package com.jwebmp.plugins.jqueryui.autocomplete.options;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRawValue;
-import com.jwebmp.annotations.SiteBinder;
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.annotations.SiteBinderGuiceSiteBinder;
+import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.autocomplete.AutoCompleteEntries;
 import com.jwebmp.plugins.jqueryui.autocomplete.AutoCompleteEntrySet;
 import com.jwebmp.plugins.jqueryui.autocomplete.JQUIAutoComplete;
@@ -386,7 +386,7 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	{
 		if (isAjax())
 		{
-			return '"' + SiteBinder.getDataBindUrl(autoComplete) + '"';
+			return '"' + SiteBinderGuiceSiteBinder.getDataBindUrl(autoComplete) + '"';
 		}
 		else
 		{

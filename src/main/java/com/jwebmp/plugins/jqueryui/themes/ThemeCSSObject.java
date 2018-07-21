@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.jqueryui.themes;
 
-import com.jwebmp.htmlbuilder.css.composer.CSSBlock;
-import com.jwebmp.htmlbuilder.css.fonts.FontFamilies;
-import com.jwebmp.htmlbuilder.css.fonts.FontWeights;
-import com.jwebmp.htmlbuilder.css.measurement.MeasurementCSSImpl;
+import com.jwebmp.core.htmlbuilder.css.composer.CSSBlock;
+import com.jwebmp.core.htmlbuilder.css.fonts.FontFamilies;
+import com.jwebmp.core.htmlbuilder.css.fonts.FontWeights;
+import com.jwebmp.core.htmlbuilder.css.measurement.MeasurementCSSImpl;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -16,11 +16,11 @@
  */
 package com.jwebmp.plugins.jqueryui.selectmenu;
 
-import com.jwebmp.base.html.Option;
-import com.jwebmp.base.html.attributes.InputAttributes;
+import com.jwebmp.core.base.html.Option;
+import com.jwebmp.core.base.html.attributes.InputAttributes;
+import com.jwebmp.core.utilities.GUIDGenerator;
 import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.IJQUISelectMenuItem;
 import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuChildren;
-import com.jwebmp.utilities.GUIDGenerator;
 
 import javax.validation.constraints.NotNull;
 

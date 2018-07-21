@@ -16,12 +16,12 @@
  */
 package com.jwebmp.plugins.jqueryui.sortable;
 
-import com.jwebmp.Component;
-import com.jwebmp.Feature;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.Feature;
 import com.jwebmp.plugins.jqueryui.sortable.interfaces.JQUISortableFeatures;
 import com.jwebmp.plugins.jqueryui.sortable.options.JQUISortableOptions;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc

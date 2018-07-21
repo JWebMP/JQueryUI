@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.button.options;
 
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.button.enumerations.JQUIButtonIconPositions;
 
 import javax.validation.constraints.NotNull;

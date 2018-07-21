@@ -16,15 +16,14 @@
  */
 package com.jwebmp.plugins.jqueryui.tabs;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.html.Link;
-import com.jwebmp.base.html.ListItem;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.ListItem;
 import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * A specific tab for the JWAccordion
@@ -58,7 +57,7 @@ public class JQUITab<J extends JQUITab<J>>
 	{
 		if (tabDisplayComponent != null)
 		{
-			Link tabLink = new Link(STRING_HASH + ((Component) tabDisplayComponent)
+			Link tabLink = new Link(STRING_HASH + tabDisplayComponent
 					                                      .getID(), null, tabHeader.getText(0)
 			                                                                       .toString());
 			tabHeader.setText((String) null);
@@ -68,7 +67,7 @@ public class JQUITab<J extends JQUITab<J>>
 		this.tabDisplayComponent = tabDisplayComponent;
 		if (tabDisplayComponent != null)
 		{
-			((Component) tabDisplayComponent)
+			tabDisplayComponent
 					.addClass(JQUIThemeBlocks.UI_Widget_Content.toString());
 		}
 	}

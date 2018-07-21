@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.events;
 
-import com.jwebmp.Component;
-import com.jwebmp.events.response.ResponseAdapter;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.events.response.ResponseAdapter;
 import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteEvents;
 
 /**

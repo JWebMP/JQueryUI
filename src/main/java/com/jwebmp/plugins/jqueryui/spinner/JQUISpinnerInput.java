@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.spinner;
 
-import com.jwebmp.base.html.Input;
-import com.jwebmp.base.html.interfaces.AttributeDefinitions;
+import com.jwebmp.core.base.html.Input;
+import com.jwebmp.core.base.html.interfaces.AttributeDefinitions;
 import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerChildren;
 
 /**

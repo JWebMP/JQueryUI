@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.jqueryui.sortable.options;
 
-import com.jwebmp.Component;
-import com.jwebmp.base.servlets.enumarations.ComponentTypes;
-import com.jwebmp.htmlbuilder.css.displays.Cursors;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
+import com.jwebmp.core.htmlbuilder.css.displays.Cursors;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.draggable.enumerations.Axis;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
 import com.jwebmp.plugins.jqueryui.sortable.enumerations.SortableHelpers;

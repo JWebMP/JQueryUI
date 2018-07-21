@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.tooltips.options;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.easingeffects.JQEasingAnimationEffectsPart;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
 

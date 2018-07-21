@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.menu;
 
-import com.jwebmp.base.html.ListItem;
+import com.jwebmp.core.base.html.ListItem;
 import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuChildren;
 
 /**

@@ -16,11 +16,11 @@
  */
 package com.jwebmp.plugins.jqueryui.datepicker;
 
-import com.jwebmp.Feature;
+import com.jwebmp.core.Feature;
 import com.jwebmp.plugins.jqueryui.datepicker.interfaces.JQUIDatePickerFeatures;
 import com.jwebmp.plugins.jqueryui.datepicker.options.JQUIDatePickerOptions;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author mmagon

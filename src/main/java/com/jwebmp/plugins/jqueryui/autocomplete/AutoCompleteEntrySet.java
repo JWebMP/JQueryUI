@@ -18,7 +18,7 @@ package com.jwebmp.plugins.jqueryui.autocomplete;
 
 import com.fasterxml.jackson.annotation.JsonRawValue;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 import javax.validation.constraints.NotNull;
 import java.util.LinkedHashSet;

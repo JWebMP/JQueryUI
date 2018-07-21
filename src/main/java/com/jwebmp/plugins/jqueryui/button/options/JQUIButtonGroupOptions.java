@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.button.options;
 
-import com.jwebmp.base.servlets.enumarations.ComponentTypes;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 import javax.validation.constraints.NotNull;
 

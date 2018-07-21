@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.selectmenu.options;
 
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
 
 import javax.validation.constraints.NotNull;

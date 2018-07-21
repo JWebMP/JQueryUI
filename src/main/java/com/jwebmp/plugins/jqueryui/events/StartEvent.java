@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.events;
 
-import com.jwebmp.Component;
-import com.jwebmp.events.start.StartAdapter;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.events.start.StartAdapter;
 import com.jwebmp.plugins.jqueryui.draggable.interfaces.JQUIDraggableEvents;
 import com.jwebmp.plugins.jqueryui.resizable.interfaces.JQUIResizableEvents;
 import com.jwebmp.plugins.jqueryui.slider.interfaces.JQUISliderEvents;

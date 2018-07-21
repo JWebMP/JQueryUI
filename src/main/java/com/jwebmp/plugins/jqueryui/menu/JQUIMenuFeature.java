@@ -16,11 +16,11 @@
  */
 package com.jwebmp.plugins.jqueryui.menu;
 
-import com.jwebmp.Feature;
+import com.jwebmp.core.Feature;
 import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuFeatures;
 import com.jwebmp.plugins.jqueryui.menu.options.JQUIMenuOptions;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc

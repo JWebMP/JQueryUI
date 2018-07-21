@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.jqueryui.resizable;
 
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.attributes.NoAttributes;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.attributes.NoAttributes;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.resizable.interfaces.IJQUIResizable;
 import com.jwebmp.plugins.jqueryui.resizable.interfaces.JQUIResizableChildren;
 import com.jwebmp.plugins.jqueryui.resizable.interfaces.JQUIResizableEvents;

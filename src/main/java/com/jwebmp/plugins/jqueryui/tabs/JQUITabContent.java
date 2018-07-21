@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.tabs;
 
-import com.jwebmp.base.html.DivSimple;
+import com.jwebmp.core.base.html.DivSimple;
 import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsChildren;
 
 /**

@@ -16,12 +16,12 @@
  */
 package com.jwebmp.plugins.jqueryui.droppable;
 
-import com.jwebmp.Component;
-import com.jwebmp.Feature;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.Feature;
 import com.jwebmp.plugins.jqueryui.droppable.interfaces.JQUIDroppableFeatures;
 import com.jwebmp.plugins.jqueryui.droppable.options.JQUIDroppableOptions;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * The droppable implementation

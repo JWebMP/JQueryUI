@@ -16,12 +16,12 @@
  */
 package com.jwebmp.plugins.jqueryui.tooltips;
 
-import com.jwebmp.Component;
-import com.jwebmp.Feature;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.Feature;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.tooltips.interfaces.JQUIToolTipFeatures;
 import com.jwebmp.plugins.jqueryui.tooltips.options.JQUITooltipOptions;
 

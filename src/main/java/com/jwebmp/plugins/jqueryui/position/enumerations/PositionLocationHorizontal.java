@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.jqueryui.position.enumerations;
 
-import com.jwebmp.utilities.StaticStrings;
+import com.jwebmp.core.utilities.StaticStrings;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * Positions for the location horizontal

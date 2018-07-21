@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.jqueryui.resizable;
 
-import com.jwebmp.Component;
-import com.jwebmp.Feature;
-import com.jwebmp.base.servlets.interfaces.IFeature;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.Feature;
+import com.jwebmp.core.base.servlets.interfaces.IFeature;
 import com.jwebmp.plugins.jqueryui.resizable.options.JQUIResizableOptions;
 
 /**

@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.draggable;
 
-import com.jwebmp.Component;
-import com.jwebmp.Feature;
+import com.jwebmp.core.Component;
+import com.jwebmp.core.Feature;
 import com.jwebmp.plugins.jqueryui.draggable.interfaces.JQUIDraggableFeatures;
 import com.jwebmp.plugins.jqueryui.draggable.options.JQUIDraggableOptions;
 
