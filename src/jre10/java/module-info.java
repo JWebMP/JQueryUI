@@ -1,3 +1,6 @@
+import com.jwebmp.core.services.IPageConfigurator;
+import com.jwebmp.plugins.jqueryui.JQUIPageConfigurator;
+
 module com.jwebmp.plugins.jqueryui {
 
 	exports com.jwebmp.plugins.jqueryui;
@@ -80,4 +83,7 @@ module com.jwebmp.plugins.jqueryui {
 	requires com.jwebmp.plugins.easingeffects;
 	requires com.jwebmp.plugins.globalize.cultures;
 	requires com.jwebmp.guicedservlets;
+
+	provides IPageConfigurator with JQUIPageConfigurator;
+
 }

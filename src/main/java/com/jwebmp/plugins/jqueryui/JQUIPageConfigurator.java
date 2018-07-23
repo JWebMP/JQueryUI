@@ -17,9 +17,9 @@
 package com.jwebmp.plugins.jqueryui;
 
 import com.jwebmp.core.Page;
-import com.jwebmp.core.PageConfigurator;
 import com.jwebmp.core.plugins.PluginInformation;
 import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
+import com.jwebmp.core.services.IPageConfigurator;
 import com.jwebmp.plugins.jqueryui.pools.JQueryUIReferencePool;
 
 /**
@@ -44,13 +44,10 @@ import com.jwebmp.plugins.jqueryui.pools.JQueryUIReferencePool;
 		pluginIconImageUrl = "bower_components/jquery-ui/jqueryui_example.jpg",
 		pluginLastUpdatedDate = "2017/03/04")
 public class JQUIPageConfigurator
-		extends PageConfigurator
+		implements IPageConfigurator
 {
-
-	private static final long serialVersionUID = 1L;
-
 	@Override
-	public Page configure(Page page)
+	public Page configure(Page<?> page)
 	{
 		if (!page.isConfigured())
 		{
