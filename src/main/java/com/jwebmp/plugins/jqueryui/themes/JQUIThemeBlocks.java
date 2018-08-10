@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.themes;
 
-import com.jwebmp.core.base.interfaces.ICSSClassName;
+import com.jwebmp.core.base.interfaces.ICssClassName;
 
 import java.util.EnumSet;
 import java.util.Set;
@@ -29,7 +29,7 @@ import java.util.Set;
  * @since 21 Jul 2013
  */
 public enum JQUIThemeBlocks
-		implements ICSSClassName
+		implements ICssClassName
 {
 	/**
 	 * Specifies the container must adopt the widget

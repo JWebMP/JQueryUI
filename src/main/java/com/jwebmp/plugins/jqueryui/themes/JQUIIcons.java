@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.themes;
 
-import com.jwebmp.core.base.interfaces.ICSSClassName;
+import com.jwebmp.core.base.interfaces.ICssClassName;
 
 /**
  * Defines the blocks available to UI-Themes for Icons
@@ -26,7 +26,7 @@ import com.jwebmp.core.base.interfaces.ICSSClassName;
  * @since 24 Jun 2013,
  */
 public enum JQUIIcons
-		implements ICSSClassName
+		implements ICssClassName
 {
 	UI_icon_blank,
 	UI_icon_carat_1_n,
