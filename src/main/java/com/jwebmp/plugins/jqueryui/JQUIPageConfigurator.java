@@ -22,6 +22,8 @@ import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
 import com.jwebmp.core.services.IPageConfigurator;
 import com.jwebmp.plugins.jqueryui.pools.JQueryUIReferencePool;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * Checks if a UI component is used on the page and adds
  *
@@ -46,6 +48,7 @@ import com.jwebmp.plugins.jqueryui.pools.JQueryUIReferencePool;
 public class JQUIPageConfigurator
 		implements IPageConfigurator
 {
+	@NotNull
 	@Override
 	public Page configure(Page<?> page)
 	{
