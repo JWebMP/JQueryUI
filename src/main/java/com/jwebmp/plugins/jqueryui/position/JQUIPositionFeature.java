@@ -18,6 +18,7 @@ package com.jwebmp.plugins.jqueryui.position;
 
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
 
@@ -31,7 +32,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since Forever
  */
 public class JQUIPositionFeature<J extends JQUIPositionFeature<J>>
-		extends Feature<JavaScriptPart, J>
+		extends Feature<GlobalFeatures, JavaScriptPart, J>
 {
 
 	private static final long serialVersionUID = 1L;

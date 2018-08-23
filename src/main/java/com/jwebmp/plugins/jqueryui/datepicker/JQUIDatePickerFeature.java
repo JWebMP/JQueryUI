@@ -17,7 +17,7 @@
 package com.jwebmp.plugins.jqueryui.datepicker;
 
 import com.jwebmp.core.Feature;
-import com.jwebmp.plugins.jqueryui.datepicker.interfaces.JQUIDatePickerFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.datepicker.options.JQUIDatePickerOptions;
 
 import static com.jwebmp.core.utilities.StaticStrings.*;
@@ -26,8 +26,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @author mmagon
  */
 public class JQUIDatePickerFeature<J extends JQUIDatePickerFeature<J>>
-		extends Feature<JQUIDatePickerOptions, J>
-		implements JQUIDatePickerFeatures
+		extends Feature<GlobalFeatures, JQUIDatePickerOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;

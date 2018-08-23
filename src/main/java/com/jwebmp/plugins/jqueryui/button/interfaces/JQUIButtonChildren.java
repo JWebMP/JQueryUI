@@ -16,13 +16,14 @@
  */
 package com.jwebmp.plugins.jqueryui.button.interfaces;
 
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.ComponentBase;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 
 /**
  * @author Marc Magon
  */
-public interface JQUIButtonChildren
-		extends GlobalChildren
+public interface JQUIButtonChildren<C extends IComponentHierarchyBase, J extends ComponentBase>
+		extends IComponentHierarchyBase<C, J>
 {
 
 }

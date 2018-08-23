@@ -20,6 +20,7 @@ import com.jwebmp.core.base.html.Label;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
 import com.jwebmp.core.base.html.inputs.InputCheckBoxType;
 import com.jwebmp.core.base.html.interfaces.children.FieldSetChildren;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.checkboxradio.interfaces.IJQUICheckBox;
 import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOptions;
@@ -37,7 +38,7 @@ import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOption
 
 public class JQUICheckBox<J extends JQUICheckBox<J>>
 		extends InputCheckBoxType<J>
-		implements IJQUICheckBox, FieldSetChildren
+		implements IJQUICheckBox, FieldSetChildren<IComponentHierarchyBase, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -144,14 +145,14 @@ public class JQUICheckBox<J extends JQUICheckBox<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

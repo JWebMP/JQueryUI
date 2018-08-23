@@ -18,7 +18,7 @@ package com.jwebmp.plugins.jqueryui.spinner;
 
 import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
-import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.spinner.options.JQUISpinnerOptions;
 
 import static com.jwebmp.core.utilities.StaticStrings.*;
@@ -30,8 +30,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since Mar 8, 2015
  */
 public class JQUISpinnerTimeFeature<J extends JQUISpinnerTimeFeature<J>>
-		extends Feature<JQUISpinnerOptions, J>
-		implements JQUISpinnerFeatures
+		extends Feature<GlobalFeatures, JQUISpinnerOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;

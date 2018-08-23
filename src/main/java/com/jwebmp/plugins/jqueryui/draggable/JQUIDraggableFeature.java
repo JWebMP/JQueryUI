@@ -18,7 +18,7 @@ package com.jwebmp.plugins.jqueryui.draggable;
 
 import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
-import com.jwebmp.plugins.jqueryui.draggable.interfaces.JQUIDraggableFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.draggable.options.JQUIDraggableOptions;
 
 /**
@@ -31,8 +31,7 @@ import com.jwebmp.plugins.jqueryui.draggable.options.JQUIDraggableOptions;
  * @since 2014/04/13
  */
 public class JQUIDraggableFeature<J extends JQUIDraggableFeature<J>>
-		extends Feature<JQUIDraggableOptions, J>
-		implements JQUIDraggableFeatures
+		extends Feature<GlobalFeatures, JQUIDraggableOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;

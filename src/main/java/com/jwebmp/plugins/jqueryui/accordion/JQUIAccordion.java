@@ -49,7 +49,7 @@ import java.util.List;
 		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIAccordion<J extends JQUIAccordion<J>>
 		extends Div<JQUIAccordionChildren, NoAttributes, JQUIAccordionFeatures, JQUIAccordionEvents, J>
-		implements JQUIAccordionChildren
+		implements JQUIAccordionChildren<JQUIAccordionChildren, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -235,14 +235,14 @@ public class JQUIAccordion<J extends JQUIAccordion<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

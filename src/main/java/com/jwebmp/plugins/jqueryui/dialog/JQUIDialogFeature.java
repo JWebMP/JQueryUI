@@ -17,8 +17,8 @@
 package com.jwebmp.plugins.jqueryui.dialog;
 
 import com.jwebmp.core.Feature;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
-import com.jwebmp.plugins.jqueryui.dialog.interfaces.JQUIDialogFeatures;
 
 /**
  * Implements the JQuery UI Dialog
@@ -28,8 +28,8 @@ import com.jwebmp.plugins.jqueryui.dialog.interfaces.JQUIDialogFeatures;
  * @since 28 Mar 2013
  */
 public class JQUIDialogFeature<J extends JQUIDialogFeature<J>>
-		extends Feature<JavaScriptPart, J>
-		implements JQUIDialogFeatures
+		extends Feature<GlobalFeatures, JavaScriptPart, J>
+
 {
 
 	private static final long serialVersionUID = 1L;

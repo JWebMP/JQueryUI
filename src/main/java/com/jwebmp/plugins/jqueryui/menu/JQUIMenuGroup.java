@@ -29,7 +29,7 @@ import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;
  */
 public class JQUIMenuGroup<J extends JQUIMenuGroup<J>>
 		extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvents, J>
-		implements JQUIMenuChildren
+		implements JQUIMenuChildren<JQUIMenuChildren, J>
 {
 
 	private static final long serialVersionUID = 1L;

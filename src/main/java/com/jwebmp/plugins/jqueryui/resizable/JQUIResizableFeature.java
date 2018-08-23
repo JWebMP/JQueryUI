@@ -18,7 +18,7 @@ package com.jwebmp.plugins.jqueryui.resizable;
 
 import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
-import com.jwebmp.core.base.servlets.interfaces.IFeature;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.resizable.options.JQUIResizableOptions;
 
 /**
@@ -28,8 +28,7 @@ import com.jwebmp.plugins.jqueryui.resizable.options.JQUIResizableOptions;
  * @since Forever
  */
 public class JQUIResizableFeature<J extends JQUIResizableFeature<J>>
-		extends Feature<JQUIResizableOptions, J>
-		implements IFeature
+		extends Feature<GlobalFeatures, JQUIResizableOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;

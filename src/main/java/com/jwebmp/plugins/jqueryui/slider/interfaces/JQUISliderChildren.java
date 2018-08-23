@@ -16,7 +16,8 @@
  */
 package com.jwebmp.plugins.jqueryui.slider.interfaces;
 
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.ComponentBase;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 
 /**
  * @author GedMarc
@@ -24,8 +25,8 @@ import com.jwebmp.core.base.html.interfaces.GlobalChildren;
  * 		<p>
  * @since Mar 9, 2015
  */
-public interface JQUISliderChildren
-		extends GlobalChildren
+public interface JQUISliderChildren<C extends IComponentHierarchyBase, J extends ComponentBase>
+		extends IComponentHierarchyBase<C, J>
 {
 
 }

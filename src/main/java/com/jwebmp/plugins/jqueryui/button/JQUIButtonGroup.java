@@ -18,9 +18,9 @@ package com.jwebmp.plugins.jqueryui.button;
 
 import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.attributes.NoAttributes;
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.jqueryui.button.options.JQUIButtonGroupOptions;
 
 import javax.validation.constraints.NotNull;
@@ -33,7 +33,7 @@ import javax.validation.constraints.NotNull;
  * @since Mar 8, 2015
  */
 public class JQUIButtonGroup
-		extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, JQUIButtonGroup>
+		extends Div<IComponentHierarchyBase, NoAttributes, GlobalFeatures, GlobalEvents, JQUIButtonGroup>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -77,14 +77,14 @@ public class JQUIButtonGroup
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

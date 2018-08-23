@@ -17,6 +17,7 @@
 package com.jwebmp.plugins.jqueryui.sortable;
 
 import com.jwebmp.core.base.html.ListItem;
+import com.jwebmp.core.base.html.interfaces.children.ListItemChildren;
 import com.jwebmp.plugins.jqueryui.sortable.interfaces.JQUISortableChildren;
 import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;
 
@@ -28,7 +29,7 @@ import javax.validation.constraints.NotNull;
  */
 public class JQUISortableItem<J extends JQUISortableItem<J>>
 		extends ListItem<J>
-		implements JQUISortableChildren
+		implements JQUISortableChildren<ListItemChildren, J>
 {
 
 	private static final long serialVersionUID = 1L;

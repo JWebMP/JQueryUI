@@ -22,7 +22,6 @@ import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.plugins.ComponentInformation;
-import com.jwebmp.plugins.jqueryui.tooltips.interfaces.JQUIToolTipFeatures;
 import com.jwebmp.plugins.jqueryui.tooltips.options.JQUITooltipOptions;
 
 /**
@@ -37,8 +36,7 @@ import com.jwebmp.plugins.jqueryui.tooltips.options.JQUITooltipOptions;
 		url = "http://jqueryui.com/tooltip/",
 		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIToolTipFeature
-		extends Feature<JQUITooltipOptions, JQUIToolTipFeature>
-		implements JQUIToolTipFeatures, GlobalFeatures
+		extends Feature<GlobalFeatures, JQUITooltipOptions, JQUIToolTipFeature>
 {
 
 	private static final long serialVersionUID = 1L;

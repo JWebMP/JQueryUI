@@ -18,7 +18,6 @@ package com.jwebmp.plugins.jqueryui.button;
 
 import com.jwebmp.core.Component;
 import com.jwebmp.core.base.html.attributes.ButtonAttributes;
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.html.interfaces.NoNewLineBeforeClosingTag;
 import com.jwebmp.core.base.html.interfaces.NoNewLineForRawText;
 import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
@@ -48,7 +47,7 @@ import javax.validation.constraints.NotNull;
 		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
 public class JQUIButton<J extends JQUIButton<J>>
 		extends Component<JQUIButtonChildren, ButtonAttributes, JQUIButtonFeatures, JQUIButtonEvents, J>
-		implements GlobalChildren, NoNewLineBeforeClosingTag, NoNewLineForRawText, JQUIAccordionChildren
+		implements NoNewLineBeforeClosingTag, NoNewLineForRawText, JQUIAccordionChildren<JQUIButtonChildren, J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -103,14 +102,14 @@ public class JQUIButton<J extends JQUIButton<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

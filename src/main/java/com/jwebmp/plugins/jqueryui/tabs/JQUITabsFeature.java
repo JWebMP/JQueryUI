@@ -17,7 +17,7 @@
 package com.jwebmp.plugins.jqueryui.tabs;
 
 import com.jwebmp.core.Feature;
-import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.tabs.options.JQUITabOptions;
 
 import static com.jwebmp.core.utilities.StaticStrings.*;
@@ -31,8 +31,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since 29 Mar 2013
  */
 public class JQUITabsFeature<J extends JQUITabsFeature<J>>
-		extends Feature<JQUITabOptions, J>
-		implements JQUITabsFeatures
+		extends Feature<GlobalFeatures, JQUITabOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;

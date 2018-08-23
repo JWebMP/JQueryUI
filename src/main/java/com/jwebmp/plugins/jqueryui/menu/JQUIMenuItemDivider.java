@@ -17,6 +17,7 @@
 package com.jwebmp.plugins.jqueryui.menu;
 
 import com.jwebmp.core.base.html.ListItem;
+import com.jwebmp.core.base.html.interfaces.children.ListItemChildren;
 import com.jwebmp.core.utilities.StaticStrings;
 import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuChildren;
 
@@ -27,7 +28,7 @@ import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuChildren;
  */
 public class JQUIMenuItemDivider<J extends JQUIMenuItemDivider<J>>
 		extends ListItem<J>
-		implements JQUIMenuChildren
+		implements JQUIMenuChildren<ListItemChildren, J>
 {
 
 	private static final long serialVersionUID = 1L;

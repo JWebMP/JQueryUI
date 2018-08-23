@@ -17,7 +17,7 @@
 package com.jwebmp.plugins.jqueryui.progressbar;
 
 import com.jwebmp.core.Feature;
-import com.jwebmp.plugins.jqueryui.progressbar.interfaces.JQUIProgressBarFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.progressbar.options.JQUIProgressBarOptions;
 
 import javax.validation.constraints.NotNull;
@@ -31,8 +31,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since Mar 8, 2015
  */
 public class JQUIProgressBarFeature<J extends JQUIProgressBarFeature<J>>
-		extends Feature<JQUIProgressBarOptions, J>
-		implements JQUIProgressBarFeatures
+		extends Feature<GlobalFeatures, JQUIProgressBarOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;

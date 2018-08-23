@@ -17,7 +17,7 @@
 package com.jwebmp.plugins.jqueryui.accordion;
 
 import com.jwebmp.core.Feature;
-import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.accordion.options.JQUIAccordionOptions;
 
 import javax.validation.constraints.NotNull;
@@ -28,8 +28,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @author MMagon
  */
 public class JQUIAccordionFeature
-		extends Feature<JQUIAccordionOptions, JQUIAccordionFeature>
-		implements JQUIAccordionFeatures
+		extends Feature<GlobalFeatures, JQUIAccordionOptions, JQUIAccordionFeature>
 {
 
 	private static final long serialVersionUID = 1L;

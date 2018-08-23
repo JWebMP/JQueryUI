@@ -19,7 +19,7 @@ package com.jwebmp.plugins.jqueryui.autocomplete;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.Input;
-import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.autocomplete.options.JQUIAutoCompleteOptions;
 
 import static com.jwebmp.core.utilities.StaticStrings.*;
@@ -30,8 +30,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since 30 Mar 2013
  */
 public class JQUIAutoCompleteFeature<J extends JQUIAutoCompleteFeature<J>>
-		extends Feature<JQUIAutoCompleteOptions, J>
-		implements JQUIAutoCompleteFeatures
+		extends Feature<GlobalFeatures, JQUIAutoCompleteOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;

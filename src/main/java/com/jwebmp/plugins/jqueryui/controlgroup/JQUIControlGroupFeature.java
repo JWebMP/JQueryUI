@@ -18,6 +18,7 @@ package com.jwebmp.plugins.jqueryui.controlgroup;
 
 import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 /**
@@ -28,7 +29,7 @@ import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
  * @since Mar 8, 2015
  */
 public class JQUIControlGroupFeature<J extends JQUIControlGroupFeature<J>>
-		extends Feature<JavaScriptPart, J>
+		extends Feature<GlobalFeatures, JavaScriptPart, J>
 {
 
 	private static final long serialVersionUID = 1L;

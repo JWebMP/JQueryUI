@@ -17,6 +17,7 @@
 package com.jwebmp.plugins.jqueryui.accordion;
 
 import com.jwebmp.core.base.html.H3;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
 
 /**
@@ -25,7 +26,7 @@ import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
  */
 public class JQUIAccordionHeader<J extends JQUIAccordionHeader<J>>
 		extends H3<J>
-		implements JQUIAccordionChildren
+		implements JQUIAccordionChildren<IComponentHierarchyBase, J>
 {
 
 	private static final long serialVersionUID = 1L;

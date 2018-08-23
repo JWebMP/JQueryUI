@@ -18,7 +18,6 @@ package com.jwebmp.plugins.jqueryui.accordion;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
-import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
 
 /**
  * An Accordion Tab.
@@ -30,7 +29,6 @@ import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
  */
 public class JQUIAccordionTab<J extends JQUIAccordionTab<J>>
 		extends JavaScriptPart<J>
-		implements JQUIAccordionChildren
 {
 
 	private static final long serialVersionUID = 1L;

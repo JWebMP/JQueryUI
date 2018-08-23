@@ -18,6 +18,8 @@ package com.jwebmp.plugins.jqueryui.autocomplete;
 
 import com.jwebmp.core.base.html.Input;
 import com.jwebmp.core.base.html.Label;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
+import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteChildren;
 
 /**
  * @param <J>
@@ -27,6 +29,7 @@ import com.jwebmp.core.base.html.Label;
  */
 public class JQUIAutoCompleteLabel<J extends JQUIAutoCompleteLabel<J>>
 		extends Label<J>
+		implements JQUIAutoCompleteChildren<IComponentHierarchyBase, J>
 {
 
 	private static final long serialVersionUID = 1L;

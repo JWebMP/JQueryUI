@@ -18,6 +18,7 @@ package com.jwebmp.plugins.jqueryui.spinner;
 
 import com.jwebmp.core.base.html.Input;
 import com.jwebmp.core.base.html.Label;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerChildren;
 
 /**
@@ -26,7 +27,7 @@ import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerChildren;
  */
 public class JQUISpinnerLabel<J extends JQUISpinnerLabel<J>>
 		extends Label<J>
-		implements JQUISpinnerChildren
+		implements JQUISpinnerChildren<IComponentHierarchyBase, J>
 {
 
 	private static final long serialVersionUID = 1L;

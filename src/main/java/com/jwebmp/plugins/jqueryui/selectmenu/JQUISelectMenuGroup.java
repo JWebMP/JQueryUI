@@ -17,6 +17,7 @@
 package com.jwebmp.plugins.jqueryui.selectmenu;
 
 import com.jwebmp.core.base.html.OptionGroup;
+import com.jwebmp.core.base.html.interfaces.children.SelectChildren;
 import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuChildren;
 
 /**
@@ -25,7 +26,7 @@ import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuChildren;
  */
 public class JQUISelectMenuGroup<J extends JQUISelectMenuGroup<J>>
 		extends OptionGroup<J>
-		implements JQUISelectMenuChildren
+		implements JQUISelectMenuChildren<SelectChildren, J>
 {
 
 	private static final long serialVersionUID = 1L;

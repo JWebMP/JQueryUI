@@ -18,6 +18,7 @@ package com.jwebmp.plugins.jqueryui.selectmenu;
 
 import com.jwebmp.core.base.html.Option;
 import com.jwebmp.core.base.html.attributes.InputAttributes;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.utilities.GUIDGenerator;
 import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.IJQUISelectMenuItem;
 import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuChildren;
@@ -30,7 +31,7 @@ import javax.validation.constraints.NotNull;
  */
 public class JQUISelectMenuItem<J extends JQUISelectMenuItem<J>>
 		extends Option<J>
-		implements JQUISelectMenuChildren, IJQUISelectMenuItem
+		implements JQUISelectMenuChildren<IComponentHierarchyBase, J>, IJQUISelectMenuItem
 {
 
 	private static final long serialVersionUID = 1L;
@@ -113,11 +114,11 @@ public class JQUISelectMenuItem<J extends JQUISelectMenuItem<J>>
 	{
 		if (selected)
 		{
-			addAttribute(selectedString, selectedString);
+			addAttribute(JQUISelectMenuItem.selectedString, JQUISelectMenuItem.selectedString);
 		}
 		else
 		{
-			getAttributes().remove(selectedString);
+			getAttributes().remove(JQUISelectMenuItem.selectedString);
 		}
 
 		return (J) this;

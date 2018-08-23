@@ -18,7 +18,7 @@ package com.jwebmp.plugins.jqueryui.droppable;
 
 import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
-import com.jwebmp.plugins.jqueryui.droppable.interfaces.JQUIDroppableFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.droppable.options.JQUIDroppableOptions;
 
 import static com.jwebmp.core.utilities.StaticStrings.*;
@@ -38,8 +38,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since 2014/04/14
  */
 public class JQUIDroppableFeature<J extends JQUIDroppableFeature<J>>
-		extends Feature<JQUIDroppableOptions, J>
-		implements JQUIDroppableFeatures
+		extends Feature<GlobalFeatures, JQUIDroppableOptions, J>
 {
 
 	private JQUIDroppableOptions<?> options;

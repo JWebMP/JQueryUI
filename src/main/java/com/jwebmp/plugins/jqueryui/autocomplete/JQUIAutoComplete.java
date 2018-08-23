@@ -20,7 +20,6 @@ import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.Input;
 import com.jwebmp.core.base.html.attributes.LabelAttributes;
 import com.jwebmp.core.base.html.attributes.NoAttributes;
-import com.jwebmp.core.base.html.inputs.InputTextType;
 import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteChildren;
 import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteEvents;
@@ -68,7 +67,7 @@ public class JQUIAutoComplete
 	/**
 	 * The actual label for the input
 	 */
-	private Input input;
+	private JQUIAutoCompleteInput input;
 
 	/**
 	 * Description: Autocomplete enables users to quickly find and select from a pre-populated list of values as they type, leveraging
@@ -78,10 +77,10 @@ public class JQUIAutoComplete
 	 */
 	public JQUIAutoComplete(String label)
 	{
-		input = new InputTextType();
+		input = new JQUIAutoCompleteInput();
 		this.label = new JQUIAutoCompleteLabel(label, input);
-		getChildren().add(this.label);
-		getChildren().add(input);
+		add(this.label);
+		add(input);
 		feature = new JQUIAutoCompleteFeature(input);
 		addFeature(feature);
 		addClass(JQUIThemeBlocks.UI_Widget.toString());
@@ -123,9 +122,9 @@ public class JQUIAutoComplete
 	 *
 	 * @param input
 	 */
-	public void setInput(Input input)
+	public void setInput(JQUIAutoCompleteInput input)
 	{
-		getChildren().remove(input);
+		remove(input);
 		feature = new JQUIAutoCompleteFeature(input);
 		input.addFeature(feature);
 		this.input = input;
@@ -170,14 +169,14 @@ public class JQUIAutoComplete
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

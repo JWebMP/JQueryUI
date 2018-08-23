@@ -18,6 +18,7 @@ package com.jwebmp.plugins.jqueryui.checkboxradio;
 
 import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOptions;
 
 import javax.validation.constraints.NotNull;
@@ -29,7 +30,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since 27 Feb 2017
  */
 public class JQUICheckBoxRadioFeature<J extends JQUICheckBoxRadioFeature<J>>
-		extends Feature<JQUICheckBoxRadioOptions, J>
+		extends Feature<GlobalFeatures, JQUICheckBoxRadioOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;

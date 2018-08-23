@@ -18,7 +18,7 @@ package com.jwebmp.plugins.jqueryui.selectable;
 
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.ComponentHierarchyBase;
-import com.jwebmp.plugins.jqueryui.selectable.interfaces.JQUISelectableFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.selectable.options.JQUISelectableOptions;
 
 /**
@@ -31,8 +31,7 @@ import com.jwebmp.plugins.jqueryui.selectable.options.JQUISelectableOptions;
  * @since 2014/05/16
  */
 public class JQUISelectableFeature<J extends JQUISelectableFeature<J>>
-		extends Feature<JQUISelectableOptions, J>
-		implements JQUISelectableFeatures
+		extends Feature<GlobalFeatures, JQUISelectableOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;

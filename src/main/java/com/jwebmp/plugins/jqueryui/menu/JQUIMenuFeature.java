@@ -17,7 +17,7 @@
 package com.jwebmp.plugins.jqueryui.menu;
 
 import com.jwebmp.core.Feature;
-import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.menu.options.JQUIMenuOptions;
 
 import static com.jwebmp.core.utilities.StaticStrings.*;
@@ -29,8 +29,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since Mar 8, 2015
  */
 public class JQUIMenuFeature<J extends JQUIMenuFeature<J>>
-		extends Feature<JQUIMenuOptions, J>
-		implements JQUIMenuFeatures
+		extends Feature<GlobalFeatures, JQUIMenuOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;

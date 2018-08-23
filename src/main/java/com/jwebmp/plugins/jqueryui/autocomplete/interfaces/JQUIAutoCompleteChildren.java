@@ -16,13 +16,14 @@
  */
 package com.jwebmp.plugins.jqueryui.autocomplete.interfaces;
 
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.ComponentBase;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 
 /**
  * @author Marc Magon
  */
-public interface JQUIAutoCompleteChildren
-		extends GlobalChildren
+public interface JQUIAutoCompleteChildren<C extends IComponentHierarchyBase, J extends ComponentBase>
+		extends IComponentHierarchyBase<C, J>
 {
 
 }

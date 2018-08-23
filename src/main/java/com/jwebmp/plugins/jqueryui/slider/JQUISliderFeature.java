@@ -17,7 +17,7 @@
 package com.jwebmp.plugins.jqueryui.slider;
 
 import com.jwebmp.core.Feature;
-import com.jwebmp.plugins.jqueryui.slider.interfaces.JQUISliderFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.slider.options.JQUISliderOptions;
 
 import static com.jwebmp.core.utilities.StaticStrings.*;
@@ -29,8 +29,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since Mar 8, 2015
  */
 public class JQUISliderFeature<J extends JQUISliderFeature<J>>
-		extends Feature<JQUISliderOptions, J>
-		implements JQUISliderFeatures
+		extends Feature<GlobalFeatures, JQUISliderOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;

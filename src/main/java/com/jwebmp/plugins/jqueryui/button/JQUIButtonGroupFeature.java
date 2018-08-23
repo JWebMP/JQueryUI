@@ -18,7 +18,7 @@ package com.jwebmp.plugins.jqueryui.button;
 
 import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
-import com.jwebmp.plugins.jqueryui.button.interfaces.JQUIButtonFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.button.options.JQUIButtonGroupOptions;
 
 import javax.validation.constraints.NotNull;
@@ -33,8 +33,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since Mar 8, 2015
  */
 public class JQUIButtonGroupFeature<J extends JQUIButtonGroupFeature<J>>
-		extends Feature<JQUIButtonGroupOptions, J>
-		implements JQUIButtonFeatures
+		extends Feature<GlobalFeatures, JQUIButtonGroupOptions, J>
 {
 
 	private static final long serialVersionUID = 1L;
