@@ -37,12 +37,10 @@ public class JQUICheckBoxTest
 	@Test
 	public void testGetLabel()
 	{
-		com.jwebmp.plugins.jqueryui.checkboxradio.JQUICheckBox cb = new com.jwebmp.plugins.jqueryui.checkboxradio.JQUICheckBox();
-		cb.asMe()
-		  .setValue("Value 1");
-		cb.getOptions()
-		  .setIcon("Icon");
-		cb.getOptions()
+		JQUICheckBox<?> cb = new JQUICheckBox();
+		cb.setValue("Value 1")
+		  .getOptions()
+		  .setIcon("Icon")
 		  .getClasses()
 		  .put("class1", "value1");
 
@@ -50,4 +48,15 @@ public class JQUICheckBoxTest
 		System.out.println(cb.renderJavascript());
 	}
 
+	@Test
+	public void testGetLabel2()
+	{
+		JQUICheckBoxGroup<?> cb = new JQUICheckBoxGroup();
+		cb.addCheckBox(new JQUICheckBox("checkbox"));
+		JQUIRadioButtonGroup rb = new JQUIRadioButtonGroup();
+		rb.addRadioButton(new JQUIRadioButton("radioButton"));
+
+		System.out.println(cb.toString(true));
+		System.out.println(cb.renderJavascript());
+	}
 }

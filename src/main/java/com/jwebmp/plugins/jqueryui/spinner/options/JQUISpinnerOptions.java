@@ -19,6 +19,7 @@ package com.jwebmp.plugins.jqueryui.spinner.options;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.plugins.globalize.cultures.GlobalizeCultures;
 
 import javax.validation.constraints.NotNull;
 
@@ -38,7 +39,7 @@ public class JQUISpinnerOptions<J extends JQUISpinnerOptions<J>>
 	 * <p>
 	 * Requires Globalize to be included.
 	 */
-	private String culture;
+	private GlobalizeCultures culture;
 	/**
 	 * Disables the spinner if set to true.
 	 */
@@ -110,7 +111,7 @@ public class JQUISpinnerOptions<J extends JQUISpinnerOptions<J>>
 	 *
 	 * @return
 	 */
-	public String getCulture()
+	public GlobalizeCultures getCulture()
 	{
 		return culture;
 	}
@@ -125,7 +126,7 @@ public class JQUISpinnerOptions<J extends JQUISpinnerOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setCulture(String culture)
+	public J setCulture(GlobalizeCultures culture)
 	{
 		this.culture = culture;
 		return (J) this;
@@ -366,10 +367,10 @@ public class JQUISpinnerOptions<J extends JQUISpinnerOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setStep(Integer step)
+	public J setStep(Double step)
 	{
-		this.step = new Double(step);
-		setInteger(true);
+		this.step = step;
+		setInteger(false);
 		return (J) this;
 	}
 
@@ -380,10 +381,10 @@ public class JQUISpinnerOptions<J extends JQUISpinnerOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setStep(Double step)
+	public J setStep(Integer step)
 	{
-		this.step = step;
-		setInteger(false);
+		this.step = new Double(step);
+		setInteger(true);
 		return (J) this;
 	}
 

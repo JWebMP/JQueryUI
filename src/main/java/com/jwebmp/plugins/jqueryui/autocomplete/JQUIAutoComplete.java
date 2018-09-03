@@ -35,6 +35,7 @@ import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;
  * @version 1.0
  * @since 06 Aug 2015
  */
+@SuppressWarnings("MissingClassJavaDoc")
 @ComponentInformation(name = "JQuery UI Auto Complete",
 		description = "Enables users to quickly find and select from a pre-populated " +
 		              "list" +
@@ -47,8 +48,8 @@ import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;
 		              ".",
 		url = "http://jqueryui.com/autocomplete/",
 		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUIAutoComplete
-		extends Div<JQUIAutoCompleteChildren, NoAttributes, JQUIAutoCompleteFeatures, JQUIAutoCompleteEvents, JQUIAutoComplete>
+public class JQUIAutoComplete<J extends JQUIAutoComplete<J>>
+		extends Div<JQUIAutoCompleteChildren, NoAttributes, JQUIAutoCompleteFeatures, JQUIAutoCompleteEvents, J>
 {
 
 	/**

@@ -124,4 +124,9 @@ public class JQUIAutoCompleteTest
 		//super.writeValuesToFile(expected, rendered);
 		Assertions.assertEquals(expected, rendered);
 	}
+
+	@Test
+	void getInput()
+	{
+	}
 }

@@ -39,11 +39,14 @@ import com.jwebmp.plugins.jqueryui.sortable.options.JQUISortableOptions;
 		              " keys.",
 		url = "http://jqueryui.com/sortable/",
 		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
-public class JQUISortable
-		extends Div<JQUISortableChildren, NoAttributes, JQUISortableFeatures, JQUISortableEvents, JQUISortable>
+public class JQUISortable<J extends JQUISortable<J>>
+		extends Div<JQUISortableChildren, NoAttributes, JQUISortableFeatures, JQUISortableEvents, J>
 		implements IJQUISortable
 {
 
+	/**
+	 * Field serialVersionUID
+	 */
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The sortable feature
@@ -95,14 +98,14 @@ public class JQUISortable
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

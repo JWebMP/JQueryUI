@@ -33,10 +33,6 @@ import com.jwebmp.plugins.jqueryui.dialog.options.JQUIDialogOptions;
  */
 @ComponentInformation(name = "JQuery UI Dialog",
 		description = "The basic dialog window is an overlay positioned within the viewport and " +
-		              "" +
-		              "" +
-		              "" +
-		              "" +
 		              "is protected from page content (like select " +
 		              "elements) " +
 		              "shining" +
@@ -105,14 +101,14 @@ public class JQUIDialog<J extends JQUIDialog<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

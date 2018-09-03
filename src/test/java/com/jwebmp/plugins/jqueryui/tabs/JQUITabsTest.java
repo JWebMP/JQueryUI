@@ -16,6 +16,10 @@
  */
 package com.jwebmp.plugins.jqueryui.tabs;
 
+import com.jwebmp.core.base.html.Paragraph;
+import com.jwebmp.plugins.easingeffects.JQEasingAnimationEffectsPart;
+import com.jwebmp.plugins.easingeffects.JQEasingEffects;
+import com.jwebmp.plugins.jqueryui.accordion.enumerations.JQUIAccordionHeightStyle;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -33,7 +37,21 @@ public class JQUITabsTest
 	{
 		JQUITabs tab = new JQUITabs();
 		tab.addTab("tab 1", new JQUITabContent());
+		tab.addTab("Number 2", new JQUITabContent<>().add(new Paragraph("Stuff")));
+
+		tab.getOptions()
+		   .setActive(2)
+		   .setCollapsible(true)
+		   .setHeightStyle(JQUIAccordionHeightStyle.Fill)
+		   .setShow(
+				   new JQEasingAnimationEffectsPart<>().setEasing(JQEasingEffects.easeInBounce)
+				                                       .setDuration(6000));
+
 		System.out.println(tab.toString(0));
 	}
 
+	@Test
+	void getOptions()
+	{
+	}
 }

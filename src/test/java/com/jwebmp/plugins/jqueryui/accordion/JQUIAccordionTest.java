@@ -50,7 +50,7 @@ public class JQUIAccordionTest
 	@Test
 	public void testIcons()
 	{
-		com.jwebmp.plugins.jqueryui.accordion.JQUIAccordion accordion = new JQUIAccordion();
+		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
 		accordion.getOptions()
 		         .getIcons()
@@ -174,14 +174,14 @@ public class JQUIAccordionTest
 	{
 		JQUIAccordion accordion = new JQUIAccordion();
 		accordion.setID("id");
-		com.jwebmp.plugins.jqueryui.accordion.JQUIAccordionContent<?> d1 = new com.jwebmp.plugins.jqueryui.accordion.JQUIAccordionContent();
+		JQUIAccordionContent<?> d1 = new JQUIAccordionContent();
 		d1.setID("d1");
-		com.jwebmp.plugins.jqueryui.accordion.JQUIAccordionContent<?> d2 = new com.jwebmp.plugins.jqueryui.accordion.JQUIAccordionContent();
+		JQUIAccordionContent<?> d2 = new JQUIAccordionContent();
 		d2.setID("d2");
-		com.jwebmp.plugins.jqueryui.accordion.JQUIAccordionTab<?> tab1 = new com.jwebmp.plugins.jqueryui.accordion.JQUIAccordionTab("tab1", d1);
+		JQUIAccordionTab<?> tab1 = new JQUIAccordionTab("tab1", d1);
 		tab1.getHeader()
 		    .setID("h1");
-		com.jwebmp.plugins.jqueryui.accordion.JQUIAccordionTab<?> tab2 = new com.jwebmp.plugins.jqueryui.accordion.JQUIAccordionTab("tab2", d2);
+		JQUIAccordionTab<?> tab2 = new JQUIAccordionTab("tab2", d2);
 		tab2.getHeader()
 		    .setID("h2");
 

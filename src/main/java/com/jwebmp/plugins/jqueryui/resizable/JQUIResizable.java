@@ -30,6 +30,7 @@ import com.jwebmp.plugins.jqueryui.resizable.options.JQUIResizableOptions;
  * @version 1.0
  * @since 07 Aug 2015
  */
+@SuppressWarnings("MissingClassJavaDoc")
 @ComponentInformation(name = "JQuery UI Resizable",
 		description = "Enable any DOM element to be resizable. With the cursor grab the " + "right" + " or bottom border and drag to the desired width or " + "height.",
 		url = "http://jqueryui.com/resizable/",
@@ -39,6 +40,9 @@ public class JQUIResizable<J extends JQUIResizable<J>>
 		implements IJQUIResizable
 {
 
+	/**
+	 * Field serialVersionUID
+	 */
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The resizable feature
@@ -101,14 +105,14 @@ public class JQUIResizable<J extends JQUIResizable<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

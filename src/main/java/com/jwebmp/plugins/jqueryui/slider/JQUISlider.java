@@ -32,6 +32,7 @@ import com.jwebmp.plugins.jqueryui.slider.options.JQUISliderOptions;
  * 		<p>
  * @since Mar 9, 2015
  */
+@SuppressWarnings("MissingClassJavaDoc")
 @ComponentInformation(name = "JQuery UI Slider",
 		description = "The jQuery UI Slider plugin makes selected elements into sliders. There " +
 		              "are various options such as multiple handles and ranges. The " +
@@ -99,14 +100,14 @@ public class JQUISlider<J extends JQUISlider<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

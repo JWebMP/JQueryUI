@@ -29,10 +29,14 @@ import javax.validation.constraints.NotNull;
  * @version 1.0
  * @since 07 Aug 2015
  */
+@SuppressWarnings({"MissingClassJavaDoc", "unused"})
 public class JQUIDroppableOptions<J extends JQUIDroppableOptions<J>>
 		extends JavaScriptPart<J>
 {
 
+	/**
+	 * Field serialVersionUID
+	 */
 	private static final long serialVersionUID = 1L;
 	/**
 	 * Default: "*" Controls which draggable elements are accepted by the droppable.
@@ -105,6 +109,21 @@ public class JQUIDroppableOptions<J extends JQUIDroppableOptions<J>>
 	}
 
 	/**
+	 * Sets the component that must be draggable
+	 * <p>
+	 *
+	 * @param component
+	 * 		The component to accept dragging from
+	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setAccept(Component component)
+	{
+		accept = component.getID(true);
+		return (J) this;
+	}
+
+	/**
 	 * @return Controls which draggable elements are accepted by the droppable.
 	 */
 	public String getAccept()
@@ -121,9 +140,9 @@ public class JQUIDroppableOptions<J extends JQUIDroppableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setAccept(Component component)
+	public J setAccept(String component)
 	{
-		accept = component.getID(true);
+		accept = component;
 		return (J) this;
 	}
 

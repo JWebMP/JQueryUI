@@ -34,6 +34,7 @@ import javax.validation.constraints.NotNull;
  * 		<p>
  * @since Mar 9, 2015
  */
+@SuppressWarnings("MissingClassJavaDoc")
 @ComponentInformation(name = "JQuery UI Spinner",
 		description = "The Spinner, or number stepper widget, is perfect for handling all " +
 		              "kinds" +
@@ -53,6 +54,9 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 		implements IJQUISpinner
 {
 
+	/**
+	 * Field serialVersionUID
+	 */
 	private static final long serialVersionUID = 1L;
 	/**
 	 * The header text for the spinner
@@ -122,7 +126,7 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	public J addGlobalization(GlobalizeCultures culture)
 	{
 		getJavascriptReferences().add(GlobalizeCultures.getJavascriptReference());
-		getOptions().setCulture(culture.toString());
+		getOptions().setCulture(culture);
 		return (J) this;
 	}
 
@@ -171,6 +175,10 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	@Override
 	public JQUISpinnerLabel<?> getLabel()
 	{
+		if (label == null)
+		{
+			label = new JQUISpinnerLabel<>();
+		}
 		return label;
 	}
 
@@ -247,14 +255,14 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

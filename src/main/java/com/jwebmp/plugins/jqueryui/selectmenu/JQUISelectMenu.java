@@ -39,13 +39,7 @@ import com.jwebmp.plugins.jqueryui.selectmenu.options.JQUISelectMenuOptions;
 @ComponentInformation(name = "JQuery UI Select Menu",
 		description = "Enable a DOM element (or group of elements) to be selectable. Draw " +
 		              "a" +
-		              " box with your cursor to select items. Hold down the " +
-		              "" +
-		              "" +
-		              "" +
-		              "" +
-		              "" +
-		              "Ctrl key" +
+		              " box with your cursor to select items. Hold down the Ctrl key" +
 		              " to make multiple " +
 		              "non-adjacent " +
 		              "selections" +
@@ -111,14 +105,14 @@ public class JQUISelectMenu<J extends JQUISelectMenu<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

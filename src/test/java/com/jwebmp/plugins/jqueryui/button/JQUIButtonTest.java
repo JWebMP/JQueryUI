@@ -16,6 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.button;
 
+import com.jwebmp.core.base.html.Div;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -33,6 +34,13 @@ public class JQUIButtonTest
 	public void testHtml()
 	{
 		JQUIButton button = new JQUIButton("test");
+		button.getOptions()
+		      .setLabel("Label")
+		      .setIcon("far fa-something")
+		      .setDisabled(true);
+
+		Div anything = new Div();
+		anything.addFeature(new JQUIButtonFeature(anything));
 		button.setID("test");
 		System.out.println(button.toString(true));
 	}
@@ -42,8 +50,8 @@ public class JQUIButtonTest
 	{
 		JQUIButton button = new JQUIButton("test");
 		button.setID("test");
-		//button.toString(true);
-		//System.out.println(button.renderJavascript());
+		button.toString(true);
+		System.out.println(button.renderJavascript());
 		System.out.println(button.renderJavascriptAll());
 
 	}
