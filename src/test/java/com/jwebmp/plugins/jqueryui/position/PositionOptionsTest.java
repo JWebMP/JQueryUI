@@ -52,8 +52,7 @@ public class PositionOptionsTest
 		                   "  \"myX\" : \"left\",\n" +
 		                   "  \"myY\" : \"top\",\n" +
 		                   "  \"atX\" : \"left\",\n" +
-		                   "  \"atY\" : " +
-		                   "\"top\",\n" +
+		                   "  \"atY\" : \"top\",\n" +
 		                   "  \"of\" : \"#of\"\n" +
 		                   "}" +
 		                   "";
