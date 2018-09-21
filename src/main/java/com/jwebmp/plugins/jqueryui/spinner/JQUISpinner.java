@@ -34,7 +34,6 @@ import javax.validation.constraints.NotNull;
  * 		<p>
  * @since Mar 9, 2015
  */
-@SuppressWarnings("MissingClassJavaDoc")
 @ComponentInformation(name = "JQuery UI Spinner",
 		description = "The Spinner, or number stepper widget, is perfect for handling all " +
 		              "kinds" +
@@ -121,11 +120,9 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	 * @return
 	 */
 	@Override
-	@SuppressWarnings("unchecked")
 	@NotNull
 	public J addGlobalization(GlobalizeCultures culture)
 	{
-		getJavascriptReferences().add(GlobalizeCultures.getJavascriptReference());
 		getOptions().setCulture(culture);
 		return (J) this;
 	}
@@ -137,7 +134,6 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	 * @return
 	 */
 	@Override
-	@SuppressWarnings("unchecked")
 	@NotNull
 	public JQUISpinnerOptions<?> getOptions()
 	{
@@ -191,7 +187,6 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	 * @return
 	 */
 	@Override
-	@SuppressWarnings("unchecked")
 	@NotNull
 	public J setLabel(JQUISpinnerLabel<?> label)
 	{
@@ -221,7 +216,6 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	 * @return
 	 */
 	@Override
-	@SuppressWarnings("unchecked")
 	@NotNull
 	public J setHeaderText(String headerText)
 	{
