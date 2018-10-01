@@ -38,6 +38,11 @@ public class JQUISelectMenuIconsOptions<J extends JQUISelectMenuIconsOptions<J>>
 	 */
 	private String button;
 
+	public JQUISelectMenuIconsOptions()
+	{
+		//No config required
+	}
+
 	/**
 	 * Sets the button
 	 *
