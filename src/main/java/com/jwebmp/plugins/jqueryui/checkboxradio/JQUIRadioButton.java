@@ -32,7 +32,7 @@ import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOption
 @ComponentInformation(name = "JQuery UI Radio Button",
 		description = "Enhances standard checkbox and radio input element to themeable " + "buttons with appropriate hover and active " + "styles.",
 		url = "http://jqueryui.com/button/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 
 public class JQUIRadioButton
 		extends InputRadioType
@@ -139,14 +139,14 @@ public class JQUIRadioButton
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

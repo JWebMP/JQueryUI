@@ -46,7 +46,7 @@ import java.util.List;
 @ComponentInformation(name = "JQuery UI Accordion",
 		description = "Displays collapsible content panels for presenting information in a limited amount of space.",
 		url = "http://jqueryui.com/accordion/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIAccordion<J extends JQUIAccordion<J>>
 		extends Div<JQUIAccordionChildren, NoAttributes, JQUIAccordionFeatures, JQUIAccordionEvents, J>
 		implements JQUIAccordionChildren<JQUIAccordionChildren, J>

@@ -38,7 +38,7 @@ import com.jwebmp.plugins.jqueryui.sortable.options.JQUISortableOptions;
 		              "arrow" +
 		              " keys.",
 		url = "http://jqueryui.com/sortable/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUISortable<J extends JQUISortable<J>>
 		extends Div<JQUISortableChildren, NoAttributes, JQUISortableFeatures, JQUISortableEvents, J>
 		implements IJQUISortable

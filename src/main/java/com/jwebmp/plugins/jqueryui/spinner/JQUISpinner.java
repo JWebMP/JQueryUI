@@ -46,7 +46,7 @@ import javax.validation.constraints.NotNull;
 		              "currencies and dates in a " +
 		              "variety of locales.",
 		url = "http://jqueryui.com/spinner/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 
 public class JQUISpinner<J extends JQUISpinner<J>>
 		extends Div<JQUISpinnerChildren, NoAttributes, JQUISpinnerFeatures, JQUISpinnerEvents, J>

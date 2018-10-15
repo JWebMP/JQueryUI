@@ -37,7 +37,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
 @ComponentInformation(name = "JQuery UI Position",
 		description = "Position an element relative to the window, document, another element, " + "" + "" + "" + "or the cursor/mouse.",
 		url = "http://jqueryui.com/position/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class PositionOptions<J extends PositionOptions<J>>
 		extends JavaScriptPart<J>
 {

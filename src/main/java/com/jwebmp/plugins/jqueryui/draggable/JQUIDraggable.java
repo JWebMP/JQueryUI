@@ -40,7 +40,7 @@ import com.jwebmp.plugins.jqueryui.draggable.options.JQUIDraggableOptions;
 		              "it " +
 		              "anywhere within the viewport.",
 		url = "http://jqueryui.com/draggable/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIDraggable<J extends JQUIDraggable<J>>
 		extends Div<JQUIDraggableChildren, NoAttributes, JQUIDraggableFeatures, JQUIDraggableEvents, J>
 		implements IJQUIDraggable

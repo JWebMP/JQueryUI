@@ -41,7 +41,7 @@ import com.jwebmp.plugins.jqueryui.progressbar.options.JQUIProgressBarOptions;
 		              "sized through CSS and will scale to fit inside its parent " +
 		              "container by default.",
 		url = "http://jqueryui.com/progressbar/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIProgressBar<J extends JQUIProgressBar<J>>
 		extends Div<JQUIProgressBarChildren, NoAttributes, JQUIProgressBarFeatures, JQUIProgressBarEvents, J>
 		implements IJQUIProgressBar

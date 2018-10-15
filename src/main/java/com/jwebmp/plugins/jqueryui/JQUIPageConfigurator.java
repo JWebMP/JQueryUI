@@ -37,16 +37,16 @@ import javax.validation.constraints.NotNull;
 		pluginDependancyUniqueIDs = "jquery",
 		pluginCategories = "jquery, ui, jquery-ui,themes, styles, styling",
 		pluginSubtitle = "A complete UI framework built using JQuery",
-		pluginGitUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin",
+		pluginGitUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin",
 		pluginSourceUrl = "http://jqueryui.com/",
-		pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki",
+		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki",
 		pluginOriginalHomepage = "http://jqueryui.com/",
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/JQueryUIPlugin.jar/download",
 		pluginIconUrl = "bower_components/jquery-ui/jqueryui_icon.ico",
 		pluginIconImageUrl = "bower_components/jquery-ui/jqueryui_example.jpg",
 		pluginLastUpdatedDate = "2017/03/04")
 public class JQUIPageConfigurator
-		implements IPageConfigurator
+		implements IPageConfigurator<JQUIPageConfigurator>
 {
 	/**
 	 * If this configurator is enabled

@@ -34,7 +34,7 @@ import com.jwebmp.plugins.jqueryui.resizable.options.JQUIResizableOptions;
 @ComponentInformation(name = "JQuery UI Resizable",
 		description = "Enable any DOM element to be resizable. With the cursor grab the " + "right" + " or bottom border and drag to the desired width or " + "height.",
 		url = "http://jqueryui.com/resizable/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIResizable<J extends JQUIResizable<J>>
 		extends Div<JQUIResizableChildren, NoAttributes, JQUIResizableFeatures, JQUIResizableEvents, J>
 		implements IJQUIResizable

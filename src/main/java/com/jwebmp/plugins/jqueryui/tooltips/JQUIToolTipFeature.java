@@ -34,7 +34,7 @@ import com.jwebmp.plugins.jqueryui.tooltips.options.JQUITooltipOptions;
 @ComponentInformation(name = "JQuery UI Tooltips",
 		description = "Tooltip replaces native tooltips, making them themeable as well as allowing various customizations:",
 		url = "http://jqueryui.com/tooltip/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIToolTipFeature
 		extends Feature<GlobalFeatures, JQUITooltipOptions, JQUIToolTipFeature>
 {

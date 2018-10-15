@@ -42,7 +42,7 @@ import java.util.Date;
 @ComponentInformation(name = "JQuery UI Date Picker",
 		description = "Select a date from a popup or inline calendar",
 		url = "http://jqueryui.com/datepicker/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIDatePicker<J extends JQUIDatePicker<J>>
 		extends Div<JQUIDatePickerChildren, NoAttributes, JQUIDatePickerFeatures, JQUIDatePickerEvents, J>
 		implements IJQUIDatePicker
@@ -119,14 +119,14 @@ public class JQUIDatePicker<J extends JQUIDatePicker<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

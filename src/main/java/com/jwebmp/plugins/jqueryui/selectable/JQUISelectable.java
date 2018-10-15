@@ -35,7 +35,7 @@ import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuChildren;
 @ComponentInformation(name = "JQuery UI Selectable",
 		description = "Enable a DOM element (or group of elements) to be selectable. Draw a box with your cursor to select items. Hold down the Ctrl key to make multiple non-adjacent selections.",
 		url = "http://jqueryui.com/selectable/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUISelectable<J extends JQUISelectable<J>>
 		extends Div<JQUISelectMenuChildren, NoAttributes, JQUISelectableFeatures, JQUISelectableEvents, J>
 		implements IJQUISelectable

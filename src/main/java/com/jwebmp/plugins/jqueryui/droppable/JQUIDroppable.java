@@ -35,7 +35,7 @@ import javax.validation.constraints.NotNull;
 @ComponentInformation(name = "JQuery UI Droppable",
 		description = "Enable any DOM element to be droppable, a target for draggable " + "elements.",
 		url = "http://jqueryui.com/droppable/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIDroppable
 		extends Div<JQUIDroppableChildren, NoAttributes, JQUIDroppableFeatures, JQUIDroppableEvents, JQUIDroppable>
 		implements IJQUIDroppable
@@ -82,14 +82,14 @@ public class JQUIDroppable
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

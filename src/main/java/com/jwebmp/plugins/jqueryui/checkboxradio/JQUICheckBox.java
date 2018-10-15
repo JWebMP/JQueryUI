@@ -34,7 +34,7 @@ import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOption
 @ComponentInformation(name = "JQuery UI Checkbox",
 		description = "Enhances standard checkbox and radio input element to themeable " + "buttons" + " with appropriate hover and " + "active" + " styles.",
 		url = "http://jqueryui.com/button/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 
 public class JQUICheckBox<J extends JQUICheckBox<J>>
 		extends InputCheckBoxType<J>

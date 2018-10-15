@@ -49,7 +49,7 @@ import com.jwebmp.plugins.jqueryui.dialog.options.JQUIDialogOptions;
 		              "by " +
 		              "default.",
 		url = "http://jqueryui.com/dialog/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIDialog<J extends JQUIDialog<J>>
 		extends Div<JQUIDialogChildren, NoAttributes, JQUIDialogFeatures, JQUIDialogEvents, J>
 		implements IJQUIDialog

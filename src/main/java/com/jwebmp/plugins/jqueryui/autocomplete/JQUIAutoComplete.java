@@ -47,7 +47,7 @@ import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;
 		              "filtering" +
 		              ".",
 		url = "http://jqueryui.com/autocomplete/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIAutoComplete<J extends JQUIAutoComplete<J>>
 		extends Div<JQUIAutoCompleteChildren, NoAttributes, JQUIAutoCompleteFeatures, JQUIAutoCompleteEvents, J>
 {

@@ -44,7 +44,7 @@ import javax.validation.constraints.NotNull;
 @ComponentInformation(name = "JQuery UI Button",
 		description = "Enhances standard form elements like buttons, inputs and anchors to " + "themeable buttons with appropriate hover and active styles.",
 		url = "http://jqueryui.com/button/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIButton<J extends JQUIButton<J>>
 		extends Component<JQUIButtonChildren, ButtonAttributes, JQUIButtonFeatures, JQUIButtonEvents, J>
 		implements NoNewLineBeforeClosingTag, NoNewLineForRawText, JQUIAccordionChildren<JQUIButtonChildren, J>

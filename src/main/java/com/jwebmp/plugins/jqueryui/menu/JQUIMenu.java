@@ -49,7 +49,7 @@ import com.jwebmp.plugins.jqueryui.menu.options.JQUIMenuOptions;
 		              "navigate" +
 		              ".",
 		url = "http://jqueryui.com/menu/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIMenu<J extends JQUIMenu<J>>
 		extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvents, J>
 		implements IJQUIMenu

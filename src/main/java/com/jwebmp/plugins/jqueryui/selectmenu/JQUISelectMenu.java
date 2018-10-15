@@ -45,7 +45,7 @@ import com.jwebmp.plugins.jqueryui.selectmenu.options.JQUISelectMenuOptions;
 		              "selections" +
 		              ".",
 		url = "http://jqueryui.com/selectmenu/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUISelectMenu<J extends JQUISelectMenu<J>>
 		extends Div<JQUISelectMenuChildren, NoAttributes, JQUISelectMenuFeatures, JQUISelectMenuEvents, J>
 		implements IJQUISelectMenu

@@ -38,7 +38,7 @@ import com.jwebmp.plugins.jqueryui.slider.options.JQUISliderOptions;
 		              "are various options such as multiple handles and ranges. The " +
 		              "handle can be moved with the mouse or the arrow keys.",
 		url = "http://jqueryui.com/slider/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUISlider<J extends JQUISlider<J>>
 		extends Div<JQUISliderChildren, NoAttributes, JQUISliderFeatures, JQUISliderEvents, J>
 		implements IJQUISlider

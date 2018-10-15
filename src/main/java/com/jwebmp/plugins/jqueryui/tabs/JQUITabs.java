@@ -39,7 +39,7 @@ import java.util.ArrayList;
 @ComponentInformation(name = "JQuery UI Tabs",
 		description = "Tabs are generally used to break content into multiple sections that can " + "be" + " swapped to save space, much like an accordion",
 		url = "http://jqueryui.com/tabs/",
-		wikiUrl = "https://github.com/GedMarc/JWebSwing-JQueryUIPlugin/wiki")
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUITabs<J extends JQUITabs<J>>
 		extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatures, JQUITabsEvents, J>
 		implements IJQUITabs<J>
