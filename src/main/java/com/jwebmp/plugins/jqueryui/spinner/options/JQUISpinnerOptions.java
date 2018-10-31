@@ -29,8 +29,6 @@ import javax.validation.constraints.NotNull;
 public class JQUISpinnerOptions<J extends JQUISpinnerOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * Sets the culture to use for parsing and formatting the value.<p>
 	 * If null, the currently set culture in Globalize is used, see Globalize docs for available cultures.<p>
@@ -368,7 +366,7 @@ public class JQUISpinnerOptions<J extends JQUISpinnerOptions<J>>
 	@NotNull
 	public J setStep(Integer step)
 	{
-		this.step = new Double(step);
+		this.step = Double.valueOf(step);
 		setInteger(true);
 		return (J) this;
 	}
