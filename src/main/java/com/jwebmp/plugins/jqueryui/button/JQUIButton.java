@@ -50,7 +50,6 @@ public class JQUIButton<J extends JQUIButton<J>>
 		implements NoNewLineBeforeClosingTag, NoNewLineForRawText, JQUIAccordionChildren<JQUIButtonChildren, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private JQUIButtonFeature feature;
 

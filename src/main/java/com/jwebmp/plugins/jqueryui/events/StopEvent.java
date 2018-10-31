@@ -32,7 +32,6 @@ public abstract class StopEvent
 		implements JQUIDraggableEvents, JQUIResizableEvents, JQUISliderEvents, JQUISpinnerEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public StopEvent(Component component)
 	{

@@ -33,7 +33,6 @@ public class JQUIAutoCompleteFeature<J extends JQUIAutoCompleteFeature<J>>
 		extends Feature<GlobalFeatures, JQUIAutoCompleteOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The component to display the list at

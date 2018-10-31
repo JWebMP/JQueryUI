@@ -44,7 +44,7 @@ public class JQUISlider<J extends JQUISlider<J>>
 		implements IJQUISlider
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The feature for this component
 	 */

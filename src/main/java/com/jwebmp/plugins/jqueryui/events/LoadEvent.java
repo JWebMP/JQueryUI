@@ -29,7 +29,6 @@ public abstract class LoadEvent
 		implements JQUITabsEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public LoadEvent(Component component)
 	{

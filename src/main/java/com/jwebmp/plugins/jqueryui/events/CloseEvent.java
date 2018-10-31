@@ -31,7 +31,6 @@ public abstract class CloseEvent
 		implements JQUIAutoCompleteEvents, JQUIDialogEvents, JQUISelectMenuEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public CloseEvent(Component component)
 	{

@@ -29,7 +29,6 @@ public abstract class BlurEvent
 		implements JQUIMenuEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public BlurEvent(Component component)
 	{

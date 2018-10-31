@@ -45,7 +45,7 @@ public class JQUITabs<J extends JQUITabs<J>>
 		implements IJQUITabs<J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * the feature list
 	 */
@@ -156,15 +156,15 @@ public class JQUITabs<J extends JQUITabs<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 
 	/**

@@ -31,7 +31,6 @@ public class JQUIResizableFeature<J extends JQUIResizableFeature<J>>
 		extends Feature<GlobalFeatures, JQUIResizableOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private JQUIResizableOptions options;
 

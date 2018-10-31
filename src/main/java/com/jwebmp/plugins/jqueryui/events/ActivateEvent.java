@@ -31,7 +31,6 @@ public abstract class ActivateEvent
 		implements JQUIAccordionEvents, JQUIDroppableEvents, JQUITabsEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public ActivateEvent(Component component)
 	{

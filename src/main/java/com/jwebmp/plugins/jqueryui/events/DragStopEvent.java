@@ -29,7 +29,6 @@ public abstract class DragStopEvent
 		implements JQUIDialogEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public DragStopEvent(Component component)
 	{

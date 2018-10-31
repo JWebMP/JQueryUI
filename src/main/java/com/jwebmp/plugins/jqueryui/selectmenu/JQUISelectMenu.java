@@ -51,7 +51,6 @@ public class JQUISelectMenu<J extends JQUISelectMenu<J>>
 		implements IJQUISelectMenu
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The select menu feature

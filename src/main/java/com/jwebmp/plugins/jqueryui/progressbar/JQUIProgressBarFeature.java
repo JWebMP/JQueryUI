@@ -34,7 +34,6 @@ public class JQUIProgressBarFeature<J extends JQUIProgressBarFeature<J>>
 		extends Feature<GlobalFeatures, JQUIProgressBarOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private final JQUIProgressBar progressBar;
 	private JQUIProgressBarOptions<?> options;

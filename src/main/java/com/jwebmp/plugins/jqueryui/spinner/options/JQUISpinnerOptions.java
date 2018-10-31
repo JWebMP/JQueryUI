@@ -30,7 +30,6 @@ public class JQUISpinnerOptions<J extends JQUISpinnerOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Sets the culture to use for parsing and formatting the value.<p>
@@ -367,10 +366,10 @@ public class JQUISpinnerOptions<J extends JQUISpinnerOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setStep(Double step)
+	public J setStep(Integer step)
 	{
-		this.step = step;
-		setInteger(false);
+		this.step = new Double(step);
+		setInteger(true);
 		return (J) this;
 	}
 
@@ -381,10 +380,10 @@ public class JQUISpinnerOptions<J extends JQUISpinnerOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setStep(Integer step)
+	public J setStep(Double step)
 	{
-		this.step = new Double(step);
-		setInteger(true);
+		this.step = step;
+		setInteger(false);
 		return (J) this;
 	}
 

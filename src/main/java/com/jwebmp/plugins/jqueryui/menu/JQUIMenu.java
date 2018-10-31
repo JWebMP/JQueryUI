@@ -55,7 +55,7 @@ public class JQUIMenu<J extends JQUIMenu<J>>
 		implements IJQUIMenu
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private Orientation orientation;
 	private JQUIMenuFeature<?> feature;
 
@@ -117,14 +117,14 @@ public class JQUIMenu<J extends JQUIMenu<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

@@ -44,7 +44,7 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	/**
 	 * Version 1
 	 */
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * appendTo Type: Selector Default: null
 	 * <p>
@@ -196,15 +196,15 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	 * suggestions menu is open.
 	 *
 	 * @param appendTo
-	 * 		Sets the string to the #id
+	 * 		set the string to the # id
 	 *
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setAppendTo(ComponentHierarchyBase appendTo)
+	public J setAppendTo(String appendTo)
 	{
-		this.appendTo = appendTo.getID(true);
+		this.appendTo = appendTo;
 		return (J) this;
 	}
 
@@ -218,15 +218,15 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	 * suggestions menu is open.
 	 *
 	 * @param appendTo
-	 * 		set the string to the # id
+	 * 		Sets the string to the #id
 	 *
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setAppendTo(String appendTo)
+	public J setAppendTo(ComponentHierarchyBase appendTo)
 	{
-		this.appendTo = appendTo;
+		this.appendTo = appendTo.getID(true);
 		return (J) this;
 	}
 

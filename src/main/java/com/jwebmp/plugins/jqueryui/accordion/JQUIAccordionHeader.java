@@ -29,7 +29,6 @@ public class JQUIAccordionHeader<J extends JQUIAccordionHeader<J>>
 		implements JQUIAccordionChildren<IComponentHierarchyBase, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * An accordion header

@@ -21,7 +21,6 @@ import com.jwebmp.core.base.html.ListItem;
 import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;
 
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 
 import static com.jwebmp.core.utilities.StaticStrings.*;
 
@@ -34,10 +33,10 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since 29 Mar 2013
  */
 public class JQUITab<J extends JQUITab<J>>
-		implements Serializable
+
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The header for a tab
 	 */

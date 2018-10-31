@@ -31,7 +31,6 @@ public class JQUIAccordionTab<J extends JQUIAccordionTab<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The header for the accordion

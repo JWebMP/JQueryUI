@@ -34,7 +34,7 @@ public class AutoCompleteEntrySet<J extends AutoCompleteEntries<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The available category selections
 	 * <p>

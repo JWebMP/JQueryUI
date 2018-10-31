@@ -29,7 +29,6 @@ public class JQUIButtonGroupOptions<J extends JQUIButtonGroupOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The component type.

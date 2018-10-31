@@ -32,7 +32,6 @@ public class JQUIControlGroupFeature<J extends JQUIControlGroupFeature<J>>
 		extends Feature<GlobalFeatures, JavaScriptPart, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private final Component checkBoxGroup;
 

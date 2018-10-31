@@ -48,7 +48,6 @@ public class JQUIDatePicker<J extends JQUIDatePicker<J>>
 		implements IJQUIDatePicker
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private JQUIDatePickerFeature<?> inputFeature;
 

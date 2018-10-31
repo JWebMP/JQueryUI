@@ -33,7 +33,6 @@ public abstract class ChangeEvent
 		implements JQUIAutoCompleteEvents, JQUIProgressBarEvents, JQUISelectMenuEvents, JQUISliderEvents, JQUISpinnerEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public ChangeEvent(Component component)
 	{

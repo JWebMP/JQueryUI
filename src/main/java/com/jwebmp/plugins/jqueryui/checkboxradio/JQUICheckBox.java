@@ -41,7 +41,7 @@ public class JQUICheckBox<J extends JQUICheckBox<J>>
 		implements IJQUICheckBox, FieldSetChildren<IComponentHierarchyBase, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The feature
 	 */

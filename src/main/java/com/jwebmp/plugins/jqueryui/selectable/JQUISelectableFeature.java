@@ -34,7 +34,6 @@ public class JQUISelectableFeature<J extends JQUISelectableFeature<J>>
 		extends Feature<GlobalFeatures, JQUISelectableOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private JQUISelectableOptions<?> options;
 

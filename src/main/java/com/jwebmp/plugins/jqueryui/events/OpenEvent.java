@@ -32,7 +32,6 @@ public abstract class OpenEvent
 		implements JQUIAutoCompleteEvents, JQUIDraggableEvents, JQUIDialogEvents, JQUISelectMenuEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public OpenEvent(Component component)
 	{

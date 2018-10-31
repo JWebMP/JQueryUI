@@ -43,7 +43,7 @@ public class JQUIResizable<J extends JQUIResizable<J>>
 	/**
 	 * Field serialVersionUID
 	 */
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The resizable feature
 	 */

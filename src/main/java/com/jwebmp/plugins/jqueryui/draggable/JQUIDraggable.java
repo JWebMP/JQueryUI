@@ -46,7 +46,7 @@ public class JQUIDraggable<J extends JQUIDraggable<J>>
 		implements IJQUIDraggable
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private JQUIDraggableFeature<?> feature;
 	private String scope;
 

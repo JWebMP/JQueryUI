@@ -29,7 +29,6 @@ public abstract class DropEvent
 		implements JQUIDroppableEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public DropEvent(Component component)
 	{

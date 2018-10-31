@@ -31,7 +31,6 @@ public class JQUIMenuItemDivider<J extends JQUIMenuItemDivider<J>>
 		implements JQUIMenuChildren<ListItemChildren, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Creates a menu item divider

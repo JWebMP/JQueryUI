@@ -36,7 +36,6 @@ public class JQUIAccordionOptions<J extends JQUIAccordionOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Which panel index is currently open.

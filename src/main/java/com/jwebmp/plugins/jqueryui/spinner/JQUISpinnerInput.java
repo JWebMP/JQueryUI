@@ -30,7 +30,6 @@ public class JQUISpinnerInput<J extends JQUISpinnerInput<J, A>, A extends Enum &
 		implements JQUISpinnerChildren<IComponentHierarchyBase, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The spinner input

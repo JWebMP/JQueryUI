@@ -55,7 +55,7 @@ public class JQUIAutoComplete<J extends JQUIAutoComplete<J>>
 	/**
 	 * Version 1
 	 */
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The feature for the input
 	 */

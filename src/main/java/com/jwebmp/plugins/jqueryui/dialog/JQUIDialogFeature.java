@@ -32,7 +32,6 @@ public class JQUIDialogFeature<J extends JQUIDialogFeature<J>>
 
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private final JQUIDialog<?> panel;
 

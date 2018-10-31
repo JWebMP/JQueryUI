@@ -31,7 +31,6 @@ public class JQUIControlGroup<J extends JQUIControlGroup<J>>
 		extends DivSimple<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructs a new control group div

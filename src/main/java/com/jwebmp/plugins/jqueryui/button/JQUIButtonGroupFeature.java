@@ -36,7 +36,6 @@ public class JQUIButtonGroupFeature<J extends JQUIButtonGroupFeature<J>>
 		extends Feature<GlobalFeatures, JQUIButtonGroupOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private final Component buttonGroup;
 	private JQUIButtonGroupOptions buttongGroupOptions;

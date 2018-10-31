@@ -34,7 +34,7 @@ public class JQUISpinnerFeature<J extends JQUISpinnerFeature<J>>
 		extends Feature<GlobalFeatures, JQUISpinnerOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The component for the spinner
 	 */

@@ -31,7 +31,6 @@ public class JQUIMenuIconSet<J extends JQUIMenuIconSet<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Sets the sub menu string

@@ -37,7 +37,7 @@ public class JQUIDroppableOptions<J extends JQUIDroppableOptions<J>>
 	/**
 	 * Field serialVersionUID
 	 */
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Default: "*" Controls which draggable elements are accepted by the droppable.
 	 */
@@ -160,9 +160,9 @@ public class JQUIDroppableOptions<J extends JQUIDroppableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setActiveClassType(JQUIThemeBlocks activeClassType)
+	public J setActiveClassType(String activeClassType)
 	{
-		this.activeClassType = activeClassType.toString();
+		this.activeClassType = activeClassType;
 		return (J) this;
 	}
 
@@ -172,9 +172,9 @@ public class JQUIDroppableOptions<J extends JQUIDroppableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setActiveClassType(String activeClassType)
+	public J setActiveClassType(JQUIThemeBlocks activeClassType)
 	{
-		this.activeClassType = activeClassType;
+		this.activeClassType = activeClassType.toString();
 		return (J) this;
 	}
 
@@ -241,9 +241,9 @@ public class JQUIDroppableOptions<J extends JQUIDroppableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setHoverClass(String hoverClass)
+	public J setHoverClass(JQUIThemeBlocks hoverClass)
 	{
-		this.hoverClass = hoverClass;
+		this.hoverClass = hoverClass.toString();
 		return (J) this;
 	}
 
@@ -253,9 +253,9 @@ public class JQUIDroppableOptions<J extends JQUIDroppableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setHoverClass(JQUIThemeBlocks hoverClass)
+	public J setHoverClass(String hoverClass)
 	{
-		this.hoverClass = hoverClass.toString();
+		this.hoverClass = hoverClass;
 		return (J) this;
 	}
 

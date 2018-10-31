@@ -31,7 +31,6 @@ public abstract class SlideEvent
 		implements JQUIDraggableEvents, JQUIResizableEvents, JQUISliderEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public SlideEvent(Component component)
 	{

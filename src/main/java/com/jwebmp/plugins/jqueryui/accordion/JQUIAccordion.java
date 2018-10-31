@@ -52,7 +52,7 @@ public class JQUIAccordion<J extends JQUIAccordion<J>>
 		implements JQUIAccordionChildren<JQUIAccordionChildren, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The list of accordion tabs
 	 */

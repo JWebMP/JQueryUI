@@ -30,7 +30,6 @@ public class AutoCompleteEntries<J extends AutoCompleteEntries<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private String label;
 	private String value;

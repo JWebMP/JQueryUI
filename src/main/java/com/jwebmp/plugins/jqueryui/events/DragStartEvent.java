@@ -29,7 +29,6 @@ public abstract class DragStartEvent
 		implements JQUIDialogEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public DragStartEvent(Component component)
 	{

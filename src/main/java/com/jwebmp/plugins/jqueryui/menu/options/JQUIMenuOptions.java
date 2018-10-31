@@ -32,7 +32,7 @@ public class JQUIMenuOptions<J extends JQUIMenuOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * If the item is disabled or not
 	 */

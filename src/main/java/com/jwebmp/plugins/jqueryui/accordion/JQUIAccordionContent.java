@@ -28,7 +28,7 @@ public class JQUIAccordionContent<J extends JQUIAccordionContent<J>>
 		extends DivSimple<J>
 		implements JQUIAccordionChildren<IComponentHierarchyBase, J>
 {
-	private static final long serialVersionUID = 1L;
+
 
 	/**
 	 * The container for the accordion

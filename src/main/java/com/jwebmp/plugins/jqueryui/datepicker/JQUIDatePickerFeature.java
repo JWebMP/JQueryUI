@@ -29,7 +29,6 @@ public class JQUIDatePickerFeature<J extends JQUIDatePickerFeature<J>>
 		extends Feature<GlobalFeatures, JQUIDatePickerOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The circular reference for the Date Picker

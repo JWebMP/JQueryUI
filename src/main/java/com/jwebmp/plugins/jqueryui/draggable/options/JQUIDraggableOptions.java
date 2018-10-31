@@ -39,7 +39,6 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * If set to false, will prevent the ui-draggable class from being added. This may be desired as a performance optimization when
@@ -978,7 +977,7 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	public static class CursorAt
 			extends JavaScriptPart<CursorAt>
 	{
-		private static final long serialVersionUID = 1L;
+
 		private Integer top;
 		private Integer left;
 		private Integer right;

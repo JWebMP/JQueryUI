@@ -34,7 +34,7 @@ public class JQUITabsFeature<J extends JQUITabsFeature<J>>
 		extends Feature<GlobalFeatures, JQUITabOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The actual tab
 	 */

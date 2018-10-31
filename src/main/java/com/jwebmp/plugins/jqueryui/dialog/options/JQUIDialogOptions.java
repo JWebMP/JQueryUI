@@ -33,7 +33,7 @@ public class JQUIDialogOptions<J extends JQUIDialogOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The component to append to
 	 */

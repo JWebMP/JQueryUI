@@ -31,7 +31,6 @@ public abstract class SelectEvent
 		implements JQUIAutoCompleteEvents, JQUIMenuEvents, JQUISelectMenuEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public SelectEvent(Component component)
 	{

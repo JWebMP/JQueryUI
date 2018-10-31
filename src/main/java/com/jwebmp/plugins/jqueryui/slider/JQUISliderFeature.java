@@ -32,7 +32,7 @@ public class JQUISliderFeature<J extends JQUISliderFeature<J>>
 		extends Feature<GlobalFeatures, JQUISliderOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The actual slider for the menu
 	 */

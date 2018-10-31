@@ -46,7 +46,6 @@ public class JQUIDatePickerOptions<J extends JQUIDatePickerOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * An input element that is to be updated with the selected date from the datepicker. Use the altFormat option to change the format of

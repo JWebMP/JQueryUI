@@ -28,7 +28,6 @@ public class JQUIButtonOptions<J extends JQUIButtonOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Specifies if the button is disabled or not

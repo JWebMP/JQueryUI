@@ -42,7 +42,6 @@ public class JQUISortableOptions<J extends JQUISortableOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Defines where the helper that moves with the mouse is being appended to during the drag (for example, to resolve overlap/zIndex

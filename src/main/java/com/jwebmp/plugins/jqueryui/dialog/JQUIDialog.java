@@ -55,7 +55,6 @@ public class JQUIDialog<J extends JQUIDialog<J>>
 		implements IJQUIDialog
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private final JQUIDialogFeature<?> jwDialogFeature;
 	private JQUIDialogOptions<?> options;

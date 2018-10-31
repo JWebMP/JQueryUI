@@ -33,7 +33,7 @@ public class JQUICheckBoxRadioFeature<J extends JQUICheckBoxRadioFeature<J>>
 		extends Feature<GlobalFeatures, JQUICheckBoxRadioOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private JQUICheckBoxRadioOptions<?> options;
 
 	public JQUICheckBoxRadioFeature(Component component)

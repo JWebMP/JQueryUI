@@ -39,7 +39,7 @@ public class JQUIRadioButton
 		implements IJQUICheckBox
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The feature
 	 */

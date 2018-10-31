@@ -35,7 +35,7 @@ public class JQUIPositionFeature<J extends JQUIPositionFeature<J>>
 		extends Feature<GlobalFeatures, JavaScriptPart, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private final PositionOptions<?> positionOptions;
 
 	public JQUIPositionFeature(ComponentHierarchyBase positionComponent, PositionOptions positionOptions)

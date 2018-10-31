@@ -32,7 +32,6 @@ public class JQUIButtonIconOptions<J extends JQUIButtonIconOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Specifies the icon for primary

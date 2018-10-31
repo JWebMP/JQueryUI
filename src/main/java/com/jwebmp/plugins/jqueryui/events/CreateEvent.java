@@ -41,7 +41,6 @@ public abstract class CreateEvent
 		implements JQUIAccordionEvents, JQUIAutoCompleteEvents, JQUIButtonEvents, JQUIDraggableEvents, JQUIDialogEvents, JQUIDroppableEvents, JQUIMenuEvents, JQUIProgressBarEvents, JQUIResizableEvents, JQUISelectMenuEvents, JQUISliderEvents, JQUISpinnerEvents, JQUITabsEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public CreateEvent(Component component)
 	{

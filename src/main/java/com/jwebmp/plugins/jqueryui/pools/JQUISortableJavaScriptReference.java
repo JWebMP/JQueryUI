@@ -32,7 +32,7 @@ class JQUISortableJavaScriptReference
 	/**
 	 * First build serial version
 	 */
-	private static final long serialVersionUID = 1L;
+
 
 	/**
 	 *

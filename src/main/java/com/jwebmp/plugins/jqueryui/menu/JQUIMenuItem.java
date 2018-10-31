@@ -30,7 +30,6 @@ public class JQUIMenuItem<J extends JQUIMenuItem<J>>
 		implements JQUIMenuChildren<ListItemChildren, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public JQUIMenuItem(String text)
 	{

@@ -41,7 +41,7 @@ public class JQUIDroppable
 		implements IJQUIDroppable
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private JQUIDroppableFeature<?> feature;
 
 	public JQUIDroppable()

@@ -36,7 +36,6 @@ public class SpinnerIconOptions<J extends SpinnerIconOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>

@@ -34,7 +34,6 @@ class JQueryUIMouseJavaScriptReference
 		extends JavascriptReference
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public JQueryUIMouseJavaScriptReference()
 	{

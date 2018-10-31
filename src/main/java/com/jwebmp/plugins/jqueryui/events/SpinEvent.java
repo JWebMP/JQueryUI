@@ -29,7 +29,6 @@ public abstract class SpinEvent
 		implements JQUISpinnerEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public SpinEvent(Component component)
 	{

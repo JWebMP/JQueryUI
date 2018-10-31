@@ -34,7 +34,7 @@ public class JQUIDraggableFeature<J extends JQUIDraggableFeature<J>>
 		extends Feature<GlobalFeatures, JQUIDraggableOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private JQUIDraggableOptions draggableOptions = new JQUIDraggableOptions();
 
 	/**

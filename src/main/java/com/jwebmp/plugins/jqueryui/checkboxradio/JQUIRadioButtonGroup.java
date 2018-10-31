@@ -31,7 +31,6 @@ public class JQUIRadioButtonGroup
 		extends FieldSet
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private JQUIControlGroupFeature feature;
 
@@ -105,14 +104,14 @@ public class JQUIRadioButtonGroup
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

@@ -33,7 +33,7 @@ public class JQUISortableFeature<J extends JQUISortableFeature<J>>
 		extends Feature<GlobalFeatures, JQUISortableOptions<?>, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The sortable linked component
 	 */

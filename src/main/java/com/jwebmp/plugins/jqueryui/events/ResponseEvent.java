@@ -29,7 +29,6 @@ public abstract class ResponseEvent
 		implements JQUIAutoCompleteEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public ResponseEvent(Component component)
 	{

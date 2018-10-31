@@ -36,7 +36,6 @@ public class JQUIButtonGroup
 		extends Div<IComponentHierarchyBase, NoAttributes, GlobalFeatures, GlobalEvents, JQUIButtonGroup>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private JQUIButtonGroupFeature<?> groupFeature;
 

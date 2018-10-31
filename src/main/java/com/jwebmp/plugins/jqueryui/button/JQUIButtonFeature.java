@@ -37,7 +37,7 @@ public class JQUIButtonFeature<J extends JQUIButtonFeature<J>>
 		extends Feature<GlobalFeatures, JQUIButtonOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The component that we are turning into a button
 	 */

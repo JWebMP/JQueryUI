@@ -31,7 +31,6 @@ public class JQUIAccordionFeature
 		extends Feature<GlobalFeatures, JQUIAccordionOptions, JQUIAccordionFeature>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private final JQUIAccordion<?> accordion;
 

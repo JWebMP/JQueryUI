@@ -29,7 +29,6 @@ public class JQUITabContent<J extends JQUITabContent<J>>
 		implements JQUITabsChildren<IComponentHierarchyBase, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Any tab content

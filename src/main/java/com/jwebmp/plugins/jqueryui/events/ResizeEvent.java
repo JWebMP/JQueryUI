@@ -30,7 +30,6 @@ public abstract class ResizeEvent
 		implements JQUIDialogEvents, JQUIResizableEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public ResizeEvent(Component component)
 	{

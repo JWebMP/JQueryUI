@@ -29,7 +29,6 @@ public abstract class ResizeStopEvent
 		implements JQUIDialogEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public ResizeStopEvent(Component component)
 	{

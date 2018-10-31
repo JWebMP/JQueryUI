@@ -29,7 +29,6 @@ public abstract class CompleteEvent
 		implements JQUIProgressBarEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public CompleteEvent(Component component)
 	{

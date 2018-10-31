@@ -30,7 +30,6 @@ public class JQUISpinnerLabel<J extends JQUISpinnerLabel<J>>
 		implements JQUISpinnerChildren<IComponentHierarchyBase, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A specific label for the spinner

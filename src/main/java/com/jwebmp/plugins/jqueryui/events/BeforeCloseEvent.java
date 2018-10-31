@@ -29,7 +29,6 @@ public abstract class BeforeCloseEvent
 		implements JQUIDialogEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public BeforeCloseEvent(Component component)
 	{

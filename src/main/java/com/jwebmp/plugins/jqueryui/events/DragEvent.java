@@ -30,7 +30,6 @@ public abstract class DragEvent
 		implements JQUIDraggableEvents, JQUIDialogEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public DragEvent(Component component)
 	{

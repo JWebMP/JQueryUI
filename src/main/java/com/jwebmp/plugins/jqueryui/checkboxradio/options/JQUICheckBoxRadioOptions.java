@@ -30,7 +30,7 @@ public class JQUICheckBoxRadioOptions<J extends JQUICheckBoxRadioOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The classes map for the checkbox/radio
 	 */

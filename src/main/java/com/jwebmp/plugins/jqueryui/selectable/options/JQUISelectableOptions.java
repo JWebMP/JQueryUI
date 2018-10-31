@@ -34,7 +34,7 @@ import java.util.List;
 public class JQUISelectableOptions<J extends JQUISelectableOptions<J>>
 		extends JavaScriptPart<J>
 {
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Prevents selecting if you start on elements matching the selector
 	 */
@@ -82,6 +82,19 @@ public class JQUISelectableOptions<J extends JQUISelectableOptions<J>>
 	}
 
 	/**
+	 * Sets the append to string
+	 *
+	 * @param appendTo
+	 */
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setAppendTo(String appendTo)
+	{
+		this.appendTo = appendTo;
+		return (J) this;
+	}
+
+	/**
 	 * Which element the selectable helper should be appended to while dragging.
 	 *
 	 * @param appendTo
@@ -92,19 +105,6 @@ public class JQUISelectableOptions<J extends JQUISelectableOptions<J>>
 	public J setAppendTo(Component appendTo)
 	{
 		this.appendTo = appendTo.getID(true);
-		return (J) this;
-	}
-
-	/**
-	 * Sets the append to string
-	 *
-	 * @param appendTo
-	 */
-	@SuppressWarnings("unchecked")
-	@NotNull
-	public J setAppendTo(String appendTo)
-	{
-		this.appendTo = appendTo;
 		return (J) this;
 	}
 

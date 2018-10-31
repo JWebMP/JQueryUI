@@ -30,7 +30,6 @@ public abstract class BeforeActivateEvent
 		implements JQUIAccordionEvents, JQUITabsEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public BeforeActivateEvent(Component component)
 	{

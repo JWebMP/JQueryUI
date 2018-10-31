@@ -32,7 +32,6 @@ public class JQUIMenuFeature<J extends JQUIMenuFeature<J>>
 		extends Feature<GlobalFeatures, JQUIMenuOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private JQUIMenu<?> menu;
 	/**

@@ -33,7 +33,7 @@ public class JQUISelectMenuFeature<J extends JQUISelectMenuFeature<J>>
 		extends Feature<GlobalFeatures, JQUISelectMenuOptions, J>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The select menu's component
 	 */

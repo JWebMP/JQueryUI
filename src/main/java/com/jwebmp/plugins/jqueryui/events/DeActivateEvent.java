@@ -29,7 +29,6 @@ public abstract class DeActivateEvent
 		implements JQUIDroppableEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public DeActivateEvent(Component component)
 	{

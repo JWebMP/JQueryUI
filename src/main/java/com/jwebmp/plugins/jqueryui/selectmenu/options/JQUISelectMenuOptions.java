@@ -32,7 +32,6 @@ public class JQUISelectMenuOptions<J extends JQUISelectMenuOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Which element to append the menu to. When the value is null, the parents of the select are checked for a class name of ui-front. If

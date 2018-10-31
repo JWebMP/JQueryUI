@@ -34,7 +34,6 @@ public class ThemePackItem
 		extends ListItem
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private String name;
 	private String cssClass;
@@ -84,6 +83,19 @@ public class ThemePackItem
 	}
 
 	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (getName() != null ? getName().hashCode() : 0);
+		result = 31 * result + (getCssClass() != null ? getCssClass().hashCode() : 0);
+		result = 31 * result + (getIconImageLocation() != null ? getIconImageLocation().hashCode() : 0);
+		result = 31 * result + (link != null ? link.hashCode() : 0);
+		result = 31 * result + (image != null ? image.hashCode() : 0);
+		result = 31 * result + (span != null ? span.hashCode() : 0);
+		return result;
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -122,19 +134,6 @@ public class ThemePackItem
 			return false;
 		}
 		return span != null ? span.equals(that.span) : that.span == null;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int result = super.hashCode();
-		result = 31 * result + (getName() != null ? getName().hashCode() : 0);
-		result = 31 * result + (getCssClass() != null ? getCssClass().hashCode() : 0);
-		result = 31 * result + (getIconImageLocation() != null ? getIconImageLocation().hashCode() : 0);
-		result = 31 * result + (link != null ? link.hashCode() : 0);
-		result = 31 * result + (image != null ? image.hashCode() : 0);
-		result = 31 * result + (span != null ? span.hashCode() : 0);
-		return result;
 	}
 
 	/**

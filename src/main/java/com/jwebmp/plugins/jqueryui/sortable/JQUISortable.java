@@ -47,7 +47,7 @@ public class JQUISortable<J extends JQUISortable<J>>
 	/**
 	 * Field serialVersionUID
 	 */
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The sortable feature
 	 */

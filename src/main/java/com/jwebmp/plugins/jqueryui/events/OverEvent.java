@@ -29,7 +29,6 @@ public abstract class OverEvent
 		implements JQUIDroppableEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public OverEvent(Component component)
 	{

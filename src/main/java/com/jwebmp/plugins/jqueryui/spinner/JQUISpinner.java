@@ -56,7 +56,7 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	/**
 	 * Field serialVersionUID
 	 */
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The header text for the spinner
 	 */

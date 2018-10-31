@@ -44,7 +44,7 @@ public class JQUISelectable<J extends JQUISelectable<J>>
 	/**
 	 * Field serialVersionUID
 	 */
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Field feature
 	 */

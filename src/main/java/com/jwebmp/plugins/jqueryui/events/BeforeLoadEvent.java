@@ -30,7 +30,6 @@ public abstract class BeforeLoadEvent
 		implements JQUIDialogEvents, JQUITabsEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public BeforeLoadEvent(Component component)
 	{

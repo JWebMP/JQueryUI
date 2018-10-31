@@ -32,7 +32,6 @@ public class JQUISortableItem<J extends JQUISortableItem<J>>
 		implements JQUISortableChildren<ListItemChildren, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructs a new sortable item with any children available

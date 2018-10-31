@@ -29,7 +29,6 @@ public abstract class SearchEvent
 		implements JQUIAutoCompleteEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public SearchEvent(Component component)
 	{

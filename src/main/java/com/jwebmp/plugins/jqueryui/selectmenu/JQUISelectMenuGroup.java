@@ -29,7 +29,6 @@ public class JQUISelectMenuGroup<J extends JQUISelectMenuGroup<J>>
 		implements JQUISelectMenuChildren<SelectChildren, J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A option group

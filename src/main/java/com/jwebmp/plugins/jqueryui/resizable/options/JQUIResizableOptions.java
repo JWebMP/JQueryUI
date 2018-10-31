@@ -39,7 +39,6 @@ public class JQUIResizableOptions<J extends JQUIResizableOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * One or more elements to resize synchronously with the resizable element.

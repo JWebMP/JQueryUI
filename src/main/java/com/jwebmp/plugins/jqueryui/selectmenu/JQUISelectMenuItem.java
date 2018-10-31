@@ -34,7 +34,7 @@ public class JQUISelectMenuItem<J extends JQUISelectMenuItem<J>>
 		implements JQUISelectMenuChildren<IComponentHierarchyBase, J>, IJQUISelectMenuItem
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private static final String selectedString = "selected";
 
 	/**

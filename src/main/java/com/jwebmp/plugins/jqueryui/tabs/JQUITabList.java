@@ -28,7 +28,6 @@ public class JQUITabList<J extends JQUITabList<J>>
 		implements JQUITabsChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * A list for the tabs display

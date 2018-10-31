@@ -33,7 +33,6 @@ public abstract class FocusEvent
 		implements JQUIAutoCompleteEvents, JQUIDraggableEvents, JQUIDialogEvents, JQUIMenuEvents, JQUISelectMenuEvents
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public FocusEvent(Component component)
 	{

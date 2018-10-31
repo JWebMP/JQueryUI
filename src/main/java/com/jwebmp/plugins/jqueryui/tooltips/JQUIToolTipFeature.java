@@ -39,7 +39,7 @@ public class JQUIToolTipFeature
 		extends Feature<GlobalFeatures, JQUITooltipOptions, JQUIToolTipFeature>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The options for this component
 	 */

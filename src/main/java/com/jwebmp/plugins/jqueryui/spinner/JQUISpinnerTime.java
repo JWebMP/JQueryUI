@@ -26,7 +26,6 @@ public final class JQUISpinnerTime<J extends JQUISpinnerTime<J>>
 		extends JQUISpinner<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The spinner feature
@@ -65,14 +64,14 @@ public final class JQUISpinnerTime<J extends JQUISpinnerTime<J>>
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

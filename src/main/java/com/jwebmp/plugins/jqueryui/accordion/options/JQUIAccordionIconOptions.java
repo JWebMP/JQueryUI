@@ -30,7 +30,6 @@ public class JQUIAccordionIconOptions<J extends JQUIAccordionIconOptions<J>>
 		extends JavaScriptPart<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private String header;
 	private String activeHeader;
