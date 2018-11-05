@@ -19,8 +19,8 @@ package com.jwebmp.plugins.jqueryui.droppable.options;
 import com.jwebmp.core.Component;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.core.utilities.StaticStrings;
+import com.jwebmp.plugins.jqueryui.basethemes.JQUIThemeBlocks;
 import com.jwebmp.plugins.jqueryui.droppable.enumerations.JQUIDroppableTolerances;
-import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;
 
 import javax.validation.constraints.NotNull;
 

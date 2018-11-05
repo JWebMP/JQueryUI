@@ -18,8 +18,8 @@ package com.jwebmp.plugins.jqueryui.sortable;
 
 import com.jwebmp.core.base.html.ListItem;
 import com.jwebmp.core.base.html.interfaces.children.ListItemChildren;
+import com.jwebmp.plugins.jqueryui.basethemes.JQUIThemeBlocks;
 import com.jwebmp.plugins.jqueryui.sortable.interfaces.JQUISortableChildren;
-import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;
 
 import javax.validation.constraints.NotNull;
 

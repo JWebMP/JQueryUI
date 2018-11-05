@@ -25,7 +25,7 @@ import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteChild
 import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteEvents;
 import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteFeatures;
 import com.jwebmp.plugins.jqueryui.autocomplete.options.JQUIAutoCompleteOptions;
-import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;
+import com.jwebmp.plugins.jqueryui.basethemes.JQUIThemeBlocks;
 
 /**
  * Description: Autocomplete enables users to quickly find and select from a pre-populated list of values as they type, leveraging

@@ -18,7 +18,7 @@ package com.jwebmp.plugins.jqueryui.tabs;
 
 import com.jwebmp.core.base.html.Link;
 import com.jwebmp.core.base.html.ListItem;
-import com.jwebmp.plugins.jqueryui.themes.JQUIThemeBlocks;
+import com.jwebmp.plugins.jqueryui.basethemes.JQUIThemeBlocks;
 
 import javax.validation.constraints.NotNull;
 

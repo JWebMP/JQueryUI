@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.jqueryui.themes;
+package com.jwebmp.plugins.jqueryui.basethemes;
 
 import com.jwebmp.core.base.html.Image;
 import com.jwebmp.core.base.html.Link;
