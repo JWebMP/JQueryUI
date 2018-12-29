@@ -37,29 +37,4 @@ public abstract class ActivateEvent
 		super(component);
 	}
 
-	/**
-	 * A hash code
-	 *
-	 * @return
-	 */
-	@Override
-	public int hashCode()
-	{
-		int result = super.hashCode();
-		result = 31 * result + getDirective().hashCode();
-		return result;
-	}
-
-	/**
-	 * This object is never equal to another as an event
-	 *
-	 * @param obj
-	 *
-	 * @return
-	 */
-	@Override
-	public boolean equals(Object obj)
-	{
-		return false;
-	}
 }

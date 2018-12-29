@@ -32,8 +32,6 @@ public abstract class ChangeEvent
 		extends ChangeAdapter
 		implements JQUIAutoCompleteEvents, JQUIProgressBarEvents, JQUISelectMenuEvents, JQUISliderEvents, JQUISpinnerEvents
 {
-
-
 	public ChangeEvent(Component component)
 	{
 		super(component);

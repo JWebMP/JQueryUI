@@ -15,9 +15,9 @@ class JQUIControlGroupTest
 	public void test()
 	{
 		JQUIControlGroup<?> group = new JQUIControlGroup<>();
-		group.add(new InputTextType().bind("bind.me"));
-		group.add(new InputPasswordType().bind("bind.me"));
-		group.add(new InputEmailType().bind("bind.me"));
+		group.add(new InputTextType<>().bind("bind.me"));
+		group.add(new InputPasswordType<>().bind("bind.me"));
+		group.add(new InputEmailType<>().bind("bind.me"));
 		group.add(new Select<>().bind("bind.me")
 		                        .add(new Option<>("Option1"))
 		                        .add(new Option("Option 2"))
