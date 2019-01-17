@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Marc Magon
+ * Copyright (C) 2017 GedMarc
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ import java.util.List;
  * <p>
  * The underlying HTML markup is a series of headers (H3 tags) and content divs so the content is usable without JavaScript.
  *
- * @author Marc Magon
+ * @author GedMarc
  * @since 2013/01/15
  */
 @ComponentInformation(name = "JQuery UI Accordion",

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Marc Magon
+ * Copyright (C) 2017 GedMarc
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ import javax.validation.constraints.NotNull;
  * The options for the tab component
  * <p>
  *
- * @author Marc Magon
+ * @author GedMarc
  * @since 2014/04/27
  */
 public class JQUITabOptions<J extends JQUITabOptions<J>>
