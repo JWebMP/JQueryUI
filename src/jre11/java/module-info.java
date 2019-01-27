@@ -1,8 +1,3 @@
-import com.jwebmp.core.services.IPageConfigurator;
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions;
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions;
-import com.jwebmp.plugins.jqueryui.JQUIPageConfigurator;
-
 module com.jwebmp.plugins.jqueryui {
 
 	exports com.jwebmp.plugins.jqueryui;
@@ -87,9 +82,9 @@ module com.jwebmp.plugins.jqueryui {
 	requires com.jwebmp.guicedservlets;
 	requires com.jwebmp.guicedinjection;
 
-	provides IPageConfigurator with JQUIPageConfigurator;
-	provides IGuiceScanModuleExclusions with com.jwebmp.plugins.jqueryui.implementations.JQueryUIExclusionsModule;
-	provides IGuiceScanJarExclusions with com.jwebmp.plugins.jqueryui.implementations.JQueryUIExclusionsModule;
+	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.jqueryui.JQUIPageConfigurator;
+	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.jqueryui.implementations.JQueryUIExclusionsModule;
+	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions with com.jwebmp.plugins.jqueryui.implementations.JQueryUIExclusionsModule;
 
 	opens com.jwebmp.plugins.jqueryui to com.fasterxml.jackson.databind, com.jwebmp.core;
 	opens com.jwebmp.plugins.jqueryui.events to com.fasterxml.jackson.databind, com.jwebmp.core;
