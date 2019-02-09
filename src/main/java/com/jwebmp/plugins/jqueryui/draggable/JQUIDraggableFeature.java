@@ -33,9 +33,19 @@ import com.jwebmp.plugins.jqueryui.draggable.options.JQUIDraggableOptions;
 public class JQUIDraggableFeature<J extends JQUIDraggableFeature<J>>
 		extends Feature<GlobalFeatures, JQUIDraggableOptions, J>
 {
-
-
 	private JQUIDraggableOptions draggableOptions = new JQUIDraggableOptions();
+
+	/**
+	 * Add the draggable to a component
+	 * <p>
+	 * Used to group sets of draggable and droppable items, in addition to droppable's accept option.
+	 * A draggable with the same scope value as a droppable will be accepted by the droppable.
+	 * <p>
+	 */
+	public JQUIDraggableFeature()
+	{
+		//No config required
+	}
 
 	/**
 	 * Add the draggable to a component

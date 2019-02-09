@@ -154,5 +154,6 @@ module com.jwebmp.plugins.jqueryui {
 	opens com.jwebmp.plugins.jqueryui.tooltips to com.fasterxml.jackson.databind, com.jwebmp.core;
 	opens com.jwebmp.plugins.jqueryui.tooltips.interfaces to com.fasterxml.jackson.databind, com.jwebmp.core;
 	opens com.jwebmp.plugins.jqueryui.tooltips.options to com.fasterxml.jackson.databind, com.jwebmp.core;
+	exports com.jwebmp.plugins.jqueryui.checkboxradio;
 }
 
