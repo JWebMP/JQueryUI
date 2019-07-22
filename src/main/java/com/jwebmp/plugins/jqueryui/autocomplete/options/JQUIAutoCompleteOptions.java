@@ -19,7 +19,7 @@ package com.jwebmp.plugins.jqueryui.autocomplete.options;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRawValue;
-import com.jwebmp.core.annotations.JWebMPSiteBinder;
+import com.jwebmp.core.implementations.JWebMPSiteBinder;
 import com.jwebmp.core.base.ComponentHierarchyBase;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.autocomplete.AutoCompleteEntries;
