@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 class JQUIDialogTest
 {
 
+	@SuppressWarnings("unchecked")
 	@Test
 	void getOptions()
 	{
@@ -18,6 +19,6 @@ class JQUIDialogTest
 		      .setResizable(true)
 		      .setShow(true);
 
-		dialog.add(new Div<>().add("This can be anything"));
+		dialog.add(new  Div<>().add("This can be anything"));
 	}
 }

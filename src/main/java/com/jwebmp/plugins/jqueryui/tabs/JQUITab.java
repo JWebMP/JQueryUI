@@ -52,7 +52,7 @@ public class JQUITab<J extends JQUITab<J>>
 	 * @param tabHeader
 	 * @param tabDisplayComponent
 	 */
-	public JQUITab(ListItem tabHeader, JQUITabContent tabDisplayComponent)
+	public JQUITab(ListItem<?> tabHeader, JQUITabContent<?> tabDisplayComponent)
 	{
 		if (tabDisplayComponent != null)
 		{
