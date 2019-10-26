@@ -72,19 +72,19 @@ module com.jwebmp.plugins.jqueryui {
 	exports com.jwebmp.plugins.jqueryui.pools;
 
 	requires com.jwebmp.core;
-	requires com.jwebmp.logmaster;
+	requires com.guicedee.logmaster;
 	requires com.fasterxml.jackson.annotation;
 
 	requires java.validation;
 	requires java.logging;
 	requires com.jwebmp.plugins.easingeffects;
 	requires com.jwebmp.plugins.globalize.cultures;
-	requires com.jwebmp.guicedservlets;
-	requires com.jwebmp.guicedinjection;
+	requires com.guicedee.guicedservlets;
+	requires com.guicedee.guicedinjection;
 
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.jqueryui.JQUIPageConfigurator;
-	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.jqueryui.implementations.JQueryUIExclusionsModule;
-	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions with com.jwebmp.plugins.jqueryui.implementations.JQueryUIExclusionsModule;
+	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.jqueryui.implementations.JQueryUIExclusionsModule;
+	provides com.guicedee.guicedinjection.interfaces.IGuiceScanJarExclusions with com.jwebmp.plugins.jqueryui.implementations.JQueryUIExclusionsModule;
 
 	opens com.jwebmp.plugins.jqueryui to com.fasterxml.jackson.databind, com.jwebmp.core;
 	opens com.jwebmp.plugins.jqueryui.events to com.fasterxml.jackson.databind, com.jwebmp.core;
