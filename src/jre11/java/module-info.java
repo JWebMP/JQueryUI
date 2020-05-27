@@ -73,7 +73,6 @@ module com.jwebmp.plugins.jqueryui {
 
 	requires com.jwebmp.core;
 	requires com.guicedee.logmaster;
-	requires com.fasterxml.jackson.annotation;
 
 	requires java.validation;
 	requires java.logging;
