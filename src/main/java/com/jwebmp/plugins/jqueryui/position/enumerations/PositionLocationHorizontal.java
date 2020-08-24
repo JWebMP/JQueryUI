@@ -16,9 +16,10 @@
  */
 package com.jwebmp.plugins.jqueryui.position.enumerations;
 
-import com.jwebmp.core.utilities.StaticStrings;
+//import com.guicedee.guicedinjection.json.StaticStrings;
+import com.guicedee.guicedinjection.json.StaticStrings;
 
-import static com.jwebmp.core.utilities.StaticStrings.*;
+import static com.guicedee.guicedinjection.json.StaticStrings.*;
 
 /**
  * Positions for the location horizontal

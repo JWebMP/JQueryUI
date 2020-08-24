@@ -22,7 +22,7 @@ import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
 
-import static com.jwebmp.core.utilities.StaticStrings.*;
+import static com.guicedee.guicedinjection.json.StaticStrings.*;
 
 /**
  * @author MMagon

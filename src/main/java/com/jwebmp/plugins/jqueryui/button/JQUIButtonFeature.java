@@ -24,7 +24,8 @@ import com.jwebmp.plugins.jqueryui.pools.JQUIReferencePool;
 
 import javax.validation.constraints.NotNull;
 
-import static com.jwebmp.core.utilities.StaticStrings.*;
+import static com.guicedee.guicedinjection.json.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
+
 
 /**
  * The JavaScript implementation of the JWButton

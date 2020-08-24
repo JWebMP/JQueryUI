@@ -18,7 +18,7 @@ package com.jwebmp.plugins.jqueryui.menu;
 
 import com.jwebmp.core.base.html.ListItem;
 import com.jwebmp.core.base.html.interfaces.children.ListItemChildren;
-import com.jwebmp.core.utilities.StaticStrings;
+import com.guicedee.guicedinjection.json.StaticStrings;
 import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuChildren;
 
 /**

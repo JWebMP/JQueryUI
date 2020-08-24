@@ -25,7 +25,7 @@ import com.jwebmp.plugins.jqueryui.position.enumerations.PositionLocationVertica
 
 import javax.validation.constraints.NotNull;
 
-import static com.jwebmp.core.utilities.StaticStrings.*;
+import static com.guicedee.guicedinjection.json.StaticStrings.*;
 
 /**
  * This defines the JavaScript part for JQuery UI for Position

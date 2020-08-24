@@ -23,7 +23,7 @@ import com.jwebmp.plugins.jqueryui.button.options.JQUIButtonGroupOptions;
 
 import javax.validation.constraints.NotNull;
 
-import static com.jwebmp.core.utilities.StaticStrings.*;
+import static com.guicedee.guicedinjection.json.StaticStrings.*;
 
 /**
  * @author GedMarc
