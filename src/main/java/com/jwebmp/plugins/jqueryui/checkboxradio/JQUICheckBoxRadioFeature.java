@@ -21,7 +21,7 @@ import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOptions;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 import static com.guicedee.guicedinjection.json.StaticStrings.*;
 

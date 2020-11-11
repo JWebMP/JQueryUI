@@ -23,7 +23,7 @@ import com.jwebmp.core.utilities.GUIDGenerator;
 import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.IJQUISelectMenuItem;
 import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuChildren;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * @author GedMarc

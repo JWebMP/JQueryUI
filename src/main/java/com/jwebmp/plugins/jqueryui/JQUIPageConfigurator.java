@@ -22,7 +22,7 @@ import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
 import com.jwebmp.core.services.IPageConfigurator;
 import com.jwebmp.plugins.jqueryui.pools.JQueryUIReferencePool;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * Checks if a UI component is used on the page and adds

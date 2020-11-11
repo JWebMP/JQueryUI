@@ -21,7 +21,7 @@ import com.jwebmp.core.htmlbuilder.css.displays.Cursors;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.draggable.enumerations.*;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 

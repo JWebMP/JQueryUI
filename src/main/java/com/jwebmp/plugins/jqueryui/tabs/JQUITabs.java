@@ -26,7 +26,7 @@ import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsEvents;
 import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsFeatures;
 import com.jwebmp.plugins.jqueryui.tabs.options.JQUITabOptions;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 
 /**

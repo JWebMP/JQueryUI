@@ -26,7 +26,7 @@ import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionEvents;
 import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionFeatures;
 import com.jwebmp.plugins.jqueryui.accordion.options.JQUIAccordionOptions;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 

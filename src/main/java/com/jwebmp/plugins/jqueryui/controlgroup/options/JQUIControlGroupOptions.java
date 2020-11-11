@@ -19,7 +19,7 @@ package com.jwebmp.plugins.jqueryui.controlgroup.options;
 import com.jwebmp.core.base.servlets.enumarations.Orientation;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 

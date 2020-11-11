@@ -26,7 +26,7 @@ import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerEvents;
 import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerFeatures;
 import com.jwebmp.plugins.jqueryui.spinner.options.JQUISpinnerOptions;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * @author GedMarc

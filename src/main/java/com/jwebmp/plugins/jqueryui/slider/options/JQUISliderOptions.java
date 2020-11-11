@@ -20,7 +20,7 @@ import com.jwebmp.core.base.servlets.enumarations.Orientation;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.slider.enumerations.SliderRanges;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 

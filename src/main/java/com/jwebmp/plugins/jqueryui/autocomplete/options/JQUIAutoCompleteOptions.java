@@ -27,7 +27,7 @@ import com.jwebmp.plugins.jqueryui.autocomplete.AutoCompleteEntrySet;
 import com.jwebmp.plugins.jqueryui.autocomplete.JQUIAutoComplete;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 

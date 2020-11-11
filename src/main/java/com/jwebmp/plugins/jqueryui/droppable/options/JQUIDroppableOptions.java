@@ -22,7 +22,7 @@ import com.guicedee.guicedinjection.json.StaticStrings;
 import com.jwebmp.plugins.jqueryui.basethemes.JQUIThemeBlocks;
 import com.jwebmp.plugins.jqueryui.droppable.enumerations.JQUIDroppableTolerances;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * @author GedMarc

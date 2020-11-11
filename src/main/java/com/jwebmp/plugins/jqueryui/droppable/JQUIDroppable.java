@@ -25,7 +25,7 @@ import com.jwebmp.plugins.jqueryui.droppable.interfaces.JQUIDroppableEvents;
 import com.jwebmp.plugins.jqueryui.droppable.interfaces.JQUIDroppableFeatures;
 import com.jwebmp.plugins.jqueryui.droppable.options.JQUIDroppableOptions;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * @author GedMarc

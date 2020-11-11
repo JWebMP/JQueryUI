@@ -22,7 +22,7 @@ import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.jqueryui.button.options.JQUIButtonOptions;
 import com.jwebmp.plugins.jqueryui.pools.JQUIReferencePool;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 import static com.guicedee.guicedinjection.json.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 

@@ -18,7 +18,7 @@ package com.jwebmp.plugins.jqueryui.button.options;
 
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * The button icon options, This has been deprecated from version 1-11

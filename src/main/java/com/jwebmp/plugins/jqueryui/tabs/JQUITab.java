@@ -20,7 +20,7 @@ import com.jwebmp.core.base.html.Link;
 import com.jwebmp.core.base.html.ListItem;
 import com.jwebmp.plugins.jqueryui.basethemes.JQUIThemeBlocks;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 import static com.guicedee.guicedinjection.json.StaticStrings.*;
 

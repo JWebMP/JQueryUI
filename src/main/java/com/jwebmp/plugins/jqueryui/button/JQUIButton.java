@@ -28,7 +28,7 @@ import com.jwebmp.plugins.jqueryui.button.interfaces.JQUIButtonEvents;
 import com.jwebmp.plugins.jqueryui.button.interfaces.JQUIButtonFeatures;
 import com.jwebmp.plugins.jqueryui.button.options.JQUIButtonOptions;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * This class implements the JQuery UI implementation of a normal button

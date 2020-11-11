@@ -24,7 +24,7 @@ import com.jwebmp.plugins.jqueryui.draggable.enumerations.Axis;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
 import com.jwebmp.plugins.jqueryui.sortable.enumerations.SortableHelpers;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * The jQuery UI Sortable plugin makes selected elements sortable by dragging with the mouse.

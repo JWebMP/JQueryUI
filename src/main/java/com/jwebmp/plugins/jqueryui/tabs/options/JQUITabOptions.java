@@ -21,7 +21,7 @@ import com.jwebmp.core.htmlbuilder.javascript.events.enumerations.EventTypes;
 import com.jwebmp.plugins.easingeffects.JQEasingAnimationEffectsPart;
 import com.jwebmp.plugins.jqueryui.accordion.enumerations.JQUIAccordionHeightStyle;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * The options for the tab component

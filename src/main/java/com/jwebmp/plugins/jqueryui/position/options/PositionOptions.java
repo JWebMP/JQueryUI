@@ -23,7 +23,7 @@ import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.position.enumerations.PositionLocationHorizontal;
 import com.jwebmp.plugins.jqueryui.position.enumerations.PositionLocationVertical;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 import static com.guicedee.guicedinjection.json.StaticStrings.*;
 

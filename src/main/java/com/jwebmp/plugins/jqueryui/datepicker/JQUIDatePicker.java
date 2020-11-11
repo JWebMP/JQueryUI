@@ -25,7 +25,7 @@ import com.jwebmp.plugins.jqueryui.datepicker.interfaces.JQUIDatePickerEvents;
 import com.jwebmp.plugins.jqueryui.datepicker.interfaces.JQUIDatePickerFeatures;
 import com.jwebmp.plugins.jqueryui.datepicker.options.JQUIDatePickerOptions;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.util.Date;
 
 /**

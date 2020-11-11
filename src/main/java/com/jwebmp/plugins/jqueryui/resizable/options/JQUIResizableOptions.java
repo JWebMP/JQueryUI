@@ -23,7 +23,7 @@ import com.jwebmp.core.generics.CompassPoints;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.easingeffects.JQEasingEffects;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 

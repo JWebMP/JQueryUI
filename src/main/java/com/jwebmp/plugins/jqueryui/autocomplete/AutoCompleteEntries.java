@@ -18,7 +18,7 @@ package com.jwebmp.plugins.jqueryui.autocomplete;
 
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * Specifies a single entry for a JQUI Auto Complete Moved from inner class to object

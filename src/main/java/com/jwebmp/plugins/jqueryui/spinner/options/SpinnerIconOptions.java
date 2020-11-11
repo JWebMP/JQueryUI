@@ -18,7 +18,7 @@ package com.jwebmp.plugins.jqueryui.spinner.options;
 
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * Icons to use for buttons, matching an icon provided by the jQuery UI CSS Framework.

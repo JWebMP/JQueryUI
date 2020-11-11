@@ -21,7 +21,7 @@ import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.easingeffects.JQEasingAnimationEffectsPart;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * All the options for the tooltip library
