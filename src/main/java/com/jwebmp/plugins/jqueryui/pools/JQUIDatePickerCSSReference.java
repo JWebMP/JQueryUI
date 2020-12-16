@@ -35,6 +35,6 @@ class JQUIDatePickerCSSReference
 	 */
 	public JQUIDatePickerCSSReference()
 	{
-		super("JWDatePickerCSSRef", 1.114, "bower_components/jquery-ui/themes/base/datepicker.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css");
+		super("JWDatePickerCSSRef", 1.121, "bower_components/jquery-ui/themes/base/datepicker.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css");
 	}
 }

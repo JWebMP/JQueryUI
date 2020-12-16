@@ -20,7 +20,9 @@ import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.tooltips.options.JQUITooltipOptions;
 
@@ -36,14 +38,12 @@ import com.jwebmp.plugins.jqueryui.tooltips.options.JQUITooltipOptions;
 		url = "http://jqueryui.com/tooltip/",
 		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIToolTipFeature
-		extends Feature<GlobalFeatures, JQUITooltipOptions, JQUIToolTipFeature>
+		extends Feature<GlobalFeatures, JQUITooltipOptions<?>, JQUIToolTipFeature>
 {
-
-
 	/**
 	 * The options for this component
 	 */
-	private JQUITooltipOptions options;
+	private JQUITooltipOptions<?> options;
 
 	/**
 	 * Constructs a new Tooltip ComponentFeatureBase for a component that uses the Title field as the tooltip
@@ -51,7 +51,7 @@ public class JQUIToolTipFeature
 	 *
 	 * @param forComponent
 	 */
-	public JQUIToolTipFeature(Component forComponent)
+	public JQUIToolTipFeature(IComponentHierarchyBase<?,?> forComponent)
 	{
 		this(forComponent, (String) null);
 	}
@@ -63,13 +63,13 @@ public class JQUIToolTipFeature
 	 * @param forComponent
 	 * @param tooltipText
 	 */
-	public JQUIToolTipFeature(Component forComponent, String tooltipText)
+	public JQUIToolTipFeature(IComponentHierarchyBase<?,?> forComponent, String tooltipText)
 	{
 		super("JWTooltip");
 		setComponent(forComponent);
 		if (tooltipText != null)
 		{
-			getComponent().addAttribute(GlobalAttributes.Title, tooltipText);
+			getComponent().asAttributeBase().addAttribute(GlobalAttributes.Title, tooltipText);
 		}
 	}
 
@@ -80,11 +80,11 @@ public class JQUIToolTipFeature
 	 * @param forComponent
 	 * @param divToDisplayForComponent
 	 */
-	public JQUIToolTipFeature(Component forComponent, Div divToDisplayForComponent)
+	public JQUIToolTipFeature(IComponentHierarchyBase<GlobalChildren,?> forComponent, IComponentHierarchyBase<?,?> divToDisplayForComponent)
 	{
 		super("JWTooltip");
 		setComponent(forComponent);
-		getComponent().add(divToDisplayForComponent);
+		forComponent.add(divToDisplayForComponent);
 	}
 
 	@Override
@@ -106,11 +106,11 @@ public class JQUIToolTipFeature
 	 * @return
 	 */
 	@Override
-	public JQUITooltipOptions getOptions()
+	public JQUITooltipOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUITooltipOptions();
+			options = new JQUITooltipOptions<>();
 		}
 		return options;
 	}
@@ -118,7 +118,7 @@ public class JQUIToolTipFeature
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		String requiredString = getComponent().getJQueryID() + "tooltip(";
+		String requiredString = getComponent().asBase().getJQueryID() + "tooltip(";
 		requiredString += getOptions().toString();
 		requiredString += ");" + getNewLine();
 

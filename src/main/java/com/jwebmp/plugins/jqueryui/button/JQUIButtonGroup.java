@@ -18,6 +18,7 @@ package com.jwebmp.plugins.jqueryui.button;
 
 import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.attributes.NoAttributes;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
@@ -33,7 +34,7 @@ import jakarta.validation.constraints.NotNull;
  * @since Mar 8, 2015
  */
 public class JQUIButtonGroup
-		extends Div<IComponentHierarchyBase, NoAttributes, GlobalFeatures, GlobalEvents, JQUIButtonGroup>
+		extends Div<GlobalChildren, NoAttributes, GlobalFeatures, GlobalEvents, JQUIButtonGroup>
 {
 
 
@@ -70,7 +71,7 @@ public class JQUIButtonGroup
 	 * @return
 	 */
 	@Override
-	public JQUIButtonGroupOptions getOptions()
+	public JQUIButtonGroupOptions<?> getOptions()
 	{
 		return getGroupFeature().getOptions();
 	}

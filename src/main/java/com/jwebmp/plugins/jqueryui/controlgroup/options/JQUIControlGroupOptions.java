@@ -30,8 +30,6 @@ import java.util.Map;
 public class JQUIControlGroupOptions<J extends JQUIControlGroupOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * A map of the classes
 	 */

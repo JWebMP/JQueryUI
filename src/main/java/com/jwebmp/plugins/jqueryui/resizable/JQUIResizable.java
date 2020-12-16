@@ -39,11 +39,6 @@ public class JQUIResizable<J extends JQUIResizable<J>>
 		extends Div<JQUIResizableChildren, NoAttributes, JQUIResizableFeatures, JQUIResizableEvents, J>
 		implements IJQUIResizable
 {
-
-	/**
-	 * Field serialVersionUID
-	 */
-
 	/**
 	 * The resizable feature
 	 */
@@ -75,7 +70,7 @@ public class JQUIResizable<J extends JQUIResizable<J>>
 	 *
 	 * @return
 	 */
-	public JQUIResizableFeature getFeature()
+	public JQUIResizableFeature<?> getFeature()
 	{
 		if (feature == null)
 		{

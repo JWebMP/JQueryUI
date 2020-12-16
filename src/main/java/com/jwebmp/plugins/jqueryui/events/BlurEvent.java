@@ -25,7 +25,7 @@ import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuEvents;
  * @since 27 Feb 2017
  */
 public abstract class BlurEvent
-		extends BlurAdapter
+		extends BlurAdapter<BlurEvent>
 		implements JQUIMenuEvents
 {
 

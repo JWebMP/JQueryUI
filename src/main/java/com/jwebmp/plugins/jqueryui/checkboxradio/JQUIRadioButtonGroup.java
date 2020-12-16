@@ -27,12 +27,10 @@ import com.jwebmp.plugins.jqueryui.controlgroup.JQUIControlGroupFeature;
  * 		<p>
  * @since Mar 8, 2015
  */
-public class JQUIRadioButtonGroup
-		extends FieldSet
+public class JQUIRadioButtonGroup<J extends JQUIRadioButtonGroup<J>>
+		extends FieldSet<J>
 {
-
-
-	private JQUIControlGroupFeature feature;
+	private JQUIControlGroupFeature<?> feature;
 
 	private String legendTitle;
 
@@ -50,11 +48,11 @@ public class JQUIRadioButtonGroup
 	 *
 	 * @return
 	 */
-	public final JQUIControlGroupFeature getFeature()
+	public final JQUIControlGroupFeature<?> getFeature()
 	{
 		if (feature == null)
 		{
-			feature = new JQUIControlGroupFeature(this);
+			feature = new JQUIControlGroupFeature<>(this);
 		}
 		return feature;
 	}
@@ -68,10 +66,11 @@ public class JQUIRadioButtonGroup
 	 *
 	 * @return
 	 */
-	public JQUIRadioButtonGroup addRadioButton(JQUIRadioButton checkBox)
+	@SuppressWarnings("unchecked")
+	public J addRadioButton(JQUIRadioButton<?> checkBox)
 	{
 		add(checkBox);
-		return this;
+		return (J)this;
 	}
 
 	public String getLegendTitle()
@@ -79,10 +78,11 @@ public class JQUIRadioButtonGroup
 		return legendTitle;
 	}
 
-	public JQUIRadioButtonGroup setLegendTitle(String legendTitle)
+	@SuppressWarnings("unchecked")
+	public J setLegendTitle(String legendTitle)
 	{
 		this.legendTitle = legendTitle;
-		return this;
+		return (J)this;
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class JQUIRadioButtonGroup
 	@Override
 	protected StringBuilder renderBeforeChildren()
 	{
-		Legend leg = new Legend();
+		Legend<?> leg = new Legend<>();
 		leg.setText(legendTitle);
 		leg.setTiny(true);
 		return new StringBuilder().append(getCurrentTabIndents())

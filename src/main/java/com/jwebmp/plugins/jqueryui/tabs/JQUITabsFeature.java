@@ -31,10 +31,8 @@ import static com.guicedee.guicedinjection.json.StaticStrings.*;
  * @since 29 Mar 2013
  */
 public class JQUITabsFeature<J extends JQUITabsFeature<J>>
-		extends Feature<GlobalFeatures, JQUITabOptions, J>
+		extends Feature<GlobalFeatures, JQUITabOptions<?>, J>
 {
-
-
 	/**
 	 * The actual tab
 	 */

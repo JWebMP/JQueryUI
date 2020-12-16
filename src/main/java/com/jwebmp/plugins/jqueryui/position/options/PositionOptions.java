@@ -16,16 +16,15 @@
  */
 package com.jwebmp.plugins.jqueryui.position.options;
 
-import com.jwebmp.core.Component;
-import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.position.enumerations.PositionLocationHorizontal;
 import com.jwebmp.plugins.jqueryui.position.enumerations.PositionLocationVertical;
-
 import jakarta.validation.constraints.NotNull;
 
-import static com.guicedee.guicedinjection.json.StaticStrings.*;
+import static com.guicedee.guicedinjection.json.StaticStrings.STRING_EMPTY;
+import static com.guicedee.guicedinjection.json.StaticStrings.STRING_SPACE;
 
 /**
  * This defines the JavaScript part for JQuery UI for Position
@@ -41,8 +40,6 @@ import static com.guicedee.guicedinjection.json.StaticStrings.*;
 public class PositionOptions<J extends PositionOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * My position of x
 	 */
@@ -95,13 +92,13 @@ public class PositionOptions<J extends PositionOptions<J>>
 	 * @param of
 	 * 		Of Which Component
 	 */
-	public PositionOptions(PositionLocationHorizontal myX, PositionLocationVertical myY, PositionLocationHorizontal atX, PositionLocationVertical atY, ComponentHierarchyBase of)
+	public PositionOptions(PositionLocationHorizontal myX, PositionLocationVertical myY, PositionLocationHorizontal atX, PositionLocationVertical atY, IComponentHierarchyBase<?,?> of)
 	{
 		this.myY = myY;
 		this.myX = myX;
 		this.atX = atX;
 		this.atY = atY;
-		this.of = of.getID(true);
+		this.of = of.asBase().getID(true);
 	}
 
 	/**
@@ -136,11 +133,11 @@ public class PositionOptions<J extends PositionOptions<J>>
 	 * @param atX
 	 * @param of
 	 */
-	public PositionOptions(PositionLocationHorizontal myX, PositionLocationHorizontal atX, Component of)
+	public PositionOptions(PositionLocationHorizontal myX, PositionLocationHorizontal atX, IComponentHierarchyBase<?,?> of)
 	{
 		this.myX = myX;
 		this.atX = atX;
-		this.of = of.getID(true);
+		this.of = of.asBase().getID(true);
 	}
 
 	/**
@@ -210,9 +207,9 @@ public class PositionOptions<J extends PositionOptions<J>>
 	 */
 	@NotNull
 	@SuppressWarnings("unchecked")
-	public J setOf(Component comp)
+	public J setOf(IComponentHierarchyBase<?,?> comp)
 	{
-		of = comp.getID(true);
+		of = comp.asBase().getID(true);
 		return (J) this;
 	}
 

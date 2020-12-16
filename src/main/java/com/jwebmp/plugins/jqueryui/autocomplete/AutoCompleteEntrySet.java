@@ -47,7 +47,7 @@ public class AutoCompleteEntrySet<J extends AutoCompleteEntries<J>>
 	 * item. If just one property is specified, it will be used for
 	 * both, e.g., if you provide only value properties, the value will also be used as the label.
 	 */
-	private Set<AutoCompleteEntries> source;
+	private Set<AutoCompleteEntries<?>> source;
 
 	/**
 	 * Constructs a default set
@@ -72,7 +72,7 @@ public class AutoCompleteEntrySet<J extends AutoCompleteEntries<J>>
 	@JsonRawValue
 	@JsonValue
 	@NotNull
-	public Set<AutoCompleteEntries> getSource()
+	public Set<AutoCompleteEntries<?>> getSource()
 	{
 		if (source == null)
 		{

@@ -25,7 +25,7 @@ import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteEvent
  * @since 27 Feb 2017
  */
 public abstract class SearchEvent
-		extends SearchAdapter
+		extends SearchAdapter<SearchEvent>
 		implements JQUIAutoCompleteEvents
 {
 

@@ -29,7 +29,7 @@ import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerEvents;
  * @since 27 Feb 2017
  */
 public abstract class ChangeEvent
-		extends ChangeAdapter
+		extends ChangeAdapter<ChangeEvent>
 		implements JQUIAutoCompleteEvents, JQUIProgressBarEvents, JQUISelectMenuEvents, JQUISliderEvents, JQUISpinnerEvents
 {
 	public ChangeEvent(Component component)

@@ -50,8 +50,6 @@ public class JQUISelectMenu<J extends JQUISelectMenu<J>>
 		extends Div<JQUISelectMenuChildren, NoAttributes, JQUISelectMenuFeatures, JQUISelectMenuEvents, J>
 		implements IJQUISelectMenu
 {
-
-
 	/**
 	 * The select menu feature
 	 */

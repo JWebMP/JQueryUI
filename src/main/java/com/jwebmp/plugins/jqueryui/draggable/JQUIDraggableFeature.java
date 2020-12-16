@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.jqueryui.draggable;
 
-import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.jqueryui.draggable.options.JQUIDraggableOptions;
 
 /**
@@ -31,9 +31,9 @@ import com.jwebmp.plugins.jqueryui.draggable.options.JQUIDraggableOptions;
  * @since 2014/04/13
  */
 public class JQUIDraggableFeature<J extends JQUIDraggableFeature<J>>
-		extends Feature<GlobalFeatures, JQUIDraggableOptions, J>
+		extends Feature<GlobalFeatures, JQUIDraggableOptions<?>, J>
 {
-	private JQUIDraggableOptions draggableOptions = new JQUIDraggableOptions();
+	private JQUIDraggableOptions<?> draggableOptions = new JQUIDraggableOptions<>();
 
 	/**
 	 * Add the draggable to a component
@@ -57,7 +57,7 @@ public class JQUIDraggableFeature<J extends JQUIDraggableFeature<J>>
 	 * @param component
 	 * 		The component that must get the feature
 	 */
-	public JQUIDraggableFeature(Component component)
+	public JQUIDraggableFeature(IComponentHierarchyBase<?,?> component)
 	{
 		this(component, null);
 	}
@@ -74,7 +74,7 @@ public class JQUIDraggableFeature<J extends JQUIDraggableFeature<J>>
 	 * @param scope
 	 * 		The scope of this component.
 	 */
-	public JQUIDraggableFeature(Component component, String scope)
+	public JQUIDraggableFeature(IComponentHierarchyBase<?,?> component, String scope)
 	{
 		super("JWDraggableFeature");
 		setComponent(component);
@@ -82,7 +82,7 @@ public class JQUIDraggableFeature<J extends JQUIDraggableFeature<J>>
 		{
 			getOptions().setScope(scope);
 		}
-		getComponent().addFeature(this);
+		getComponent().asFeatureBase().addFeature(this);
 	}
 
 	@Override
@@ -104,11 +104,11 @@ public class JQUIDraggableFeature<J extends JQUIDraggableFeature<J>>
 	 * @return
 	 */
 	@Override
-	public final JQUIDraggableOptions getOptions()
+	public final JQUIDraggableOptions<?> getOptions()
 	{
 		if (draggableOptions == null)
 		{
-			draggableOptions = new JQUIDraggableOptions();
+			draggableOptions = new JQUIDraggableOptions<>();
 		}
 		return draggableOptions;
 	}
@@ -120,7 +120,7 @@ public class JQUIDraggableFeature<J extends JQUIDraggableFeature<J>>
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		String draggableString = getComponent().getJQueryID() + "draggable(";
+		String draggableString = getComponent().asBase().getJQueryID() + "draggable(";
 		draggableString += draggableOptions;
 		draggableString += ");" + getNewLine();
 		addQuery(draggableString);

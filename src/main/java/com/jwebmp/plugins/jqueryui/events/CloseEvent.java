@@ -27,7 +27,7 @@ import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuEvents;
  * @since 27 Feb 2017
  */
 public abstract class CloseEvent
-		extends CloseAdapter
+		extends CloseAdapter<CloseEvent>
 		implements JQUIAutoCompleteEvents, JQUIDialogEvents, JQUISelectMenuEvents
 {
 

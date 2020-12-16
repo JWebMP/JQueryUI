@@ -35,6 +35,6 @@ class JQUIAccordionJavaScriptReference
 	 */
 	public JQUIAccordionJavaScriptReference()
 	{
-		super("JWAccordionJS", 1.114, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js");
+		super("JWAccordionJS", 1.121, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js");
 	}
 }

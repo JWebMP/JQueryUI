@@ -35,6 +35,6 @@ class JQUIAccordionCSSReference
 	 */
 	public JQUIAccordionCSSReference()
 	{
-		super("JWAccordionCSSRef", 1.114, "bower_components/jquery-ui/themes/base/accordion.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css");
+		super("JWAccordionCSSRef", 1.121, "bower_components/jquery-ui/themes/base/accordion.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css");
 	}
 }

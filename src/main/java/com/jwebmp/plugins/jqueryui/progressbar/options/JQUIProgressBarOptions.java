@@ -29,8 +29,6 @@ import jakarta.validation.constraints.NotNull;
 public class JQUIProgressBarOptions<J extends JQUIProgressBarOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * if is disabled
 	 */

@@ -49,10 +49,8 @@ import java.util.List;
 		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIAccordion<J extends JQUIAccordion<J>>
 		extends Div<JQUIAccordionChildren, NoAttributes, JQUIAccordionFeatures, JQUIAccordionEvents, J>
-		implements JQUIAccordionChildren<JQUIAccordionChildren, J>
+		implements JQUIAccordionChildren
 {
-
-
 	/**
 	 * The list of accordion tabs
 	 */
@@ -94,7 +92,7 @@ public class JQUIAccordion<J extends JQUIAccordion<J>>
 	 */
 	@Override
 	@NotNull
-	public final JQUIAccordionOptions getOptions()
+	public final JQUIAccordionOptions<?> getOptions()
 	{
 		return getFeature().getOptions();
 	}
@@ -140,16 +138,16 @@ public class JQUIAccordion<J extends JQUIAccordion<J>>
 	 * @return The accordion tab
 	 */
 	@NotNull
-	public JQUIAccordionTab addAccordianTab(String tabName, @NotNull JQUIAccordionContent tabContents)
+	public JQUIAccordionTab<?> addAccordianTab(String tabName, @NotNull JQUIAccordionContent<?> tabContents)
 	{
-		JQUIAccordionHeader header;
+		JQUIAccordionHeader<?> header;
 		if (getOptions().getHeader() == null)
 		{
-			header = new JQUIAccordionHeader(tabName);
+			header = new JQUIAccordionHeader<>(tabName);
 		}
 		else
 		{
-			return addAccordianTab(new JQUIAccordionHeader(tabName), tabContents);
+			return addAccordianTab(new JQUIAccordionHeader<>(tabName), tabContents);
 		}
 
 		return addAccordianTab(header, tabContents);
@@ -166,9 +164,9 @@ public class JQUIAccordion<J extends JQUIAccordion<J>>
 	 *
 	 * @return The accordion tab
 	 */
-	public JQUIAccordionTab addAccordianTab(JQUIAccordionHeader tabName, JQUIAccordionContent tabContents)
+	public JQUIAccordionTab<?> addAccordianTab(JQUIAccordionHeader<?> tabName, JQUIAccordionContent<?> tabContents)
 	{
-		JQUIAccordionTab accTab = new JQUIAccordionTab(tabName, tabContents);
+		JQUIAccordionTab<?> accTab = new JQUIAccordionTab<>(tabName, tabContents);
 		addAccordianTab(accTab);
 		return accTab;
 	}
@@ -183,7 +181,7 @@ public class JQUIAccordion<J extends JQUIAccordion<J>>
 	 * @return
 	 */
 	@NotNull
-	public JQUIAccordionTab addAccordianTab(@NotNull JQUIAccordionTab accordianTab)
+	public JQUIAccordionTab<?> addAccordianTab(@NotNull JQUIAccordionTab<?> accordianTab)
 	{
 		getAccordionTabs().add(accordianTab);
 		return accordianTab;

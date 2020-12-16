@@ -47,11 +47,11 @@ import jakarta.validation.constraints.NotNull;
 		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIButton<J extends JQUIButton<J>>
 		extends Component<JQUIButtonChildren, ButtonAttributes, JQUIButtonFeatures, JQUIButtonEvents, J>
-		implements NoNewLineBeforeClosingTag, NoNewLineForRawText, JQUIAccordionChildren<JQUIButtonChildren, J>
+		implements NoNewLineBeforeClosingTag, NoNewLineForRawText, JQUIAccordionChildren
 {
 
 
-	private JQUIButtonFeature feature;
+	private JQUIButtonFeature<?> feature;
 
 	/**
 	 * Constructs a new JWButton
@@ -78,11 +78,11 @@ public class JQUIButton<J extends JQUIButton<J>>
 	 *
 	 * @return
 	 */
-	public final JQUIButtonFeature getFeature()
+	public final JQUIButtonFeature<?> getFeature()
 	{
 		if (feature == null)
 		{
-			feature = new JQUIButtonFeature(this);
+			feature = new JQUIButtonFeature<>(this);
 			addFeature(feature);
 		}
 		return feature;
@@ -95,7 +95,7 @@ public class JQUIButton<J extends JQUIButton<J>>
 	 */
 	@Override
 	@NotNull
-	public JQUIButtonOptions getOptions()
+	public JQUIButtonOptions<?> getOptions()
 	{
 		return getFeature().getOptions();
 	}

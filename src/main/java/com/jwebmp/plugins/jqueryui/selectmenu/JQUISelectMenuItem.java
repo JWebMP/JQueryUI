@@ -31,7 +31,7 @@ import jakarta.validation.constraints.NotNull;
  */
 public class JQUISelectMenuItem<J extends JQUISelectMenuItem<J>>
 		extends Option<J>
-		implements JQUISelectMenuChildren<IComponentHierarchyBase, J>, IJQUISelectMenuItem
+		implements JQUISelectMenuChildren, IJQUISelectMenuItem
 {
 
 

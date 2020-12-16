@@ -38,37 +38,27 @@ import com.jwebmp.plugins.jqueryui.basethemes.JQUIThemeBlocks;
 @SuppressWarnings("MissingClassJavaDoc")
 @ComponentInformation(name = "JQuery UI Auto Complete",
 		description = "Enables users to quickly find and select from a pre-populated " +
-		              "list" +
-		              " of values as they type, leveraging " +
-		              "searching and " +
-		              "" +
-		              "" +
-		              "" +
-		              "filtering" +
+		              "list of values as they type, leveraging " +
+		              "searching and  filtering" +
 		              ".",
 		url = "http://jqueryui.com/autocomplete/",
 		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIAutoComplete<J extends JQUIAutoComplete<J>>
 		extends Div<JQUIAutoCompleteChildren, NoAttributes, JQUIAutoCompleteFeatures, JQUIAutoCompleteEvents, J>
 {
-
-	/**
-	 * Version 1
-	 */
-
 	/**
 	 * The feature for the input
 	 */
-	private JQUIAutoCompleteFeature feature;
+	private JQUIAutoCompleteFeature<?> feature;
 
 	/**
 	 * The input label for the auto complete
 	 */
-	private JQUIAutoCompleteLabel label;
+	private JQUIAutoCompleteLabel<?> label;
 	/**
 	 * The actual label for the input
 	 */
-	private JQUIAutoCompleteInput input;
+	private JQUIAutoCompleteInput<?> input;
 
 	/**
 	 * Description: Autocomplete enables users to quickly find and select from a pre-populated list of values as they type, leveraging
@@ -78,11 +68,11 @@ public class JQUIAutoComplete<J extends JQUIAutoComplete<J>>
 	 */
 	public JQUIAutoComplete(String label)
 	{
-		input = new JQUIAutoCompleteInput();
-		this.label = new JQUIAutoCompleteLabel(label, input);
+		input = new JQUIAutoCompleteInput<>();
+		this.label = new JQUIAutoCompleteLabel<>(label, input);
 		add(this.label);
 		add(input);
-		feature = new JQUIAutoCompleteFeature(input);
+		feature = new JQUIAutoCompleteFeature<>(input);
 		addFeature(feature);
 		addClass(JQUIThemeBlocks.UI_Widget.toString());
 	}
@@ -92,7 +82,7 @@ public class JQUIAutoComplete<J extends JQUIAutoComplete<J>>
 	 *
 	 * @return
 	 */
-	public JQUIAutoCompleteLabel getLabel()
+	public JQUIAutoCompleteLabel<?> getLabel()
 	{
 		return label;
 	}
@@ -102,7 +92,7 @@ public class JQUIAutoComplete<J extends JQUIAutoComplete<J>>
 	 *
 	 * @param label
 	 */
-	public void setLabel(JQUIAutoCompleteLabel label)
+	public void setLabel(JQUIAutoCompleteLabel<?> label)
 	{
 		this.label = label;
 		label.addAttribute(LabelAttributes.For, getInput().getID());
@@ -113,7 +103,7 @@ public class JQUIAutoComplete<J extends JQUIAutoComplete<J>>
 	 *
 	 * @return
 	 */
-	public Input getInput()
+	public Input<?,?> getInput()
 	{
 		return input;
 	}
@@ -123,10 +113,10 @@ public class JQUIAutoComplete<J extends JQUIAutoComplete<J>>
 	 *
 	 * @param input
 	 */
-	public void setInput(JQUIAutoCompleteInput input)
+	public void setInput(JQUIAutoCompleteInput<?> input)
 	{
 		remove(input);
-		feature = new JQUIAutoCompleteFeature(input);
+		feature = new JQUIAutoCompleteFeature<>(input);
 		input.addFeature(feature);
 		this.input = input;
 	}
@@ -149,11 +139,11 @@ public class JQUIAutoComplete<J extends JQUIAutoComplete<J>>
 	 *
 	 * @return
 	 */
-	public JQUIAutoCompleteFeature getFeature()
+	public JQUIAutoCompleteFeature<?> getFeature()
 	{
 		if (feature == null)
 		{
-			feature = new JQUIAutoCompleteFeature(input);
+			feature = new JQUIAutoCompleteFeature<>(input);
 		}
 		return feature;
 	}
@@ -164,7 +154,7 @@ public class JQUIAutoComplete<J extends JQUIAutoComplete<J>>
 	 *
 	 * @param feature
 	 */
-	public void setFeature(JQUIAutoCompleteFeature feature)
+	public void setFeature(JQUIAutoCompleteFeature<?> feature)
 	{
 		this.feature = feature;
 	}

@@ -37,6 +37,6 @@ public class JQUIControlGroup<J extends JQUIControlGroup<J>>
 	 */
 	public JQUIControlGroup()
 	{
-		addFeature(new JQUIControlGroupFeature(this));
+		addFeature(new JQUIControlGroupFeature<>(this));
 	}
 }

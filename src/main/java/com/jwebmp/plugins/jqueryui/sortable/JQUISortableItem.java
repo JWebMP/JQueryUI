@@ -29,16 +29,14 @@ import jakarta.validation.constraints.NotNull;
  */
 public class JQUISortableItem<J extends JQUISortableItem<J>>
 		extends ListItem<J>
-		implements JQUISortableChildren<ListItemChildren, J>
+		implements JQUISortableChildren
 {
-
-
 	/**
 	 * Constructs a new sortable item with any children available
 	 */
 	public JQUISortableItem()
 	{
-
+		//Quiock start
 	}
 
 	/**

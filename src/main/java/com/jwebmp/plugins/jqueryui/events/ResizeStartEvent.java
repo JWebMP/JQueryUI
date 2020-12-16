@@ -25,7 +25,7 @@ import com.jwebmp.plugins.jqueryui.dialog.interfaces.JQUIDialogEvents;
  * @since 27 Feb 2017
  */
 public abstract class ResizeStartEvent
-		extends ResizeAdapter
+		extends ResizeAdapter<ResizeStartEvent>
 		implements JQUIDialogEvents
 {
 

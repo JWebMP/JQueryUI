@@ -19,6 +19,7 @@ package com.jwebmp.plugins.jqueryui.spinner;
 import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.jqueryui.pools.JQUIReferencePool;
 import com.jwebmp.plugins.jqueryui.spinner.options.JQUISpinnerOptions;
 
@@ -31,14 +32,12 @@ import static com.guicedee.guicedinjection.json.StaticStrings.*;
  * @since Mar 8, 2015
  */
 public class JQUISpinnerFeature<J extends JQUISpinnerFeature<J>>
-		extends Feature<GlobalFeatures, JQUISpinnerOptions, J>
+		extends Feature<GlobalFeatures, JQUISpinnerOptions<?>, J>
 {
-
-
 	/**
 	 * The component for the spinner
 	 */
-	private final Component selectMenu;
+	private final IComponentHierarchyBase<?,?> selectMenu;
 	/**
 	 * The options for the spinner
 	 */
@@ -49,7 +48,7 @@ public class JQUISpinnerFeature<J extends JQUISpinnerFeature<J>>
 	 *
 	 * @param selectMenu
 	 */
-	public JQUISpinnerFeature(Component selectMenu)
+	public JQUISpinnerFeature(IComponentHierarchyBase<?,?> selectMenu)
 	{
 		super("JWPSelectMenuFeature");
 		this.selectMenu = selectMenu;
@@ -97,6 +96,7 @@ public class JQUISpinnerFeature<J extends JQUISpinnerFeature<J>>
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(selectMenu.getJQueryID() + "spinner(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
+		addQuery(selectMenu.asBase()
+		                   .getJQueryID() + "spinner(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
 	}
 }

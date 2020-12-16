@@ -17,13 +17,13 @@
 package com.jwebmp.plugins.jqueryui.resizable.options;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.jwebmp.core.Component;
 import com.jwebmp.core.base.html.interfaces.CssClass;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.generics.CompassPoints;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.easingeffects.JQEasingEffects;
-
 import jakarta.validation.constraints.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,8 +38,6 @@ import java.util.List;
 public class JQUIResizableOptions<J extends JQUIResizableOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * One or more elements to resize synchronously with the resizable element.
 	 */
@@ -71,7 +69,7 @@ public class JQUIResizableOptions<J extends JQUIResizableOptions<J>>
 	/**
 	 * Constrains resizing to within the bounds of the specified element or region.
 	 */
-	private Component containment;
+	private IComponentHierarchyBase<?,?> containment;
 	/**
 	 * Tolerance, in milliseconds, for when resizing should start. If specified, resizing will not start until after mouse is moved beyond
 	 * duration. This can help prevent unIntegerended resizing when
@@ -155,9 +153,9 @@ public class JQUIResizableOptions<J extends JQUIResizableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setAlsoSize(Component alsoSize)
+	public J setAlsoSize(IComponentHierarchyBase<?,?> alsoSize)
 	{
-		this.alsoSize = alsoSize.getID(true);
+		this.alsoSize = alsoSize.asBase().getID(true);
 		return (J) this;
 	}
 
@@ -289,7 +287,7 @@ public class JQUIResizableOptions<J extends JQUIResizableOptions<J>>
 	 *
 	 * @return Constrains resizing to within the bounds of the specified element or region.
 	 */
-	public Component getContainment()
+	public IComponentHierarchyBase<?,?> getContainment()
 	{
 		return containment;
 	}
@@ -302,7 +300,7 @@ public class JQUIResizableOptions<J extends JQUIResizableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setContainment(Component containment)
+	public J setContainment(IComponentHierarchyBase<?,?> containment)
 	{
 		this.containment = containment;
 		return (J) this;

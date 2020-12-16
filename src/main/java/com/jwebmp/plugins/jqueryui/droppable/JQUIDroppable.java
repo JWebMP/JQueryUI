@@ -50,7 +50,7 @@ public class JQUIDroppable
 	}
 
 	@NotNull
-	public final JQUIDroppableFeature getFeature()
+	public final JQUIDroppableFeature<?> getFeature()
 	{
 		if (feature == null)
 		{

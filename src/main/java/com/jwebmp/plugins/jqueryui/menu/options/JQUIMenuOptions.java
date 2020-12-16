@@ -48,7 +48,7 @@ public class JQUIMenuOptions<J extends JQUIMenuOptions<J>>
 	/**
 	 * The actual position
 	 */
-	private PositionOptions positionOptions;
+	private PositionOptions<?> positionOptions;
 	/**
 	 * Customize the ARIA roles used for the menu and menu items.
 	 * <p>
@@ -140,7 +140,7 @@ public class JQUIMenuOptions<J extends JQUIMenuOptions<J>>
 	 *
 	 * @return
 	 */
-	public PositionOptions getPositionOptions()
+	public PositionOptions<?> getPositionOptions()
 	{
 		return positionOptions;
 	}
@@ -155,7 +155,7 @@ public class JQUIMenuOptions<J extends JQUIMenuOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setPositionOptions(PositionOptions positionOptions)
+	public J setPositionOptions(PositionOptions<?> positionOptions)
 	{
 		this.positionOptions = positionOptions;
 		return (J) this;

@@ -29,11 +29,9 @@ import static com.guicedee.guicedinjection.json.StaticStrings.*;
  * @since Mar 8, 2015
  */
 public class JQUIMenuFeature<J extends JQUIMenuFeature<J>>
-		extends Feature<GlobalFeatures, JQUIMenuOptions, J>
+		extends Feature<GlobalFeatures, JQUIMenuOptions<?>, J>
 {
-
-
-	private JQUIMenu<?> menu;
+	private final JQUIMenu<?> menu;
 	/**
 	 * The options of the menu
 	 */
@@ -43,7 +41,7 @@ public class JQUIMenuFeature<J extends JQUIMenuFeature<J>>
 	 * @param menu
 	 * 		The menu creating for
 	 */
-	public JQUIMenuFeature(JQUIMenu menu)
+	public JQUIMenuFeature(JQUIMenu<?> menu)
 	{
 		super("JWMenuFeature");
 		this.menu = menu;

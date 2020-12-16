@@ -29,8 +29,6 @@ import java.util.Map;
 public class JQUICheckBoxRadioOptions<J extends JQUICheckBoxRadioOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * The classes map for the checkbox/radio
 	 */

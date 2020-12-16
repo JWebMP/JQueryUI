@@ -16,17 +16,15 @@
  */
 package com.jwebmp.plugins.jqueryui.selectmenu.interfaces;
 
-import com.jwebmp.core.base.ComponentBase;
-import com.jwebmp.core.base.html.interfaces.DisplayObjectType;
-import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 
 /**
  * @author GedMarc
  * @version 1.0
  * @since 07 Aug 2015
  */
-public interface JQUISelectMenuChildren<C extends IComponentHierarchyBase, J extends ComponentBase>
-		extends IComponentHierarchyBase<C, J>, DisplayObjectType<C, J>
+public interface JQUISelectMenuChildren
+		extends GlobalChildren
 {
 
 }

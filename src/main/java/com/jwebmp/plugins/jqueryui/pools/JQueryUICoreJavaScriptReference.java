@@ -36,7 +36,7 @@ class JQueryUICoreJavaScriptReference
 
 	public JQueryUICoreJavaScriptReference()
 	{
-		super("JQueryUICore", 1.114, "bower_components/jquery-ui/jquery-ui.min.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js");
+		super("JQueryUICore", 1.121, "bower_components/jquery-ui/jquery-ui.min.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js");
 		setSortOrder(5);
 		setPriority(RequirementsPriority.Third);
 	}

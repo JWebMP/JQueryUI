@@ -17,6 +17,7 @@
 package com.jwebmp.plugins.jqueryui.dialog.options;
 
 import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
 
@@ -32,12 +33,10 @@ import java.util.List;
 public class JQUIDialogOptions<J extends JQUIDialogOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * The component to append to
 	 */
-	private ComponentHierarchyBase appendTo;
+	private IComponentHierarchyBase<?,?> appendTo;
 	/**
 	 * If the component should auto open
 	 */
@@ -45,7 +44,7 @@ public class JQUIDialogOptions<J extends JQUIDialogOptions<J>>
 	/**
 	 * The buttons on the widget
 	 */
-	private List<ComponentHierarchyBase> buttons;
+	private List<IComponentHierarchyBase<?,?>> buttons;
 	/**
 	 * if it should close on esc key
 	 */
@@ -93,7 +92,7 @@ public class JQUIDialogOptions<J extends JQUIDialogOptions<J>>
 	/**
 	 * the position of the modal
 	 */
-	private PositionOptions positionOptions;
+	private PositionOptions<?> positionOptions;
 	/**
 	 * If the modal is resiable
 	 */
@@ -116,7 +115,7 @@ public class JQUIDialogOptions<J extends JQUIDialogOptions<J>>
 	 *
 	 * @return
 	 */
-	public ComponentHierarchyBase getAppendTo()
+	public IComponentHierarchyBase<?,?> getAppendTo()
 	{
 		return appendTo;
 	}
@@ -128,7 +127,7 @@ public class JQUIDialogOptions<J extends JQUIDialogOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setAppendTo(ComponentHierarchyBase appendTo)
+	public J setAppendTo(IComponentHierarchyBase<?,?> appendTo)
 	{
 		this.appendTo = appendTo;
 		return (J) this;
@@ -426,7 +425,7 @@ public class JQUIDialogOptions<J extends JQUIDialogOptions<J>>
 	 *
 	 * @return
 	 */
-	public PositionOptions getPositionOptions()
+	public PositionOptions<?> getPositionOptions()
 	{
 		return positionOptions;
 	}
@@ -443,7 +442,7 @@ public class JQUIDialogOptions<J extends JQUIDialogOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setPositionOptions(PositionOptions positionOptions)
+	public J setPositionOptions(PositionOptions<?> positionOptions)
 	{
 		this.positionOptions = positionOptions;
 		return (J) this;
@@ -541,7 +540,7 @@ public class JQUIDialogOptions<J extends JQUIDialogOptions<J>>
 		return (J) this;
 	}
 
-	public List<ComponentHierarchyBase> getButtons()
+	public List<IComponentHierarchyBase<?,?>> getButtons()
 	{
 		if (buttons == null)
 		{
@@ -552,7 +551,7 @@ public class JQUIDialogOptions<J extends JQUIDialogOptions<J>>
 
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setButtons(List<ComponentHierarchyBase> buttons)
+	public J setButtons(List<IComponentHierarchyBase<?,?>> buttons)
 	{
 		this.buttons = buttons;
 		return (J) this;

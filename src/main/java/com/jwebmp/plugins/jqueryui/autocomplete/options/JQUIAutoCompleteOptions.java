@@ -40,11 +40,6 @@ import java.util.List;
 public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-	/**
-	 * Version 1
-	 */
-
 	/**
 	 * appendTo Type: Selector Default: null
 	 * <p>
@@ -147,7 +142,7 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	 * <p>
 	 * $( ".selector" ).autocomplete({ position: { my : "right top", at: "right bottom" } });
 	 */
-	private PositionOptions positionOptions;
+	private PositionOptions<?> positionOptions;
 	@JsonIgnore
 	private boolean ajax;
 	/**
@@ -159,7 +154,7 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	 * The autoComplete location
 	 */
 	@JsonIgnore
-	private JQUIAutoComplete autoComplete;
+	private JQUIAutoComplete<?> autoComplete;
 
 	/**
 	 * Constructs a new Auto Complete Options Array
@@ -238,7 +233,7 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	 *
 	 * @return
 	 */
-	public AutoCompleteEntries addOption(String label, String category)
+	public AutoCompleteEntries<?> addOption(String label, String category)
 	{
 		return addOption(label, label, category);
 	}
@@ -252,9 +247,9 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	 *
 	 * @return
 	 */
-	public AutoCompleteEntries addOption(String label, String value, String category)
+	public AutoCompleteEntries<?> addOption(String label, String value, String category)
 	{
-		AutoCompleteEntries entry = new AutoCompleteEntries(label, value, category);
+		AutoCompleteEntries<?> entry = new AutoCompleteEntries<>(label, value, category);
 		getSource().add(entry);
 		return entry;
 	}
@@ -301,7 +296,7 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	 *
 	 * @return
 	 */
-	public AutoCompleteEntries addOption(String label)
+	public AutoCompleteEntries<?> addOption(String label)
 	{
 		return addOption(label, null, null);
 	}
@@ -390,7 +385,7 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 		}
 		else
 		{
-			AutoCompleteEntrySet set = new AutoCompleteEntrySet();
+			AutoCompleteEntrySet<?> set = new AutoCompleteEntrySet<>();
 			set.getSource()
 			   .clear();
 			set.getSource()
@@ -437,7 +432,7 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	 *
 	 * @return
 	 */
-	public PositionOptions getPositionOptions()
+	public PositionOptions<?> getPositionOptions()
 	{
 		return positionOptions;
 	}
@@ -449,7 +444,7 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setPositionOptions(PositionOptions positionOptions)
+	public J setPositionOptions(PositionOptions<?> positionOptions)
 	{
 		this.positionOptions = positionOptions;
 		return (J) this;
@@ -463,7 +458,7 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setAjax(boolean ajax, JQUIAutoComplete accordion)
+	public J setAjax(boolean ajax, JQUIAutoComplete<?> accordion)
 	{
 		this.ajax = ajax;
 		autoComplete = accordion;
@@ -475,7 +470,7 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	 *
 	 * @return
 	 */
-	public JQUIAutoComplete getAutoComplete()
+	public JQUIAutoComplete<?> getAutoComplete()
 	{
 		return autoComplete;
 	}
@@ -487,7 +482,7 @@ public class JQUIAutoCompleteOptions<J extends JQUIAutoCompleteOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setAutoComplete(JQUIAutoComplete autoComplete)
+	public J setAutoComplete(JQUIAutoComplete<?> autoComplete)
 	{
 		this.autoComplete = autoComplete;
 		return (J) this;

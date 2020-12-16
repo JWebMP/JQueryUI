@@ -30,7 +30,7 @@ class JQueryUIMenuBarJavaScriptReference
 
 	public JQueryUIMenuBarJavaScriptReference()
 	{
-		super("JWMenuBarCSSRef", 1.114, "bower_components/jquery-ui/themes/base/menubar.css", "bower_components/jquery-ui/themes/base/menubar.css");
+		super("JWMenuBarCSSRef", 1.121, "bower_components/jquery-ui/themes/base/menubar.css", "bower_components/jquery-ui/themes/base/menubar.css");
 	}
 
 }

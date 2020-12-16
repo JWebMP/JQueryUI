@@ -33,8 +33,6 @@ import java.util.List;
 public class JQUISliderOptions<J extends JQUISliderOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * Determines the animation speed Whether to slide the handle smoothly when the user clicks on the slider track. Also accepts any
 	 * valid animation duration.

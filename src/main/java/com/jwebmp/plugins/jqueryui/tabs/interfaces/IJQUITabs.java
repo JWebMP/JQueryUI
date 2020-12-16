@@ -37,9 +37,9 @@ public interface IJQUITabs<J>
 	 *
 	 * @return
 	 */
-	JQUITab addTab(JQUITab tab);
+	JQUITab<?> addTab(JQUITab<?> tab);
 
-	JQUITab addTab(String title, JQUITabContent displayComponent);
+	JQUITab<?> addTab(String title, JQUITabContent<?> displayComponent);
 
 	/**
 	 * Returns the options fields for the tab
@@ -47,20 +47,20 @@ public interface IJQUITabs<J>
 	 *
 	 * @return
 	 */
-	JQUITabOptions getOptions();
+	JQUITabOptions<?> getOptions();
 
 	/**
 	 * Returns a list of tabs
 	 *
 	 * @return
 	 */
-	List<JQUITab> getTabs();
+	List<JQUITab<?>> getTabs();
 
 	/**
 	 * Sets the list of tabs
 	 *
 	 * @param tabs
 	 */
-	J setTabs(List<JQUITab> tabs);
+	J setTabs(List<JQUITab<?>> tabs);
 
 }

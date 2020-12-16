@@ -43,11 +43,6 @@ public class JQUISortable<J extends JQUISortable<J>>
 		extends Div<JQUISortableChildren, NoAttributes, JQUISortableFeatures, JQUISortableEvents, J>
 		implements IJQUISortable
 {
-
-	/**
-	 * Field serialVersionUID
-	 */
-
 	/**
 	 * The sortable feature
 	 */

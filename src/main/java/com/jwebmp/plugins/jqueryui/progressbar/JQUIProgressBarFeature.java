@@ -31,11 +31,11 @@ import static com.guicedee.guicedinjection.json.StaticStrings.*;
  * @since Mar 8, 2015
  */
 public class JQUIProgressBarFeature<J extends JQUIProgressBarFeature<J>>
-		extends Feature<GlobalFeatures, JQUIProgressBarOptions, J>
+		extends Feature<GlobalFeatures, JQUIProgressBarOptions<?>, J>
 {
 
 
-	private final JQUIProgressBar progressBar;
+	private final JQUIProgressBar<?> progressBar;
 	private JQUIProgressBarOptions<?> options;
 
 	/**
@@ -43,7 +43,7 @@ public class JQUIProgressBarFeature<J extends JQUIProgressBarFeature<J>>
 	 *
 	 * @param progressBar
 	 */
-	public JQUIProgressBarFeature(JQUIProgressBar progressBar)
+	public JQUIProgressBarFeature(JQUIProgressBar<?> progressBar)
 	{
 		super("JWProgressBarFeature");
 		this.progressBar = progressBar;

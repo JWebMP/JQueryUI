@@ -32,7 +32,7 @@ public class JQUICheckBoxGroup<J extends JQUICheckBoxGroup<J>>
 {
 
 
-	private JQUIControlGroupFeature feature;
+	private JQUIControlGroupFeature<?> feature;
 
 	private String legendTitle;
 
@@ -50,11 +50,11 @@ public class JQUICheckBoxGroup<J extends JQUICheckBoxGroup<J>>
 	 *
 	 * @return
 	 */
-	public final JQUIControlGroupFeature getFeature()
+	public final JQUIControlGroupFeature<?> getFeature()
 	{
 		if (feature == null)
 		{
-			feature = new JQUIControlGroupFeature(this);
+			feature = new JQUIControlGroupFeature<>(this);
 		}
 		return feature;
 	}
@@ -68,7 +68,7 @@ public class JQUICheckBoxGroup<J extends JQUICheckBoxGroup<J>>
 	 *
 	 * @return
 	 */
-	public JQUICheckBoxGroup addCheckBox(JQUICheckBox checkBox)
+	public JQUICheckBoxGroup<?> addCheckBox(JQUICheckBox<?> checkBox)
 	{
 		add(checkBox);
 		return this;
@@ -91,6 +91,7 @@ public class JQUICheckBoxGroup<J extends JQUICheckBoxGroup<J>>
 	 *
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public J setLegendTitle(String legendTitle)
 	{
 		this.legendTitle = legendTitle;
@@ -100,7 +101,7 @@ public class JQUICheckBoxGroup<J extends JQUICheckBoxGroup<J>>
 	@Override
 	protected StringBuilder renderBeforeChildren()
 	{
-		Legend leg = new Legend();
+		Legend<?> leg = new Legend<>();
 		leg.setText(legendTitle);
 		leg.setTiny(true);
 		return new StringBuilder().append(getCurrentTabIndents())

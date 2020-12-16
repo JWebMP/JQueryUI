@@ -29,10 +29,8 @@ import static com.guicedee.guicedinjection.json.StaticStrings.*;
  * @since Mar 8, 2015
  */
 public class JQUISliderFeature<J extends JQUISliderFeature<J>>
-		extends Feature<GlobalFeatures, JQUISliderOptions, J>
+		extends Feature<GlobalFeatures, JQUISliderOptions<?>, J>
 {
-
-
 	/**
 	 * The actual slider for the menu
 	 */
@@ -47,7 +45,7 @@ public class JQUISliderFeature<J extends JQUISliderFeature<J>>
 	 *
 	 * @param selectMenu
 	 */
-	public JQUISliderFeature(JQUISlider selectMenu)
+	public JQUISliderFeature(JQUISlider<?> selectMenu)
 	{
 		super("JWPSelectMenuFeature");
 		this.selectMenu = selectMenu;
@@ -67,11 +65,11 @@ public class JQUISliderFeature<J extends JQUISliderFeature<J>>
 	}
 
 	@Override
-	public JQUISliderOptions getOptions()
+	public JQUISliderOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUISliderOptions();
+			options = new JQUISliderOptions<>();
 		}
 		return options;
 	}

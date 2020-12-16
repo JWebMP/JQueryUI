@@ -16,12 +16,12 @@
  */
 package com.jwebmp.plugins.jqueryui.selectable.options;
 
-import com.jwebmp.core.Component;
 import com.jwebmp.core.base.html.interfaces.CssClass;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
-
 import jakarta.validation.constraints.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +34,6 @@ import java.util.List;
 public class JQUISelectableOptions<J extends JQUISelectableOptions<J>>
 		extends JavaScriptPart<J>
 {
-
 	/**
 	 * Prevents selecting if you start on elements matching the selector
 	 */
@@ -102,9 +101,9 @@ public class JQUISelectableOptions<J extends JQUISelectableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setAppendTo(Component appendTo)
+	public J setAppendTo(IComponentHierarchyBase<?,?> appendTo)
 	{
-		this.appendTo = appendTo.getID(true);
+		this.appendTo = appendTo.asBase().getID(true);
 		return (J) this;
 	}
 

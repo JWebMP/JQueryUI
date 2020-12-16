@@ -11,6 +11,6 @@ import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteChild
  */
 public class JQUIAutoCompleteInput<J extends JQUIAutoCompleteInput<J>>
 		extends InputTextType<J>
-		implements JQUIAutoCompleteChildren<IComponentHierarchyBase, J>
+		implements JQUIAutoCompleteChildren
 {
 }

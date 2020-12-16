@@ -27,7 +27,7 @@ import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerChildren;
  */
 public class JQUISpinnerLabel<J extends JQUISpinnerLabel<J>>
 		extends Label<J>
-		implements JQUISpinnerChildren<IComponentHierarchyBase, J>
+		implements JQUISpinnerChildren
 {
 
 

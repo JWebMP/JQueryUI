@@ -44,8 +44,6 @@ public class JQUITabs<J extends JQUITabs<J>>
 		extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatures, JQUITabsEvents, J>
 		implements IJQUITabs<J>
 {
-
-
 	/**
 	 * the feature list
 	 */
@@ -59,11 +57,7 @@ public class JQUITabs<J extends JQUITabs<J>>
 	/**
 	 * A list of all the tabs
 	 */
-	private java.util.List<JQUITab> tabs;
-
-	/**
-	 * Constructs a new JQUI Tab/** Constructs a new JQUI Tab
-	 */
+	private java.util.List<JQUITab<?>> tabs;
 	/**
 	 * Constructs a new JQUI JQUITab/** Constructs a new JQUI JQUITab
 	 */
@@ -94,7 +88,7 @@ public class JQUITabs<J extends JQUITabs<J>>
 	 *
 	 * @return
 	 */
-	public IJQUITabs asMe()
+	public IJQUITabs<?> asMe()
 	{
 		return this;
 	}
@@ -120,11 +114,11 @@ public class JQUITabs<J extends JQUITabs<J>>
 	 * @return
 	 */
 	@NotNull
-	protected JQUITabList getUnorderedList()
+	protected JQUITabList<?> getUnorderedList()
 	{
 		if (unorderedList == null)
 		{
-			unorderedList = new JQUITabList();
+			unorderedList = new JQUITabList<>();
 		}
 		return unorderedList;
 	}
@@ -136,7 +130,7 @@ public class JQUITabs<J extends JQUITabs<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	protected J setUnorderedList(JQUITabList unorderedList)
+	protected J setUnorderedList(JQUITabList<?> unorderedList)
 	{
 		this.unorderedList = unorderedList;
 		return (J) this;
@@ -150,7 +144,7 @@ public class JQUITabs<J extends JQUITabs<J>>
 	 */
 	@Override
 	@NotNull
-	public JQUITabOptions getOptions()
+	public JQUITabOptions<?> getOptions()
 	{
 		return feature.getOptions();
 	}
@@ -176,16 +170,16 @@ public class JQUITabs<J extends JQUITabs<J>>
 	 * @return
 	 */
 	@Override
-	public JQUITab addTab(JQUITab tab)
+	public JQUITab<?> addTab(JQUITab<?> tab)
 	{
 		getTabs().add(tab);
 		return tab;
 	}
 
 	@Override
-	public JQUITab addTab(String title, JQUITabContent displayComponent)
+	public JQUITab<?> addTab(String title, JQUITabContent<?> displayComponent)
 	{
-		return addTab(new JQUITab(new ListItem(title), displayComponent));
+		return addTab(new JQUITab<>(new ListItem<>(title), displayComponent));
 	}
 
 	/**
@@ -195,7 +189,7 @@ public class JQUITabs<J extends JQUITabs<J>>
 	 */
 	@Override
 	@NotNull
-	public java.util.List<JQUITab> getTabs()
+	public java.util.List<JQUITab<?>> getTabs()
 	{
 		if (tabs == null)
 		{
@@ -212,7 +206,7 @@ public class JQUITabs<J extends JQUITabs<J>>
 	@Override
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setTabs(java.util.List<JQUITab> tabs)
+	public J setTabs(java.util.List<JQUITab<?>> tabs)
 	{
 		this.tabs = tabs;
 		return (J) this;

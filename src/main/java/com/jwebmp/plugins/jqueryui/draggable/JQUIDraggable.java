@@ -45,8 +45,6 @@ public class JQUIDraggable<J extends JQUIDraggable<J>>
 		extends Div<JQUIDraggableChildren, NoAttributes, JQUIDraggableFeatures, JQUIDraggableEvents, J>
 		implements IJQUIDraggable
 {
-
-
 	private JQUIDraggableFeature<?> feature;
 	private String scope;
 
@@ -68,7 +66,7 @@ public class JQUIDraggable<J extends JQUIDraggable<J>>
 	}
 
 	@Override
-	public JQUIDraggableFeature getFeature()
+	public JQUIDraggableFeature<?> getFeature()
 	{
 		if (feature == null)
 		{

@@ -30,8 +30,6 @@ public abstract class ActivateEvent
 		extends ActivateAdapter
 		implements JQUIAccordionEvents, JQUIDroppableEvents, JQUITabsEvents
 {
-
-
 	public ActivateEvent(Component component)
 	{
 		super(component);

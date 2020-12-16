@@ -28,8 +28,6 @@ public abstract class CompleteEvent
 		extends CompleteAdapter
 		implements JQUIProgressBarEvents
 {
-
-
 	public CompleteEvent(Component component)
 	{
 		super(component);

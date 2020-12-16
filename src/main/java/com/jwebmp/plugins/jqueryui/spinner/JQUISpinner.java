@@ -52,11 +52,6 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 		extends Div<JQUISpinnerChildren, NoAttributes, JQUISpinnerFeatures, JQUISpinnerEvents, J>
 		implements IJQUISpinner
 {
-
-	/**
-	 * Field serialVersionUID
-	 */
-
 	/**
 	 * The header text for the spinner
 	 */
@@ -93,12 +88,12 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	 */
 	public JQUISpinner(String labelText)
 	{
-		input = new JQUISpinnerInput();
+		input = new JQUISpinnerInput<>();
 		input.addFeature(getFeature());
 		input.setID(getID() + "_spinnerInput");
 		if (labelText != null)
 		{
-			label = new JQUISpinnerLabel(labelText);
+			label = new JQUISpinnerLabel<>(labelText);
 			label.setForInputComponent(input);
 		}
 	}
@@ -107,7 +102,7 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	{
 		if (feature == null)
 		{
-			feature = new JQUISpinnerFeature(input);
+			feature = new JQUISpinnerFeature<>(input);
 		}
 		return feature;
 	}
@@ -119,6 +114,7 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	 *
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	@NotNull
 	public J addGlobalization(GlobalizeCultures culture)
@@ -186,6 +182,7 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	 *
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	@NotNull
 	public J setLabel(JQUISpinnerLabel<?> label)
@@ -201,6 +198,7 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	 *
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public J setInput(JQUISpinnerInput<?, ?> input)
 	{
@@ -215,6 +213,7 @@ public class JQUISpinner<J extends JQUISpinner<J>>
 	 *
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	@NotNull
 	public J setHeaderText(String headerText)

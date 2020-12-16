@@ -68,7 +68,7 @@ public class JQUIDatePicker<J extends JQUIDatePicker<J>>
 	public JQUIDatePicker(Date selectedDate)
 	{
 		super();
-		inputFeature = new JQUIDatePickerFeature(this);
+		inputFeature = new JQUIDatePickerFeature<>(this);
 		if (selectedDate != null)
 		{
 			inputFeature.getOptions()

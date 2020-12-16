@@ -16,16 +16,15 @@
  */
 package com.jwebmp.plugins.jqueryui.accordion.interfaces;
 
-import com.jwebmp.core.base.ComponentBase;
-import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 
 /**
  * Specifies all valid Accordion Children
  *
  * @author GedMarc
  */
-public interface JQUIAccordionChildren<C extends IComponentHierarchyBase, J extends ComponentBase>
-		extends IComponentHierarchyBase<C, J>
+public interface JQUIAccordionChildren
+		extends GlobalChildren
 {
 
 }

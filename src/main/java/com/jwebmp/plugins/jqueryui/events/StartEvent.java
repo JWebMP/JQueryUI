@@ -28,7 +28,7 @@ import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerEvents;
  * @since 27 Feb 2017
  */
 public abstract class StartEvent
-		extends StartAdapter
+		extends StartAdapter<StartEvent>
 		implements JQUIDraggableEvents, JQUIResizableEvents, JQUISliderEvents, JQUISpinnerEvents
 {
 

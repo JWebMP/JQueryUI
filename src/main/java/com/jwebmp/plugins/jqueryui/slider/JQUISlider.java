@@ -43,8 +43,6 @@ public class JQUISlider<J extends JQUISlider<J>>
 		extends Div<JQUISliderChildren, NoAttributes, JQUISliderFeatures, JQUISliderEvents, J>
 		implements IJQUISlider
 {
-
-
 	/**
 	 * The feature for this component
 	 */
@@ -84,7 +82,7 @@ public class JQUISlider<J extends JQUISlider<J>>
 	{
 		if (options == null)
 		{
-			options = new JQUISliderOptions();
+			options = new JQUISliderOptions<>();
 		}
 		return options;
 	}

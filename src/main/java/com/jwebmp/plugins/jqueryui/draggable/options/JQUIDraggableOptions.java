@@ -17,6 +17,7 @@
 package com.jwebmp.plugins.jqueryui.draggable.options;
 
 import com.jwebmp.core.Component;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.htmlbuilder.css.displays.Cursors;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.draggable.enumerations.*;
@@ -38,8 +39,6 @@ import java.util.List;
 public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * If set to false, will prevent the ui-draggable class from being added. This may be desired as a performance optimization when
 	 * calling .draggable() on hundreds of elements.
@@ -182,7 +181,7 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 * Controls the z-index of the set of elements that match the selector, always brings the currently dragged item to the front. Very
 	 * useful in things like window managers.
 	 */
-	private Component stack;
+	private IComponentHierarchyBase<?,?> stack;
 	/**
 	 * Z-index for the helper while being dragged.
 	 */
@@ -230,9 +229,9 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 */
 	@NotNull
 	@SuppressWarnings("unchecked")
-	public J setAppendTo(Component appendTo)
+	public J setAppendTo(IComponentHierarchyBase<?,?> appendTo)
 	{
-		this.appendTo = appendTo.getID(true);
+		this.appendTo = appendTo.asBase().getID(true);
 		return (J) this;
 	}
 
@@ -311,9 +310,9 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 */
 	@NotNull
 	@SuppressWarnings("unchecked")
-	public J setConnectToSortableType(Component connectToSortableType)
+	public J setConnectToSortableType(IComponentHierarchyBase<?,?> connectToSortableType)
 	{
-		this.connectToSortableType = connectToSortableType.getID(true);
+		this.connectToSortableType = connectToSortableType.asBase().getID(true);
 		return (J) this;
 	}
 
@@ -335,9 +334,9 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 */
 	@NotNull
 	@SuppressWarnings("unchecked")
-	public J setContainment(Component containment)
+	public J setContainment(IComponentHierarchyBase<?,?> containment)
 	{
-		this.containment = containment.getID(true);
+		this.containment = containment.asBase().getID(true);
 		return (J) this;
 	}
 
@@ -371,7 +370,6 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 * @return
 	 */
 	@NotNull
-	@SuppressWarnings("unchecked")
 	public CursorAt getCursorAt()
 	{
 		if (cursorAt == null)
@@ -518,9 +516,9 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 */
 	@NotNull
 	@SuppressWarnings("unchecked")
-	public J setHandle(Component handle)
+	public J setHandle(IComponentHierarchyBase<?,?> handle)
 	{
-		this.handle = handle.getID(true);
+		this.handle = handle.asBase().getID(true);
 		return (J) this;
 	}
 
@@ -570,9 +568,9 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 */
 	@NotNull
 	@SuppressWarnings("unchecked")
-	public J setHelperComponent(Component helperComponent)
+	public J setHelperComponent(IComponentHierarchyBase<?,?> helperComponent)
 	{
-		this.helperComponent = helperComponent.getID(true);
+		this.helperComponent = helperComponent.asBase().getID(true);
 		return (J) this;
 	}
 
@@ -841,9 +839,9 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 */
 	@NotNull
 	@SuppressWarnings("unchecked")
-	public J setSnapComponent(Component snapComponent)
+	public J setSnapComponent(IComponentHierarchyBase<?,?> snapComponent)
 	{
-		this.snapComponent = snapComponent.getID(true);
+		this.snapComponent = snapComponent.asBase().getID(true);
 		return (J) this;
 	}
 
@@ -913,7 +911,7 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 * @return Controls the z-index of the set of elements that match the selector, always brings the currently dragged item to the front.
 	 * 		Very useful in things like window managers.
 	 */
-	public Component getStack()
+	public IComponentHierarchyBase<?,?> getStack()
 	{
 		return stack;
 	}
@@ -925,7 +923,7 @@ public class JQUIDraggableOptions<J extends JQUIDraggableOptions<J>>
 	 */
 	@NotNull
 	@SuppressWarnings("unchecked")
-	public J setStack(Component stack)
+	public J setStack(IComponentHierarchyBase<?,?> stack)
 	{
 		this.stack = stack;
 		return (J) this;

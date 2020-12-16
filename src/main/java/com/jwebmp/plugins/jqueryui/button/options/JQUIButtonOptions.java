@@ -88,7 +88,7 @@ public class JQUIButtonOptions<J extends JQUIButtonOptions<J>>
 	{
 		if (icons == null)
 		{
-			icons = new JQUIButtonIconOptions();
+			icons = new JQUIButtonIconOptions<>();
 		}
 		return icons;
 	}

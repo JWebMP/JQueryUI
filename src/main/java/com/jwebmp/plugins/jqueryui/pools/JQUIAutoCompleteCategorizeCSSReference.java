@@ -35,7 +35,7 @@ class JQUIAutoCompleteCategorizeCSSReference
 	 */
 	public JQUIAutoCompleteCategorizeCSSReference()
 	{
-		super("JWAutoCompleteCategorizeCSSRef", 1.114, "bower_components/jquery-ui/themes/base/autocomplete_categorize.css",
+		super("JWAutoCompleteCategorizeCSSRef", 1.121, "bower_components/jquery-ui/themes/base/autocomplete_categorize.css",
 		      "bower_components/jquery-ui/themes/base/autocomplete_categorize.css");
 	}
 }

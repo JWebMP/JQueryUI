@@ -34,7 +34,7 @@ class JQueryUIWidgetCSSReference
 
 	public JQueryUIWidgetCSSReference()
 	{
-		super("JQueryUIWidgetCSS", 1.112, "bower_components/jquery-ui/themes/base/theme.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css");
+		super("JQueryUIWidgetCSS", 1.112, "bower_components/jquery-ui/themes/base/theme.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css");
 		setSortOrder(11);
 		setPriority(RequirementsPriority.Third);
 	}

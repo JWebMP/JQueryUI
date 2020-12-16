@@ -35,8 +35,6 @@ import jakarta.validation.constraints.NotNull;
 public class SpinnerIconOptions<J extends SpinnerIconOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * Icons to use for the button, matching an icon defined by the jQuery UI CSS Framework.<p>
 	 * <p>

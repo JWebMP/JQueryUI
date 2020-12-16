@@ -80,7 +80,7 @@ public class JQUIProgressBar<J extends JQUIProgressBar<J>>
 	 *
 	 * @return
 	 */
-	public JQUIProgressBarFeature getFeature()
+	public JQUIProgressBarFeature<?> getFeature()
 	{
 		if (feature == null)
 		{

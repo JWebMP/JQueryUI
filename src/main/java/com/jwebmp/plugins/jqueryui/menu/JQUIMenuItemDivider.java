@@ -28,10 +28,8 @@ import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuChildren;
  */
 public class JQUIMenuItemDivider<J extends JQUIMenuItemDivider<J>>
 		extends ListItem<J>
-		implements JQUIMenuChildren<ListItemChildren, J>
+		implements JQUIMenuChildren
 {
-
-
 	/**
 	 * Creates a menu item divider
 	 */

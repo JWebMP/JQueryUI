@@ -16,16 +16,15 @@
  */
 package com.jwebmp.plugins.jqueryui.tabs.interfaces;
 
-import com.jwebmp.core.base.ComponentBase;
-import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 
 /**
  * @author GedMarc
  * @version 1.0
  * @since 07 Aug 2015
  */
-public interface JQUITabsChildren<C extends IComponentHierarchyBase, J extends ComponentBase>
-		extends IComponentHierarchyBase<C, J>
+public interface JQUITabsChildren
+		extends GlobalChildren
 {
 
 }

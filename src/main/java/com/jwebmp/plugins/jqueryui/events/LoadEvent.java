@@ -25,7 +25,7 @@ import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsEvents;
  * @since 27 Feb 2017
  */
 public abstract class LoadEvent
-		extends LoadAdapter
+		extends LoadAdapter<LoadEvent>
 		implements JQUITabsEvents
 {
 

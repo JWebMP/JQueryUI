@@ -16,11 +16,10 @@
  */
 package com.jwebmp.plugins.jqueryui.tooltips.options;
 
-import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.easingeffects.JQEasingAnimationEffectsPart;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
-
 import jakarta.validation.constraints.NotNull;
 
 /**
@@ -36,11 +35,6 @@ import jakarta.validation.constraints.NotNull;
 public class JQUITooltipOptions<J extends JQUITooltipOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-	/**
-	 * Version 2.0
-	 */
-	private static final long serialVersionUID = 2L;
 	/**
 	 * The position of the tooltip
 	 */
@@ -128,7 +122,7 @@ public class JQUITooltipOptions<J extends JQUITooltipOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setContent(Div content)
+	public J setContent(IComponentHierarchyBase<?,?> content)
 	{
 		content.setTiny(true);
 		this.content = content.toString(true);

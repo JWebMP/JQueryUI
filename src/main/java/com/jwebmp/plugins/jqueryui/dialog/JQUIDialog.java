@@ -54,9 +54,7 @@ public class JQUIDialog<J extends JQUIDialog<J>>
 		extends Div<JQUIDialogChildren, NoAttributes, JQUIDialogFeatures, JQUIDialogEvents, J>
 		implements IJQUIDialog
 {
-
-
-	private final JQUIDialogFeature<?> jwDialogFeature;
+	private final JQUIDialogFeature<?> jqDialogFeature;
 	private JQUIDialogOptions<?> options;
 
 	/**
@@ -68,8 +66,8 @@ public class JQUIDialog<J extends JQUIDialog<J>>
 	 */
 	public JQUIDialog(String title)
 	{
-		jwDialogFeature = new JQUIDialogFeature<>(this);
-		addFeature(jwDialogFeature);
+		jqDialogFeature = new JQUIDialogFeature<>(this);
+		addFeature(jqDialogFeature);
 		addAttribute(GlobalAttributes.Title, title);
 	}
 

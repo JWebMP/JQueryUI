@@ -16,14 +16,13 @@
  */
 package com.jwebmp.plugins.jqueryui.sortable.options;
 
-import com.jwebmp.core.Component;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
 import com.jwebmp.core.htmlbuilder.css.displays.Cursors;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.draggable.enumerations.Axis;
 import com.jwebmp.plugins.jqueryui.position.options.PositionOptions;
 import com.jwebmp.plugins.jqueryui.sortable.enumerations.SortableHelpers;
-
 import jakarta.validation.constraints.NotNull;
 
 /**
@@ -41,8 +40,6 @@ import jakarta.validation.constraints.NotNull;
 public class JQUISortableOptions<J extends JQUISortableOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * Defines where the helper that moves with the mouse is being appended to during the drag (for example, to resolve overlap/zIndex
 	 * issues). Multiple types supported:
@@ -86,7 +83,7 @@ public class JQUISortableOptions<J extends JQUISortableOptions<J>>
 	 * using a combination of one or two keys: { top, left, right,
 	 * bottom }.
 	 */
-	private PositionOptions cursorAt;
+	private PositionOptions<?> cursorAt;
 	/**
 	 * Time in milliseconds to define when the sorting should start. Adding a delay helps preventing unwanted drags when clicking on an
 	 * element.
@@ -210,9 +207,9 @@ public class JQUISortableOptions<J extends JQUISortableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setAppendTo(Component appendTo)
+	public J setAppendTo(IComponentHierarchyBase<?,?> appendTo)
 	{
-		this.appendTo = appendTo.getID(true);
+		this.appendTo = appendTo.asBase().getID(true);
 		return (J) this;
 	}
 
@@ -289,9 +286,9 @@ public class JQUISortableOptions<J extends JQUISortableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setConnectWith(Component connectWith)
+	public J setConnectWith(IComponentHierarchyBase<?,?> connectWith)
 	{
-		this.connectWith = connectWith.getID(true);
+		this.connectWith = connectWith.asBase().getID(true);
 		return (J) this;
 	}
 
@@ -326,9 +323,9 @@ public class JQUISortableOptions<J extends JQUISortableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setContainment(Component containment)
+	public J setContainment(IComponentHierarchyBase<?,?> containment)
 	{
-		this.containment = containment.getID(true);
+		this.containment = containment.asBase().getID(true);
 		return (J) this;
 	}
 
@@ -365,7 +362,7 @@ public class JQUISortableOptions<J extends JQUISortableOptions<J>>
 	 *
 	 * @return
 	 */
-	public PositionOptions getCursorAt()
+	public PositionOptions<?> getCursorAt()
 	{
 		return cursorAt;
 	}
@@ -380,7 +377,7 @@ public class JQUISortableOptions<J extends JQUISortableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setCursorAt(PositionOptions cursorAt)
+	public J setCursorAt(PositionOptions<?> cursorAt)
 	{
 		this.cursorAt = cursorAt;
 		return (J) this;
@@ -590,9 +587,9 @@ public class JQUISortableOptions<J extends JQUISortableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setHandle(Component handle)
+	public J setHandle(IComponentHierarchyBase<?,?> handle)
 	{
-		this.handle = handle.getID(true);
+		this.handle = handle.asBase().getID(true);
 		return (J) this;
 	}
 

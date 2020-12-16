@@ -26,10 +26,8 @@ import static com.guicedee.guicedinjection.json.StaticStrings.*;
  * @author mmagon
  */
 public class JQUIDatePickerFeature<J extends JQUIDatePickerFeature<J>>
-		extends Feature<GlobalFeatures, JQUIDatePickerOptions, J>
+		extends Feature<GlobalFeatures, JQUIDatePickerOptions<?>, J>
 {
-
-
 	/**
 	 * The circular reference for the Date Picker
 	 */
@@ -45,7 +43,7 @@ public class JQUIDatePickerFeature<J extends JQUIDatePickerFeature<J>>
 	 *
 	 * @param dateInput
 	 */
-	public JQUIDatePickerFeature(JQUIDatePicker dateInput)
+	public JQUIDatePickerFeature(JQUIDatePicker<?> dateInput)
 	{
 		super("dateinput");
 		this.dateInput = dateInput;

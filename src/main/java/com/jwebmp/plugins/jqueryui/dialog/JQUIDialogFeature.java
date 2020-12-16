@@ -28,14 +28,12 @@ import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
  * @since 28 Mar 2013
  */
 public class JQUIDialogFeature<J extends JQUIDialogFeature<J>>
-		extends Feature<GlobalFeatures, JavaScriptPart, J>
+		extends Feature<GlobalFeatures, JavaScriptPart<?>, J>
 
 {
-
-
 	private final JQUIDialog<?> panel;
 
-	public JQUIDialogFeature(JQUIDialog panel)
+	public JQUIDialogFeature(JQUIDialog<?> panel)
 	{
 		super("JWDialog");
 		this.panel = panel;
@@ -67,12 +65,11 @@ public class JQUIDialogFeature<J extends JQUIDialogFeature<J>>
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		StringBuilder sb = new StringBuilder();
-		sb.append(panel.getJQueryID())
-		  .append("dialog(");
-		sb.append(panel.getOptions());
-		sb.append(");")
-		  .append(getNewLine());
-		addQuery(sb.toString());
+		String sb = panel.getJQueryID() +
+				"dialog(" +
+				panel.getOptions() +
+				");" +
+				getNewLine();
+		addQuery(sb);
 	}
 }

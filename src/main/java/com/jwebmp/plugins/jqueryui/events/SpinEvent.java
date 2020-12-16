@@ -25,7 +25,7 @@ import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerEvents;
  * @since 27 Feb 2017
  */
 public abstract class SpinEvent
-		extends SpinAdapter
+		extends SpinAdapter<SpinEvent>
 		implements JQUISpinnerEvents
 {
 

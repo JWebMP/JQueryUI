@@ -30,7 +30,7 @@ import static com.guicedee.guicedinjection.json.StaticStrings.*;
  * @since 30 Mar 2013
  */
 public class JQUIAutoCompleteFeature<J extends JQUIAutoCompleteFeature<J>>
-		extends Feature<GlobalFeatures, JQUIAutoCompleteOptions, J>
+		extends Feature<GlobalFeatures, JQUIAutoCompleteOptions<?>, J>
 {
 
 
@@ -38,12 +38,12 @@ public class JQUIAutoCompleteFeature<J extends JQUIAutoCompleteFeature<J>>
 	 * The component to display the list at
 	 */
 	@JsonIgnore
-	private final Input menuDisplayAtComponent;
+	private final Input<?,?> menuDisplayAtComponent;
 	/**
 	 * Options
 	 */
 	@JsonIgnore
-	private JQUIAutoCompleteOptions options;
+	private JQUIAutoCompleteOptions<?> options;
 
 	/**
 	 * Constructs a new Auto Complete feature
@@ -51,7 +51,7 @@ public class JQUIAutoCompleteFeature<J extends JQUIAutoCompleteFeature<J>>
 	 * @param menuDisplayAtComponent
 	 * 		The component to display at
 	 */
-	public JQUIAutoCompleteFeature(Input menuDisplayAtComponent)
+	public JQUIAutoCompleteFeature(Input<?,?> menuDisplayAtComponent)
 	{
 		super("JWAutoCompleteFeature");
 		this.menuDisplayAtComponent = menuDisplayAtComponent;
@@ -76,11 +76,11 @@ public class JQUIAutoCompleteFeature<J extends JQUIAutoCompleteFeature<J>>
 	 * @return
 	 */
 	@Override
-	public JQUIAutoCompleteOptions getOptions()
+	public JQUIAutoCompleteOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUIAutoCompleteOptions();
+			options = new JQUIAutoCompleteOptions<>();
 		}
 		return options;
 	}

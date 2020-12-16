@@ -34,7 +34,7 @@ class JQUISelectableJavaScriptReference
 	 */
 	public JQUISelectableJavaScriptReference()
 	{
-		super("JWSelectableJavaScriptReference", 1.114, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js");
+		super("JWSelectableJavaScriptReference", 1.121, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js");
 		setSortOrder(24);
 	}
 }

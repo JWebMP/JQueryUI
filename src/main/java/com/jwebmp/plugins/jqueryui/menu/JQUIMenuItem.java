@@ -27,10 +27,8 @@ import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuChildren;
  */
 public class JQUIMenuItem<J extends JQUIMenuItem<J>>
 		extends ListItem<J>
-		implements JQUIMenuChildren<ListItemChildren, J>
+		implements JQUIMenuChildren
 {
-
-
 	public JQUIMenuItem(String text)
 	{
 		super(text);

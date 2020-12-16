@@ -35,6 +35,6 @@ class JQUIAutoCompleteCategorizeJavaScriptReference
 	 */
 	public JQUIAutoCompleteCategorizeJavaScriptReference()
 	{
-		super("JWAutoCompleteCategorizeJS", 1.114, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.js");
+		super("JWAutoCompleteCategorizeJS", 1.121, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js");
 	}
 }

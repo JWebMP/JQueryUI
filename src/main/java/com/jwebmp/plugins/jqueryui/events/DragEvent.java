@@ -26,7 +26,7 @@ import com.jwebmp.plugins.jqueryui.draggable.interfaces.JQUIDraggableEvents;
  * @since 27 Feb 2017
  */
 public abstract class DragEvent
-		extends DragAdapter
+		extends DragAdapter<DragEvent>
 		implements JQUIDraggableEvents, JQUIDialogEvents
 {
 

@@ -25,7 +25,7 @@ import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteEvent
  * @since 27 Feb 2017
  */
 public abstract class ResponseEvent
-		extends ResponseAdapter
+		extends ResponseAdapter<ResponseEvent>
 		implements JQUIAutoCompleteEvents
 {
 

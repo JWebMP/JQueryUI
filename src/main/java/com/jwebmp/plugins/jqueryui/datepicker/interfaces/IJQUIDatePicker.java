@@ -32,7 +32,7 @@ public interface IJQUIDatePicker
 	 *
 	 * @return
 	 */
-	JQUIDatePickerFeature getInputFeature();
+	JQUIDatePickerFeature<?> getInputFeature();
 
 	/**
 	 * Returns the options of an item
@@ -40,6 +40,6 @@ public interface IJQUIDatePicker
 	 *
 	 * @return
 	 */
-	JQUIDatePickerOptions getOptions();
+	JQUIDatePickerOptions<?> getOptions();
 
 }

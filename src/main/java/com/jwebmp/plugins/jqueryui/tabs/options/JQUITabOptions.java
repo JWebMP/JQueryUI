@@ -33,8 +33,6 @@ import jakarta.validation.constraints.NotNull;
 public class JQUITabOptions<J extends JQUITabOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * The panel to show as active
 	 */

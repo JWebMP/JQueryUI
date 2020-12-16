@@ -29,10 +29,8 @@ import com.jwebmp.plugins.jqueryui.menu.interfaces.JQUIMenuEvents;
  */
 public class JQUIMenuGroup<J extends JQUIMenuGroup<J>>
 		extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvents, J>
-		implements JQUIMenuChildren<JQUIMenuChildren, J>
+		implements JQUIMenuChildren
 {
-
-
 	public JQUIMenuGroup()
 	{
 		addClass(JQUIThemeBlocks.UI_Widget_Header.toString());

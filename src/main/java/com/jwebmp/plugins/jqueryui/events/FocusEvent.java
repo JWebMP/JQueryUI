@@ -29,7 +29,7 @@ import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuEvents;
  * @since 27 Feb 2017
  */
 public abstract class FocusEvent
-		extends FocusAdapter
+		extends FocusAdapter<FocusEvent>
 		implements JQUIAutoCompleteEvents, JQUIDraggableEvents, JQUIDialogEvents, JQUIMenuEvents, JQUISelectMenuEvents
 {
 

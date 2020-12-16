@@ -26,7 +26,7 @@ import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
  */
 public class JQUIAccordionHeader<J extends JQUIAccordionHeader<J>>
 		extends H3<J>
-		implements JQUIAccordionChildren<IComponentHierarchyBase, J>
+		implements JQUIAccordionChildren
 {
 
 

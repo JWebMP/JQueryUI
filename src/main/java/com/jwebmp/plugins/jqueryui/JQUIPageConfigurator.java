@@ -18,6 +18,7 @@ package com.jwebmp.plugins.jqueryui;
 
 import com.jwebmp.core.Page;
 import com.jwebmp.core.plugins.PluginInformation;
+import com.jwebmp.core.plugins.PluginStatus;
 import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
 import com.jwebmp.core.services.IPageConfigurator;
 import com.jwebmp.plugins.jqueryui.pools.JQueryUIReferencePool;
@@ -35,16 +36,22 @@ import jakarta.validation.constraints.NotNull;
 		pluginDescription = "jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. Whether you're building highly interactive web applications or you just need to add a date picker to a form control, jQuery UI is the perfect choice.",
 		pluginVersion = "1.12.1",
 		pluginDependancyUniqueIDs = "jquery",
-		pluginCategories = "jquery, ui, jquery-ui,themes, styles, styling",
+		pluginCategories = "jquery, ui, jquery-ui,themes, styles, styling,framework",
 		pluginSubtitle = "A complete UI framework built using JQuery",
 		pluginGitUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin",
-		pluginSourceUrl = "http://jqueryui.com/",
+		pluginSourceUrl = "https://github.com/jquery/jquery-ui",
 		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki",
 		pluginOriginalHomepage = "http://jqueryui.com/",
-		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/JQueryUIPlugin.jar/download",
+		pluginDownloadUrl = "https://mvnrepository.com/artifact/com.jwebmp.plugins.jquery/jwebmp-jquery-ui",
 		pluginIconUrl = "bower_components/jquery-ui/jqueryui_icon.ico",
 		pluginIconImageUrl = "bower_components/jquery-ui/jqueryui_example.jpg",
-		pluginLastUpdatedDate = "2017/03/04")
+		pluginLastUpdatedDate = "2020/12/14",
+		pluginGroupId = "com.jwebmp.plugins.jquery",
+		pluginArtifactId = "jwebmp-jquery-ui",
+		pluginModuleName = "com.jwebmp.plugins.jqueryui",
+		pluginSourceDonateUrl = "https://js.foundation/about/donate",
+		pluginStatus = PluginStatus.Released
+)
 public class JQUIPageConfigurator
 		implements IPageConfigurator<JQUIPageConfigurator>
 {

@@ -28,7 +28,7 @@ import static com.guicedee.guicedinjection.json.StaticStrings.*;
  * @author MMagon
  */
 public class JQUIAccordionFeature
-		extends Feature<GlobalFeatures, JQUIAccordionOptions, JQUIAccordionFeature>
+		extends Feature<GlobalFeatures, JQUIAccordionOptions<?>, JQUIAccordionFeature>
 {
 
 
@@ -39,7 +39,7 @@ public class JQUIAccordionFeature
 	 */
 	private JQUIAccordionOptions<?> options;
 
-	public JQUIAccordionFeature(JQUIAccordion accordion)
+	public JQUIAccordionFeature(JQUIAccordion <?>accordion)
 	{
 		super("JWAccordianFeature");
 		this.accordion = accordion;

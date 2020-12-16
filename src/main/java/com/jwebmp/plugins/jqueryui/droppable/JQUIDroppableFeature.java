@@ -19,6 +19,7 @@ package com.jwebmp.plugins.jqueryui.droppable;
 import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.jqueryui.droppable.options.JQUIDroppableOptions;
 
 import static com.guicedee.guicedinjection.json.StaticStrings.*;
@@ -38,12 +39,12 @@ import static com.guicedee.guicedinjection.json.StaticStrings.*;
  * @since 2014/04/14
  */
 public class JQUIDroppableFeature<J extends JQUIDroppableFeature<J>>
-		extends Feature<GlobalFeatures, JQUIDroppableOptions, J>
+		extends Feature<GlobalFeatures, JQUIDroppableOptions<?>, J>
 {
 
 	private JQUIDroppableOptions<?> options;
 
-	public JQUIDroppableFeature(Component componentFor)
+	public JQUIDroppableFeature(IComponentHierarchyBase<?,?> componentFor)
 	{
 		super("JWDroppableFeature");
 		setComponent(componentFor);
@@ -80,6 +81,7 @@ public class JQUIDroppableFeature<J extends JQUIDroppableFeature<J>>
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(getComponent().getJQueryID() + "droppable(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON);
+		addQuery(getComponent().asBase().getJQueryID()
+				         + "droppable(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON);
 	}
 }

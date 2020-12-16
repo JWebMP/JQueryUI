@@ -19,6 +19,7 @@ package com.jwebmp.plugins.jqueryui.checkboxradio;
 import com.jwebmp.core.base.html.Label;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
 import com.jwebmp.core.base.html.inputs.InputRadioType;
+import com.jwebmp.core.base.html.interfaces.children.FieldSetChildren;
 import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.checkboxradio.interfaces.IJQUICheckBox;
 import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOptions;
@@ -34,12 +35,10 @@ import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOption
 		url = "http://jqueryui.com/button/",
 		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 
-public class JQUIRadioButton
-		extends InputRadioType
-		implements IJQUICheckBox
+public class JQUIRadioButton<J extends JQUIRadioButton<J>>
+		extends InputRadioType<J>
+		implements IJQUICheckBox, FieldSetChildren
 {
-
-
 	/**
 	 * The feature
 	 */
@@ -54,13 +53,13 @@ public class JQUIRadioButton
 	 */
 	public JQUIRadioButton()
 	{
-		feature = new JQUICheckBoxRadioFeature(this);
+		feature = new JQUICheckBoxRadioFeature<>(this);
 		addFeature(feature);
 	}
 
 	public JQUIRadioButton(String label)
 	{
-		feature = new JQUICheckBoxRadioFeature(this);
+		feature = new JQUICheckBoxRadioFeature<>(this);
 		addFeature(feature);
 		this.label = label;
 	}
@@ -109,7 +108,7 @@ public class JQUIRadioButton
 	}
 
 	@Override
-	public JQUICheckBoxRadioOptions getOptions()
+	public JQUICheckBoxRadioOptions<?> getOptions()
 	{
 		return getFeature().getOptions();
 	}
@@ -125,10 +124,9 @@ public class JQUIRadioButton
 	}
 
 	@Override
-	@SuppressWarnings("all")
 	protected StringBuilder renderBeforeTag()
 	{
-		Label legend = new Label();
+		Label<?> legend = new Label<>();
 		legend.setText(label);
 		legend.setTiny(true);
 		legend.setForInputComponent(this);

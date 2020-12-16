@@ -25,12 +25,10 @@ package com.jwebmp.plugins.jqueryui.spinner;
 public final class JQUISpinnerTime<J extends JQUISpinnerTime<J>>
 		extends JQUISpinner<J>
 {
-
-
 	/**
 	 * The spinner feature
 	 */
-	private JQUISpinnerTimeFeature feature;
+	private JQUISpinnerTimeFeature<?> feature;
 
 	/**
 	 * Constructs a new spinner paragraph object
@@ -54,11 +52,11 @@ public final class JQUISpinnerTime<J extends JQUISpinnerTime<J>>
 		addFeature(getTimeFeature());
 	}
 
-	public JQUISpinnerTimeFeature getTimeFeature()
+	public JQUISpinnerTimeFeature<?> getTimeFeature()
 	{
 		if (feature == null)
 		{
-			feature = new JQUISpinnerTimeFeature(getInput());
+			feature = new JQUISpinnerTimeFeature<>(getInput());
 		}
 		return feature;
 	}

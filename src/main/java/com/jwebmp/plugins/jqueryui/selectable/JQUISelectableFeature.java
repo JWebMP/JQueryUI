@@ -17,8 +17,8 @@
 package com.jwebmp.plugins.jqueryui.selectable;
 
 import com.jwebmp.core.Feature;
-import com.jwebmp.core.base.ComponentHierarchyBase;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.jqueryui.selectable.options.JQUISelectableOptions;
 
 /**
@@ -31,36 +31,33 @@ import com.jwebmp.plugins.jqueryui.selectable.options.JQUISelectableOptions;
  * @since 2014/05/16
  */
 public class JQUISelectableFeature<J extends JQUISelectableFeature<J>>
-		extends Feature<GlobalFeatures, JQUISelectableOptions, J>
+		extends Feature<GlobalFeatures, JQUISelectableOptions<?>, J>
 {
-
-
 	private JQUISelectableOptions<?> options;
-
+	
 	/**
 	 * Construct a new instance of a selectable feature Sets name to JWSelectableFeature
 	 *
-	 * @param component
-	 * 		The component to assign the feature to
+	 * @param component The component to assign the feature to
 	 */
-	public JQUISelectableFeature(ComponentHierarchyBase component)
+	public JQUISelectableFeature(IComponentHierarchyBase<?, ?> component)
 	{
 		super("JWSelectableFeature");
 		setComponent(component);
 	}
-
+	
 	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
 	}
-
+	
 	@Override
 	public boolean equals(Object o)
 	{
 		return super.equals(o);
 	}
-
+	
 	@Override
 	public JQUISelectableOptions<?> getOptions()
 	{
@@ -70,7 +67,7 @@ public class JQUISelectableFeature<J extends JQUISelectableFeature<J>>
 		}
 		return options;
 	}
-
+	
 	/**
 	 * The JQuery String
 	 * <p>
@@ -78,10 +75,10 @@ public class JQUISelectableFeature<J extends JQUISelectableFeature<J>>
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		StringBuilder selectableString = new StringBuilder(getComponent().getJQueryID() + "selectable(");
-		selectableString.append(getOptions().toString());
-		selectableString.append(");")
-		                .append(getNewLine());
-		addQuery(selectableString.toString());
+		String selectableString = getComponent().asBase()
+		                                        .getJQueryID() + "selectable(" + getOptions().toString() +
+				");" +
+				getNewLine();
+		addQuery(selectableString);
 	}
 }

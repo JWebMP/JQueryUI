@@ -26,10 +26,8 @@ import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuChildren;
  */
 public class JQUISelectMenuGroup<J extends JQUISelectMenuGroup<J>>
 		extends OptionGroup<J>
-		implements JQUISelectMenuChildren<SelectChildren, J>
+		implements JQUISelectMenuChildren
 {
-
-
 	/**
 	 * A option group
 	 */

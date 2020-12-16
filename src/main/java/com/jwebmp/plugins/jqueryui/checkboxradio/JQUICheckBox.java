@@ -20,7 +20,6 @@ import com.jwebmp.core.base.html.Label;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
 import com.jwebmp.core.base.html.inputs.InputCheckBoxType;
 import com.jwebmp.core.base.html.interfaces.children.FieldSetChildren;
-import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.plugins.ComponentInformation;
 import com.jwebmp.plugins.jqueryui.checkboxradio.interfaces.IJQUICheckBox;
 import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOptions;
@@ -38,7 +37,7 @@ import com.jwebmp.plugins.jqueryui.checkboxradio.options.JQUICheckBoxRadioOption
 
 public class JQUICheckBox<J extends JQUICheckBox<J>>
 		extends InputCheckBoxType<J>
-		implements IJQUICheckBox, FieldSetChildren<IComponentHierarchyBase, J>
+		implements IJQUICheckBox, FieldSetChildren
 {
 
 
@@ -56,7 +55,7 @@ public class JQUICheckBox<J extends JQUICheckBox<J>>
 	 */
 	public JQUICheckBox()
 	{
-		feature = new JQUICheckBoxRadioFeature(this);
+		feature = new JQUICheckBoxRadioFeature<>(this);
 		addFeature(feature);
 	}
 
@@ -65,7 +64,7 @@ public class JQUICheckBox<J extends JQUICheckBox<J>>
 	 */
 	public JQUICheckBox(String label)
 	{
-		feature = new JQUICheckBoxRadioFeature(this);
+		feature = new JQUICheckBoxRadioFeature<>(this);
 		addFeature(feature);
 		this.label = label;
 	}

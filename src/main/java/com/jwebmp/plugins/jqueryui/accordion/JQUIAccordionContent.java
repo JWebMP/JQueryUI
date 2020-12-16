@@ -26,7 +26,7 @@ import com.jwebmp.plugins.jqueryui.accordion.interfaces.JQUIAccordionChildren;
  */
 public class JQUIAccordionContent<J extends JQUIAccordionContent<J>>
 		extends DivSimple<J>
-		implements JQUIAccordionChildren<IComponentHierarchyBase, J>
+		implements JQUIAccordionChildren
 {
 
 

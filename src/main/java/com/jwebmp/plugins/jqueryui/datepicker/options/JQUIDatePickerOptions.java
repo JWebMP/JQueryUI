@@ -45,8 +45,6 @@ import static com.fasterxml.jackson.annotation.JsonInclude.Include.*;
 public class JQUIDatePickerOptions<J extends JQUIDatePickerOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * An input element that is to be updated with the selected date from the datepicker. Use the altFormat option to change the format of
 	 * the date within this field. Leave as blank for no alternate

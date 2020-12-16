@@ -26,10 +26,8 @@ import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsChildren;
  */
 public class JQUITabContent<J extends JQUITabContent<J>>
 		extends DivSimple<J>
-		implements JQUITabsChildren<IComponentHierarchyBase, J>
+		implements JQUITabsChildren
 {
-
-
 	/**
 	 * Any tab content
 	 */

@@ -40,22 +40,17 @@ public class JQUISelectable<J extends JQUISelectable<J>>
 		extends Div<JQUISelectMenuChildren, NoAttributes, JQUISelectableFeatures, JQUISelectableEvents, J>
 		implements IJQUISelectable
 {
-
-	/**
-	 * Field serialVersionUID
-	 */
-
 	/**
 	 * Field feature
 	 */
-	private JQUISelectableFeature feature;
+	private JQUISelectableFeature<?> feature;
 
 	/**
 	 *
 	 */
 	public JQUISelectable()
 	{
-		feature = new JQUISelectableFeature(this);
+		feature = new JQUISelectableFeature<>(this);
 		addFeature(feature);
 	}
 
@@ -76,7 +71,7 @@ public class JQUISelectable<J extends JQUISelectable<J>>
 	 * @return
 	 */
 	@Override
-	public JQUISelectableOptions getOptions()
+	public JQUISelectableOptions<?> getOptions()
 	{
 		return feature.getOptions();
 	}
@@ -98,11 +93,11 @@ public class JQUISelectable<J extends JQUISelectable<J>>
 	 *
 	 * @return
 	 */
-	public JQUISelectableFeature getFeature()
+	public JQUISelectableFeature<?> getFeature()
 	{
 		if (feature == null)
 		{
-			feature = new JQUISelectableFeature(this);
+			feature = new JQUISelectableFeature<>(this);
 		}
 		return feature;
 	}
@@ -112,7 +107,7 @@ public class JQUISelectable<J extends JQUISelectable<J>>
 	 *
 	 * @param feature
 	 */
-	public void setFeature(JQUISelectableFeature feature)
+	public void setFeature(JQUISelectableFeature<?> feature)
 	{
 		this.feature = feature;
 	}

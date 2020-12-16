@@ -16,12 +16,11 @@
  */
 package com.jwebmp.plugins.jqueryui.button;
 
-import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.jqueryui.button.options.JQUIButtonOptions;
 import com.jwebmp.plugins.jqueryui.pools.JQUIReferencePool;
-
 import jakarta.validation.constraints.NotNull;
 
 import static com.guicedee.guicedinjection.json.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
@@ -35,14 +34,14 @@ import static com.guicedee.guicedinjection.json.StaticStrings.STRING_CLOSING_BRA
  * @since 09 Mar 2013
  */
 public class JQUIButtonFeature<J extends JQUIButtonFeature<J>>
-		extends Feature<GlobalFeatures, JQUIButtonOptions, J>
+		extends Feature<GlobalFeatures, JQUIButtonOptions<?>, J>
 {
 
 
 	/**
 	 * The component that we are turning into a button
 	 */
-	private final Component comp;
+	private final IComponentHierarchyBase<?,?> comp;
 	/**
 	 * The specified options
 	 */
@@ -54,7 +53,7 @@ public class JQUIButtonFeature<J extends JQUIButtonFeature<J>>
 	 *
 	 * @param comp
 	 */
-	public JQUIButtonFeature(Component comp)
+	public JQUIButtonFeature(IComponentHierarchyBase<?,?> comp)
 	{
 		super("JWButtonFeature");
 		this.comp = comp;
@@ -86,11 +85,11 @@ public class JQUIButtonFeature<J extends JQUIButtonFeature<J>>
 	 */
 	@Override
 	@NotNull
-	public JQUIButtonOptions getOptions()
+	public JQUIButtonOptions<?> getOptions()
 	{
 		if (options == null)
 		{
-			options = new JQUIButtonOptions();
+			options = new JQUIButtonOptions<>();
 		}
 		return options;
 	}
@@ -98,6 +97,6 @@ public class JQUIButtonFeature<J extends JQUIButtonFeature<J>>
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(comp.getJQueryID() + "button(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
+		addQuery(comp.asBase().getJQueryID() + "button(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
 	}
 }

@@ -35,16 +35,14 @@ import static com.guicedee.guicedinjection.json.StaticStrings.*;
 public class JQUITab<J extends JQUITab<J>>
 
 {
-
-
 	/**
 	 * The header for a tab
 	 */
-	private ListItem tabHeader;
+	private ListItem<?> tabHeader;
 	/**
 	 * The child component for a tab
 	 */
-	private JQUITabContent tabDisplayComponent;
+	private JQUITabContent<?> tabDisplayComponent;
 
 	/**
 	 * Any tab to be displayed
@@ -56,7 +54,7 @@ public class JQUITab<J extends JQUITab<J>>
 	{
 		if (tabDisplayComponent != null)
 		{
-			Link tabLink = new Link(STRING_HASH + tabDisplayComponent
+			Link<?> tabLink = new Link<>(STRING_HASH + tabDisplayComponent
 					                                      .getID(), null, tabHeader.getText(0)
 			                                                                       .toString());
 			tabHeader.setText((String) null);
@@ -76,7 +74,7 @@ public class JQUITab<J extends JQUITab<J>>
 	 *
 	 * @return
 	 */
-	public ListItem getTabHeader()
+	public ListItem<?> getTabHeader()
 	{
 		return tabHeader;
 	}
@@ -88,7 +86,7 @@ public class JQUITab<J extends JQUITab<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setTabHeader(ListItem tabHeader)
+	public J setTabHeader(ListItem<?> tabHeader)
 	{
 		this.tabHeader = tabHeader;
 		return (J) this;
@@ -99,7 +97,7 @@ public class JQUITab<J extends JQUITab<J>>
 	 *
 	 * @return
 	 */
-	public JQUITabContent getTabDisplayComponent()
+	public JQUITabContent<?> getTabDisplayComponent()
 	{
 		return tabDisplayComponent;
 	}
@@ -111,7 +109,7 @@ public class JQUITab<J extends JQUITab<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setTabDisplayComponent(JQUITabContent tabDisplayComponent)
+	public J setTabDisplayComponent(JQUITabContent<?> tabDisplayComponent)
 	{
 		this.tabDisplayComponent = tabDisplayComponent;
 		return (J) this;

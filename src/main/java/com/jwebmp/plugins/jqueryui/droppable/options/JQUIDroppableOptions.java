@@ -16,12 +16,11 @@
  */
 package com.jwebmp.plugins.jqueryui.droppable.options;
 
-import com.jwebmp.core.Component;
-import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.guicedee.guicedinjection.json.StaticStrings;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
+import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.basethemes.JQUIThemeBlocks;
 import com.jwebmp.plugins.jqueryui.droppable.enumerations.JQUIDroppableTolerances;
-
 import jakarta.validation.constraints.NotNull;
 
 /**
@@ -33,11 +32,6 @@ import jakarta.validation.constraints.NotNull;
 public class JQUIDroppableOptions<J extends JQUIDroppableOptions<J>>
 		extends JavaScriptPart<J>
 {
-
-	/**
-	 * Field serialVersionUID
-	 */
-
 	/**
 	 * Default: "*" Controls which draggable elements are accepted by the droppable.
 	 */
@@ -93,7 +87,7 @@ public class JQUIDroppableOptions<J extends JQUIDroppableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public <E extends Component> J setAccept(E componentClass, boolean classAllocation)
+	public <E extends IComponentHierarchyBase<?,?>> J setAccept(E componentClass, boolean classAllocation)
 	{
 		if (classAllocation)
 		{
@@ -117,9 +111,9 @@ public class JQUIDroppableOptions<J extends JQUIDroppableOptions<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setAccept(Component component)
+	public J setAccept(IComponentHierarchyBase<?,?> component)
 	{
-		accept = component.getID(true);
+		accept = component.asBase().getID(true);
 		return (J) this;
 	}
 

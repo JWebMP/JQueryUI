@@ -18,6 +18,7 @@ package com.jwebmp.plugins.jqueryui.accordion;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.plugins.ComponentInformation;
 
 /**
  * An Accordion Tab.
@@ -27,11 +28,13 @@ import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
  * @author GedMarc
  * @since 22 Feb 2016
  */
+@ComponentInformation(name = "JQuery UI Accordion Tab",
+		description = "Displays accordions as tabs.",
+		url = "http://jqueryui.com/accordion/",
+		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIAccordionTab<J extends JQUIAccordionTab<J>>
 		extends JavaScriptPart<J>
 {
-
-
 	/**
 	 * The header for the accordion
 	 */

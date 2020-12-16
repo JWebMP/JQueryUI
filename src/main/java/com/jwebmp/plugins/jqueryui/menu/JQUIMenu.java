@@ -54,8 +54,6 @@ public class JQUIMenu<J extends JQUIMenu<J>>
 		extends List<JQUIMenuChildren, NoAttributes, JQUIMenuEvents, J>
 		implements IJQUIMenu
 {
-
-
 	private Orientation orientation;
 	private JQUIMenuFeature<?> feature;
 
@@ -77,7 +75,7 @@ public class JQUIMenu<J extends JQUIMenu<J>>
 	 *
 	 * @return
 	 */
-	public final JQUIMenuFeature getFeature()
+	public final JQUIMenuFeature<?> getFeature()
 	{
 		if (feature == null)
 		{

@@ -25,9 +25,9 @@ import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerChildren;
  * @author GedMarc
  * @since 28 Feb 2017
  */
-public class JQUISpinnerInput<J extends JQUISpinnerInput<J, A>, A extends Enum & AttributeDefinitions>
+public class JQUISpinnerInput<J extends JQUISpinnerInput<J, A>, A extends Enum<?> & AttributeDefinitions>
 		extends Input<A, J>
-		implements JQUISpinnerChildren<IComponentHierarchyBase, J>
+		implements JQUISpinnerChildren
 {
 
 
