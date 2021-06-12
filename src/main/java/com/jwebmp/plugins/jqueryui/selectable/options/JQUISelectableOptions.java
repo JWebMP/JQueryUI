@@ -20,6 +20,7 @@ import com.jwebmp.core.base.html.interfaces.CssClass;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.core.htmlbuilder.javascript.JavascriptLiteralFunction;
 import jakarta.validation.constraints.NotNull;
 
 import java.util.ArrayList;
@@ -61,7 +62,17 @@ public class JQUISelectableOptions<J extends JQUISelectableOptions<J>>
 	 * beyond the specified distance.
 	 */
 	private Integer distance;
-
+	
+	/**
+	 * A function to perform when a selected event occurs
+	 */
+	private JavascriptLiteralFunction<?> selected;
+	
+	/**
+	 * A function to perform when a unselected event occurs
+	 */
+	private JavascriptLiteralFunction<?> unselected;
+	
 	/**
 	 *
 	 */
@@ -224,7 +235,28 @@ public class JQUISelectableOptions<J extends JQUISelectableOptions<J>>
 		this.filter = filter;
 		return (J) this;
 	}
-
+	
+	/**
+	 * A function for selected
+	 * @return
+	 */
+	public JavascriptLiteralFunction<?> getSelected()
+	{
+		return selected;
+	}
+	
+	/**
+	 * A function for selected
+	 * @param selected
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public J setSelected(JavascriptLiteralFunction<?> selected)
+	{
+		this.selected = selected;
+		return (J)this;
+	}
+	
 	/**
 	 * Return if auto refresh is enabled
 	 *
@@ -249,5 +281,24 @@ public class JQUISelectableOptions<J extends JQUISelectableOptions<J>>
 	{
 		this.autoRefresh = autoRefresh;
 		return (J) this;
+	}
+	
+	/**
+	 * Get the unselected function
+	 * @return
+	 */
+	public JavascriptLiteralFunction<?> getUnselected()
+	{
+		return unselected;
+	}
+	
+	@SuppressWarnings("unchecked")
+	/**
+	 * Sets the unselected function
+	 */
+	public J setUnselected(JavascriptLiteralFunction<?> unselected)
+	{
+		this.unselected = unselected;
+		return (J)this;
 	}
 }
