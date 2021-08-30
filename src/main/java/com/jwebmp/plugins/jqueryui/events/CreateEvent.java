@@ -36,9 +36,21 @@ import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class CreateEvent
-		extends BeforeActivateAdapter<CreateEvent>
-		implements JQUIAccordionEvents, JQUIAutoCompleteEvents, JQUIButtonEvents, JQUIDraggableEvents, JQUIDialogEvents, JQUIDroppableEvents, JQUIMenuEvents, JQUIProgressBarEvents, JQUIResizableEvents, JQUISelectMenuEvents, JQUISliderEvents, JQUISpinnerEvents, JQUITabsEvents
+public abstract class CreateEvent<J extends CreateEvent<J>>
+		extends BeforeActivateAdapter<J>
+		implements JQUIAccordionEvents<J>,
+		           JQUIAutoCompleteEvents<J>,
+		           JQUIButtonEvents<J>,
+		           JQUIDraggableEvents<J>,
+		           JQUIDialogEvents<J>,
+		           JQUIDroppableEvents<J>,
+		           JQUIMenuEvents<J>,
+		           JQUIProgressBarEvents<J>,
+		           JQUIResizableEvents<J>,
+		           JQUISelectMenuEvents<J>,
+		           JQUISliderEvents<J>,
+		           JQUISpinnerEvents<J>,
+		           JQUITabsEvents<J>
 {
 
 

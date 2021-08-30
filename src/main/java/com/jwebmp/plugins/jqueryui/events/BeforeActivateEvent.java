@@ -25,9 +25,9 @@ import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class BeforeActivateEvent
-		extends BeforeActivateAdapter<BeforeActivateEvent>
-		implements JQUIAccordionEvents, JQUITabsEvents
+public abstract class BeforeActivateEvent<J extends BeforeActivateEvent<J>>
+		extends BeforeActivateAdapter<J>
+		implements JQUIAccordionEvents<J>, JQUITabsEvents<J>
 {
 
 

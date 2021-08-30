@@ -25,12 +25,10 @@ import com.jwebmp.plugins.jqueryui.resizable.interfaces.JQUIResizableEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class ResizeEvent
-		extends ResizeAdapter<ResizeEvent>
-		implements JQUIDialogEvents, JQUIResizableEvents
+public abstract class ResizeEvent<J extends ResizeEvent<J>>
+		extends ResizeAdapter<J>
+		implements JQUIDialogEvents<J>, JQUIResizableEvents<J>
 {
-
-
 	public ResizeEvent(Component component)
 	{
 		super(component);

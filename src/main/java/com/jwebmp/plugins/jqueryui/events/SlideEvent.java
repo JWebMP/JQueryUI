@@ -26,9 +26,9 @@ import com.jwebmp.plugins.jqueryui.slider.interfaces.JQUISliderEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class SlideEvent
-		extends SlideAdapter<SlideEvent>
-		implements JQUIDraggableEvents, JQUIResizableEvents, JQUISliderEvents
+public abstract class SlideEvent<J extends  SlideEvent<J>>
+		extends SlideAdapter<J>
+		implements JQUIDraggableEvents<J>, JQUIResizableEvents<J>, JQUISliderEvents<J>
 {
 
 

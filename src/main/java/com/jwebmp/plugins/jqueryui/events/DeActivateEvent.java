@@ -24,9 +24,9 @@ import com.jwebmp.plugins.jqueryui.droppable.interfaces.JQUIDroppableEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class DeActivateEvent
-		extends DeactivateAdapter<DeActivateEvent>
-		implements JQUIDroppableEvents
+public abstract class DeActivateEvent<J extends DeActivateEvent<J>>
+		extends DeactivateAdapter<J>
+		implements JQUIDroppableEvents<J>
 {
 
 

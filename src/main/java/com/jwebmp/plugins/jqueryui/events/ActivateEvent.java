@@ -26,9 +26,9 @@ import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class ActivateEvent
-		extends ActivateAdapter
-		implements JQUIAccordionEvents, JQUIDroppableEvents, JQUITabsEvents
+public abstract class ActivateEvent<J extends ActivateEvent<J>>
+		extends ActivateAdapter<J>
+		implements JQUIAccordionEvents<J>, JQUIDroppableEvents<J>, JQUITabsEvents<J>
 {
 	public ActivateEvent(Component component)
 	{

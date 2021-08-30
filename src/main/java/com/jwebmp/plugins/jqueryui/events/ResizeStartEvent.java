@@ -24,12 +24,10 @@ import com.jwebmp.plugins.jqueryui.dialog.interfaces.JQUIDialogEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class ResizeStartEvent
-		extends ResizeAdapter<ResizeStartEvent>
-		implements JQUIDialogEvents
+public abstract class ResizeStartEvent<J extends ResizeStartEvent<J>>
+		extends ResizeAdapter<J>
+		implements JQUIDialogEvents<J>
 {
-
-
 	public ResizeStartEvent(Component component)
 	{
 		super(component);

@@ -24,12 +24,10 @@ import com.jwebmp.plugins.jqueryui.autocomplete.interfaces.JQUIAutoCompleteEvent
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class SearchEvent
-		extends SearchAdapter<SearchEvent>
-		implements JQUIAutoCompleteEvents
+public abstract class SearchEvent<J extends SearchEvent<J>>
+		extends SearchAdapter<J>
+		implements JQUIAutoCompleteEvents<J>
 {
-
-
 	public SearchEvent(Component component)
 	{
 		super(component);

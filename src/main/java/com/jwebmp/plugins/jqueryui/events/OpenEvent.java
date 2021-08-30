@@ -27,9 +27,9 @@ import com.jwebmp.plugins.jqueryui.selectmenu.interfaces.JQUISelectMenuEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class OpenEvent
-		extends OpenAdapter<OpenEvent>
-		implements JQUIAutoCompleteEvents, JQUIDraggableEvents, JQUIDialogEvents, JQUISelectMenuEvents
+public abstract class OpenEvent<J extends OpenEvent<J>>
+		extends OpenAdapter<J>
+		implements JQUIAutoCompleteEvents<J>, JQUIDraggableEvents<J>, JQUIDialogEvents<J>, JQUISelectMenuEvents<J>
 {
 
 

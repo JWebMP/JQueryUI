@@ -24,12 +24,10 @@ import com.jwebmp.plugins.jqueryui.droppable.interfaces.JQUIDroppableEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class DropEvent
-		extends DropAdapter<DropEvent>
-		implements JQUIDroppableEvents
+public abstract class DropEvent<J extends DropEvent<J>>
+		extends DropAdapter<J>
+		implements JQUIDroppableEvents<J>
 {
-
-
 	public DropEvent(Component component)
 	{
 		super(component);

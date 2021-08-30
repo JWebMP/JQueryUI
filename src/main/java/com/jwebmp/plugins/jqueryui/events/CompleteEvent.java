@@ -24,9 +24,9 @@ import com.jwebmp.plugins.jqueryui.progressbar.interfaces.JQUIProgressBarEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class CompleteEvent
-		extends CompleteAdapter
-		implements JQUIProgressBarEvents
+public abstract class CompleteEvent<J extends CompleteEvent<J>>
+		extends CompleteAdapter<J>
+		implements JQUIProgressBarEvents<J>
 {
 	public CompleteEvent(Component component)
 	{

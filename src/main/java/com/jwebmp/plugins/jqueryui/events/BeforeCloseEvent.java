@@ -24,9 +24,9 @@ import com.jwebmp.plugins.jqueryui.dialog.interfaces.JQUIDialogEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class BeforeCloseEvent
-		extends BeforeCloseAdapter<BeforeCloseEvent>
-		implements JQUIDialogEvents
+public abstract class BeforeCloseEvent<J extends BeforeCloseEvent<J>>
+		extends BeforeCloseAdapter<J>
+		implements JQUIDialogEvents<J>
 {
 
 

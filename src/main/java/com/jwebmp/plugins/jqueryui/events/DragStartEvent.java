@@ -24,12 +24,10 @@ import com.jwebmp.plugins.jqueryui.dialog.interfaces.JQUIDialogEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class DragStartEvent
-		extends DragStartAdapter<DragStartEvent>
-		implements JQUIDialogEvents
+public abstract class DragStartEvent<J extends  DragStartEvent<J>>
+		extends DragStartAdapter<J>
+		implements JQUIDialogEvents<J>
 {
-
-
 	public DragStartEvent(Component component)
 	{
 		super(component);

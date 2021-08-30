@@ -24,12 +24,10 @@ import com.jwebmp.plugins.jqueryui.droppable.interfaces.JQUIDroppableEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class DropOutEvent
-		extends DropOutAdapter<DropOutEvent>
-		implements JQUIDroppableEvents
+public abstract class DropOutEvent<J extends DropOutEvent<J>>
+		extends DropOutAdapter<J>
+		implements JQUIDroppableEvents<J>
 {
-
-
 	public DropOutEvent(Component component)
 	{
 		super(component);

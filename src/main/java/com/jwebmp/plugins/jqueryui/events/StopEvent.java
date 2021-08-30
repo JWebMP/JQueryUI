@@ -27,12 +27,10 @@ import com.jwebmp.plugins.jqueryui.spinner.interfaces.JQUISpinnerEvents;
  * @author GedMarc
  * @since 27 Feb 2017
  */
-public abstract class StopEvent
-		extends StopAdapter<StopEvent>
-		implements JQUIDraggableEvents, JQUIResizableEvents, JQUISliderEvents, JQUISpinnerEvents
+public abstract class StopEvent<J extends StopEvent<J>>
+		extends StopAdapter<J>
+		implements JQUIDraggableEvents<J>, JQUIResizableEvents<J>, JQUISliderEvents<J>, JQUISpinnerEvents<J>
 {
-
-
 	public StopEvent(Component component)
 	{
 		super(component);

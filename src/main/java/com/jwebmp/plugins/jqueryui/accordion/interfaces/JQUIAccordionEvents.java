@@ -23,8 +23,8 @@ import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
  *
  * @author GedMarc
  */
-public interface JQUIAccordionEvents
-		extends GlobalEvents
+public interface JQUIAccordionEvents<J extends JQUIAccordionEvents<J>>
+		extends GlobalEvents<J>
 {
 
 }

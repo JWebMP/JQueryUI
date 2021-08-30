@@ -23,8 +23,8 @@ import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
  * @version 1.0
  * @since 07 Aug 2015
  */
-public interface JQUIMenuEvents
-		extends GlobalEvents
+public interface JQUIMenuEvents<J extends JQUIMenuEvents<J>>
+		extends GlobalEvents<J>
 {
 
 }
