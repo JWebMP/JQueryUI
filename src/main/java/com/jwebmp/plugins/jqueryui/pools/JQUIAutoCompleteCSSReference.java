@@ -35,6 +35,6 @@ class JQUIAutoCompleteCSSReference
 	 */
 	public JQUIAutoCompleteCSSReference()
 	{
-		super("JWAutoCompleteCSSRef", 1.121, "bower_components/jquery-ui/themes/base/autocomplete.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css");
+		super("JWAutoCompleteCSSRef", 1.130,"bower_components/jquery-ui/themes/base/autocomplete.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.0/jquery-ui.css");
 	}
 }

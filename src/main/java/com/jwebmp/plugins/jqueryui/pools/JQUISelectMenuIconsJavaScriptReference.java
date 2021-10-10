@@ -35,6 +35,6 @@ class JQUISelectMenuIconsJavaScriptReference
 	 */
 	public JQUISelectMenuIconsJavaScriptReference()
 	{
-		super("JWSelectMenuIconsJS", 1.121, "bower_components/jquery-ui/ui/selectmenu_icons.js", "bower_components/jquery-ui/ui/selectmenu_icons.js");
+		super("JWSelectMenuIconsJS", 1.130,"bower_components/jquery-ui/ui/selectmenu_icons.js", "bower_components/jquery-ui/ui/selectmenu_icons.js");
 	}
 }

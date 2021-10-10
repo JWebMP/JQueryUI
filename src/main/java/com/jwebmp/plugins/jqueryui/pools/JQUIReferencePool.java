@@ -99,7 +99,7 @@ public enum JQUIReferencePool
 	/**
 	 * The spinner Time class
 	 */
-	SpinnerTime(new JavascriptReference("JWSpinnerTimeJavaScriptReferenceJS", 1.121, "javascript/jquery.ui/timespinner.js", 21), new JQUISpinnerCSSReference(), 20),
+	SpinnerTime(new JavascriptReference("JWSpinnerTimeJavaScriptReferenceJS", 1.130,"javascript/jquery.ui/timespinner.js", 21), new JQUISpinnerCSSReference(), 20),
 	/**
 	 * The tabs scripts for JQuery UI
 	 */

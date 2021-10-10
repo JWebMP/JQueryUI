@@ -28,8 +28,8 @@ class JQueryUICoreCSSReference
 
 	public JQueryUICoreCSSReference()
 	{
-		super("JQueryUICore", 1.121, "bower_components/jquery-ui/themes/base/core.min.css",
-		      "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css");
+		super("JQueryUICore", 1.130,"bower_components/jquery-ui/themes/base/core.min.css",
+		      "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.0/jquery-ui.min.css");
 		setSortOrder(8);
 		setPriority(RequirementsPriority.Third);
 		setSpecifiedClassName("jquitheme");

@@ -1,5 +1,5 @@
 /*!
- * jQuery UI Tooltip 1.12.1
+ * jQuery UI Tooltip 1.13.0
  * http://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
@@ -9,12 +9,11 @@
  * http://api.jqueryui.com/tooltip/#theming
  */
 .ui-tooltip {
-    padding: 8px;
-    position: absolute;
-    z-index: 9999;
-    max-width: 300px;
+	padding: 8px;
+	position: absolute;
+	z-index: 9999;
+	max-width: 300px;
 }
-
 body .ui-tooltip {
-    border-width: 2px;
+	border-width: 2px;
 }

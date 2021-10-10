@@ -37,7 +37,7 @@ class JQueryUIMouseJavaScriptReference
 
 	public JQueryUIMouseJavaScriptReference()
 	{
-		super("JQueryUIMouse", 1.113, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js");
+		super("JQueryUIMouse", 1.113, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.0/jquery-ui.js");
 		setSortOrder(12);
 		setPriority(RequirementsPriority.Fourth);
 	}

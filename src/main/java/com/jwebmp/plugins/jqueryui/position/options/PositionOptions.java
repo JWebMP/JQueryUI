@@ -16,15 +16,13 @@
  */
 package com.jwebmp.plugins.jqueryui.position.options;
 
-import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
-import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
-import com.jwebmp.core.plugins.ComponentInformation;
-import com.jwebmp.plugins.jqueryui.position.enumerations.PositionLocationHorizontal;
-import com.jwebmp.plugins.jqueryui.position.enumerations.PositionLocationVertical;
-import jakarta.validation.constraints.NotNull;
+import com.jwebmp.core.base.interfaces.*;
+import com.jwebmp.core.htmlbuilder.javascript.*;
+import com.jwebmp.core.plugins.*;
+import com.jwebmp.plugins.jqueryui.position.enumerations.*;
+import jakarta.validation.constraints.*;
 
-import static com.guicedee.guicedinjection.json.StaticStrings.STRING_EMPTY;
-import static com.guicedee.guicedinjection.json.StaticStrings.STRING_SPACE;
+import static com.guicedee.guicedinjection.json.StaticStrings.*;
 
 /**
  * This defines the JavaScript part for JQuery UI for Position
@@ -34,9 +32,9 @@ import static com.guicedee.guicedinjection.json.StaticStrings.STRING_SPACE;
  * @since 07 Apr 2013
  */
 @ComponentInformation(name = "JQuery UI Position",
-		description = "Position an element relative to the window, document, another element, " + "" + "" + "" + "or the cursor/mouse.",
-		url = "http://jqueryui.com/position/",
-		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
+                      description = "Position an element relative to the window, document, another element, " + "" + "" + "" + "or the cursor/mouse.",
+                      url = "http://jqueryui.com/position/",
+                      wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class PositionOptions<J extends PositionOptions<J>>
 		extends JavaScriptPart<J>
 {
@@ -56,7 +54,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 	 * Place component ad y
 	 */
 	private PositionLocationVertical atY;
-
+	
 	/**
 	 * The component id for at
 	 */
@@ -69,7 +67,11 @@ public class PositionOptions<J extends PositionOptions<J>>
 	 * The component ID for of
 	 */
 	private String of;
-
+	/**
+	 * Sets the container of the tooltip
+	 */
+	private String within;
+	
 	/**
 	 * Blank instantiation
 	 */
@@ -77,30 +79,26 @@ public class PositionOptions<J extends PositionOptions<J>>
 	{
 		//Nothing needed here
 	}
-
+	
 	/**
 	 * Constructs a new JavaScript Part "Position"
 	 *
-	 * @param myX
-	 * 		My X Location
-	 * @param myY
-	 * 		My Y Location
-	 * @param atX
-	 * 		At X Location
-	 * @param atY
-	 * 		At Y Location
-	 * @param of
-	 * 		Of Which Component
+	 * @param myX My X Location
+	 * @param myY My Y Location
+	 * @param atX At X Location
+	 * @param atY At Y Location
+	 * @param of  Of Which Component
 	 */
-	public PositionOptions(PositionLocationHorizontal myX, PositionLocationVertical myY, PositionLocationHorizontal atX, PositionLocationVertical atY, IComponentHierarchyBase<?,?> of)
+	public PositionOptions(PositionLocationHorizontal myX, PositionLocationVertical myY, PositionLocationHorizontal atX, PositionLocationVertical atY, IComponentHierarchyBase<?, ?> of)
 	{
 		this.myY = myY;
 		this.myX = myX;
 		this.atX = atX;
 		this.atY = atY;
-		this.of = of.asBase().getID(true);
+		this.of = of.asBase()
+		            .getID(true);
 	}
-
+	
 	/**
 	 * My x at target X
 	 * <p>
@@ -113,7 +111,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 		this.myX = myX;
 		this.atX = atX;
 	}
-
+	
 	/**
 	 * At target X
 	 * <p>
@@ -124,7 +122,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 	{
 		this.atX = atX;
 	}
-
+	
 	/**
 	 * My X at X of Component
 	 * <p>
@@ -133,13 +131,14 @@ public class PositionOptions<J extends PositionOptions<J>>
 	 * @param atX
 	 * @param of
 	 */
-	public PositionOptions(PositionLocationHorizontal myX, PositionLocationHorizontal atX, IComponentHierarchyBase<?,?> of)
+	public PositionOptions(PositionLocationHorizontal myX, PositionLocationHorizontal atX, IComponentHierarchyBase<?, ?> of)
 	{
 		this.myX = myX;
 		this.atX = atX;
-		this.of = of.asBase().getID(true);
+		this.of = of.asBase()
+		            .getID(true);
 	}
-
+	
 	/**
 	 * My 7 at target Y
 	 * <p>
@@ -152,7 +151,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 		this.myY = myY;
 		this.atY = atY;
 	}
-
+	
 	/**
 	 * My corners at corners
 	 * <p>
@@ -169,7 +168,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 		this.atX = atX;
 		this.atY = atY;
 	}
-
+	
 	/**
 	 * Gets the My String Part
 	 *
@@ -179,7 +178,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 	{
 		return myX.name() + STRING_SPACE + myY.name() + STRING_EMPTY;
 	}
-
+	
 	/**
 	 * Gets the At String Part
 	 *
@@ -189,7 +188,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 	{
 		return atX.name() + STRING_SPACE + atY.name() + STRING_EMPTY;
 	}
-
+	
 	/**
 	 * The Of String Part
 	 *
@@ -199,7 +198,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 	{
 		return of;
 	}
-
+	
 	/**
 	 * Set the component
 	 *
@@ -207,12 +206,13 @@ public class PositionOptions<J extends PositionOptions<J>>
 	 */
 	@NotNull
 	@SuppressWarnings("unchecked")
-	public J setOf(IComponentHierarchyBase<?,?> comp)
+	public J setOf(IComponentHierarchyBase<?, ?> comp)
 	{
-		of = comp.asBase().getID(true);
+		of = comp.asBase()
+		         .getID(true);
 		return (J) this;
 	}
-
+	
 	/**
 	 * gets the at component string
 	 *
@@ -222,7 +222,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 	{
 		return at;
 	}
-
+	
 	/**
 	 * Sets the at
 	 *
@@ -235,7 +235,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 		this.at = at;
 		return (J) this;
 	}
-
+	
 	/**
 	 * Returns the my
 	 *
@@ -245,7 +245,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 	{
 		return my;
 	}
-
+	
 	/**
 	 * Sets the my
 	 *
@@ -258,7 +258,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 		this.my = my;
 		return (J) this;
 	}
-
+	
 	/**
 	 * Returns the id of the component of
 	 *
@@ -268,7 +268,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 	{
 		return of;
 	}
-
+	
 	/**
 	 * sets the #id of the component
 	 *
@@ -281,7 +281,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 		this.of = of;
 		return (J) this;
 	}
-
+	
 	/**
 	 * Sets the location for position x
 	 *
@@ -294,7 +294,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 		this.myX = myX;
 		return (J) this;
 	}
-
+	
 	/**
 	 * Sets the location for position y
 	 *
@@ -307,7 +307,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 		this.myY = myY;
 		return (J) this;
 	}
-
+	
 	/**
 	 * Sets the position at x
 	 *
@@ -320,7 +320,7 @@ public class PositionOptions<J extends PositionOptions<J>>
 		this.atX = atX;
 		return (J) this;
 	}
-
+	
 	/**
 	 * Sets the position at y
 	 *
@@ -333,5 +333,16 @@ public class PositionOptions<J extends PositionOptions<J>>
 		this.atY = atY;
 		return (J) this;
 	}
-
+	
+	public String getWithin()
+	{
+		return within;
+	}
+	
+	public PositionOptions<J> setWithin(IComponentHierarchyBase<?, ?> within)
+	{
+		this.within = within.asBase()
+		                    .getID(true);
+		return this;
+	}
 }

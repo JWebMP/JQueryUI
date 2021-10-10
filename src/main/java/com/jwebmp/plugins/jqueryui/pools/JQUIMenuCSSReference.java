@@ -34,6 +34,6 @@ class JQUIMenuCSSReference
 	 */
 	public JQUIMenuCSSReference()
 	{
-		super("JWMenuCSSRef", 1.121, "bower_components/jquery-ui/themes/base/menu.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css");
+		super("JWMenuCSSRef", 1.130,"bower_components/jquery-ui/themes/base/menu.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.0/jquery-ui.css");
 	}
 }

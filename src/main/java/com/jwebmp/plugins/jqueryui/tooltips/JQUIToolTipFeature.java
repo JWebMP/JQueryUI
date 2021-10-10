@@ -16,15 +16,12 @@
  */
 package com.jwebmp.plugins.jqueryui.tooltips;
 
-import com.jwebmp.core.Component;
-import com.jwebmp.core.Feature;
-import com.jwebmp.core.base.html.Div;
-import com.jwebmp.core.base.html.attributes.GlobalAttributes;
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
-import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
-import com.jwebmp.core.plugins.ComponentInformation;
-import com.jwebmp.plugins.jqueryui.tooltips.options.JQUITooltipOptions;
+import com.jwebmp.core.*;
+import com.jwebmp.core.base.html.attributes.*;
+import com.jwebmp.core.base.html.interfaces.*;
+import com.jwebmp.core.base.interfaces.*;
+import com.jwebmp.core.plugins.*;
+import com.jwebmp.plugins.jqueryui.tooltips.options.*;
 
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
@@ -34,9 +31,9 @@ import com.jwebmp.plugins.jqueryui.tooltips.options.JQUITooltipOptions;
  * @since 2013/01/16
  */
 @ComponentInformation(name = "JQuery UI Tooltips",
-		description = "Tooltip replaces native tooltips, making them themeable as well as allowing various customizations:",
-		url = "http://jqueryui.com/tooltip/",
-		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
+                      description = "Tooltip replaces native tooltips, making them themeable as well as allowing various customizations:",
+                      url = "http://jqueryui.com/tooltip/",
+                      wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUIToolTipFeature
 		extends Feature<GlobalFeatures, JQUITooltipOptions<?>, JQUIToolTipFeature>
 {
@@ -44,18 +41,24 @@ public class JQUIToolTipFeature
 	 * The options for this component
 	 */
 	private JQUITooltipOptions<?> options;
-
+	
+	/**
+	 * Sets if the tooltip should be placed in the body or in the component
+	 * If using dynamic html replace this should be true or you get sticky tooltips
+	 */
+	private boolean withinComponent;
+	
 	/**
 	 * Constructs a new Tooltip ComponentFeatureBase for a component that uses the Title field as the tooltip
 	 * <p>
 	 *
 	 * @param forComponent
 	 */
-	public JQUIToolTipFeature(IComponentHierarchyBase<?,?> forComponent)
+	public JQUIToolTipFeature(IComponentHierarchyBase<?, ?> forComponent)
 	{
 		this(forComponent, (String) null);
 	}
-
+	
 	/**
 	 * Constructs a new Tooltip ComponentFeatureBase for a component. Adds the tooltip text as the Title attribute to the component
 	 * <p>
@@ -63,16 +66,17 @@ public class JQUIToolTipFeature
 	 * @param forComponent
 	 * @param tooltipText
 	 */
-	public JQUIToolTipFeature(IComponentHierarchyBase<?,?> forComponent, String tooltipText)
+	public JQUIToolTipFeature(IComponentHierarchyBase<?, ?> forComponent, String tooltipText)
 	{
 		super("JWTooltip");
 		setComponent(forComponent);
 		if (tooltipText != null)
 		{
-			getComponent().asAttributeBase().addAttribute(GlobalAttributes.Title, tooltipText);
+			getComponent().asAttributeBase()
+			              .addAttribute(GlobalAttributes.Title, tooltipText);
 		}
 	}
-
+	
 	/**
 	 * Creates a new tooltip for a component with the specified Div to display
 	 * <p>
@@ -80,25 +84,25 @@ public class JQUIToolTipFeature
 	 * @param forComponent
 	 * @param divToDisplayForComponent
 	 */
-	public JQUIToolTipFeature(IComponentHierarchyBase<GlobalChildren,?> forComponent, IComponentHierarchyBase<?,?> divToDisplayForComponent)
+	public JQUIToolTipFeature(IComponentHierarchyBase<GlobalChildren, ?> forComponent, IComponentHierarchyBase<?, ?> divToDisplayForComponent)
 	{
 		super("JWTooltip");
 		setComponent(forComponent);
 		forComponent.add(divToDisplayForComponent);
 	}
-
+	
 	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
 	}
-
+	
 	@Override
 	public boolean equals(Object o)
 	{
 		return super.equals(o);
 	}
-
+	
 	/**
 	 * Returns all the tooltip options
 	 * <p>
@@ -114,14 +118,55 @@ public class JQUIToolTipFeature
 		}
 		return options;
 	}
-
+	
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		String requiredString = getComponent().asBase().getJQueryID() + "tooltip(";
+		if (isWithinComponent())
+		{
+			getOptions().getPosition()
+			            .setWithin(getComponent());
+		}
+		String requiredString = getComponent().asBase()
+		                                      .getJQueryID() + "tooltip(";
 		requiredString += getOptions().toString();
 		requiredString += ");" + getNewLine();
-
+		
 		addQuery(requiredString);
+	}
+	
+	/**
+	 * Sets if the tooltip should be placed in the body or in the component
+	 * If using dynamic html replace this should be true or you get sticky tooltips
+	 *
+	 * @return
+	 */
+	public boolean isWithinComponent()
+	{
+		return withinComponent;
+	}
+	
+	/**
+	 * Sets if the tooltip should be placed in the body or in the component
+	 * If using dynamic html replace this should be true or you get sticky tooltips
+	 *
+	 * @param withinComponent
+	 * @return
+	 */
+	public JQUIToolTipFeature setWithinComponent(boolean withinComponent)
+	{
+		this.withinComponent = withinComponent;
+		return this;
+	}
+	
+	/**
+	 * Shortcut for setting the track on for the generated tooltip
+	 *
+	 * @return
+	 */
+	public JQUIToolTipFeature setTrack()
+	{
+		getOptions().setTrack(true);
+		return this;
 	}
 }

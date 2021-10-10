@@ -86,6 +86,10 @@ public class JQUITooltipOptions<J extends JQUITooltipOptions<J>>
 	 */
 	public PositionOptions<?> getPosition()
 	{
+		if (position == null)
+		{
+			position = new PositionOptions<>();
+		}
 		return position;
 	}
 
@@ -163,6 +167,10 @@ public class JQUITooltipOptions<J extends JQUITooltipOptions<J>>
 	 */
 	public JQEasingAnimationEffectsPart<?> getHide()
 	{
+		if (hide == null)
+		{
+			hide = new JQEasingAnimationEffectsPart<>();
+		}
 		return hide;
 	}
 
@@ -213,6 +221,10 @@ public class JQUITooltipOptions<J extends JQUITooltipOptions<J>>
 	 */
 	public JQEasingAnimationEffectsPart<?> getShow()
 	{
+		if (show == null)
+		{
+			show = new JQEasingAnimationEffectsPart<>();
+		}
 		return show;
 	}
 

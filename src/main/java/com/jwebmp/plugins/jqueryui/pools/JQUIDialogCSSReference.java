@@ -35,6 +35,6 @@ class JQUIDialogCSSReference
 	 */
 	public JQUIDialogCSSReference()
 	{
-		super("JWDialogCSSRef", 1.121, "bower_components/jquery-ui/themes/base/dialog.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css");
+		super("JWDialogCSSRef", 1.130,"bower_components/jquery-ui/themes/base/dialog.css", "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.0/jquery-ui.css");
 	}
 }

@@ -39,7 +39,7 @@ class JQUISortableJavaScriptReference
 	 */
 	public JQUISortableJavaScriptReference()
 	{
-		super("JWSortableJS", 1.121, "bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js");
+		super("JWSortableJS", 1.130,"bower_components/jquery-ui/jquery-ui.js", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.0/jquery-ui.js");
 		setSortOrder(27);
 	}
 }
