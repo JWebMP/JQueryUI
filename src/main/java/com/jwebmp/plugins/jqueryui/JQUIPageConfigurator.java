@@ -16,14 +16,12 @@
  */
 package com.jwebmp.plugins.jqueryui;
 
-import com.jwebmp.core.Page;
-import com.jwebmp.core.plugins.PluginInformation;
-import com.jwebmp.core.plugins.PluginStatus;
-import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
-import com.jwebmp.core.services.IPageConfigurator;
-import com.jwebmp.plugins.jqueryui.pools.JQueryUIReferencePool;
-
-import jakarta.validation.constraints.NotNull;
+import com.jwebmp.core.*;
+import com.jwebmp.core.base.angular.client.annotations.angularconfig.*;
+import com.jwebmp.core.base.angular.client.annotations.typescript.*;
+import com.jwebmp.core.plugins.*;
+import com.jwebmp.core.services.*;
+import jakarta.validation.constraints.*;
 
 /**
  * Checks if a UI component is used on the page and adds
@@ -34,7 +32,7 @@ import jakarta.validation.constraints.NotNull;
 @PluginInformation(pluginName = "JQuery UI",
 		pluginUniqueName = "jquery-ui",
 		pluginDescription = "jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. Whether you're building highly interactive web applications or you just need to add a date picker to a form control, jQuery UI is the perfect choice.",
-		pluginVersion = "1.13.0",
+		pluginVersion = "1.13.1",
 		pluginDependancyUniqueIDs = "jquery",
 		pluginCategories = "jquery, ui, jquery-ui,themes, styles, styling,framework",
 		pluginSubtitle = "A complete UI framework built using JQuery",
@@ -52,6 +50,10 @@ import jakarta.validation.constraints.NotNull;
 		pluginSourceDonateUrl = "https://js.foundation/about/donate",
 		pluginStatus = PluginStatus.Released
 )
+@TsDependency(value = "jquery-ui-dist",version = "^1.13.1")
+@NgScript(value = "jquery-ui-dist/jquery-ui.js",sortOrder = 15)
+@NgStyleSheet("jquery-ui-dist/jquery-ui.css")
+@NgStyleSheet("jquery-ui-dist/jquery-ui.theme.css")
 public class JQUIPageConfigurator
 		implements IPageConfigurator<JQUIPageConfigurator>
 {
@@ -91,13 +93,6 @@ public class JQUIPageConfigurator
 	{
 		if (!page.isConfigured() && enabled())
 		{
-			JQueryPageConfigurator.setRequired(true);
-			page.getBody()
-			    .getJavascriptReferences()
-			    .add(JQueryUIReferencePool.Core.getJavaScriptReference());
-			page.getBody()
-			    .getCssReferences()
-			    .add(JQueryUIReferencePool.Core.getCssReference());
 		}
 		return page;
 	}

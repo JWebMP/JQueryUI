@@ -20,7 +20,6 @@ import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.jqueryui.button.options.JQUIButtonOptions;
-import com.jwebmp.plugins.jqueryui.pools.JQUIReferencePool;
 import jakarta.validation.constraints.NotNull;
 
 import static com.guicedee.guicedinjection.json.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
@@ -57,12 +56,6 @@ public class JQUIButtonFeature<J extends JQUIButtonFeature<J>>
 	{
 		super("JWButtonFeature");
 		this.comp = comp;
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Button.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Button.getCssReference());
 	}
 
 	@Override

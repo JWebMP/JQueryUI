@@ -71,17 +71,11 @@ module com.jwebmp.plugins.jqueryui {
 	exports com.jwebmp.plugins.jqueryui.tooltips.interfaces;
 	exports com.jwebmp.plugins.jqueryui.tooltips.options;
 
-	exports com.jwebmp.plugins.jqueryui.pools;
-
-	requires com.jwebmp.core;
-	requires com.guicedee.logmaster;
-
-	requires jakarta.validation;
-	requires java.logging;
+	requires transitive com.jwebmp.plugins.jquery;
 	requires com.jwebmp.plugins.easingeffects;
 	requires com.jwebmp.plugins.globalize.cultures;
+
 	requires com.guicedee.guicedservlets;
-	requires com.guicedee.guicedinjection;
 
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.jqueryui.JQUIPageConfigurator;
 	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.jqueryui.implementations.JQueryUIExclusionsModule;

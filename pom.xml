@@ -31,6 +31,10 @@
             <artifactId>jwebmp-globalize</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.jwebmp.plugins.jquery</groupId>
+            <artifactId>jwebmp-jquery</artifactId>
+        </dependency>
 
     </dependencies>
 

@@ -16,12 +16,10 @@
  */
 package com.jwebmp.plugins.jqueryui.spinner;
 
-import com.jwebmp.core.Component;
-import com.jwebmp.core.Feature;
-import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
-import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
-import com.jwebmp.plugins.jqueryui.pools.JQUIReferencePool;
-import com.jwebmp.plugins.jqueryui.spinner.options.JQUISpinnerOptions;
+import com.jwebmp.core.*;
+import com.jwebmp.core.base.html.interfaces.*;
+import com.jwebmp.core.base.interfaces.*;
+import com.jwebmp.plugins.jqueryui.spinner.options.*;
 
 import static com.guicedee.guicedinjection.json.StaticStrings.*;
 
@@ -52,17 +50,6 @@ public class JQUISpinnerFeature<J extends JQUISpinnerFeature<J>>
 	{
 		super("JWPSelectMenuFeature");
 		this.selectMenu = selectMenu;
-
-		getJavascriptReferences().add(JQUIReferencePool.Core.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Widget.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Core.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Widget.getCssReference());
-
-		getJavascriptReferences().add(JQUIReferencePool.Button.getJavaScriptReference());
-		getJavascriptReferences().add(JQUIReferencePool.Spinner.getJavaScriptReference());
-		getCssReferences().add(JQUIReferencePool.Button.getCssReference());
-		getCssReferences().add(JQUIReferencePool.Spinner.getCssReference());
-
 	}
 
 	@Override
