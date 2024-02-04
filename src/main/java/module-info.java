@@ -76,7 +76,8 @@ module com.jwebmp.plugins.jqueryui {
 	requires com.jwebmp.plugins.globalize.cultures;
 
 	requires com.guicedee.guicedservlets;
-
+	requires com.guicedee.jsonrepresentation;
+	
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.jqueryui.JQUIPageConfigurator;
 	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.jqueryui.implementations.JQueryUIExclusionsModule;
 	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleInclusions with JQueryUIModuleInclusion;

@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.jqueryui.droppable.options;
 
-import com.guicedee.guicedinjection.json.StaticStrings;
+import com.guicedee.services.jsonrepresentation.json.StaticStrings;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.jqueryui.basethemes.JQUIThemeBlocks;

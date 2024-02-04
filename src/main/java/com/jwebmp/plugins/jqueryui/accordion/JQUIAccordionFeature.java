@@ -22,7 +22,7 @@ import com.jwebmp.plugins.jqueryui.accordion.options.JQUIAccordionOptions;
 
 import jakarta.validation.constraints.NotNull;
 
-import static com.guicedee.guicedinjection.json.StaticStrings.*;
+import static com.guicedee.services.jsonrepresentation.json.StaticStrings.*;
 
 /**
  * @author MMagon

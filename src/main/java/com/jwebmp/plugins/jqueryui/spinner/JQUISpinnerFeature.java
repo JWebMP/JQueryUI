@@ -21,7 +21,7 @@ import com.jwebmp.core.base.html.interfaces.*;
 import com.jwebmp.core.base.interfaces.*;
 import com.jwebmp.plugins.jqueryui.spinner.options.*;
 
-import static com.guicedee.guicedinjection.json.StaticStrings.*;
+import static com.guicedee.services.jsonrepresentation.json.StaticStrings.*;
 
 /**
  * @author GedMarc

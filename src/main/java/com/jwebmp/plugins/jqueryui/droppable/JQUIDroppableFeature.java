@@ -22,7 +22,7 @@ import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.jqueryui.droppable.options.JQUIDroppableOptions;
 
-import static com.guicedee.guicedinjection.json.StaticStrings.*;
+import static com.guicedee.services.jsonrepresentation.json.StaticStrings.*;
 
 /**
  * The droppable implementation

@@ -22,7 +22,7 @@ import com.jwebmp.core.plugins.*;
 import com.jwebmp.plugins.jqueryui.position.enumerations.*;
 import jakarta.validation.constraints.*;
 
-import static com.guicedee.guicedinjection.json.StaticStrings.*;
+import static com.guicedee.services.jsonrepresentation.json.StaticStrings.*;
 
 /**
  * This defines the JavaScript part for JQuery UI for Position
