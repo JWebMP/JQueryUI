@@ -1,21 +1,22 @@
 package com.jwebmp.plugins.jqueryui.droppable;
 
 import com.jwebmp.core.CSSComponent;
+import com.jwebmp.core.base.servlets.interfaces.ICSSComponent;
 import com.jwebmp.plugins.jqueryui.draggable.JQUIDraggable;
 import org.junit.jupiter.api.Test;
 
 class JQUIDroppableTest
 {
 
-	@Test
-	void getOptions()
-	{
-		CSSComponent draggables = new CSSComponent("dragMeToTheDroppable");
+    @Test
+    void getOptions()
+    {
+        CSSComponent draggables = new CSSComponent("dragMeToTheDroppable");
 
-		JQUIDraggable dragWithDrop = new JQUIDraggable<>().addClass(draggables);
-		JQUIDroppable droppable = new JQUIDroppable();
-		droppable.getOptions()
-		         .setAccept(draggables);
-		System.out.println(droppable.toString(0));
-	}
+        JQUIDraggable dragWithDrop = new JQUIDraggable<>().addClass((ICSSComponent<?>) draggables);
+        JQUIDroppable droppable = new JQUIDroppable();
+        droppable.getOptions()
+                 .setAccept(draggables);
+        System.out.println(droppable.toString(0));
+    }
 }
