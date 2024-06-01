@@ -78,7 +78,6 @@ module com.jwebmp.plugins.jqueryui {
     requires com.jwebmp.core.base.angular.client;
     requires com.jwebmp.client;
     requires com.jwebmp.core;
-    requires com.guicedee.guicedservlets;
     requires com.guicedee.jsonrepresentation;
 
     provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.jqueryui.JQUIPageConfigurator;
