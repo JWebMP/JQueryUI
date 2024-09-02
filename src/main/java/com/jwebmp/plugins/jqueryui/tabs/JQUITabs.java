@@ -27,6 +27,7 @@ import com.jwebmp.plugins.jqueryui.tabs.interfaces.JQUITabsFeatures;
 import com.jwebmp.plugins.jqueryui.tabs.options.JQUITabOptions;
 
 import jakarta.validation.constraints.NotNull;
+
 import java.util.ArrayList;
 
 /**
@@ -37,179 +38,179 @@ import java.util.ArrayList;
  * @since 09 Mar 2013
  */
 @ComponentInformation(name = "JQuery UI Tabs",
-		description = "Tabs are generally used to break content into multiple sections that can " + "be" + " swapped to save space, much like an accordion",
-		url = "http://jqueryui.com/tabs/",
-		wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
+                      description = "Tabs are generally used to break content into multiple sections that can " + "be" + " swapped to save space, much like an accordion",
+                      url = "http://jqueryui.com/tabs/",
+                      wikiUrl = "https://github.com/GedMarc/JWebMP-JQueryUIPlugin/wiki")
 public class JQUITabs<J extends JQUITabs<J>>
-		extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatures, JQUITabsEvents, J>
-		implements IJQUITabs<J>
+        extends Div<JQUITabsChildren, NoAttributes, JQUITabsFeatures, JQUITabsEvents, J>
+        implements IJQUITabs<J>
 {
-	/**
-	 * the feature list
-	 */
-	private JQUITabsFeature<?> feature;
+    /**
+     * the feature list
+     */
+    private JQUITabsFeature<?> feature;
 
-	/**
-	 * The Unordered List
-	 */
-	private JQUITabList<?> unorderedList;
+    /**
+     * The Unordered List
+     */
+    private JQUITabList<?> unorderedList;
 
-	/**
-	 * A list of all the tabs
-	 */
-	private java.util.List<JQUITab<?>> tabs;
-	/**
-	 * Constructs a new JQUI JQUITab/** Constructs a new JQUI JQUITab
-	 */
-	public JQUITabs()
-	{
-		super();
-		addFeature(getFeature());
-	}
+    /**
+     * A list of all the tabs
+     */
+    private java.util.List<JQUITab<?>> tabs;
 
-	/**
-	 * Returns the feature for the JQUITabs object
-	 * <p>
-	 *
-	 * @return
-	 */
-	@NotNull
-	public final JQUITabsFeature<?> getFeature()
-	{
-		if (feature == null)
-		{
-			feature = new JQUITabsFeature<>(this);
-		}
-		return feature;
-	}
+    /**
+     * Constructs a new JQUI JQUITab/** Constructs a new JQUI JQUITab
+     */
+    public JQUITabs()
+    {
+        super();
+        addFeature(getFeature());
+    }
 
-	/**
-	 * As Me
-	 *
-	 * @return
-	 */
-	public IJQUITabs<?> asMe()
-	{
-		return this;
-	}
+    /**
+     * Returns the feature for the JQUITabs object
+     * <p>
+     *
+     * @return
+     */
+    @NotNull
+    public final JQUITabsFeature<?> getFeature()
+    {
+        if (feature == null)
+        {
+            feature = new JQUITabsFeature<>(this);
+        }
+        return feature;
+    }
 
-	@Override
-	public void init()
-	{
-		if (!isInitialized())
-		{
-			add(getUnorderedList());
-			getTabs().forEach(next ->
-			                  {
-				                  getUnorderedList().add(next.getTabHeader());
-				                  add(next.getTabDisplayComponent());
-			                  });
-		}
-		super.init();
-	}
+    /**
+     * As Me
+     *
+     * @return
+     */
+    public IJQUITabs<?> asMe()
+    {
+        return this;
+    }
 
-	/**
-	 * Retrieves this unordered list
-	 *
-	 * @return
-	 */
-	@NotNull
-	protected JQUITabList<?> getUnorderedList()
-	{
-		if (unorderedList == null)
-		{
-			unorderedList = new JQUITabList<>();
-		}
-		return unorderedList;
-	}
+    @Override
+    protected void init()
+    {
+        if (!isInitialized())
+        {
+            add(getUnorderedList());
+            getTabs().forEach(next ->
+                              {
+                                  getUnorderedList().add(next.getTabHeader());
+                                  add(next.getTabDisplayComponent());
+                              });
+        }
+        super.init();
+    }
 
-	/**
-	 * Sets the unordered list
-	 *
-	 * @param unorderedList
-	 */
-	@SuppressWarnings("unchecked")
-	@NotNull
-	protected J setUnorderedList(JQUITabList<?> unorderedList)
-	{
-		this.unorderedList = unorderedList;
-		return (J) this;
-	}
+    /**
+     * Retrieves this unordered list
+     *
+     * @return
+     */
+    @NotNull
+    protected JQUITabList<?> getUnorderedList()
+    {
+        if (unorderedList == null)
+        {
+            unorderedList = new JQUITabList<>();
+        }
+        return unorderedList;
+    }
 
-	/**
-	 * Returns the options fields for the tab
-	 * <p>
-	 *
-	 * @return
-	 */
-	@Override
-	@NotNull
-	public JQUITabOptions<?> getOptions()
-	{
-		return feature.getOptions();
-	}
+    /**
+     * Sets the unordered list
+     *
+     * @param unorderedList
+     */
+    @SuppressWarnings("unchecked")
+    @NotNull
+    protected J setUnorderedList(JQUITabList<?> unorderedList)
+    {
+        this.unorderedList = unorderedList;
+        return (J) this;
+    }
 
-	@Override
-	public int hashCode()
-	{
-		return super.hashCode();
-	}
+    /**
+     * Returns the options fields for the tab
+     * <p>
+     *
+     * @return
+     */
+    @Override
+    @NotNull
+    public JQUITabOptions<?> getOptions()
+    {
+        return feature.getOptions();
+    }
 
-	@Override
-	public boolean equals(Object o)
-	{
-		return super.equals(o);
-	}
+    @Override
+    public int hashCode()
+    {
+        return super.hashCode();
+    }
 
-	/**
-	 * Adds a tab to the collection
-	 * <p>
-	 *
-	 * @param tab
-	 *
-	 * @return
-	 */
-	@Override
-	public JQUITab<?> addTab(JQUITab<?> tab)
-	{
-		getTabs().add(tab);
-		return tab;
-	}
+    @Override
+    public boolean equals(Object o)
+    {
+        return super.equals(o);
+    }
 
-	@Override
-	public JQUITab<?> addTab(String title, JQUITabContent<?> displayComponent)
-	{
-		return addTab(new JQUITab<>(new ListItem<>(title), displayComponent));
-	}
+    /**
+     * Adds a tab to the collection
+     * <p>
+     *
+     * @param tab
+     * @return
+     */
+    @Override
+    public JQUITab<?> addTab(JQUITab<?> tab)
+    {
+        getTabs().add(tab);
+        return tab;
+    }
 
-	/**
-	 * Returns a list of tabs
-	 *
-	 * @return
-	 */
-	@Override
-	@NotNull
-	public java.util.List<JQUITab<?>> getTabs()
-	{
-		if (tabs == null)
-		{
-			tabs = new ArrayList<>();
-		}
-		return tabs;
-	}
+    @Override
+    public JQUITab<?> addTab(String title, JQUITabContent<?> displayComponent)
+    {
+        return addTab(new JQUITab<>(new ListItem<>(title), displayComponent));
+    }
 
-	/**
-	 * Sets the list of tabs
-	 *
-	 * @param tabs
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	@NotNull
-	public J setTabs(java.util.List<JQUITab<?>> tabs)
-	{
-		this.tabs = tabs;
-		return (J) this;
-	}
+    /**
+     * Returns a list of tabs
+     *
+     * @return
+     */
+    @Override
+    @NotNull
+    public java.util.List<JQUITab<?>> getTabs()
+    {
+        if (tabs == null)
+        {
+            tabs = new ArrayList<>();
+        }
+        return tabs;
+    }
+
+    /**
+     * Sets the list of tabs
+     *
+     * @param tabs
+     */
+    @Override
+    @SuppressWarnings("unchecked")
+    @NotNull
+    public J setTabs(java.util.List<JQUITab<?>> tabs)
+    {
+        this.tabs = tabs;
+        return (J) this;
+    }
 
 }
