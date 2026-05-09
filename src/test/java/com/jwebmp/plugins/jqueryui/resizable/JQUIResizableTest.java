@@ -9,7 +9,7 @@ class JQUIResizableTest
 	@Test
 	void getOptions()
 	{
-		JQUIResizable resizable = new JQUIResizable();
+		JQUIResizable resizable = new JQUIResizable<>();
 		resizable.getOptions()
 		         .setAnimate(true)
 		         .setAnimateDuration(6000)

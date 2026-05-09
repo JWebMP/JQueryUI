@@ -32,7 +32,7 @@
 
         <dependency>
             <groupId>com.jwebmp.core</groupId>
-            <artifactId>jwebmp-testlib</artifactId>
+            <artifactId>testlib</artifactId>
             <scope>test</scope>
         </dependency>
 
@@ -66,9 +66,8 @@
                 <artifactId>jwebmp-bom</artifactId>
                 <type>pom</type>
                 <scope>import</scope>
-                <version>${guicedee.version}</version>
+                <version>${jwebmp.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 

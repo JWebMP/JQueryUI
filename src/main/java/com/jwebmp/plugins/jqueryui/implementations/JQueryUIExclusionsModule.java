@@ -1,19 +1,15 @@
 package com.jwebmp.plugins.jqueryui.implementations;
 
-import com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions;
+import com.guicedee.client.services.config.IGuiceScanModuleExclusions;
 
-import jakarta.validation.constraints.NotNull;
-import java.util.HashSet;
 import java.util.Set;
 
 public class JQueryUIExclusionsModule
-		implements IGuiceScanModuleExclusions<JQueryUIExclusionsModule>
+        implements IGuiceScanModuleExclusions<JQueryUIExclusionsModule>
 {
-	@Override
-	public @NotNull Set<String> excludeModules()
-	{
-		Set<String> strings = new HashSet<>();
-		strings.add("com.jwebmp.plugins.jqueryui");
-		return strings;
-	}
+    @Override
+    public Set<String> excludeModules()
+    {
+        return Set.of("com.jwebmp.plugins.jqueryui");
+    }
 }

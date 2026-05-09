@@ -37,7 +37,7 @@ public class JQUIAccordionTest
 	@Test
 	public void testDefault()
 	{
-		JQUIAccordion accordion = new JQUIAccordion();
+		JQUIAccordion accordion = new JQUIAccordion<>();
 		accordion.setID("id");
 		String rendered = accordion.renderJavascript()
 		                           .toString();
@@ -50,7 +50,7 @@ public class JQUIAccordionTest
 	@Test
 	public void testIcons()
 	{
-		JQUIAccordion accordion = new JQUIAccordion();
+		JQUIAccordion accordion = new JQUIAccordion<>();
 		accordion.setID("id");
 		accordion.getOptions()
 		         .getIcons()
@@ -76,7 +76,7 @@ public class JQUIAccordionTest
 	@Test
 	public void testActive()
 	{
-		JQUIAccordion accordion = new JQUIAccordion();
+		JQUIAccordion accordion = new JQUIAccordion<>();
 		accordion.setID("id");
 		accordion.getOptions()
 		         .setActive(1);
@@ -92,7 +92,7 @@ public class JQUIAccordionTest
 	@Test
 	public void testCollapsible()
 	{
-		JQUIAccordion accordion = new JQUIAccordion();
+		JQUIAccordion accordion = new JQUIAccordion<>();
 		accordion.setID("id");
 		accordion.getOptions()
 		         .setCollapsible(true);
@@ -110,7 +110,7 @@ public class JQUIAccordionTest
 	@Test
 	public void testAnimate()
 	{
-		JQUIAccordion accordion = new JQUIAccordion();
+		JQUIAccordion accordion = new JQUIAccordion<>();
 		accordion.setID("id");
 		accordion.getOptions()
 		         .getAnimate()
@@ -138,7 +138,7 @@ public class JQUIAccordionTest
 	@Test
 	public void testEvent()
 	{
-		JQUIAccordion accordion = new JQUIAccordion();
+		JQUIAccordion accordion = new JQUIAccordion<>();
 		accordion.setID("id");
 
 		accordion.getOptions()
@@ -155,7 +155,7 @@ public class JQUIAccordionTest
 	@Test
 	public void testHeader()
 	{
-		JQUIAccordion accordion = new JQUIAccordion();
+		JQUIAccordion accordion = new JQUIAccordion<>();
 		accordion.setID("id");
 
 		accordion.getOptions()
@@ -172,11 +172,11 @@ public class JQUIAccordionTest
 	@Test
 	public void testStructure()
 	{
-		JQUIAccordion accordion = new JQUIAccordion();
+		JQUIAccordion accordion = new JQUIAccordion<>();
 		accordion.setID("id");
-		JQUIAccordionContent<?> d1 = new JQUIAccordionContent();
+		JQUIAccordionContent<?> d1 = new JQUIAccordionContent<>();
 		d1.setID("d1");
-		JQUIAccordionContent<?> d2 = new JQUIAccordionContent();
+		JQUIAccordionContent<?> d2 = new JQUIAccordionContent<>();
 		d2.setID("d2");
 		JQUIAccordionTab<?> tab1 = new JQUIAccordionTab("tab1", d1);
 		tab1.getHeader()

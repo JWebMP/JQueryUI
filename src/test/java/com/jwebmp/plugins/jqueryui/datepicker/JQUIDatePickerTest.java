@@ -8,7 +8,7 @@ class JQUIDatePickerTest
 	@Test
 	void test()
 	{
-		JQUIDatePicker datePicker = new JQUIDatePicker();
+		JQUIDatePicker datePicker = new JQUIDatePicker<>();
 		datePicker.getInputFeature()
 		          .getOptions()
 		          .setAutoSize(true)

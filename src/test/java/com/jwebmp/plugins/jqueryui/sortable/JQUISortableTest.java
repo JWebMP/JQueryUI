@@ -10,7 +10,7 @@ class JQUISortableTest
 	@Test
 	void getOptions()
 	{
-		JQUISortable sortable = new JQUISortable();
+		JQUISortable sortable = new JQUISortable<>();
 		sortable.getOptions()
 		        .setAxis(Axis.X)
 		        .setCursor(Cursors.Move)

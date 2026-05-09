@@ -81,8 +81,8 @@ module com.jwebmp.plugins.jqueryui {
     requires com.guicedee.jsonrepresentation;
 
     provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.jqueryui.JQUIPageConfigurator;
-    provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.jqueryui.implementations.JQueryUIExclusionsModule;
-    provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleInclusions with JQueryUIModuleInclusion;
+    provides com.guicedee.client.services.config.IGuiceScanModuleExclusions with com.jwebmp.plugins.jqueryui.implementations.JQueryUIExclusionsModule;
+    provides com.guicedee.client.services.config.IGuiceScanModuleInclusions with JQueryUIModuleInclusion;
 
     opens com.jwebmp.plugins.jqueryui to com.fasterxml.jackson.databind, com.jwebmp.core;
     opens com.jwebmp.plugins.jqueryui.events to com.fasterxml.jackson.databind, com.jwebmp.core;

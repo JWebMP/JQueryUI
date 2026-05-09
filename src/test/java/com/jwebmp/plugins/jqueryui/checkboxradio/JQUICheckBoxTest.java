@@ -37,7 +37,7 @@ public class JQUICheckBoxTest
 	@Test
 	public void testGetLabel()
 	{
-		JQUICheckBox<?> cb = new JQUICheckBox();
+		JQUICheckBox<?> cb = new JQUICheckBox<>();
 		cb.setValue("Value 1")
 		  .getOptions()
 		  .setIcon("Icon")
@@ -51,9 +51,9 @@ public class JQUICheckBoxTest
 	@Test
 	public void testGetLabel2()
 	{
-		JQUICheckBoxGroup<?> cb = new JQUICheckBoxGroup();
+		JQUICheckBoxGroup<?> cb = new JQUICheckBoxGroup<>();
 		cb.addCheckBox(new JQUICheckBox("checkbox"));
-		JQUIRadioButtonGroup rb = new JQUIRadioButtonGroup();
+		JQUIRadioButtonGroup rb = new JQUIRadioButtonGroup<>();
 		rb.addRadioButton(new JQUIRadioButton("radioButton"));
 
 		System.out.println(cb.toString(true));

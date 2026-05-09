@@ -35,8 +35,8 @@ public class JQUITabsTest
 	@Test
 	public void testSomeMethod()
 	{
-		JQUITabs tab = new JQUITabs();
-		tab.addTab("tab 1", new JQUITabContent());
+		JQUITabs tab = new JQUITabs<>();
+		tab.addTab("tab 1", new JQUITabContent<>());
 		tab.addTab("Number 2", new JQUITabContent<>().add(new Paragraph("Stuff")));
 
 		tab.getOptions()

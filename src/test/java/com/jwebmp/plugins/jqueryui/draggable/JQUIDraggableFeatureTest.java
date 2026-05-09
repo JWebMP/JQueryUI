@@ -9,7 +9,7 @@ class JQUIDraggableFeatureTest
 	@Test
 	void getOptions()
 	{
-		JQUIDraggable draggable = new JQUIDraggable();
+		JQUIDraggable draggable = new JQUIDraggable<>();
 		draggable.getFeature()
 		         .getOptions()
 		         .setCursor(Cursors.Crosshair);

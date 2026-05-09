@@ -9,7 +9,7 @@ class JQUISelectableTest
 	@Test
 	void getOptions()
 	{
-		JQUISelectable selectable = new JQUISelectable();
+		JQUISelectable selectable = new JQUISelectable<>();
 		selectable.getOptions()
 		          .setAutoRefresh(true)
 		          .setDelay(500)
